@@ -1,0 +1,14 @@
+﻿node_modules/
+.next/
+.env
+.env.local
+.env.production
+*.log
+dist/
+.turbo/
+coverage/
+inbox/
+sent/
+drafts/
+secrets/
+*.db
