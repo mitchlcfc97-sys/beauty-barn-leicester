@@ -1,7 +1,7 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
-import { X, ExternalLink, Sparkles, ShieldCheck, Clock } from 'lucide-react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { ExternalLink, Sparkles, ShieldCheck, Calendar, Clock, ArrowRight, X, CheckCircle2 } from 'lucide-react';
 import { FRESHA_CONFIG } from '@/lib/utils';
 
 interface FreshaContextType {
@@ -28,20 +28,30 @@ export function FreshaProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeUrl, setActiveUrl] = useState(FRESHA_CONFIG.directBookingUrl);
   const [treatmentName, setTreatmentName] = useState('General Appointment');
+  const [hasOpened, setHasOpened] = useState(false);
 
-  const openFresha = (url?: string, name?: string) => {
-    if (url) setActiveUrl(url);
-    else setActiveUrl(FRESHA_CONFIG.directBookingUrl);
-    
-    if (name) setTreatmentName(name);
-    else setTreatmentName('General Appointment');
+  const openFresha = useCallback((url?: string, name?: string) => {
+    const targetUrl = url || FRESHA_CONFIG.directBookingUrl;
+    const targetName = name || 'General Appointment';
 
+    setActiveUrl(targetUrl);
+    setTreatmentName(targetName);
+    setHasOpened(false);
     setIsOpen(true);
-  };
 
-  const closeFresha = () => {
+    // Open Fresha in a new tab immediately
+    window.open(targetUrl, '_blank', 'noopener,noreferrer');
+    setHasOpened(true);
+
+    // Auto-dismiss the confirmation overlay after 4 seconds
+    setTimeout(() => {
+      setIsOpen(false);
+    }, 4000);
+  }, []);
+
+  const closeFresha = useCallback(() => {
     setIsOpen(false);
-  };
+  }, []);
 
   // Close on Escape key
   useEffect(() => {
@@ -49,13 +59,9 @@ export function FreshaProvider({ children }: { children: React.ReactNode }) {
       if (e.key === 'Escape') setIsOpen(false);
     };
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleKeyDown);
-    } else {
-      document.body.style.overflow = 'unset';
     }
     return () => {
-      document.body.style.overflow = 'unset';
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen]);
@@ -63,62 +69,69 @@ export function FreshaProvider({ children }: { children: React.ReactNode }) {
   return (
     <FreshaContext.Provider value={{ isOpen, activeUrl, treatmentName, openFresha, closeFresha }}>
       {children}
+
+      {/* Confirmation Toast Overlay — appears briefly after Fresha opens in new tab */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-charcoal-900/80 backdrop-blur-sm animate-fade-in">
-          <div className="relative w-full max-w-4xl h-[92vh] bg-cream-50 rounded-2xl shadow-2xl overflow-hidden flex flex-col border border-cream-200">
-            {/* Header */}
-            <div className="px-6 py-4 bg-sage-900 text-cream-50 flex items-center justify-between border-b border-sage-800">
-              <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 rounded-full bg-bronze-500/20 flex items-center justify-center text-bronze-400">
-                  <Sparkles className="w-4 h-4" />
-                </div>
-                <div>
-                  <h3 className="font-serif text-lg font-medium text-cream-50">
-                    Book Online with Fresha
-                  </h3>
-                  <p className="text-xs text-sage-200 flex items-center gap-1">
-                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                    Live Instant Booking • {treatmentName}
-                  </p>
-                </div>
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-lg px-4 animate-fade-in">
+          <div className="bg-sage-900 text-cream-50 rounded-2xl shadow-2xl border border-sage-800 overflow-hidden">
+            {/* Top accent bar */}
+            <div className="h-1 bg-gradient-to-r from-bronze-400 via-bronze-500 to-sage-700" />
+
+            <div className="px-6 py-5 flex items-start gap-4">
+              {/* Icon */}
+              <div className="w-11 h-11 rounded-xl bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
+                {hasOpened ? (
+                  <CheckCircle2 className="w-6 h-6 text-emerald-400" />
+                ) : (
+                  <Calendar className="w-6 h-6 text-bronze-400 animate-pulse" />
+                )}
               </div>
-              <div className="flex items-center space-x-2">
-                <a
-                  href={activeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hidden sm:inline-flex items-center text-xs text-sage-200 hover:text-cream-50 px-3 py-1.5 rounded-lg border border-sage-700 hover:bg-sage-800 transition"
-                >
-                  Open in new tab <ExternalLink className="w-3 h-3 ml-1" />
-                </a>
+
+              {/* Content */}
+              <div className="flex-1 min-w-0">
+                <h3 className="font-serif text-base font-medium text-cream-50 leading-snug">
+                  {hasOpened ? 'Fresha Booking Opened' : 'Opening Fresha...'}
+                </h3>
+                <p className="text-xs text-sage-200 mt-1 leading-relaxed">
+                  <span className="inline-flex items-center gap-1">
+                    <ShieldCheck className="w-3 h-3 text-emerald-400 flex-shrink-0" />
+                    Secure booking for <strong className="text-cream-100">{treatmentName}</strong>
+                  </span>
+                </p>
+                <p className="text-[11px] text-sage-300 mt-1.5">
+                  {hasOpened
+                    ? 'Your booking is ready in the new tab. Select your preferred date, time, and therapist.'
+                    : 'Connecting to Fresha\'s secure scheduling portal...'}
+                </p>
+              </div>
+
+              {/* Actions */}
+              <div className="flex flex-col items-end gap-2 flex-shrink-0">
                 <button
                   onClick={closeFresha}
-                  className="p-2 rounded-full text-sage-200 hover:text-cream-50 hover:bg-sage-800 transition focus:outline-none"
-                  aria-label="Close booking modal"
+                  className="p-1.5 rounded-lg text-sage-400 hover:text-cream-50 hover:bg-sage-800 transition"
+                  aria-label="Dismiss"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-4 h-4" />
                 </button>
               </div>
             </div>
 
-            {/* Embedded Fresha Iframe */}
-            <div className="relative flex-1 bg-cream-100 w-full h-full">
-              <iframe
-                src={activeUrl}
-                title="Fresha Booking Widget"
-                className="w-full h-full border-0"
-                allow="camera; microphone; payment"
-              />
-            </div>
-
-            {/* Modal Footer Banner */}
-            <div className="px-6 py-2.5 bg-cream-100 border-t border-cream-300 text-xs text-charcoal-800/80 flex items-center justify-between">
-              <span className="flex items-center gap-1.5 text-sage-800 font-medium">
-                <Clock className="w-3.5 h-3.5" /> No pre-payment required for single standard appointments
+            {/* Footer with quick actions */}
+            <div className="px-6 py-3 bg-sage-800/60 border-t border-sage-800 flex items-center justify-between gap-3">
+              <span className="text-[11px] text-sage-300 flex items-center gap-1.5">
+                <Clock className="w-3 h-3" /> This will close automatically
               </span>
-              <span className="text-gray-500 hidden md:inline">
-                The Beauty Barn Leicester • Scraptoft, LE7 9SJ
-              </span>
+              <div className="flex items-center gap-2">
+                <a
+                  href={activeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-medium text-bronze-300 hover:text-bronze-200 px-3 py-1.5 rounded-lg bg-sage-800 hover:bg-sage-700 border border-sage-700 transition"
+                >
+                  Re-open Fresha <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
