@@ -16,6 +16,7 @@ export default function Navbar() {
     { name: 'Massage', href: '/treatments/massage' },
     { name: 'Advanced Facials', href: '/treatments/facials' },
     { name: 'All Treatments', href: '/treatments' },
+    { name: 'Bramley', href: '/bramley' },
     { name: 'Gift Vouchers', href: '/gift-vouchers' },
     { name: 'About & Story', href: '/about' },
     { name: 'Contact & Find Us', href: '/contact' },
@@ -59,12 +60,12 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-7">
+          <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium transition ${
+                className={`text-[13px] xl:text-sm font-medium transition whitespace-nowrap ${
                   link.highlight
                     ? 'text-sage-900 font-semibold px-3 py-1.5 rounded-full bg-sage-100 hover:bg-sage-200'
                     : 'text-charcoal-800 hover:text-bronze-500'

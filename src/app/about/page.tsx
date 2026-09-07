@@ -132,7 +132,7 @@ export default function AboutPage() {
       </section>
 
       {/* BRAMLEY BOTANICAL PHILOSOPHY & IN-SALON STORE */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="bramley" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
         <div className="bg-gradient-to-br from-cream-100 via-white to-sage-50/50 rounded-3xl border border-cream-300 shadow-sm p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-5 relative h-72 sm:h-96 rounded-3xl overflow-hidden shadow-md border border-cream-300 group">
             <Image
@@ -181,6 +181,15 @@ export default function AboutPage() {
             <p className="text-xs text-charcoal-800/70 italic pt-1">
               ✨ Perfect for treating yourself on the day of your visit, or packaging alongside a Beauty Barn gift voucher for birthdays and celebrations.
             </p>
+
+            <div className="pt-2">
+              <Link
+                href="/bramley"
+                className="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 transition shadow-sm"
+              >
+                Explore Full Bramley Range & Rituals →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
