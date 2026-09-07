@@ -68,16 +68,18 @@ export default function SpaDaysPage() {
             </div>
           </div>
 
-          <div className="relative h-60 rounded-2xl overflow-hidden shadow-md group">
-            <Image
-              src="/images/private-spa-cabin.jpg"
-              alt="Heated Scandinavian Style Lodge"
-              fill
-              className="object-cover group-hover:scale-105 transition duration-500"
-              sizes="(max-width: 768px) 100vw, 25vw"
+          <div className="relative h-60 rounded-2xl overflow-hidden shadow-md group bg-charcoal-950">
+            <video
+              src="/videos/private-cabin-garden-tour.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <div className="absolute bottom-3 left-3 text-white">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-3 left-3 text-white pointer-events-none">
+              <span className="text-[9px] uppercase font-bold tracking-widest text-bronze-300 block">Video Tour</span>
               <p className="font-serif text-sm font-semibold">Heated Wooden Lodge</p>
               <span className="text-[10px] text-cream-200">Warm & cozy year-round</span>
             </div>

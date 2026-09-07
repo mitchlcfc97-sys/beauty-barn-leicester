@@ -385,11 +385,11 @@ export const TREATMENTS: Treatment[] = [
     "duration": "30 mins",
     "price": "£45 (£65 for 1-hour treatment)",
     "priceNum": 45,
-    "description": "Specially formulated pregnancy-safe massage using supportive cushioning to gently alleviate lower back ache, hip stiffness, and fatigue.",
+    "description": "Our popular signature pregnancy massage utilizes an award-winning pregnancy pillow that allows expecting mothers to safely and comfortably lie on their stomach for a deeply relieving, full back massage without any abdominal pressure.",
     "highlights": [
-      "Pregnancy-safe botanical oils",
-      "Supportive ergonomic cushioning",
-      "Eases lower back & hip strain"
+      "Award-winning lie-on-stomach pregnancy pillow",
+      "Full back massage easing lumbar & sciatic tension",
+      "100% obstetric-approved botanical body oils"
     ],
     "popular": true,
     "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"

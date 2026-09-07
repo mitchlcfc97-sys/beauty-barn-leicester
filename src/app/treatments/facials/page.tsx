@@ -3,13 +3,17 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Sparkles, Clock, Check, Calendar, ArrowRight, ShieldCheck, Heart } from 'lucide-react';
+import { Sparkles, Clock, Check, Calendar, ArrowRight, ShieldCheck, Heart, Zap, Award } from 'lucide-react';
 import { TREATMENTS } from '@/data/treatments';
 import { useFresha } from '@/components/booking/FreshaModal';
 
 export default function FacialsPage() {
   const { openFresha } = useFresha();
-  const facialTreatments = TREATMENTS.filter(t => t.category === 'facials' || t.id === 'deluxe-bacial');
+  
+  // Results-driven advanced facials only (excluding relaxing Bramley facials which live on /bramley)
+  const advancedFacials = TREATMENTS.filter(
+    t => (t.category === 'facials' || t.id === 'deluxe-bacial') && !t.id.includes('bramley')
+  );
 
   return (
     <div className="space-y-16 pb-20">
@@ -17,54 +21,260 @@ export default function FacialsPage() {
       <section className="bg-gradient-to-b from-cream-200 to-cream-50 py-16 px-4 sm:px-6 lg:px-8 border-b border-cream-200">
         <div className="max-w-4xl mx-auto text-center space-y-4">
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-sage-100 text-sage-900 text-xs font-semibold uppercase tracking-wider">
-            <Sparkles className="w-3.5 h-3.5 text-bronze-500" /> Advanced Skincare • Scraptoft
+            <Sparkles className="w-3.5 h-3.5 text-bronze-500" /> Clinical Skin Hub • Results Driven • Scraptoft
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-sage-900">
-            Advanced Facials & Organic Skincare
+            Advanced Facials & Clinical Skincare
           </h1>
           <p className="text-sm sm:text-base text-charcoal-800/80 max-w-2xl mx-auto leading-relaxed">
-            Rejuvenate your skin with our clinical-grade and luxury organic facial treatments. Featuring Bramley natural botanicals, dermaplaning, microneedling, lymphatic facial drainage, and tailored bespoke skincare.
+            At The Beauty Barn Leicester, our advanced facials are results-driven over pure relaxation. Utilizing the world-renowned <strong>Million Dollar Facial® system</strong> and <strong>MEDI+ cosmeceuticals</strong>, our certified skin specialists target acne scarring, stubborn pigmentation, deep lines, and dull texture in our dedicated Skin Hub.
           </p>
         </div>
 
-        {/* Facials Photos Showcase */}
+        {/* Facials Video & Atmosphere Showcase */}
         <div className="max-w-5xl mx-auto mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <div className="relative h-64 rounded-3xl overflow-hidden shadow-md border border-cream-300 group">
+          <div className="relative h-72 rounded-3xl overflow-hidden shadow-md border border-cream-300 group">
             <Image
               src="/images/treatment-room-skylight.jpg"
-              alt="Facial Treatment Suite with Natural Light"
+              alt="The Beauty Barn Clinical Skin Hub Suite in Scraptoft"
               fill
               className="object-cover group-hover:scale-105 transition duration-500"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-4 left-4 text-white">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">Dedicated Suite</span>
-              <p className="font-serif text-base font-medium">Bespoke Skincare Sanctuary</p>
+              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">Dedicated Skin Hub</span>
+              <p className="font-serif text-base font-medium">Clinical Treatment Sanctuary</p>
             </div>
           </div>
 
-          <div className="relative h-64 rounded-3xl overflow-hidden shadow-md border border-cream-300 group">
-            <Image
-              src="/images/bramley-products-shelf.jpg"
-              alt="Certified Organic Botanical Skincare Range"
-              fill
-              className="object-cover group-hover:scale-105 transition duration-500"
-              sizes="(max-width: 768px) 100vw, 50vw"
+          <div className="relative h-72 rounded-3xl overflow-hidden shadow-md border border-cream-300 group bg-charcoal-950">
+            <video
+              src="/videos/facial-massage-sculpt.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <div className="absolute bottom-4 left-4 text-white">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">Botanical Magic</span>
-              <p className="font-serif text-base font-medium">Certified Organic Products</p>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-4 left-4 text-white pointer-events-none">
+              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">Lymphatic Drainage</span>
+              <p className="font-serif text-base font-medium">Million Dollar Facial Movements</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Facials Menu Grid */}
+      {/* THE MILLION DOLLAR FACIAL & MEDI+ EXPLAINER BANNER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-br from-sage-900 via-sage-950 to-sage-900 text-cream-50 rounded-3xl p-8 sm:p-12 shadow-xl border border-sage-800">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-8 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-bronze-500/20 text-bronze-300 text-xs font-semibold uppercase tracking-wider">
+                <Award className="w-3.5 h-3.5 text-bronze-400" />
+                The Million Dollar Facial System & MEDI+
+              </div>
+              <h2 className="font-serif text-3xl sm:text-4xl font-medium tracking-tight text-cream-50">
+                Results-Driven Clinical Skincare in Our Dedicated Skin Hub
+              </h2>
+              <p className="text-sm text-sage-200 leading-relaxed max-w-2xl">
+                Unlike standard pampering facials, our advanced protocols are engineered to produce visible, transformative dermal changes. Combining medical-grade dermaplaning, collagen induction microneedling, clinical lymphatic drainage, and dermatological MEDI+ serums, we resurface, stimulate, and hydrate at cellular depth.
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-xs">
+                <div className="p-3 rounded-xl bg-sage-800/60 border border-sage-700/60 text-center">
+                  <span className="font-bold text-bronze-300 block">Dermaplaning</span>
+                  <span className="text-[11px] text-sage-300">Resurfacing</span>
+                </div>
+                <div className="p-3 rounded-xl bg-sage-800/60 border border-sage-700/60 text-center">
+                  <span className="font-bold text-bronze-300 block">Microneedling</span>
+                  <span className="text-[11px] text-sage-300">Collagen Boost</span>
+                </div>
+                <div className="p-3 rounded-xl bg-sage-800/60 border border-sage-700/60 text-center">
+                  <span className="font-bold text-bronze-300 block">MEDI+ Actives</span>
+                  <span className="text-[11px] text-sage-300">Deep Delivery</span>
+                </div>
+                <div className="p-3 rounded-xl bg-sage-800/60 border border-sage-700/60 text-center">
+                  <span className="font-bold text-bronze-300 block">Clinical LED</span>
+                  <span className="text-[11px] text-sage-300">Cell Repair</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-4 bg-sage-800/40 p-6 rounded-2xl border border-sage-700/60 space-y-4">
+              <h3 className="font-serif text-base font-semibold text-cream-50">What to Expect:</h3>
+              <ul className="space-y-2.5 text-xs text-sage-200">
+                <li className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-bronze-400 flex-shrink-0 mt-0.5" />
+                  <span>Full professional consultation and skin condition analysis before treatment.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-bronze-400 flex-shrink-0 mt-0.5" />
+                  <span>Customised depth and active serums based on your skin concerns.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Check className="w-4 h-4 text-bronze-400 flex-shrink-0 mt-0.5" />
+                  <span>Personalised post-treatment homecare regimen with MEDI+ products.</span>
+                </li>
+              </ul>
+              <button
+                onClick={() => openFresha('https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459', 'The Million Dollar Facial')}
+                className="w-full py-2.5 rounded-xl bg-bronze-500 hover:bg-bronze-600 text-white text-xs font-semibold uppercase tracking-wider transition"
+              >
+                Book Million Dollar Facial (£125)
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* REAL CLIENT BEFORE & AFTER TRANSFORMATIONS GALLERY */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+        <div className="text-center max-w-2xl mx-auto space-y-3">
+          <span className="text-xs uppercase tracking-widest text-bronze-600 font-bold">
+            Real Client Proof
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl font-medium text-sage-900">
+            Real Results: Before & After Case Studies
+          </h2>
+          <p className="text-sm text-charcoal-800/80 leading-relaxed">
+            All photos are unretouched, genuine results from clients treated by our skin specialists at The Beauty Barn Leicester.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* CASE 1: MICRONEEDLING ACNE SCARRING */}
+          <div className="bg-white rounded-3xl overflow-hidden border border-cream-300 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+            <div>
+              <div className="relative aspect-square w-full bg-charcoal-900 overflow-hidden">
+                <Image
+                  src="/images/treatments/microneedling-before-after.jpg"
+                  alt="Acne Scarring Before and After Microneedling at The Beauty Barn Leicester"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                />
+                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-sm text-[10px] font-semibold text-white uppercase tracking-wider">
+                  Top: Before • Bottom: After
+                </div>
+              </div>
+              <div className="p-6 space-y-2">
+                <span className="text-[11px] font-bold text-bronze-600 uppercase tracking-wider block">
+                  Microneedling & CIT
+                </span>
+                <h3 className="font-serif text-lg font-semibold text-sage-900">
+                  Acne Scarring & Texture Remodeling
+                </h3>
+                <p className="text-xs text-charcoal-800/75 leading-relaxed">
+                  Notice the visible reduction in deep post-acne pitting, smoothed skin texture, refined pores, and healthy new collagen generation across the jawline and cheek.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-6 pt-0">
+              <button
+                onClick={() => openFresha('https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459', 'The Microneedling Collagen Induction Facial')}
+                className="w-full py-2.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition"
+              >
+                Book Microneedling (£90)
+              </button>
+            </div>
+          </div>
+
+          {/* CASE 2: PIGMENTATION & SUN DAMAGE */}
+          <div className="bg-white rounded-3xl overflow-hidden border border-cream-300 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+            <div>
+              <div className="relative aspect-square w-full bg-charcoal-900 overflow-hidden">
+                <Image
+                  src="/images/treatments/facials-pigmentation-before-after.png"
+                  alt="Pigmentation and Sun Damage Before and After at The Beauty Barn"
+                  fill
+                  className="object-contain bg-white"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                />
+                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-sm text-[10px] font-semibold text-white uppercase tracking-wider">
+                  Clinical Case Study
+                </div>
+              </div>
+              <div className="p-6 space-y-2">
+                <span className="text-[11px] font-bold text-bronze-600 uppercase tracking-wider block">
+                  Skin Peels & Resurfacing
+                </span>
+                <h3 className="font-serif text-lg font-semibold text-sage-900">
+                  Pigmentation & Sun Damage Correction
+                </h3>
+                <p className="text-xs text-charcoal-800/75 leading-relaxed">
+                  Dramatically faded sun damage and stubborn hyperpigmentation across the cheeks, alongside visibly lifted contours, restored radiance, and an even complexion.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-6 pt-0">
+              <button
+                onClick={() => openFresha('https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459', 'The Dermaplaning Glow Facial')}
+                className="w-full py-2.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition"
+              >
+                Book Dermaplaning (£70)
+              </button>
+            </div>
+          </div>
+
+          {/* CASE 3: 8-MONTH SKIN HEALTH JOURNEY */}
+          <div className="bg-white rounded-3xl overflow-hidden border border-cream-300 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+            <div>
+              <div className="relative aspect-square w-full bg-charcoal-900 overflow-hidden">
+                <Image
+                  src="/images/treatments/facials-progression-timeline.jpg"
+                  alt="Long term facial skin results timeline at The Beauty Barn"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                />
+                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-sm text-[10px] font-semibold text-white uppercase tracking-wider">
+                  May 2021 → Jan 2022
+                </div>
+              </div>
+              <div className="p-6 space-y-2">
+                <span className="text-[11px] font-bold text-bronze-600 uppercase tracking-wider block">
+                  Progressive Dermal Plan
+                </span>
+                <h3 className="font-serif text-lg font-semibold text-sage-900">
+                  Long-Term Skin Health Journey
+                </h3>
+                <p className="text-xs text-charcoal-800/75 leading-relaxed">
+                  Long-term tracking demonstrating sustained clearance of congestion, progressive calming of redness, refined skin barrier, and lasting luminosity over an 8-month period.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-6 pt-0">
+              <button
+                onClick={() => openFresha('https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459', 'The Beauty Barn Bespoke Facial')}
+                className="w-full py-2.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition"
+              >
+                Book Bespoke Facial (From £65)
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Advanced Facials Menu Grid */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="space-y-2">
+          <span className="text-xs uppercase tracking-widest text-bronze-600 font-bold">
+            Skin Hub Menu
+          </span>
+          <h2 className="font-serif text-3xl font-medium text-sage-900">
+            Results-Driven Facial Protocols
+          </h2>
+          <p className="text-xs sm:text-sm text-charcoal-800/70">
+            Every session begins with a consultation to determine your ideal active serums, peeling depth, and infusion technology.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {facialTreatments.map((treatment) => (
+          {advancedFacials.map((treatment) => (
             <div
               key={treatment.id}
               className="bg-white rounded-3xl p-6 sm:p-8 border border-cream-300 shadow-sm hover:shadow-md transition flex flex-col justify-between"
@@ -112,89 +322,6 @@ export default function FacialsPage() {
         </div>
       </section>
 
-      {/* REAL RESULTS: CLINICAL MICRONEEDLING CASE STUDY */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-cream-100 via-white to-sage-50/50 rounded-3xl p-8 sm:p-12 border border-cream-300 shadow-md grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          {/* Photo comparison */}
-          <div className="lg:col-span-6 relative">
-            <div className="relative aspect-square rounded-3xl overflow-hidden shadow-xl border border-cream-300 bg-black group">
-              <Image
-                src="/images/treatments/microneedling-before-after.jpg"
-                alt="Client before and after microneedling treatment showing visible reduction in acne scarring and improved skin texture"
-                fill
-                className="object-cover group-hover:scale-105 transition duration-700"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              <div className="absolute top-4 left-4 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full text-white text-[11px] font-semibold tracking-wider uppercase border border-white/20">
-                Top: Before (Acne Scarring)
-              </div>
-              <div className="absolute bottom-4 left-4 px-3 py-1 bg-sage-900/80 backdrop-blur-md rounded-full text-white text-[11px] font-semibold tracking-wider uppercase border border-white/20">
-                Bottom: After (Collagen Remodeling)
-              </div>
-            </div>
-            <p className="text-[11px] text-center text-charcoal-800/60 mt-2 italic">
-              *Real client results treated at The Beauty Barn Leicester. Individual results may vary.
-            </p>
-          </div>
-
-          {/* Clinical Copy & Breakdown */}
-          <div className="lg:col-span-6 space-y-6">
-            <div className="space-y-3">
-              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-bronze-500/15 text-bronze-700 text-xs font-semibold uppercase tracking-wider">
-                <Sparkles className="w-3.5 h-3.5 text-bronze-600" /> Real Clinical Results
-              </span>
-              <h2 className="font-serif text-3xl sm:text-4xl font-medium text-sage-900 leading-tight">
-                Visible Transformation: <br className="hidden sm:inline" />
-                <span className="italic font-normal text-bronze-600">Microneedling Before & After</span>
-              </h2>
-              <p className="text-sm text-charcoal-800/80 leading-relaxed">
-                Notice the dramatic reduction in post-acne scarring, pitted dermal texture, and uneven tone in our client. Microneedling triggers your body’s natural wound-healing cascade, stimulating fresh fibroblast collagen and elastin without downtime.
-              </p>
-            </div>
-
-            {/* Benefit Points */}
-            <div className="space-y-3">
-              <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-white border border-cream-200 shadow-sm">
-                <div className="w-8 h-8 rounded-xl bg-sage-100 flex items-center justify-center text-sage-800 flex-shrink-0 mt-0.5">
-                  <Check className="w-4 h-4 text-bronze-600" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-sage-900 uppercase tracking-wider">Acne Scarring & Texture Remodeling</h4>
-                  <p className="text-xs text-charcoal-800/70 leading-relaxed mt-0.5">Breaks down fibrous scar tissue and fills pitted depressions with fresh structural collagen.</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-white border border-cream-200 shadow-sm">
-                <div className="w-8 h-8 rounded-xl bg-sage-100 flex items-center justify-center text-sage-800 flex-shrink-0 mt-0.5">
-                  <Check className="w-4 h-4 text-bronze-600" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-sage-900 uppercase tracking-wider">Pore Refinement & Luminous Glow</h4>
-                  <p className="text-xs text-charcoal-800/70 leading-relaxed mt-0.5">Tightens enlarged pores and restores a smooth, light-reflecting dermal surface.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* CTAs */}
-            <div className="pt-2 flex flex-wrap items-center gap-3">
-              <button
-                onClick={() => openFresha('https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459', 'The Microneedling Collagen Induction Facial')}
-                className="px-6 py-3 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition shadow-md flex items-center gap-2"
-              >
-                <Calendar className="w-3.5 h-3.5 text-bronze-300" />
-                Book Microneedling (£60)
-              </button>
-              <button
-                onClick={() => openFresha('https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459', 'The Million Dollar Facial')}
-                className="px-5 py-3 rounded-xl border border-sage-300 text-sage-900 hover:bg-cream-100 text-xs font-semibold uppercase tracking-wider transition"
-              >
-                Million Dollar Facial (£85)
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Clinical Facial Boosters & Add-Ons */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div className="text-center max-w-xl mx-auto space-y-2">
@@ -213,7 +340,7 @@ export default function FacialsPage() {
             </div>
             <h3 className="font-serif text-base font-semibold text-charcoal-900">Custom Hydrojelly® Mask</h3>
             <p className="text-xs text-charcoal-800/70 leading-relaxed">
-              Electrolyte-infused algae mask vacuum seals hydration and calms post-exfoliation redness.
+              Electrolyte-infused algae mask vacuum seals active serums into the skin and instantly calms post-microneedling redness.
             </p>
           </div>
 
@@ -224,7 +351,7 @@ export default function FacialsPage() {
             </div>
             <h3 className="font-serif text-base font-semibold text-charcoal-900">Clinical LED Light</h3>
             <p className="text-xs text-charcoal-800/70 leading-relaxed">
-              Targeted wavelengths stimulate collagen fibroblasts and clear blemish-causing bacteria.
+              Medical wavelengths stimulate ATP cellular energy, speeding recovery, boosting fibroblasts, and killing acne bacteria.
             </p>
           </div>
 
@@ -235,7 +362,7 @@ export default function FacialsPage() {
             </div>
             <h3 className="font-serif text-base font-semibold text-charcoal-900">Miracle Peptide Mask</h3>
             <p className="text-xs text-charcoal-800/70 leading-relaxed">
-              Tightens and sculpts facial contours while stimulating dermal microcirculation.
+              Tightens and sculpts facial contours while stimulating microcirculation for instant firming before special events.
             </p>
           </div>
 
@@ -246,37 +373,37 @@ export default function FacialsPage() {
             </div>
             <h3 className="font-serif text-base font-semibold text-charcoal-900">HA4c Hyaluronic Mask</h3>
             <p className="text-xs text-charcoal-800/70 leading-relaxed">
-              Quadruple molecular weight hyaluronic acid penetrates multiple skin layers for lasting dewiness.
+              Quadruple molecular weight hyaluronic acid penetrates multiple skin layers for lasting dewiness and barrier repair.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Bramley Botanicals Philosophy */}
+      {/* Skin Hub Consultation & Booking Notice */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-cream-100 rounded-3xl p-8 sm:p-12 border border-cream-300 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <div className="space-y-4">
-            <span className="text-xs font-bold text-bronze-600 uppercase tracking-wider">Natural British Botanicals</span>
+        <div className="bg-gradient-to-br from-cream-100 via-white to-cream-50 rounded-3xl p-8 sm:p-12 border border-cream-300 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div className="md:col-span-8 space-y-3">
+            <span className="text-xs font-bold text-bronze-600 uppercase tracking-wider">Unsure Which Facial You Need?</span>
             <h2 className="font-serif text-2xl sm:text-3xl text-sage-900 font-medium">
-              Why We Partner with Bramley
+              Book a Bespoke Facial with Full Skin Analysis
             </h2>
             <p className="text-xs sm:text-sm text-charcoal-800/80 leading-relaxed">
-              We believe pure, ethical botanicals deliver the healthiest, most luminous skin. Bramley formulations are 100% naturally derived, cruelty-free, and blended with therapeutic herbs and essential oils that nourish your skin barrier without irritation.
+              Our skin specialists will examine your skin under clinical lighting, discuss your primary goals (anti-aging, texture, active breakouts, or pigmentation), and tailor a Million Dollar or MEDI+ protocol specifically for you on the day.
             </p>
           </div>
-          <div className="p-6 bg-white rounded-2xl border border-cream-300 space-y-3 text-xs text-charcoal-800">
-            <div className="flex items-center gap-2 font-semibold text-sage-900">
-              <ShieldCheck className="w-4 h-4 text-emerald-600" /> 100% Naturally Derived & Cruelty-Free
-            </div>
-            <p className="text-charcoal-800/70">No parabens, artificial colours, or synthetic fragrances. Perfect for sensitive, congested, mature, or dry skin types.</p>
-            <div className="pt-2">
-              <button
-                onClick={() => openFresha('https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459', "The Bramley Ultra Relaxing Facial")}
-                className="w-full py-2.5 rounded-xl bg-sage-800 text-cream-50 text-xs font-semibold hover:bg-sage-900 transition"
-              >
-                Book Bramley Ultra Relaxing Facial (£60)
-              </button>
-            </div>
+          <div className="md:col-span-4 flex flex-col gap-3">
+            <button
+              onClick={() => openFresha('https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459', 'The Beauty Barn Bespoke Facial')}
+              className="w-full py-3 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition shadow-sm text-center"
+            >
+              Book Skin Consultation
+            </button>
+            <Link
+              href="/contact"
+              className="w-full py-3 rounded-xl border border-cream-400 bg-white hover:bg-cream-100 text-sage-900 text-xs font-semibold uppercase tracking-wider transition text-center"
+            >
+              Ask Our Therapists
+            </Link>
           </div>
         </div>
       </section>
