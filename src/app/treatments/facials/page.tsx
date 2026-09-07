@@ -112,6 +112,89 @@ export default function FacialsPage() {
         </div>
       </section>
 
+      {/* REAL RESULTS: CLINICAL MICRONEEDLING CASE STUDY */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-br from-cream-100 via-white to-sage-50/50 rounded-3xl p-8 sm:p-12 border border-cream-300 shadow-md grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* Photo comparison */}
+          <div className="lg:col-span-6 relative">
+            <div className="relative aspect-square rounded-3xl overflow-hidden shadow-xl border border-cream-300 bg-black group">
+              <Image
+                src="/images/treatments/microneedling-before-after.jpg"
+                alt="Client before and after microneedling treatment showing visible reduction in acne scarring and improved skin texture"
+                fill
+                className="object-cover group-hover:scale-105 transition duration-700"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute top-4 left-4 px-3 py-1 bg-black/60 backdrop-blur-md rounded-full text-white text-[11px] font-semibold tracking-wider uppercase border border-white/20">
+                Top: Before (Acne Scarring)
+              </div>
+              <div className="absolute bottom-4 left-4 px-3 py-1 bg-sage-900/80 backdrop-blur-md rounded-full text-white text-[11px] font-semibold tracking-wider uppercase border border-white/20">
+                Bottom: After (Collagen Remodeling)
+              </div>
+            </div>
+            <p className="text-[11px] text-center text-charcoal-800/60 mt-2 italic">
+              *Real client results treated at The Beauty Barn Leicester. Individual results may vary.
+            </p>
+          </div>
+
+          {/* Clinical Copy & Breakdown */}
+          <div className="lg:col-span-6 space-y-6">
+            <div className="space-y-3">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-bronze-500/15 text-bronze-700 text-xs font-semibold uppercase tracking-wider">
+                <Sparkles className="w-3.5 h-3.5 text-bronze-600" /> Real Clinical Results
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl font-medium text-sage-900 leading-tight">
+                Visible Transformation: <br className="hidden sm:inline" />
+                <span className="italic font-normal text-bronze-600">Microneedling Before & After</span>
+              </h2>
+              <p className="text-sm text-charcoal-800/80 leading-relaxed">
+                Notice the dramatic reduction in post-acne scarring, pitted dermal texture, and uneven tone in our client. Microneedling triggers your body’s natural wound-healing cascade, stimulating fresh fibroblast collagen and elastin without downtime.
+              </p>
+            </div>
+
+            {/* Benefit Points */}
+            <div className="space-y-3">
+              <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-white border border-cream-200 shadow-sm">
+                <div className="w-8 h-8 rounded-xl bg-sage-100 flex items-center justify-center text-sage-800 flex-shrink-0 mt-0.5">
+                  <Check className="w-4 h-4 text-bronze-600" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-sage-900 uppercase tracking-wider">Acne Scarring & Texture Remodeling</h4>
+                  <p className="text-xs text-charcoal-800/70 leading-relaxed mt-0.5">Breaks down fibrous scar tissue and fills pitted depressions with fresh structural collagen.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-white border border-cream-200 shadow-sm">
+                <div className="w-8 h-8 rounded-xl bg-sage-100 flex items-center justify-center text-sage-800 flex-shrink-0 mt-0.5">
+                  <Check className="w-4 h-4 text-bronze-600" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-sage-900 uppercase tracking-wider">Pore Refinement & Luminous Glow</h4>
+                  <p className="text-xs text-charcoal-800/70 leading-relaxed mt-0.5">Tightens enlarged pores and restores a smooth, light-reflecting dermal surface.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* CTAs */}
+            <div className="pt-2 flex flex-wrap items-center gap-3">
+              <button
+                onClick={() => openFresha('https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459', 'The Microneedling Collagen Induction Facial')}
+                className="px-6 py-3 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition shadow-md flex items-center gap-2"
+              >
+                <Calendar className="w-3.5 h-3.5 text-bronze-300" />
+                Book Microneedling (£60)
+              </button>
+              <button
+                onClick={() => openFresha('https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459', 'The Million Dollar Facial')}
+                className="px-5 py-3 rounded-xl border border-sage-300 text-sage-900 hover:bg-cream-100 text-xs font-semibold uppercase tracking-wider transition"
+              >
+                Million Dollar Facial (£85)
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Clinical Facial Boosters & Add-Ons */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
         <div className="text-center max-w-xl mx-auto space-y-2">
