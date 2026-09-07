@@ -463,6 +463,47 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* FOUNDERS WELCOME */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-br from-cream-100 via-white to-cream-50 rounded-3xl p-8 sm:p-12 border border-cream-300 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="lg:col-span-5 relative h-72 sm:h-96 rounded-2xl overflow-hidden shadow-md border border-cream-200">
+            <Image
+              src="/images/mel-and-zofia-founders.jpg"
+              alt="Mel & Zofia, Co-Founders of The Beauty Barn Leicester"
+              fill
+              className="object-cover object-[center_20%]"
+              sizes="(max-width: 1024px) 100vw, 40vw"
+            />
+          </div>
+          <div className="lg:col-span-7 space-y-4">
+            <span className="text-xs uppercase tracking-widest text-bronze-600 font-bold">
+              A Personal Welcome
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl font-medium text-sage-900 leading-tight">
+              "We Built The Beauty Barn to Give You Complete Serenity"
+            </h2>
+            <p className="text-sm text-charcoal-800/80 leading-relaxed">
+              We started The Beauty Barn in 2020 with a dream: an authentic countryside sanctuary where nobody is ever rushed, no hot tubs are shared with strangers, and every guest feels completely at home.
+            </p>
+            <p className="text-sm text-charcoal-800/80 leading-relaxed">
+              Whether you’re visiting for an afternoon tea spa package, a Bramley botanical massage, or an advanced facial, our team looks forward to welcoming you to Hall Farm.
+            </p>
+            <div className="pt-2 flex items-center justify-between flex-wrap gap-4 border-t border-cream-200">
+              <div>
+                <p className="font-serif text-base font-semibold text-sage-900">Mel & Zofia</p>
+                <p className="text-xs text-charcoal-800/60">Co-Founders & Spa Directors</p>
+              </div>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-sage-800 hover:text-bronze-600 transition"
+              >
+                Read Our Story <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* GIFT VOUCHERS BANNER (Solves the legacy /blank-page rank) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-to-r from-cream-200 via-cream-100 to-sage-50 rounded-3xl p-8 sm:p-12 border border-cream-300 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8">

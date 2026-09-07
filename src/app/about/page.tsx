@@ -33,10 +33,10 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="relative h-72 rounded-3xl overflow-hidden shadow-md border border-cream-300 group">
             <Image
-              src="/images/barn-feature.jpg"
+              src="/images/mel-and-zofia-founders.jpg"
               alt="Mel & Zofia, Co-Founders of The Beauty Barn Leicester"
               fill
-              className="object-cover object-top group-hover:scale-105 transition duration-500"
+              className="object-cover object-[center_20%] group-hover:scale-105 transition duration-500"
               sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -99,16 +99,27 @@ export default function AboutPage() {
             </div>
 
             <div className="md:col-span-5 bg-cream-100 p-6 rounded-2xl border border-cream-300 space-y-4">
-              <div className="w-12 h-12 rounded-xl bg-sage-800 text-cream-50 flex items-center justify-center">
-                <Heart className="w-6 h-6 text-bronze-300" />
+              <div className="relative h-64 -mt-2 -mx-2 mb-3 rounded-xl overflow-hidden shadow-inner">
+                <Image
+                  src="/images/mel-and-zofia-founders.jpg"
+                  alt="Mel & Zofia, Co-Founders of The Beauty Barn"
+                  fill
+                  className="object-cover object-[center_20%]"
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                />
               </div>
-              <h3 className="font-serif text-lg font-medium text-charcoal-900">
-                Our Core Promise
-              </h3>
-              <p className="text-xs text-charcoal-800/80 leading-relaxed">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-lg bg-sage-800 text-cream-50 flex items-center justify-center flex-shrink-0">
+                  <Heart className="w-4 h-4 text-bronze-300" />
+                </div>
+                <h3 className="font-serif text-base font-medium text-charcoal-900">
+                  Our Core Promise
+                </h3>
+              </div>
+              <p className="text-xs text-charcoal-800/80 leading-relaxed italic">
                 "We wanted to build a place where clients never feel rushed, never have to share a hot tub with strangers, and leave feeling genuinely rejuvenated from head to toe."
               </p>
-              <div className="pt-2 text-xs font-semibold text-sage-900">
+              <div className="pt-1 text-xs font-semibold text-sage-900">
                 — Mel & Zofia, Co-Founders
               </div>
             </div>
