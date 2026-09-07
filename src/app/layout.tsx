@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | The Beauty Barn Leicester",
   },
   description:
-    "Leicester's premier private day spa in Scraptoft. Exclusive lodge and hot tub hire with zero strangers, couples massage, full body Swedish massage, Neal's Yard organic facials, and pamper packages from £90pp. Book online with Fresha.",
+    "Leicester's premier private day spa in Scraptoft. Exclusive lodge and hot tub hire with zero strangers, couples massage, full body Swedish massage, Bramley organic facials, and pamper packages from £90pp. Book online with Fresha.",
   keywords: [
     "massage leicester",
     "the beauty barn leicester",

@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { MapPin, Phone, Mail, Clock, ShieldCheck, Send, Calendar } from 'lucide-react';
 import { BUSINESS_INFO } from '@/data/business';
 
@@ -69,14 +70,24 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Buzzer Notice */}
-              <div className="p-4 bg-cream-50 rounded-2xl border border-cream-200 text-xs text-charcoal-800/80 space-y-1">
+              {/* Buzzer Notice with Real Gate Photo */}
+              <div className="p-4 bg-cream-50 rounded-2xl border border-cream-200 text-xs text-charcoal-800/80 space-y-3">
                 <strong className="text-sage-900 flex items-center gap-1.5">
                   <ShieldCheck className="w-4 h-4 text-emerald-600" /> Arrival & Gate Instructions
                 </strong>
-                <p>
-                  The barn is located on Beeby Road between the housing development and Scraptoft Golf Club. Upon arrival at the gate, please press the buzzer to be admitted. Free private on-site parking is available.
-                </p>
+                <div className="flex items-center gap-3">
+                  <div className="relative w-24 h-24 rounded-xl overflow-hidden flex-shrink-0 shadow-sm border border-cream-300">
+                    <Image
+                      src="/images/barn-gate-entrance.jpg"
+                      alt="The Beauty Barn Gate Entrance"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <p className="leading-relaxed">
+                    The barn is located on Beeby Road between the housing development and Scraptoft Golf Club. Upon arrival at the wooden gate, please press the buzzer on the timber post to be admitted. Free private on-site parking is available.
+                  </p>
+                </div>
               </div>
 
               {/* Opening Hours */}

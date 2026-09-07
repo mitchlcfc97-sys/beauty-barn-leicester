@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { Sparkles, Check, ShieldCheck, Heart, Coffee, Users, Clock } from 'lucide-react';
 import { SPA_PACKAGES } from '@/data/spa-packages';
 import SpaPackageBuilder from '@/components/booking/SpaPackageBuilder';
@@ -34,6 +35,69 @@ export default function SpaDaysPage() {
             Unlike public hotel spas, The Beauty Barn gives you 100% private lodge and hot tub exclusivity. No strangers, no shared changing rooms—just pure, uninterrupted bliss for you and your guests.
           </p>
         </div>
+
+        {/* Real Photo Showcase Gallery */}
+        <div className="max-w-7xl mx-auto mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="relative h-60 rounded-2xl overflow-hidden shadow-md group">
+            <Image
+              src="/images/spa-garden-overview.jpg"
+              alt="Private Spa Garden and Wooden Cabin"
+              fill
+              className="object-cover group-hover:scale-105 transition duration-500"
+              sizes="(max-width: 768px) 100vw, 25vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute bottom-3 left-3 text-white">
+              <p className="font-serif text-sm font-semibold">Private Spa Garden</p>
+              <span className="text-[10px] text-cream-200">Zero other guests</span>
+            </div>
+          </div>
+
+          <div className="relative h-60 rounded-2xl overflow-hidden shadow-md group">
+            <Image
+              src="/images/hot-tub-jets.jpg"
+              alt="Hydrotherapy Hot Tub with Water Jets"
+              fill
+              className="object-cover group-hover:scale-105 transition duration-500"
+              sizes="(max-width: 768px) 100vw, 25vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute bottom-3 left-3 text-white">
+              <p className="font-serif text-sm font-semibold">Hydrotherapy Hot Tub</p>
+              <span className="text-[10px] text-cream-200">Bubbling massage jets</span>
+            </div>
+          </div>
+
+          <div className="relative h-60 rounded-2xl overflow-hidden shadow-md group">
+            <Image
+              src="/images/private-spa-cabin.jpg"
+              alt="Heated Scandinavian Style Lodge"
+              fill
+              className="object-cover group-hover:scale-105 transition duration-500"
+              sizes="(max-width: 768px) 100vw, 25vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute bottom-3 left-3 text-white">
+              <p className="font-serif text-sm font-semibold">Heated Wooden Lodge</p>
+              <span className="text-[10px] text-cream-200">Warm & cozy year-round</span>
+            </div>
+          </div>
+
+          <div className="relative h-60 rounded-2xl overflow-hidden shadow-md group">
+            <Image
+              src="/images/afternoon-tea-stand.jpg"
+              alt="Luxury 3-Tier Afternoon Tea Included"
+              fill
+              className="object-cover group-hover:scale-105 transition duration-500"
+              sizes="(max-width: 768px) 100vw, 25vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute bottom-3 left-3 text-white">
+              <p className="font-serif text-sm font-semibold">Luxury Afternoon Tea</p>
+              <span className="text-[10px] text-cream-200">Included with spa days</span>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Package Cards Grid */}
@@ -65,14 +129,27 @@ export default function SpaDaysPage() {
                 </div>
 
                 <div className="pt-2 pb-4 border-y border-cream-200/20">
+                  <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-400 block mb-0.5">
+                    From
+                  </span>
                   <div className="flex items-baseline gap-1">
                     <span className="font-serif text-3xl font-bold">£{pkg.pricePerPerson}</span>
                     <span className={`text-xs ${pkg.popular ? 'text-sage-300' : 'text-charcoal-800/60'}`}>/ person</span>
                   </div>
-                  <div className={`text-xs mt-1 flex items-center gap-1.5 ${pkg.popular ? 'text-sage-200' : 'text-charcoal-800/70'}`}>
-                    <Users className="w-3.5 h-3.5 text-bronze-500" />
-                    <span>For {pkg.minGuests} - {pkg.maxGuests} Guests</span>
-                  </div>
+                  {pkg.pricingTiers && (
+                    <div className="mt-3 pt-2.5 border-t border-cream-200/20 space-y-1 text-[11px]">
+                      {pkg.pricingTiers.map((tier, idx) => (
+                        <div key={idx} className="flex justify-between items-center">
+                          <span className={pkg.popular ? 'text-sage-200' : 'text-charcoal-800/70'}>
+                            {tier.minGuests}{tier.maxGuests > tier.minGuests ? `-${tier.maxGuests}` : ''} Guests ({tier.duration}):
+                          </span>
+                          <span className={`font-semibold ${pkg.popular ? 'text-bronze-300' : 'text-sage-900'}`}>
+                            £{tier.pricePerPerson}pp
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 <div className="space-y-2">
@@ -104,6 +181,79 @@ export default function SpaDaysPage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Visual Private Experience Gallery */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="text-center max-w-2xl mx-auto space-y-3">
+          <span className="text-xs uppercase tracking-widest text-bronze-600 font-bold">
+            Real Moments at The Barn
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl font-medium text-sage-900">
+            A Glimpse Inside Your Private Sanctuary
+          </h2>
+          <p className="text-sm text-charcoal-800/80 leading-relaxed">
+            From laughter on the private terrace to unhurried relaxation in our heated wooden retreat cabin, see what awaits your group.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+          {/* Main big card: Guests relaxing */}
+          <div className="md:col-span-7 relative h-96 sm:h-[420px] rounded-3xl overflow-hidden shadow-md border border-cream-300 group">
+            <Image
+              src="/images/spa-relaxation.jpg"
+              alt="Guests in robes enjoying afternoon tea and prosecco on the private spa terrace"
+              fill
+              className="object-cover group-hover:scale-105 transition duration-500"
+              sizes="(max-width: 768px) 100vw, 60vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
+              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300">
+                Exclusive Terrace Relaxation
+              </span>
+              <p className="font-serif text-xl sm:text-2xl font-semibold">
+                Afternoon Tea & Drinks Under The Countryside Sun
+              </p>
+              <p className="text-xs text-cream-100/90 hidden sm:block">
+                Towels, robes, slippers, and fresh food are ready from the second you step through the gate.
+              </p>
+            </div>
+          </div>
+
+          {/* Right side 2 stacked cards: Cabin interior & Garden bistro */}
+          <div className="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-6">
+            <div className="relative h-48 sm:h-[198px] rounded-3xl overflow-hidden shadow-md border border-cream-300 group">
+              <Image
+                src="/images/cabin-interior-cozy.jpg"
+                alt="Inside The Retreat heated wooden lodge with cozy cushions and blankets"
+                fill
+                className="object-cover group-hover:scale-105 transition duration-500"
+                sizes="(max-width: 768px) 100vw, 40vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute bottom-3 left-4 text-white">
+                <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">The Retreat Lodge</span>
+                <p className="font-serif text-sm font-semibold">Cozy Heated Interior</p>
+              </div>
+            </div>
+
+            <div className="relative h-48 sm:h-[198px] rounded-3xl overflow-hidden shadow-md border border-cream-300 group">
+              <Image
+                src="/images/spa-garden-bistro.jpg"
+                alt="Private outdoor spa garden with bistro dining tables and sun loungers"
+                fill
+                className="object-cover group-hover:scale-105 transition duration-500"
+                sizes="(max-width: 768px) 100vw, 40vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute bottom-3 left-4 text-white">
+                <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">Outdoor Garden</span>
+                <p className="font-serif text-sm font-semibold">Alfresco Bistro Seating</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -16,7 +16,15 @@ export default function SpaPackageBuilder() {
   const [submitted, setSubmitted] = useState<boolean>(false);
 
   const selectedPkg: SpaPackage = SPA_PACKAGES.find(p => p.id === selectedPackageId) || SPA_PACKAGES[0];
-  const totalPrice = selectedPkg.pricePerPerson * guestCount;
+
+  // Dynamic price per person based on group size tier
+  const matchedTier = selectedPkg.pricingTiers?.find(
+    t => guestCount >= t.minGuests && guestCount <= t.maxGuests
+  ) || selectedPkg.pricingTiers?.[0];
+
+  const currentPricePerPerson = matchedTier ? matchedTier.pricePerPerson : selectedPkg.pricePerPerson;
+  const currentDuration = matchedTier ? matchedTier.duration : selectedPkg.duration;
+  const totalPrice = currentPricePerPerson * guestCount;
   const depositRequired = totalPrice * 0.5;
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -107,7 +115,7 @@ export default function SpaPackageBuilder() {
                       </div>
                       <div className="pt-3 border-t border-cream-200 flex items-baseline justify-between">
                         <span className="text-xs text-charcoal-800/60">{pkg.minGuests}-{pkg.maxGuests} Guests</span>
-                        <span className="font-serif text-lg font-bold text-sage-800">£{pkg.pricePerPerson}<span className="text-xs font-normal text-charcoal-800/70">/pp</span></span>
+                        <span className="font-serif text-lg font-bold text-sage-800">From £{pkg.pricePerPerson}<span className="text-xs font-normal text-charcoal-800/70">/pp</span></span>
                       </div>
                     </button>
                   );
@@ -265,15 +273,19 @@ export default function SpaPackageBuilder() {
 
                 <div className="space-y-2 text-xs text-sage-200 mb-4">
                   <div className="flex justify-between">
-                    <span>{guestCount} Guests × £{selectedPkg.pricePerPerson}</span>
+                    <span>{guestCount} Guests × £{currentPricePerPerson}</span>
                     <span className="font-medium text-cream-50">£{totalPrice.toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Exclusive Lodge & Hot Tub Access</span>
+                    <span>Private Session Duration</span>
+                    <span className="text-bronze-300 font-medium">{currentDuration}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>{selectedPkg.includesLodgeAndHotTub ? "Exclusive Lodge & Hot Tub Access" : "Exclusive Heated Lodge Access"}</span>
                     <span className="text-emerald-400 font-medium">Included</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>Afternoon Tea & Drinks</span>
+                    <span>{selectedPkg.includesAfternoonTea ? "Afternoon Tea & Refreshments" : "Complimentary Refreshments"}</span>
                     <span className="text-emerald-400 font-medium">Included</span>
                   </div>
                 </div>

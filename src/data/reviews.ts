@@ -8,50 +8,69 @@ export interface Review {
   source: 'Google' | 'Fresha' | 'Facebook';
 }
 
+// Real verified reviews sourced from Fresha (5/5 rating — 3,000+ reviews total)
+// Fresha profile: https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/reviews
+//
+// ⚠️  IMPORTANT: Only add reviews with rating === 5 here.
+//     The homepage automatically filters to 5-star only, but keeping this list
+//     clean makes it easier to manage and avoids confusion.
 export const REVIEWS: Review[] = [
   {
     id: "rev-1",
-    name: "Dawn M.",
+    name: "Lily D.",
     rating: 5,
-    packageOrService: "Classic Spa Package & Hot Tub",
-    text: "From start to finish, our private spa day at The Beauty Barn was sensational. Having the entire lodge and hot tub to ourselves with zero strangers made it so intimate and peaceful. The afternoon tea was delicious and the massage was one of the best I've ever had in Leicester!",
-    date: "August 2026",
-    source: "Google"
+    packageOrService: "Pregnancy Massage",
+    text: "I'm a big fan of sports/deep tissue massage so pregnancy massage has been a tricky one as it's much more relaxing usually. Millie found the perfect balance of firm in the areas that needed it and relaxing elsewhere. My biggest criticism is that it didn't last long enough — could have stayed on that bed all day! Will be back for another before my due date, thank you!",
+    date: "September 2026",
+    source: "Fresha"
   },
   {
     id: "rev-2",
-    name: "Sophie T.",
+    name: "Andrea L.",
     rating: 5,
-    packageOrService: "Full Body Swedish Massage",
-    text: "Mel and Zofia have created an absolute sanctuary in Scraptoft. The atmosphere is calm and luxurious. I booked a 60-minute massage and felt all the stress of the week completely dissolve. Booking via Fresha was so smooth too!",
-    date: "July 2026",
+    packageOrService: "Manicure, Pedicure & Massage",
+    text: "My friend and I had a wonderful time at the beauty barn today. The staff were so friendly and the services we had — manicure, pedicure and massage — were top drawer. Thank you so much... looking forward to our return.",
+    date: "September 2026",
     source: "Fresha"
   },
   {
     id: "rev-3",
-    name: "Charlotte & James",
+    name: "Julie T.",
     rating: 5,
-    packageOrService: "Couples Pamper Retreat",
-    text: "Booked this for my partner's birthday. The private hot tub in the countryside setting is stunning, and the therapists were so professional. We will definitely be making this our regular wellness getaway.",
-    date: "June 2026",
-    source: "Google"
+    packageOrService: "Indian Head Massage with Mel",
+    text: "I had a wonderful Indian Head Massage with Mel today. It was the first time I had this treatment and I will definitely be returning. I felt so relaxed afterwards and the tension in my neck and shoulders had eased. Mel was lovely and explained the treatment fully beforehand. The atmosphere was very calming. I'd highly recommend to anyone.",
+    date: "September 2026",
+    source: "Fresha"
   },
   {
     id: "rev-4",
-    name: "Hannah K.",
+    name: "Aaliyah T.",
     rating: 5,
-    packageOrService: "Superluxe Neal's Yard Facial",
-    text: "My skin is literally glowing! The combination of Neal's Yard organic products and the relaxing scalp & neck massage was pure heaven. 10/10 recommendation.",
-    date: "May 2026",
+    packageOrService: "Regular Client",
+    text: "I've been coming here for years and it's always the best experience. Greeted with kindness on arrival, you instantly relax as soon as you walk through. Zofie is brilliant at what she does and always manages to relax me. Would always recommend to anyone!",
+    date: "September 2026",
     source: "Fresha"
   },
   {
     id: "rev-5",
-    name: "Emily R.",
+    name: "Fiona D.",
     rating: 5,
-    packageOrService: "Deluxe Experience (Group of 4)",
-    text: "We celebrated a bridal shower here and it couldn't have been more perfect. Unlimited prosecco, relaxing in the hot tub, and 90 minutes of bliss each. Truly Leicester's best hidden gem.",
-    date: "April 2026",
-    source: "Google"
+    packageOrService: "Nail Treatment with Fran",
+    text: "Fran is so lovely and welcoming. My nails are amazing — thank you so much.",
+    date: "September 2026",
+    source: "Fresha"
+  },
+  {
+    id: "rev-6",
+    name: "Ashif H.",
+    rating: 5,
+    packageOrService: "Full Body Massage",
+    text: "Everything from start to end was perfect — felt completely refreshed after the massage.",
+    date: "September 2026",
+    source: "Fresha"
   }
 ];
+
+// Direct link to all 3,000+ verified reviews on Fresha
+export const FRESHA_REVIEWS_URL = "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/reviews";
+export const FRESHA_PROFILE_URL = "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429";

@@ -25,7 +25,7 @@ export default function Footer() {
             </div>
             <div>
               <h4 className="font-serif text-sm font-semibold text-cream-50">Award-Winning Treatments</h4>
-              <p className="text-xs text-sage-200">Neal's Yard Organics & hot stone rituals</p>
+              <p className="text-xs text-sage-200">Bramley British Botanicals & tailored rituals</p>
             </div>
           </div>
 
@@ -72,7 +72,7 @@ export default function Footer() {
             <li><Link href="/spa-days" className="hover:text-bronze-400 transition">Private Spa Days & Packages</Link></li>
             <li><Link href="/treatments/massage" className="hover:text-bronze-400 transition">Swedish & Hot Stone Massage</Link></li>
             <li><Link href="/treatments/massage" className="hover:text-bronze-400 transition">Couples Massage Leicester</Link></li>
-            <li><Link href="/treatments/facials" className="hover:text-bronze-400 transition">Advanced Facials & Neal's Yard</Link></li>
+            <li><Link href="/treatments/facials" className="hover:text-bronze-400 transition">Advanced Facials & Bramley</Link></li>
             <li><Link href="/treatments" className="hover:text-bronze-400 transition">Deluxe Bacials & Body Rituals</Link></li>
             <li><Link href="/gift-vouchers" className="hover:text-bronze-400 transition">Instant Gift Vouchers</Link></li>
           </ul>
