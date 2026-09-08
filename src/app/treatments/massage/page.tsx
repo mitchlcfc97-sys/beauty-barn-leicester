@@ -31,8 +31,8 @@ export default function MassagePage() {
         <div className="max-w-6xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="relative h-64 rounded-3xl overflow-hidden shadow-md border border-cream-300 group">
             <Image
-              src="/images/couples-massage-room.jpg"
-              alt="Couples Massage Room with Twin Beds"
+              src="/images/treatments/couples-duo-massage-suite.jpg"
+              alt="Couples Massage Room with Twin Beds and Ambient Lighting"
               fill
               className="object-cover group-hover:scale-105 transition duration-500"
               sizes="(max-width: 768px) 100vw, 33vw"
@@ -232,6 +232,87 @@ export default function MassagePage() {
                 Mum-To-Be Gold Ritual (£245) <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* DEEP TISSUE & FIRM MUSCLE RELIEF SPOTLIGHT */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-br from-white via-cream-100 to-cream-50 rounded-3xl p-8 sm:p-12 border border-cream-300 shadow-md grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* Left: Copy & Highlights */}
+          <div className="lg:col-span-6 space-y-6">
+            <div className="space-y-3">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-sage-100 text-sage-900 text-xs font-semibold uppercase tracking-wider">
+                <Sparkles className="w-3.5 h-3.5 text-bronze-600" /> Targeted Muscular Care
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl font-medium text-sage-900 leading-tight">
+                Deep Tissue Tension Relief: <br className="hidden sm:inline" />
+                <span className="italic font-normal text-bronze-600">Bamboo Canes & Volcanic Stones</span>
+              </h2>
+              <p className="text-sm text-charcoal-800/80 leading-relaxed">
+                Persistent desk posture, heavy lifting, or everyday stress can cause stubborn tightness across the shoulders, neck, and lower back. Our deep tissue sessions are designed to break down chronic knots and restore muscular fluidity.
+              </p>
+              <p className="text-sm text-charcoal-800/80 leading-relaxed">
+                Tailored with your chosen pressure — from firm therapeutic hands-on myofascial kneading to the deep thermal penetration of heated volcanic basalt stones or smooth warm bamboo canes.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div className="p-3.5 rounded-2xl bg-white border border-cream-200 shadow-sm">
+                <h4 className="text-xs font-bold text-sage-900 uppercase tracking-wider">Warm Bamboo Canes</h4>
+                <p className="text-xs text-charcoal-800/70 mt-1 leading-relaxed">
+                  Smooth heated canes deliver firm, elongated kneading to unknot stubborn muscle bands and aid lymphatic drainage.
+                </p>
+              </div>
+              <div className="p-3.5 rounded-2xl bg-white border border-cream-200 shadow-sm">
+                <h4 className="text-xs font-bold text-sage-900 uppercase tracking-wider">Volcanic Hot Stones</h4>
+                <p className="text-xs text-charcoal-800/70 mt-1 leading-relaxed">
+                  Warm basalt stones radiate deep soothing heat directly into contracted muscle tissue, melting away stiffness.
+                </p>
+              </div>
+            </div>
+
+            <div className="pt-2 flex flex-wrap items-center gap-3">
+              <button
+                onClick={() => openFresha('https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459', 'The Deep Tissue Massage')}
+                className="px-6 py-3 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition shadow-md flex items-center gap-2"
+              >
+                <Calendar className="w-3.5 h-3.5 text-bronze-300" />
+                Book Deep Tissue (£45 - £80)
+              </button>
+              <span className="text-xs text-charcoal-800/70">
+                +£5 for Warm Bamboo or Hot Stones upgrade
+              </span>
+            </div>
+          </div>
+
+          {/* Right: Real Session Video */}
+          <div className="lg:col-span-6 space-y-3">
+            <div className="relative aspect-[4/5] sm:aspect-[3/4] max-h-[520px] rounded-3xl overflow-hidden shadow-xl border border-cream-300 bg-charcoal-950 group">
+              <video
+                src="/videos/deep-tissue-back-massage.mp4"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-4 left-4 right-4 text-white pointer-events-none">
+                <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block mb-0.5">
+                  Real Treatment Session
+                </span>
+                <p className="font-serif text-base font-semibold">
+                  Candlelit Deep Muscular Release
+                </p>
+                <p className="text-xs text-cream-100/90 mt-0.5">
+                  Firm myofascial pressure targeting upper back, neck, and shoulder tightness.
+                </p>
+              </div>
+            </div>
+            <p className="text-[11px] text-center text-charcoal-800/60 italic">
+              ✨ Every session is calibrated to your exact pressure preference.
+            </p>
           </div>
         </div>
       </section>

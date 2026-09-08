@@ -40,3 +40,6 @@ next-env.d.ts
 /*.zip
 /*.jpg
 /*.jpeg
+/*.adding
+/*.mpeg
+/scratch/

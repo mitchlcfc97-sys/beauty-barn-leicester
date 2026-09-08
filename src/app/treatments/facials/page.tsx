@@ -143,7 +143,7 @@ export default function FacialsPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* CASE 1: MICRONEEDLING ACNE SCARRING */}
           <div className="bg-white rounded-3xl overflow-hidden border border-cream-300 shadow-sm hover:shadow-md transition flex flex-col justify-between">
             <div>
@@ -153,7 +153,7 @@ export default function FacialsPage() {
                   alt="Acne Scarring Before and After Microneedling at The Beauty Barn Leicester"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                 />
                 <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-sm text-[10px] font-semibold text-white uppercase tracking-wider">
                   Top: Before • Bottom: After
@@ -191,7 +191,7 @@ export default function FacialsPage() {
                   alt="Pigmentation and Sun Damage Before and After at The Beauty Barn"
                   fill
                   className="object-contain bg-white"
-                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                 />
                 <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-sm text-[10px] font-semibold text-white uppercase tracking-wider">
                   Clinical Case Study
@@ -229,7 +229,7 @@ export default function FacialsPage() {
                   alt="Long term facial skin results timeline at The Beauty Barn"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                 />
                 <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-sm text-[10px] font-semibold text-white uppercase tracking-wider">
                   May 2021 → Jan 2022
@@ -254,6 +254,44 @@ export default function FacialsPage() {
                 className="w-full py-2.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition"
               >
                 Book Bespoke Facial (From £65)
+              </button>
+            </div>
+          </div>
+
+          {/* CASE 4: THE MILLION DOLLAR GLOW */}
+          <div className="bg-white rounded-3xl overflow-hidden border border-cream-300 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+            <div>
+              <div className="relative aspect-square w-full bg-charcoal-900 overflow-hidden">
+                <Image
+                  src="/images/treatments/million-dollar-facial-client.jpg"
+                  alt="Smiling client holding I Feel A Million Dollars sign outside The Beauty Barn"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                />
+                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-sm text-[10px] font-semibold text-bronze-300 uppercase tracking-wider">
+                  Real Client Experience
+                </div>
+              </div>
+              <div className="p-6 space-y-2">
+                <span className="text-[11px] font-bold text-bronze-600 uppercase tracking-wider block">
+                  Million Dollar Facial
+                </span>
+                <h3 className="font-serif text-lg font-semibold text-sage-900">
+                  &ldquo;I Feel A Million Dollars&rdquo; Glow
+                </h3>
+                <p className="text-xs text-charcoal-800/75 leading-relaxed">
+                  Instant post-treatment luminosity, plumped deep dermal hydration, and a super-smooth glass skin finish that leaves our guests glowing from the inside out.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-6 pt-0">
+              <button
+                onClick={() => openFresha('https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459', 'The Million Dollar Facial Protocol')}
+                className="w-full py-2.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition"
+              >
+                Book Million Dollar Facial (£125)
               </button>
             </div>
           </div>
