@@ -71,6 +71,6 @@ export const REVIEWS: Review[] = [
   }
 ];
 
-// Direct link to all 3,000+ verified reviews on Fresha
-export const FRESHA_REVIEWS_URL = "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/reviews";
-export const FRESHA_PROFILE_URL = "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429";
+// Direct link to all 3,000+ verified reviews on Fresha with partner tracking
+export const FRESHA_REVIEWS_URL = "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/reviews?pId=354459";
+export const FRESHA_PROFILE_URL = "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429?pId=354459";

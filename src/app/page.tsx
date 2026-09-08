@@ -558,7 +558,7 @@ export default function HomePage() {
               The <strong>Fresha Best in Class</strong> award is the platform&apos;s highest accolade, awarded to the top-performing spas and salons based on star rating, volume of verified reviews, and online booking performance. We&apos;re proud to have been recognised in 2023, 2025, and 2026 — a testament to our team&apos;s dedication to exceptional client care.
             </p>
             <a
-              href="https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429"
+              href="https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429?pId=354459"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#5b5bd6] hover:text-[#4a4ac5] transition mt-1"

@@ -53,7 +53,7 @@ export default function Footer() {
           </p>
           <div className="pt-2 flex flex-wrap gap-2">
             <a
-              href="https://www.fresha.com/providers/the-beauty-barn-sowuxl7s?pId=354459"
+              href={BUSINESS_INFO.freshaUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-xl bg-bronze-500 text-white hover:bg-bronze-600 transition"
