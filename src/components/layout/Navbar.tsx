@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Sparkles, Phone, Menu, X, Gift, Calendar, ChevronRight } from 'lucide-react';
+import { Sparkles, Phone, Menu, X, Gift, Calendar, ChevronRight, ShoppingBag } from 'lucide-react';
 import { BUSINESS_INFO } from '@/data/business';
 import { useFresha } from '@/components/booking/FreshaModal';
 
@@ -33,6 +33,16 @@ export default function Navbar() {
             <span className="text-bronze-300">100% Private Lodge & Hot Tub Hire</span>
           </div>
           <div className="flex items-center space-x-4">
+            <a
+              href={BUSINESS_INFO.freshaStoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-bronze-300 hover:text-white transition font-medium"
+            >
+              <ShoppingBag className="w-3.5 h-3.5" />
+              <span>Online Shop</span>
+            </a>
+            <span className="hidden md:inline text-sage-600">|</span>
             <a
               href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
               className="flex items-center gap-1.5 hover:text-bronze-300 transition"
@@ -145,6 +155,15 @@ export default function Navbar() {
             >
               <Gift className="w-4 h-4 text-bronze-500" /> Buy Gift Vouchers
             </Link>
+            <a
+              href={BUSINESS_INFO.freshaStoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full py-2.5 rounded-xl bg-cream-100 border border-cream-300 text-sage-900 text-sm font-medium flex items-center justify-center gap-2 hover:bg-cream-200 transition"
+            >
+              <ShoppingBag className="w-4 h-4 text-bronze-500" /> Online Shop (Bramley & Vouchers)
+            </a>
           </div>
         </div>
       )}

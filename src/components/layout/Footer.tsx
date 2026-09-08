@@ -51,14 +51,22 @@ export default function Footer() {
           <p className="text-xs text-sage-200 leading-relaxed">
             Leicester’s sanctuary for luxury pampering, Swedish massage, organic facials, and private hot tub spa packages. Founded by Mel and Zofia in Scraptoft.
           </p>
-          <div className="pt-2">
+          <div className="pt-2 flex flex-wrap gap-2">
             <a
               href="https://www.fresha.com/providers/the-beauty-barn-sowuxl7s?pId=354459"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2 rounded-xl bg-bronze-500 text-white hover:bg-bronze-600 transition"
             >
-              Book on Fresha Portal
+              Book Appointments
+            </a>
+            <a
+              href={BUSINESS_INFO.freshaStoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-2 rounded-xl bg-sage-800 hover:bg-sage-700 text-cream-50 transition border border-sage-700"
+            >
+              Online Shop ↗
             </a>
           </div>
         </div>
@@ -76,6 +84,16 @@ export default function Footer() {
             <li><Link href="/treatments" className="hover:text-bronze-400 transition">Deluxe Bacials & Body Rituals</Link></li>
             <li><Link href="/bramley" className="hover:text-bronze-300 transition text-bronze-300 font-medium">Bramley British Botanicals</Link></li>
             <li><Link href="/gift-vouchers" className="hover:text-bronze-400 transition">Instant Gift Vouchers</Link></li>
+            <li>
+              <a
+                href={BUSINESS_INFO.freshaStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-bronze-300 transition text-bronze-300 font-semibold inline-flex items-center gap-1"
+              >
+                Online Shop & Bramley Store ↗
+              </a>
+            </li>
           </ul>
         </div>
 

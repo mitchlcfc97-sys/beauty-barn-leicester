@@ -31,5 +31,6 @@ export const BUSINESS_INFO = {
   },
   freshaUrl: "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459",
   freshaVouchersUrl: "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-hall-farm-barn-beeby-road-wv85isjz/vouchers?pId=354459",
+  freshaStoreUrl: "https://www.fresha.com/store/the-beauty-barn-leicester-store-oa0czr2w?share=true&pId=354459",
   mapEmbedUrl: "https://maps.google.com/maps?q=The+Beauty+Barn+Leicester+LE7+9SJ&t=&z=15&ie=UTF8&iwloc=&output=embed"
 };

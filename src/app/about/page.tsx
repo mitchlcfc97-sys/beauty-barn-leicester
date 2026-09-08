@@ -2,7 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Sparkles, Heart, Users, Shield, Calendar, ArrowRight } from 'lucide-react';
+import { Sparkles, Heart, Users, Shield, Calendar, ArrowRight, ShoppingBag } from 'lucide-react';
 import { BUSINESS_INFO } from '@/data/business';
 import { TEAM_MEMBERS } from '@/data/team';
 
@@ -184,22 +184,31 @@ export default function AboutPage() {
               <div className="p-3.5 rounded-2xl bg-white border border-cream-200/80 space-y-1">
                 <span className="text-xs font-bold text-sage-900 block">Take The Spa Home</span>
                 <p className="text-[11px] text-charcoal-800/70 leading-relaxed">
-                  Fall in love with your treatment aroma? We stock a curated boutique of Bramley body washes, soothing sleep pillow mists, hand lotions, and candles to purchase in-salon.
+                  Fall in love with your treatment aroma? We stock a curated boutique in-salon and online for home delivery, including body washes, sleep pillow mists, hand lotions, and candles.
                 </p>
               </div>
             </div>
 
             <p className="text-xs text-charcoal-800/70 italic pt-1">
-              ✨ Perfect for treating yourself on the day of your visit, or packaging alongside a Beauty Barn gift voucher for birthdays and celebrations.
+              ✨ Perfect for treating yourself on the day of your visit, ordering online, or packaging alongside a Beauty Barn gift voucher for birthdays and celebrations.
             </p>
 
-            <div className="pt-2">
+            <div className="pt-2 flex flex-wrap gap-3">
               <Link
                 href="/bramley"
                 className="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 transition shadow-sm"
               >
                 Explore Full Bramley Range & Rituals →
               </Link>
+              <a
+                href={BUSINESS_INFO.freshaStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-xs font-semibold px-4 py-2.5 rounded-xl bg-bronze-500 hover:bg-bronze-600 text-white transition shadow-sm"
+              >
+                <ShoppingBag className="w-3.5 h-3.5 text-white" />
+                Shop Products Online
+              </a>
             </div>
           </div>
         </div>
