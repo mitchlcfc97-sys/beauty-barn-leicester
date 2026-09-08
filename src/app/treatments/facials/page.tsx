@@ -35,16 +35,17 @@ export default function FacialsPage() {
         <div className="max-w-5xl mx-auto mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div className="relative h-72 rounded-3xl overflow-hidden shadow-md border border-cream-300 group">
             <Image
-              src="/images/treatment-room-skylight.jpg"
-              alt="The Beauty Barn Clinical Skin Hub Suite in Scraptoft"
+              src="/images/skin-hub/skin-hub-room-wide.jpg"
+              alt="The Beauty Barn dedicated Skin Hub suite in Scraptoft with treatment bed and neon sign"
               fill
               className="object-cover group-hover:scale-105 transition duration-500"
               sizes="(max-width: 768px) 100vw, 50vw"
+              priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-4 left-4 text-white">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">Dedicated Skin Hub</span>
-              <p className="font-serif text-base font-medium">Clinical Treatment Sanctuary</p>
+              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">The Beauty Barn Sanctuary</span>
+              <p className="font-serif text-base font-medium">The Skin Hub Treatment Suite</p>
             </div>
           </div>
 
@@ -254,6 +255,108 @@ export default function FacialsPage() {
               >
                 Book Bespoke Facial (From £65)
               </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      {/* INSIDE THE SKIN HUB: REAL SUITE PHOTO SHOWCASE */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="text-center max-w-2xl mx-auto space-y-3">
+          <span className="text-xs uppercase tracking-widest text-bronze-600 font-bold">
+            Our Dedicated Space
+          </span>
+          <h2 className="font-serif text-3xl sm:text-4xl font-medium text-sage-900">
+            Inside The Skin Hub
+          </h2>
+          <p className="text-sm text-charcoal-800/80 leading-relaxed">
+            Step into our dedicated clinical treatment room in Scraptoft, created specifically for high-performance facial rituals, LED light therapy, and skin transformations.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Card 1: LED Light Therapy Canopy */}
+          <div className="group rounded-3xl overflow-hidden bg-white border border-cream-300 shadow-sm hover:shadow-md transition flex flex-col">
+            <div className="relative h-64 w-full overflow-hidden bg-charcoal-900">
+              <Image
+                src="/images/skin-hub/skin-hub-led-canopy.jpg"
+                alt="Clinical LED light therapy canopy arch glowing red in The Skin Hub"
+                fill
+                className="object-cover group-hover:scale-105 transition duration-500"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-semibold text-bronze-300 uppercase tracking-wider">
+                Clinical Phototherapy
+              </div>
+              <div className="absolute bottom-3 left-4 text-white">
+                <p className="font-serif text-base font-medium">LED Light Therapy Dome</p>
+              </div>
+            </div>
+            <div className="p-6 space-y-2 flex-1 flex flex-col justify-between">
+              <p className="text-xs text-charcoal-800/75 leading-relaxed">
+                Our medical-grade LED canopy stimulates cellular ATP, accelerates dermal recovery, boosts natural collagen, and eliminates active blemish-causing bacteria.
+              </p>
+              <div className="pt-2 text-[11px] font-semibold text-sage-800">
+                Included in Million Dollar Facials & available as an add-on
+              </div>
+            </div>
+          </div>
+
+          {/* Card 2: Treatment Room Entrance & Neon */}
+          <div className="group rounded-3xl overflow-hidden bg-white border border-cream-300 shadow-sm hover:shadow-md transition flex flex-col">
+            <div className="relative h-64 w-full overflow-hidden bg-charcoal-900">
+              <Image
+                src="/images/skin-hub/skin-hub-entrance-door.jpg"
+                alt="Entrance door with gold Treatment Room plaque looking into The Skin Hub neon"
+                fill
+                className="object-cover group-hover:scale-105 transition duration-500"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-semibold text-bronze-300 uppercase tracking-wider">
+                Private Suite
+              </div>
+              <div className="absolute bottom-3 left-4 text-white">
+                <p className="font-serif text-base font-medium">Dedicated Treatment Room</p>
+              </div>
+            </div>
+            <div className="p-6 space-y-2 flex-1 flex flex-col justify-between">
+              <p className="text-xs text-charcoal-800/75 leading-relaxed">
+                Step through to your private treatment sanctuary. Featuring our signature glowing &quot;The Skin Hub ♡&quot; neon, heated luxury treatment bed, and calming acoustics.
+              </p>
+              <div className="pt-2 text-[11px] font-semibold text-sage-800">
+                100% private, 1-on-1 certified skin specialist care
+              </div>
+            </div>
+          </div>
+
+          {/* Card 3: MEDI+ Actives & Sterilisation */}
+          <div className="group rounded-3xl overflow-hidden bg-white border border-cream-300 shadow-sm hover:shadow-md transition flex flex-col">
+            <div className="relative h-64 w-full overflow-hidden bg-charcoal-900">
+              <Image
+                src="/images/skin-hub/skin-hub-treatment-station.jpg"
+                alt="MEDI+ cosmeceuticals and sterilisation station in The Skin Hub"
+                fill
+                className="object-cover group-hover:scale-105 transition duration-500"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-semibold text-bronze-300 uppercase tracking-wider">
+                MEDI+ Cosmeceuticals
+              </div>
+              <div className="absolute bottom-3 left-4 text-white">
+                <p className="font-serif text-base font-medium">Clinical Skincare Station</p>
+              </div>
+            </div>
+            <div className="p-6 space-y-2 flex-1 flex flex-col justify-between">
+              <p className="text-xs text-charcoal-800/75 leading-relaxed">
+                Equipped with hospital-grade tool sterilisation, hot towel warming, and active MEDI+ dermatological solutions tailored to your unique skin concerns.
+              </p>
+              <div className="pt-2 text-[11px] font-semibold text-sage-800">
+                Pharmaceutical-grade ingredients & sterile single-use blades
+              </div>
             </div>
           </div>
         </div>

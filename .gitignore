@@ -38,3 +38,5 @@ next-env.d.ts
 # raw media uploads in root
 /*.mp4
 /*.zip
+/*.jpg
+/*.jpeg
