@@ -128,3 +128,6 @@ These are configured in [`src/lib/utils.ts`](src/lib/utils.ts).
 ## 📝 License
 
 This project was built by [FutureSolutions](https://futuresolutionsai.com) for The Beauty Barn Leicester.
+
+---
+*Deployment verified: September 2026 via Hostinger VPS CI/CD.*
