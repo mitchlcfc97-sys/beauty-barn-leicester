@@ -1,0 +1,41 @@
+name: 🚀 Deploy The Beauty Barn to Hostinger VPS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH and Deploy to Hostinger VPS
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_IP }}
+          username: beautybarn
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            set -e
+            echo "🚀 Starting deployment for The Beauty Barn..."
+            cd /var/www/beauty-barn
+            
+            # Pull latest changes from main
+            git reset --hard HEAD
+            git clean -fd
+            git pull origin main
+            
+            # Install & Build
+            echo "📦 Installing dependencies..."
+            npm install --legacy-peer-deps
+            
+            echo "🏗️ Building Next.js application..."
+            npm run build
+            
+            # Restart PM2
+            echo "🔄 Restarting application..."
+            pm2 restart beauty-barn
+            
+            echo "✅ The Beauty Barn is live and up-to-date!"
