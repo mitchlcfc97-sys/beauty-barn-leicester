@@ -28,7 +28,7 @@ export const SIGNATURE_RITUALS: SignatureRitual[] = [
     duration: "60 - 120 Minutes",
     badge: "Limited Seasonal Edition",
     therapists: "Senior Spa Specialist",
-    leadImage: "/images/candlelit-treatment-bed.jpg",
+    leadImage: "/images/treatment-room.jpg",
     description: "Step away from the cold and into the comforting warmth of our limited-edition Fireside Ritual. Each ritual begins with a warming cinnamon and honey back exfoliation and combines hot stones, nourishing Bramley oils, and a relaxing warm-oil scalp massage, accompanied by the gentle crackle of a fireside candle. The 90- and 120-minute options also include a luxury skincare cracker containing Bramley Raspberry Seed Facial Oil and a gua sha so you can continue the ritual at home!",
     ritualSteps: [
       {

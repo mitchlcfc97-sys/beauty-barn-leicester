@@ -317,24 +317,25 @@ export default function HomePage() {
 
             {/* Right Column: Visual Showcase */}
             <div className="lg:col-span-5 space-y-4">
-              <div className="relative aspect-[4/5] sm:aspect-[3/4] max-h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-bronze-500/40 group">
-                <Image
-                  src="/images/candlelit-treatment-bed.jpg"
-                  alt="The Fireside Ritual candlelit treatment bed at The Beauty Barn Leicester"
-                  fill
-                  className="object-cover group-hover:scale-105 transition duration-700"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
+              <div className="relative aspect-[4/5] sm:aspect-[3/4] max-h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-amber-500/40 group bg-black">
+                <video
+                  src="/videos/fireside-ritual-sneak-peek.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
                 <div className="absolute bottom-5 left-5 right-5 text-white pointer-events-none space-y-1">
                   <span className="text-[10px] uppercase font-bold tracking-widest text-amber-400 block">
-                    Sensory Atmosphere
+                    Sneak Peek Video
                   </span>
                   <p className="font-serif text-lg font-semibold text-cream-50">
-                    Candlelit Warmth & Relaxing Aromatherapy
+                    The Fireside Ritual Experience
                   </p>
                   <p className="text-xs text-cream-200/80">
-                    Accompanied by the gentle crackle of a fireside candle.
+                    Warming stones, cinnamon exfoliation & gentle candle crackle.
                   </p>
                 </div>
               </div>
