@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { HelpCircle, ChevronDown, MapPin, Clock, Shirt, Users, Calendar, Sparkles } from 'lucide-react';
@@ -13,17 +13,17 @@ const FAQS: FaqItem[] = [
   {
     question: "How do I find The Beauty Barn and where do I park?",
     icon: <MapPin className="w-5 h-5 text-bronze-600" />,
-    answer: "We are situated at Hall Farm Barn on Beeby Road in Scraptoft (LE7 9SJ), peacefully located between the residential village and the golf course. When you arrive, simply pull up to our secure gates and press the buzzer to enter. There is ample free, dedicated private parking right outside our front door.",
+    answer: "We are situated at Hall Farm Barn on Beeby Road in Scraptoft (LE7 9SJ), peacefully located between the residential village and the golf course. When you arrive, pull up to our secure gates and press the buzzer once. Please wait patiently by the gate after buzzing—our therapists may be in the middle of a treatment with clients and will open the gates for you as soon as we possibly can. Once inside, there is ample free private parking right outside our front door.",
   },
   {
     question: "What should I wear or bring with me?",
     icon: <Shirt className="w-5 h-5 text-bronze-600" />,
-    answer: "For individual massages and facials: Wear whatever you are most comfortable in. We provide professional modesty draping, disposable briefs, and fluffy warm towels. For private spa packages & lodge hire: Please bring your favourite swimwear. We provide plush heated robes, spa slippers, bath sheets, and luxury Bramley botanical toiletries.",
+    answer: "For individual massages and facials: Wear whatever you are most comfortable in. We provide professional modesty draping, disposable briefs, and fluffy warm towels. For private spa packages & lodge hire: Please bring your favourite swimwear. We provide plush cosy robes, spa slippers, bath sheets, and luxury Bramley botanical toiletries.",
   },
   {
     question: "How early should I arrive before my appointment?",
     icon: <Clock className="w-5 h-5 text-bronze-600" />,
-    answer: "We recommend arriving approximately 5 to 10 minutes prior to your scheduled start time. This gives you time to park without rushing, relax in our candlelit lounge, sip a complimentary organic herbal tea, and complete your quick digital consultation form.",
+    answer: "We recommend arriving approximately 5 to 10 minutes prior to your scheduled start time. We will let you in as soon as we are ready, where you can take a seat in reception, enjoy a refreshing cold water, use the facilities, and complete any consultation details before your treatment begins.",
   },
   {
     question: "Can I book for two people or a group?",
@@ -33,7 +33,7 @@ const FAQS: FaqItem[] = [
   {
     question: "What is your cancellation and booking policy?",
     icon: <Calendar className="w-5 h-5 text-bronze-600" />,
-    answer: "All appointments are managed safely through our official Fresha booking system. We kindly request at least 48 hours notice if you need to reschedule or cancel your appointment, allowing us the opportunity to accommodate clients on our cancellation waiting list.",
+    answer: "We take a 50% deposit upon booking which is strictly non-refundable. If you need to change your appointment date or time, you may reschedule with at least 48 hours notice. However, we do not accept cancellations or offer deposit refunds under any circumstances.",
   },
 ];
 

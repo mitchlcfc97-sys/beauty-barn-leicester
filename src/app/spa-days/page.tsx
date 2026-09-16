@@ -249,7 +249,7 @@ export default function SpaDaysPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-3 left-4 text-white pointer-events-none">
                 <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">Your Arrival</span>
-                <p className="font-serif text-sm font-semibold">Heated Robes Ready & Waiting</p>
+                <p className="font-serif text-sm font-semibold">Cosy Robes Ready & Waiting</p>
               </div>
             </div>
 
