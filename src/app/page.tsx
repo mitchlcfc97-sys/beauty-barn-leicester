@@ -28,7 +28,44 @@ import FirstTimeGuide from '@/components/home/FirstTimeGuide';
 
 export default function HomePage() {
   const { openFresha } = useFresha();
-  const featuredTreatments = TREATMENTS.slice(0, 4);
+  const popularTreatments = [
+    {
+      id: 'relaxing-full-body',
+      name: 'The Relaxing Full Body Massage',
+      categoryLabel: 'Massage',
+      duration: '60 mins',
+      price: '£55',
+      description: 'An indulgent full body Swedish massage covering legs, feet, arms, hands, neck, and finishing with a tension-melting back massage.',
+      freshaUrl: 'https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A7310103',
+    },
+    {
+      id: 'back-neck-shoulder-scalp',
+      name: 'The Back, Neck, Shoulder & Scalp Massage',
+      categoryLabel: 'Massage',
+      duration: '60 mins',
+      price: '£60',
+      description: 'Comprehensive upper body tension release flowing into a soothing warm botanical oil scalp massage to melt away mental fatigue.',
+      freshaUrl: 'https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A24093384',
+    },
+    {
+      id: 'full-indulgence-ritual',
+      name: 'The Full Indulgence Ritual',
+      categoryLabel: 'Signature Ritual',
+      duration: '90 mins',
+      price: '£100',
+      description: 'Our signature face & body combination: 45-minute restorative full-body massage combined with a 45-minute revitalising tailored botanical facial.',
+      freshaUrl: 'https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8461617',
+    },
+    {
+      id: 'the-bramley-facial',
+      name: 'The Bramley Facial',
+      categoryLabel: 'Facials & Skin',
+      duration: '60 mins',
+      price: '£60',
+      description: 'Deeply nourishing botanical facial featuring warm towel compresses, gentle exfoliation, lymphatic facial drainage, and a customized hydrating mask.',
+      freshaUrl: 'https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A5955197',
+    },
+  ];
 
   return (
     <div className="space-y-20 pb-16">
@@ -167,7 +204,10 @@ export default function HomePage() {
 
       {/* 🍁 LIMITED EDITION SEASONAL RITUAL SPOTLIGHT */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-br from-charcoal-950 via-[#1c241c] to-charcoal-900 text-cream-50 rounded-3xl p-8 sm:p-12 border border-bronze-500/40 shadow-2xl relative overflow-hidden">
+        <div 
+          style={{ backgroundColor: '#131815' }}
+          className="bg-[#131815] bg-gradient-to-br from-[#121614] via-[#1a231d] to-[#121614] text-cream-50 rounded-3xl p-8 sm:p-12 border border-bronze-500/50 shadow-2xl relative overflow-hidden"
+        >
           <div className="absolute top-0 right-0 -mr-16 -mt-16 w-80 h-80 rounded-full bg-amber-500/10 blur-3xl pointer-events-none" />
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
@@ -435,7 +475,7 @@ export default function HomePage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {featuredTreatments.map((treatment) => (
+          {popularTreatments.map((treatment) => (
             <div
               key={treatment.id}
               className="bg-white rounded-2xl p-6 border border-cream-300 hover:border-sage-300 hover:shadow-lg transition flex flex-col justify-between group"

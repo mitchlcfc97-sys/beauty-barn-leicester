@@ -31,6 +31,7 @@ export default {
         charcoal: {
           800: '#2C302E',
           900: '#1B1E1C',
+          950: '#121614',
         }
       },
       fontFamily: {
