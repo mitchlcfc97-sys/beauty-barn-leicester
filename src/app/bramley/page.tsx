@@ -17,7 +17,8 @@ import {
   ExternalLink,
   Truck,
   Gift,
-  ShieldCheck
+  ShieldCheck,
+  Clock
 } from 'lucide-react';
 import { useFresha } from '@/components/booking/FreshaModal';
 import { BUSINESS_INFO } from '@/data/business';
@@ -74,12 +75,12 @@ const RETAIL_COLLECTIONS = [
 
 const BRAMLEY_FAQS = [
   {
-    q: 'Can I order Bramley products online for home delivery?',
-    a: 'Yes! You can order directly through our official online store on Fresha. Browse our complete collection of Bramley body washes, soothing oils, candles, pillow mists, and luxury gift sets with convenient delivery or click & collect.',
+    q: 'Do you offer home delivery for Bramley products?',
+    a: 'Please note we do not offer home delivery for Bramley products. However, you can order online via our Fresha store for Click & Collect. Because our team may be in treatments with clients, please contact us beforehand to arrange a convenient collection appointment so someone is free to welcome you.',
   },
   {
-    q: 'Can I purchase Bramley products without booking a spa treatment?',
-    a: 'Yes, absolutely! You can either shop online 24/7 via our Fresha store or visit our in-salon boutique in Scraptoft during regular salon hours to test fragrances, browse gift sets, and purchase in person.',
+    q: 'Can I visit the salon to browse the Bramley collection or pick up products?',
+    a: 'Yes! To browse our boutique or collect an order, please contact us in advance to make an appointment. As our therapists may be actively treating clients, scheduling your visit ensures someone is available at reception to look after you without disturbing treatments.',
   },
   {
     q: 'Are Bramley products safe during pregnancy?',
@@ -114,7 +115,7 @@ export default function BramleyPage() {
           </h1>
 
           <p className="text-base sm:text-lg text-charcoal-800/85 max-w-3xl mx-auto leading-relaxed">
-            Rooted in the English countryside, Bramley blends therapeutic essential oils with pure botanical extracts. Experience them in our candlelit treatment cabins, private spa suites, or order online through our official store for home delivery and click & collect.
+            Rooted in the English countryside, Bramley blends therapeutic essential oils with pure botanical extracts. Experience them in our candlelit treatment cabins, private spa suites, or order online through our official store for Click & Collect (by prior appointment).
           </p>
 
           <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
@@ -291,10 +292,10 @@ export default function BramleyPage() {
             Take The Spa Home
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-medium text-sage-900">
-            Bramley Boutique & Online Store
+            Bramley Boutique & Click & Collect
           </h2>
           <p className="text-sm sm:text-base text-charcoal-800/80 leading-relaxed">
-            All Bramley ranges are available for purchase directly at our salon reception in Scraptoft, or ordered online 24/7 for home delivery and click & collect.
+            All Bramley ranges are available via our online store for Click & Collect, or in-salon during your visit. To collect an order or browse the collection, please contact us to make an appointment as we may be with clients.
           </p>
         </div>
 
@@ -307,24 +308,35 @@ export default function BramleyPage() {
                 Official Beauty Barn Online Store on Fresha
               </div>
               <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-sage-900">
-                Order Your Bramley Botanicals Directly to Your Door
+                Click & Collect Your Bramley Botanicals
               </h3>
               <p className="text-sm text-charcoal-800/85 leading-relaxed max-w-2xl">
-                Can’t make it to our Scraptoft salon? You can now order your favourite Bramley bath & body collections, botanical reed diffusers, natural wax candles, and calming sleep rituals directly through our verified Fresha store.
+                Browse our complete selection of Bramley bath & body collections, botanical reed diffusers, natural wax candles, and calming sleep rituals online, ready for convenient Click & Collect at our Scraptoft sanctuary.
               </p>
               
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs">
+              {/* Important Appointment Notice */}
+              <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-xs text-charcoal-800 leading-relaxed space-y-1.5">
+                <div className="flex items-center gap-2 text-amber-950 font-bold">
+                  <Clock className="w-4 h-4 text-amber-600 flex-shrink-0" />
+                  <span>Please Contact Us to Make an Appointment to Browse or Collect</span>
+                </div>
+                <p>
+                  <strong>No home delivery is available</strong> — all online product orders are Click & Collect only. Because our therapists and team may already be in treatments with clients, <strong>please contact us in advance to arrange an appointment time</strong> before coming to pick up your items or browse the collection. This ensures we are ready at the gate and reception to look after you!
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1 text-xs">
                 <div className="flex items-center gap-2 p-3 rounded-xl bg-white/90 border border-cream-200">
-                  <Truck className="w-4 h-4 text-bronze-500 flex-shrink-0" />
-                  <span className="text-charcoal-800 font-medium">Home Delivery Available</span>
+                  <Gift className="w-4 h-4 text-bronze-500 flex-shrink-0" />
+                  <span className="text-charcoal-800 font-medium">Click & Collect Only</span>
+                </div>
+                <div className="flex items-center gap-2 p-3 rounded-xl bg-white/90 border border-cream-200">
+                  <Clock className="w-4 h-4 text-bronze-500 flex-shrink-0" />
+                  <span className="text-charcoal-800 font-medium">By Appointment Only</span>
                 </div>
                 <div className="flex items-center gap-2 p-3 rounded-xl bg-white/90 border border-cream-200">
                   <ShieldCheck className="w-4 h-4 text-bronze-500 flex-shrink-0" />
                   <span className="text-charcoal-800 font-medium">100% Genuine Bramley</span>
-                </div>
-                <div className="flex items-center gap-2 p-3 rounded-xl bg-white/90 border border-cream-200">
-                  <Gift className="w-4 h-4 text-bronze-500 flex-shrink-0" />
-                  <span className="text-charcoal-800 font-medium">Click & Collect in Salon</span>
                 </div>
               </div>
             </div>
@@ -334,7 +346,7 @@ export default function BramleyPage() {
                 <ShoppingBag className="w-6 h-6" />
               </div>
               <div className="space-y-1">
-                <h4 className="font-serif text-lg font-semibold text-cream-50">Shop The Collection</h4>
+                <h4 className="font-serif text-lg font-semibold text-cream-50">Shop Click & Collect</h4>
                 <p className="text-xs text-sage-200">Browse live stock, prices, and gifts on our online store.</p>
               </div>
               <a
@@ -343,7 +355,7 @@ export default function BramleyPage() {
                 rel="noopener noreferrer"
                 className="w-full py-3 rounded-xl bg-bronze-500 hover:bg-bronze-600 text-white font-medium text-xs uppercase tracking-wider transition shadow-md flex items-center justify-center gap-2"
               >
-                <span>Visit Online Store</span>
+                <span>Browse Store (Click & Collect)</span>
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             </div>
@@ -458,7 +470,7 @@ export default function BramleyPage() {
             Immerse Yourself in British Botanical Wellness
           </h2>
           <p className="text-sm text-charcoal-800/80 max-w-lg mx-auto leading-relaxed">
-            Reserve your private spa day or bespoke Bramley body ritual online in seconds, or order your favorite products for home delivery.
+            Reserve your private spa day or bespoke Bramley body ritual online in seconds, or order your favorite products for Click & Collect (by prior appointment).
           </p>
           <div className="pt-2 flex flex-wrap justify-center gap-4">
             <button

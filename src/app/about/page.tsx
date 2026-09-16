@@ -187,7 +187,7 @@ export default function AboutPage() {
               <div className="p-3.5 rounded-2xl bg-white border border-cream-200/80 space-y-1">
                 <span className="text-xs font-bold text-sage-900 block">Take The Spa Home</span>
                 <p className="text-[11px] text-charcoal-800/70 leading-relaxed">
-                  Fall in love with your treatment aroma? We stock a curated boutique in-salon and online for home delivery, including body washes, sleep pillow mists, hand lotions, and candles.
+                  Fall in love with your treatment aroma? We stock a curated boutique in-salon and online for Click & Collect (by prior appointment), including body washes, sleep pillow mists, hand lotions, and candles.
                 </p>
               </div>
             </div>
