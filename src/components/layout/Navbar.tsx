@@ -10,34 +10,44 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { openFresha } = useFresha();
 
-  const navLinks = [
+  const desktopNavLinks = [
+    { name: 'Private Spa Days', href: '/spa-days', highlight: true },
+    { name: 'Massage', href: '/treatments/massage' },
+    { name: 'Facials', href: '/treatments/facials' },
+    { name: 'All Treatments', href: '/treatments' },
+    { name: 'Bramley', href: '/bramley' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
+  ];
+
+  const mobileNavLinks = [
     { name: 'Home', href: '/' },
     { name: 'Private Spa Days', href: '/spa-days', highlight: true },
     { name: 'Massage', href: '/treatments/massage' },
     { name: 'Advanced Facials', href: '/treatments/facials' },
     { name: 'All Treatments', href: '/treatments' },
-    { name: 'Bramley', href: '/bramley' },
+    { name: 'Bramley Products', href: '/bramley' },
     { name: 'Gift Vouchers', href: '/gift-vouchers' },
-    { name: 'About & Story', href: '/about' },
+    { name: 'About & Our Story', href: '/about' },
     { name: 'Contact & Find Us', href: '/contact' },
   ];
 
   return (
     <header className="sticky top-0 z-40 bg-cream-50/95 backdrop-blur-md border-b border-cream-200 transition-all">
       {/* Top Notification Bar */}
-      <div className="bg-sage-900 text-cream-50 py-1.5 px-4 text-xs font-medium tracking-wide">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+      <div className="bg-sage-900 text-cream-50 py-2 px-4 text-xs font-medium tracking-wide">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2 min-w-0">
+            <span className="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse flex-shrink-0" />
             <button
               onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A29263352', 'The Fireside Rituals 🍁')}
-              className="text-left hover:underline flex items-center gap-1.5 text-xs text-cream-100"
+              className="text-left hover:underline flex items-center gap-1.5 text-xs text-cream-100 truncate"
             >
-              <span className="hidden sm:inline font-semibold text-amber-300">Limited Edition:</span>
-              <span className="font-medium">The Fireside Rituals 🍁 (Hot Stones & Bramley Gift Cracker) →</span>
+              <span className="hidden sm:inline font-semibold text-amber-300 flex-shrink-0">Limited Edition:</span>
+              <span className="font-medium truncate">The Fireside Rituals 🍁 (Hot Stones & Bramley Gift) →</span>
             </button>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3 sm:space-x-4 flex-shrink-0 text-xs">
             <a
               href={BUSINESS_INFO.freshaStoreUrl}
               target="_blank"
@@ -45,7 +55,7 @@ export default function Navbar() {
               className="flex items-center gap-1.5 text-bronze-300 hover:text-white transition font-medium"
             >
               <ShoppingBag className="w-3.5 h-3.5" />
-              <span>Online Shop</span>
+              <span>Shop</span>
             </a>
             <span className="hidden md:inline text-sage-600">|</span>
             <a
@@ -53,30 +63,30 @@ export default function Navbar() {
               className="flex items-center gap-1.5 hover:text-bronze-300 transition"
             >
               <Phone className="w-3.5 h-3.5" />
-              <span>{BUSINESS_INFO.phone}</span>
+              <span className="hidden sm:inline">{BUSINESS_INFO.phone}</span>
             </a>
-            <span className="hidden md:inline text-sage-600">|</span>
-            <span className="hidden md:inline text-sage-200">Scraptoft, LE7 9SJ</span>
+            <span className="hidden lg:inline text-sage-600">|</span>
+            <span className="hidden lg:inline text-sage-200">Scraptoft, LE7 9SJ</span>
           </div>
         </div>
       </div>
 
       {/* Main Navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-20 gap-4">
           {/* Logo / Brand Name */}
-          <Link href="/" className="group flex flex-col">
-            <span className="font-serif text-2xl md:text-2xl font-bold tracking-tight text-sage-900 group-hover:text-bronze-500 transition">
+          <Link href="/" className="group flex flex-col flex-shrink-0">
+            <span className="font-serif text-xl xl:text-2xl font-bold tracking-tight text-sage-900 group-hover:text-bronze-500 transition whitespace-nowrap">
               The Beauty Barn
             </span>
-            <span className="text-[10px] tracking-[0.2em] uppercase font-semibold text-bronze-500">
-              Leicester • Exclusive Day Spa
+            <span className="text-[9px] xl:text-[10px] tracking-[0.2em] uppercase font-semibold text-bronze-500 whitespace-nowrap">
+              Leicester • Day Spa
             </span>
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
-            {navLinks.map((link) => (
+          <nav className="hidden lg:flex items-center space-x-3 xl:space-x-5">
+            {desktopNavLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
@@ -92,18 +102,18 @@ export default function Navbar() {
           </nav>
 
           {/* Action CTAs */}
-          <div className="hidden sm:flex items-center space-x-3">
+          <div className="hidden sm:flex items-center space-x-2.5 xl:space-x-3 flex-shrink-0">
             <Link
               href="/gift-vouchers"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-sage-900 hover:text-bronze-500 px-3.5 py-2 rounded-xl border border-cream-300 hover:border-bronze-400 bg-white/80 transition shadow-sm"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-sage-900 hover:text-bronze-500 px-3.5 py-2 rounded-xl border border-cream-300 hover:border-bronze-400 bg-white/80 transition shadow-sm whitespace-nowrap"
             >
               <Gift className="w-3.5 h-3.5 text-bronze-500" />
-              Gift Vouchers
+              <span className="hidden md:inline">Gift </span>Vouchers
             </Link>
 
             <button
               onClick={() => openFresha()}
-              className="inline-flex items-center gap-2 bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-medium px-5 py-2.5 rounded-xl shadow-md transition transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-1.5 bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-medium px-4 py-2.5 rounded-xl shadow-md transition transform hover:-translate-y-0.5 whitespace-nowrap"
             >
               <Calendar className="w-3.5 h-3.5 text-bronze-300" />
               Book Online
@@ -111,10 +121,10 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex lg:hidden items-center space-x-2">
+          <div className="flex lg:hidden items-center space-x-2 flex-shrink-0">
             <button
               onClick={() => openFresha()}
-              className="bg-sage-800 text-cream-50 text-xs font-medium px-3.5 py-2 rounded-lg shadow-sm"
+              className="bg-sage-800 text-cream-50 text-xs font-medium px-3.5 py-2 rounded-lg shadow-sm whitespace-nowrap"
             >
               Book
             </button>
@@ -132,7 +142,7 @@ export default function Navbar() {
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-cream-50 border-b border-cream-200 px-4 pt-2 pb-6 space-y-2 animate-fade-in shadow-xl">
-          {navLinks.map((link) => (
+          {mobileNavLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
