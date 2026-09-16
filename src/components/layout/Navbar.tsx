@@ -28,9 +28,14 @@ export default function Navbar() {
       <div className="bg-sage-900 text-cream-50 py-1.5 px-4 text-xs font-medium tracking-wide">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="hidden sm:inline">Leicester’s Exclusive Private Day Spa • </span>
-            <span className="text-bronze-300">100% Private Lodge & Hot Tub Hire</span>
+            <span className="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+            <button
+              onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A29263352', 'The Fireside Rituals 🍁')}
+              className="text-left hover:underline flex items-center gap-1.5 text-xs text-cream-100"
+            >
+              <span className="hidden sm:inline font-semibold text-amber-300">Limited Edition:</span>
+              <span className="font-medium">The Fireside Rituals 🍁 (Hot Stones & Bramley Gift Cracker) →</span>
+            </button>
           </div>
           <div className="flex items-center space-x-4">
             <a

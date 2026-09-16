@@ -130,12 +130,18 @@ export default function GiftVouchersPage() {
               </div>
             </div>
 
-            <div className="pt-4 border-t border-cream-200 space-y-3">
-              <a
-                href="tel:07535243827"
+            <div className="pt-4 border-t border-cream-200 space-y-2.5">
+              <button
+                onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A25577891', 'Gift Voucher Purchase (In Salon)')}
                 className="w-full py-3 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider text-center block transition shadow-sm"
               >
-                Call to Arrange Physical Voucher (07535 243827)
+                Book 15-Min Collection Slot on Fresha
+              </button>
+              <a
+                href="tel:07535243827"
+                className="w-full py-2.5 rounded-xl border border-sage-300 text-sage-900 text-xs font-semibold uppercase tracking-wider text-center block hover:bg-cream-200 transition"
+              >
+                Or Call to Arrange (07535 243827)
               </a>
             </div>
           </div>

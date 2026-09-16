@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
+import Analytics from "@/components/analytics/Analytics";
+import MobileBookingBar from "@/components/layout/MobileBookingBar";
 import { FreshaProvider } from "@/components/booking/FreshaModal";
 import { BUSINESS_INFO } from "@/data/business";
 
@@ -42,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Beauty Barn Leicester | Exclusive Private Day Spa & Beauty Salon",
     description:
-      "Leicester's only 100% private day spa. Relax in your exclusive heated lodge & hot tub with afternoon tea, Swedish massage, and luxury pamper packages.",
+      "Leicester's only 100% private day spa. Relax in your exclusive lodge & hot tub with afternoon tea, Swedish massage, and luxury pamper packages.",
     url: "https://www.thebeautybarnleicester.co.uk",
     siteName: "The Beauty Barn Leicester",
     locale: "en_GB",
@@ -69,10 +71,12 @@ export default function RootLayout({
         <SchemaMarkup />
       </head>
       <body className="font-sans antialiased bg-cream-50 text-charcoal-900 selection:bg-sage-200 selection:text-sage-900 min-h-screen flex flex-col">
+        <Analytics />
         <FreshaProvider>
           <Navbar />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 pb-16 md:pb-0">{children}</main>
           <Footer />
+          <MobileBookingBar />
         </FreshaProvider>
       </body>
     </html>

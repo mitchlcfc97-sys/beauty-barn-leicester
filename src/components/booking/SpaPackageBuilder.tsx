@@ -45,7 +45,7 @@ export default function SpaPackageBuilder() {
             Build Your Private Luxury Spa Experience
           </h2>
           <p className="text-sage-200 text-sm md:text-base mt-2 leading-relaxed">
-            Leicester's only 100% private spa lodge & hot tub. Tailor your group size, package, and treatments below with transparent pricing and real-time deposit calculation.
+            Leicester's only 100% private spa lodge & hot tub. Tailor your group size, package, and treatments below with clear pricing and real-time deposit calculation.
           </p>
         </div>
       </div>
@@ -281,7 +281,7 @@ export default function SpaPackageBuilder() {
                     <span className="text-bronze-300 font-medium">{currentDuration}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span>{selectedPkg.includesLodgeAndHotTub ? "Exclusive Lodge & Hot Tub Access" : "Exclusive Heated Lodge Access"}</span>
+                    <span>{selectedPkg.includesLodgeAndHotTub ? "Exclusive Lodge & Hot Tub Access" : "Exclusive Lodge Access"}</span>
                     <span className="text-emerald-400 font-medium">Included</span>
                   </div>
                   <div className="flex justify-between">

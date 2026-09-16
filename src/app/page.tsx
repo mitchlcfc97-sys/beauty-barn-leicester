@@ -14,13 +14,17 @@ import {
   Heart, 
   MapPin, 
   Phone,
-  Gift
+  Gift,
+  Flame,
+  Clock
 } from 'lucide-react';
 import { BUSINESS_INFO } from '@/data/business';
 import { TREATMENTS } from '@/data/treatments';
 import { SPA_PACKAGES } from '@/data/spa-packages';
 import { REVIEWS, FRESHA_REVIEWS_URL } from '@/data/reviews';
 import { useFresha } from '@/components/booking/FreshaModal';
+import TreatmentMatcher from '@/components/interactive/TreatmentMatcher';
+import FirstTimeGuide from '@/components/home/FirstTimeGuide';
 
 export default function HomePage() {
   const { openFresha } = useFresha();
@@ -36,10 +40,28 @@ export default function HomePage() {
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto text-center space-y-6">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sage-100 border border-sage-200 text-sage-900 text-xs font-semibold tracking-wider uppercase shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-bronze-500" />
-            <span>Leicester’s Only 100% Private Day Spa</span>
+          {/* Badges & Social Proof */}
+          <div className="flex flex-wrap items-center justify-center gap-2.5">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 border border-cream-300 text-charcoal-900 text-xs font-medium shadow-sm">
+              <div className="flex text-amber-500">
+                <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+              </div>
+              <span className="font-semibold">5.0 Star Rated</span>
+              <span className="text-charcoal-800/30">•</span>
+              <span className="text-[#5b5bd6] font-semibold flex items-center gap-1.5">
+                <img src="/images/fresha-best-in-class.png" alt="Fresha Best in Class" className="w-4 h-4 object-contain inline" />
+                Fresha Best In Class Winner
+              </span>
+            </div>
+
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-sage-100 border border-sage-200 text-sage-900 text-xs font-semibold tracking-wider uppercase shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-bronze-500" />
+              <span>Leicester’s 100% Private Day Spa</span>
+            </div>
           </div>
 
           {/* Heading */}
@@ -107,14 +129,14 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-4 left-4 right-4 text-white">
               <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">100% Private Garden</span>
-              <p className="font-serif text-lg font-medium">Heated Cabin & Pergola</p>
+              <p className="font-serif text-lg font-medium">Private Cabin & Garden</p>
             </div>
           </div>
 
           <div className="relative h-64 sm:h-72 rounded-3xl overflow-hidden shadow-lg border border-cream-300/80 group">
             <Image
               src="/images/hot-tub-jets.jpg"
-              alt="Private Hydrotherapy Hot Tub with Water Jets"
+              alt="Private hot tub with bubbling water jets"
               fill
               className="object-cover group-hover:scale-105 transition duration-500"
               sizes="(max-width: 768px) 100vw, 33vw"
@@ -122,7 +144,7 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-4 left-4 right-4 text-white">
               <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">Zero Strangers</span>
-              <p className="font-serif text-lg font-medium">Hydrotherapy Hot Tub</p>
+              <p className="font-serif text-lg font-medium">Private Hot Tub</p>
             </div>
           </div>
 
@@ -143,6 +165,144 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 🍁 LIMITED EDITION SEASONAL RITUAL SPOTLIGHT */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-br from-charcoal-950 via-[#1c241c] to-charcoal-900 text-cream-50 rounded-3xl p-8 sm:p-12 border border-bronze-500/40 shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 -mr-16 -mt-16 w-80 h-80 rounded-full bg-amber-500/10 blur-3xl pointer-events-none" />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+            {/* Left Column: Story & Details */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold tracking-wider uppercase border border-amber-500/30">
+                  <Flame className="w-3.5 h-3.5 text-amber-400" /> Limited Edition Seasonal Ritual
+                </span>
+                <span className="text-xs text-cream-200/80">Available Now on Fresha</span>
+              </div>
+
+              <div>
+                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-cream-50">
+                  The Fireside Rituals <span className="text-amber-400 font-normal">🍁</span>
+                </h2>
+                <p className="text-sm sm:text-base text-cream-100/85 mt-3 leading-relaxed">
+                  Step away from the cold and into the comforting warmth of our signature seasonal treatment. Each ritual begins with a warming cinnamon & honey back exfoliation, followed by soothing hot basalt stones, nourishing Bramley oils, and a relaxing warm-oil scalp massage, all accompanied by the gentle crackle of a fireside candle.
+                </p>
+              </div>
+
+              {/* Gift Cracker Banner */}
+              <div className="p-4 rounded-2xl bg-amber-950/40 border border-amber-500/30 flex items-start gap-3.5">
+                <div className="w-9 h-9 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-300 flex-shrink-0 mt-0.5">
+                  <Gift className="w-5 h-5" />
+                </div>
+                <div className="text-xs space-y-0.5">
+                  <strong className="text-amber-300 font-semibold block text-sm">Complimentary Skincare Cracker Included:</strong>
+                  <p className="text-cream-200/90 leading-relaxed">
+                    The 90-minute and 120-minute options include a luxury gift cracker containing full-size <strong>Bramley Raspberry Seed Facial Oil</strong> and a <strong>Gua Sha sculpting tool</strong> to take home.
+                  </p>
+                </div>
+              </div>
+
+              {/* 3 Booking Options */}
+              <div className="space-y-3 pt-2">
+                <p className="text-xs font-bold text-cream-200 uppercase tracking-wider">Choose Your Duration:</p>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {/* Option 1: 60m */}
+                  <div className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-400/50 transition flex flex-col justify-between space-y-3">
+                    <div>
+                      <span className="text-[10px] font-bold text-amber-400 tracking-wider uppercase block">Express Back Focus</span>
+                      <h4 className="font-serif text-base font-semibold text-white mt-0.5">60 Minutes</h4>
+                      <p className="text-[11px] text-cream-200/70 mt-1 leading-snug">
+                        Cinnamon back polish, hot stone back/neck massage & warm scalp ritual.
+                      </p>
+                    </div>
+                    <div className="pt-2 border-t border-white/10 flex items-center justify-between">
+                      <span className="font-serif font-bold text-amber-300 text-base">£70</span>
+                      <button
+                        onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A29263352', 'The Fireside Rituals - 60 minutes 🍁')}
+                        className="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-charcoal-950 font-bold text-xs transition"
+                      >
+                        Book
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Option 2: 90m with gift */}
+                  <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 hover:border-amber-400 transition flex flex-col justify-between space-y-3 relative">
+                    <span className="absolute -top-2.5 right-3 px-2 py-0.5 rounded-full bg-amber-400 text-charcoal-950 text-[9px] font-extrabold uppercase tracking-wide">
+                      Includes Gift
+                    </span>
+                    <div>
+                      <span className="text-[10px] font-bold text-amber-300 tracking-wider uppercase block">Back + Facial</span>
+                      <h4 className="font-serif text-base font-semibold text-white mt-0.5">90 Minutes</h4>
+                      <p className="text-[11px] text-cream-200/70 mt-1 leading-snug">
+                        Complete back ritual + botanical cleanse, gua sha facial & Bramley gift cracker.
+                      </p>
+                    </div>
+                    <div className="pt-2 border-t border-white/10 flex items-center justify-between">
+                      <span className="font-serif font-bold text-amber-300 text-base">£110</span>
+                      <button
+                        onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A29263353', 'The Fireside Rituals - 90 minutes with a gift 🍁')}
+                        className="px-3 py-1.5 rounded-lg bg-amber-400 hover:bg-amber-500 text-charcoal-950 font-bold text-xs transition shadow-sm"
+                      >
+                        Book
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Option 3: 120m with gift */}
+                  <div className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-amber-400/50 transition flex flex-col justify-between space-y-3 relative">
+                    <span className="absolute -top-2.5 right-3 px-2 py-0.5 rounded-full bg-amber-400 text-charcoal-950 text-[9px] font-extrabold uppercase tracking-wide">
+                      Includes Gift
+                    </span>
+                    <div>
+                      <span className="text-[10px] font-bold text-amber-400 tracking-wider uppercase block">Full Body Deluxe</span>
+                      <h4 className="font-serif text-base font-semibold text-white mt-0.5">120 Minutes</h4>
+                      <p className="text-[11px] text-cream-200/70 mt-1 leading-snug">
+                        Full-body hot stones, cinnamon polish, gua sha facial & Bramley gift cracker.
+                      </p>
+                    </div>
+                    <div className="pt-2 border-t border-white/10 flex items-center justify-between">
+                      <span className="font-serif font-bold text-amber-300 text-base">£140</span>
+                      <button
+                        onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A29263354', 'The Fireside Rituals - 120 minutes with a gift 🍁')}
+                        className="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-charcoal-950 font-bold text-xs transition"
+                      >
+                        Book
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Visual Showcase */}
+            <div className="lg:col-span-5 space-y-4">
+              <div className="relative aspect-[4/5] sm:aspect-[3/4] max-h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-bronze-500/40 group">
+                <Image
+                  src="/images/candlelit-treatment-bed.jpg"
+                  alt="The Fireside Ritual candlelit treatment bed at The Beauty Barn Leicester"
+                  fill
+                  className="object-cover group-hover:scale-105 transition duration-700"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+                <div className="absolute bottom-5 left-5 right-5 text-white pointer-events-none space-y-1">
+                  <span className="text-[10px] uppercase font-bold tracking-widest text-amber-400 block">
+                    Sensory Atmosphere
+                  </span>
+                  <p className="font-serif text-lg font-semibold text-cream-50">
+                    Candlelit Warmth & Relaxing Aromatherapy
+                  </p>
+                  <p className="text-xs text-cream-200/80">
+                    Accompanied by the gentle crackle of a fireside candle.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* WHY PRIVATE MATTERS SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-sage-900 text-cream-50 rounded-3xl p-8 md:p-16 relative overflow-hidden shadow-xl">
@@ -156,7 +316,7 @@ export default function HomePage() {
                 <span className="italic text-bronze-300">Just You and Your Loved Ones.</span>
               </h2>
               <p className="text-sage-200 text-sm sm:text-base leading-relaxed">
-                Unlike crowded hotel spas where you share pools and lounges with dozens of people, The Beauty Barn gives you complete, uninterrupted exclusivity. Relax in your private heated lodge, soak in the bubbling hot tub, and enjoy dedicated therapist care in total serenity.
+                Unlike crowded hotel spas where you share pools and lounges with dozens of people, The Beauty Barn gives you complete, uninterrupted exclusivity. Relax in your private lodge, soak in the bubbling hot tub, and enjoy dedicated therapist care in total serenity.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -166,7 +326,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h4 className="text-sm font-semibold text-cream-50">Private Lodge & Hot Tub</h4>
-                    <p className="text-xs text-sage-300">Heated countryside lodge with dedicated hydrotherapy hot tub</p>
+                    <p className="text-xs text-sage-300">Countryside lodge with dedicated private hot tub</p>
                   </div>
                 </div>
 
@@ -176,7 +336,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h4 className="text-sm font-semibold text-cream-50">Luxury Afternoon Tea</h4>
-                    <p className="text-xs text-sage-300">Sweet & savoury treats plus unlimited prosecco and teas</p>
+                    <p className="text-xs text-sage-300">Sweet & savoury treats plus unlimited drinks and teas</p>
                   </div>
                 </div>
 
@@ -195,7 +355,7 @@ export default function HomePage() {
                     <Check className="w-3.5 h-3.5" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-cream-50">Transparent Pricing</h4>
+                    <h4 className="text-sm font-semibold text-cream-50">Simple Pricing</h4>
                     <p className="text-xs text-sage-300">Packages from £90pp with easy 50% booking deposit</p>
                   </div>
                 </div>
@@ -215,7 +375,7 @@ export default function HomePage() {
               <div className="relative h-48 sm:h-52 -mt-2 -mx-2 rounded-2xl overflow-hidden shadow-inner">
                 <Image
                   src="/images/outdoor-loungers.jpg"
-                  alt="Private Daybeds and Heated Spa Lodge"
+                  alt="Private daybeds and spa lodge"
                   fill
                   className="object-cover"
                 />
@@ -320,7 +480,7 @@ export default function HomePage() {
             Life at The Beauty Barn
           </h2>
           <p className="text-sm text-charcoal-800/70">
-            Explore our private retreat in Scraptoft—from our bubbling hydrotherapy hot tub and heated wooden lodge to our candlelit treatment suites.
+            Explore our private retreat in Scraptoft—from our bubbling hot tub and cosy wooden lodge to our candlelit treatment suites.
           </p>
         </div>
 
@@ -329,7 +489,7 @@ export default function HomePage() {
           <div className="group relative h-80 rounded-3xl overflow-hidden shadow-md border border-cream-300">
             <Image
               src="/images/hot-tub-jets.jpg"
-              alt="Exclusive hydrotherapy hot tub with running water jets"
+              alt="Exclusive hot tub with running water jets"
               fill
               className="object-cover group-hover:scale-105 transition duration-500"
               sizes="(max-width: 768px) 100vw, 33vw"
@@ -337,7 +497,7 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-5 left-5 right-5 text-white">
               <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block mb-1">Exclusive Access</span>
-              <h3 className="font-serif text-xl font-medium">Hydrotherapy Hot Tub</h3>
+              <h3 className="font-serif text-xl font-medium">Private Hot Tub</h3>
               <p className="text-xs text-cream-200/90 mt-1 line-clamp-2">Bubbling jets, complimentary glassware, and serene garden privacy.</p>
             </div>
           </div>
@@ -354,8 +514,8 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-5 left-5 right-5 text-white">
               <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block mb-1">Together in Serenity</span>
-              <h3 className="font-serif text-xl font-medium">Couples Massage Suite</h3>
-              <p className="text-xs text-cream-200/90 mt-1 line-clamp-2">Side-by-side heated treatment beds with hot stones and radiant lighting.</p>
+              <h3 className="font-serif text-xl font-medium">Couples Massage Room</h3>
+              <p className="text-xs text-cream-200/90 mt-1 line-clamp-2">Side-by-side treatment beds with warm lighting and a relaxing atmosphere.</p>
             </div>
           </div>
 
@@ -363,7 +523,7 @@ export default function HomePage() {
           <div className="group relative h-80 rounded-3xl overflow-hidden shadow-md border border-cream-300">
             <Image
               src="/images/private-spa-cabin.jpg"
-              alt="Inside the cozy wooden heated spa cabin"
+              alt="Inside the cosy wooden spa cabin"
               fill
               className="object-cover group-hover:scale-105 transition duration-500"
               sizes="(max-width: 768px) 100vw, 33vw"
@@ -371,7 +531,7 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-5 left-5 right-5 text-white">
               <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block mb-1">Private Retreat</span>
-              <h3 className="font-serif text-xl font-medium">Heated Spa Lodge</h3>
+              <h3 className="font-serif text-xl font-medium">The Spa Lodge</h3>
               <p className="text-xs text-cream-200/90 mt-1 line-clamp-2">Timber beams, plush cushions, warm blankets, and music sound system.</p>
             </div>
           </div>
@@ -406,7 +566,7 @@ export default function HomePage() {
             <div className="absolute bottom-5 left-5 right-5 text-white">
               <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block mb-1">Salon Aesthetics</span>
               <h3 className="font-serif text-xl font-medium">Nail Bar & Manicures</h3>
-              <p className="text-xs text-cream-200/90 mt-1 line-clamp-2">Gel hands, builder gel, luxury pedicures, and nail art in rustic elegance.</p>
+              <p className="text-xs text-cream-200/90 mt-1 line-clamp-2">Gel hands, builder gel, and luxury pedicures in rustic elegance.</p>
             </div>
           </div>
 
@@ -432,6 +592,8 @@ export default function HomePage() {
         <div className="relative rounded-3xl overflow-hidden shadow-lg border border-cream-300 bg-charcoal-950 aspect-[16/9] sm:aspect-[21/9] max-h-[440px]">
           <video
             src="/videos/barn-video-1.mp4"
+            poster="/images/barn-entrance.jpg"
+            preload="metadata"
             autoPlay
             loop
             muted
@@ -486,7 +648,7 @@ export default function HomePage() {
               We started The Beauty Barn in 2020 with a dream: an authentic countryside sanctuary where nobody is ever rushed, no hot tubs are shared with strangers, and every guest feels completely at home.
             </p>
             <p className="text-sm text-charcoal-800/80 leading-relaxed">
-              Whether you’re visiting for an afternoon tea spa package, a Bramley botanical massage, or an advanced facial, our team looks forward to welcoming you to Hall Farm.
+              Whether you're visiting for an afternoon tea spa package, a Bramley botanical massage, or an advanced facial, our team looks forward to welcoming you to The Beauty Barn Leicester.
             </p>
             <div className="pt-2 flex items-center justify-between flex-wrap gap-4 border-t border-cream-200">
               <div>
@@ -528,6 +690,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* 30-SECOND TREATMENT MATCHER QUIZ */}
+      <TreatmentMatcher />
 
       {/* FRESHA BEST IN CLASS AWARD BANNER */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -649,6 +814,9 @@ export default function HomePage() {
           <p className="text-[10px] text-charcoal-800/50 mt-2">All reviews are from verified Fresha bookings</p>
         </div>
       </section>
+
+      {/* FIRST-TIME VISITOR FAQ & WHAT TO EXPECT */}
+      <FirstTimeGuide />
 
       {/* LOCATION & HOW TO FIND US */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

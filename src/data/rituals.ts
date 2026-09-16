@@ -20,6 +20,42 @@ export interface SignatureRitual {
 
 export const SIGNATURE_RITUALS: SignatureRitual[] = [
   {
+    id: "fireside-ritual",
+    name: "The Fireside Rituals 🍁",
+    subtitle: "A limited-edition warming escape with cinnamon & honey polish, hot basalt stones, and Bramley oils",
+    price: "From £70 (60m £70 | 90m £110 with gift | 120m £140 with gift)",
+    priceNum: 70,
+    duration: "60 - 120 Minutes",
+    badge: "Limited Seasonal Edition",
+    therapists: "Senior Spa Specialist",
+    leadImage: "/images/candlelit-treatment-bed.jpg",
+    description: "Step away from the cold and into the comforting warmth of our limited-edition Fireside Ritual. Each ritual begins with a warming cinnamon and honey back exfoliation and combines hot stones, nourishing Bramley oils, and a relaxing warm-oil scalp massage, accompanied by the gentle crackle of a fireside candle. The 90- and 120-minute options also include a luxury skincare cracker containing Bramley Raspberry Seed Facial Oil and a gua sha so you can continue the ritual at home!",
+    ritualSteps: [
+      {
+        title: "Step 1: Warming Cinnamon & Honey Back Exfoliation",
+        description: "A gentle warming polish to smooth skin texture, stimulate circulation, and awaken the senses with rich spicy notes."
+      },
+      {
+        title: "Step 2: Hot Basalt Stone Massage & Bramley Botanicals",
+        description: "Heated volcanic stones melt deep muscular tightness across back, neck, shoulders, and limbs paired with warm essential oils."
+      },
+      {
+        title: "Step 3: Warm-Oil Scalp Therapy + Botanical Gua Sha Facial (90m/120m)",
+        description: "Nourishing facial cleanse and rose quartz gua sha massage, finished with a tension-relieving warm oil scalp massage and take-home gift cracker."
+      }
+    ],
+    whatsIncluded: [
+      "Warming cinnamon & honey back polish",
+      "Hot basalt stone thermal massage",
+      "Warm botanical oil scalp ritual",
+      "Gua sha sculpting facial (included on 90m & 120m)",
+      "Free Bramley Raspberry Seed Oil & Gua Sha Gift Cracker (on 90m & 120m)",
+      "Accompanied by gentle fireside candlelight"
+    ],
+    idealFor: "Anyone seeking total sanctuary from chilly weather, tension relief, and a touch of seasonal self-care indulgence.",
+    freshaUrl: "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A29263352"
+  },
+  {
     id: "dual-serenity",
     name: "Dual Serenity — Face Forward, Feet First",
     subtitle: "A synchronized head-and-sole ritual delivered simultaneously by two therapists",
@@ -52,7 +88,7 @@ export const SIGNATURE_RITUALS: SignatureRitual[] = [
       "Private tranquil treatment suite"
     ],
     idealFor: "Time-pressed clients seeking the ultimate luxury reset, or anyone who wants double the indulgence in half the time.",
-    freshaUrl: "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    freshaUrl: "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=pkg%3A1873592"
   },
   {
     id: "bramley-simply-divine",
@@ -88,7 +124,7 @@ export const SIGNATURE_RITUALS: SignatureRitual[] = [
       "Available as a side-by-side Duo experience in our double suite"
     ],
     idealFor: "The ultimate birthday, anniversary, or self-care escape. The highest-rated gift for someone who deserves complete head-to-toe pampering.",
-    freshaUrl: "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    freshaUrl: "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A24981589"
   },
   {
     id: "bramley-sleep-ritual",
@@ -123,7 +159,7 @@ export const SIGNATURE_RITUALS: SignatureRitual[] = [
       "Herbal relaxation tea to finish"
     ],
     idealFor: "Anyone suffering from poor sleep, work stress, burnout, or emotional fatigue seeking profound stillness.",
-    freshaUrl: "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    freshaUrl: "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A24093850"
   },
   {
     id: "bramley-full-indulgence",
@@ -157,7 +193,7 @@ export const SIGNATURE_RITUALS: SignatureRitual[] = [
       "Available in private double suite for couples or pairs"
     ],
     idealFor: "Those who want both a massage and a facial in one seamless appointment without choosing between them.",
-    freshaUrl: "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    freshaUrl: "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8461617"
   },
   {
     id: "mums-to-be-gold",
@@ -192,6 +228,6 @@ export const SIGNATURE_RITUALS: SignatureRitual[] = [
       "Herbal refreshments and comfortable private suite"
     ],
     idealFor: "Second and third trimester mums seeking safe, deep relief and total pampering before baby arrives, or the ultimate baby shower gift.",
-    freshaUrl: "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    freshaUrl: "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8461547"
   }
 ];

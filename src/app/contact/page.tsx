@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { MapPin, Phone, Mail, Clock, ShieldCheck, Send, Calendar } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, ShieldCheck, Send, Calendar, MessageCircle } from 'lucide-react';
 import { BUSINESS_INFO } from '@/data/business';
 
 export const metadata: Metadata = {
@@ -55,6 +55,21 @@ export default function ContactPage() {
                     <strong className="block text-charcoal-900">Direct Phone:</strong>
                     <a href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`} className="hover:text-bronze-600 transition font-medium">
                       {BUSINESS_INFO.phone}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <MessageCircle className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+                  <div>
+                    <strong className="block text-charcoal-900">WhatsApp Chat:</strong>
+                    <a
+                      href="https://wa.me/447535243827?text=Hi%20The%20Beauty%20Barn,%20I'd%20like%20to%20enquire%20about%20an%20appointment"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-emerald-700 text-emerald-600 font-medium transition"
+                    >
+                      Chat on WhatsApp ↗
                     </a>
                   </div>
                 </div>
@@ -135,7 +150,15 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="flex-1 py-3 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider text-center transition shadow-sm"
                 >
-                  Get Directions in Google Maps
+                  Directions in Maps
+                </a>
+                <a
+                  href="https://wa.me/447535243827?text=Hi%20The%20Beauty%20Barn,%20I'd%20like%20to%20enquire%20about%20an%20appointment"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 py-3 rounded-xl border border-emerald-600 text-emerald-700 hover:bg-emerald-50 text-xs font-semibold uppercase tracking-wider text-center transition shadow-sm inline-flex items-center justify-center gap-1.5"
+                >
+                  <MessageCircle className="w-3.5 h-3.5" /> WhatsApp Us
                 </a>
                 <a
                   href={BUSINESS_INFO.freshaUrl}
@@ -143,7 +166,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="flex-1 py-3 rounded-xl bg-bronze-500 hover:bg-bronze-600 text-white text-xs font-semibold uppercase tracking-wider text-center transition shadow-sm"
                 >
-                  Book Instant Appointment
+                  Book on Fresha
                 </a>
               </div>
             </div>

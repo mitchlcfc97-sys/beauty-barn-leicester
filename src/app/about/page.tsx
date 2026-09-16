@@ -145,16 +145,19 @@ export default function AboutPage() {
       {/* BRAMLEY BOTANICAL PHILOSOPHY & IN-SALON STORE */}
       <section id="bramley" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
         <div className="bg-gradient-to-br from-cream-100 via-white to-sage-50/50 rounded-3xl border border-cream-300 shadow-sm p-8 sm:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-5 relative h-72 sm:h-96 rounded-3xl overflow-hidden shadow-md border border-cream-300 group">
-            <Image
-              src="/images/bramley-products-shelf.jpg"
-              alt="Bramley botanical products shelf and official therapist achievement certificates"
-              fill
-              className="object-cover group-hover:scale-105 transition duration-500"
-              sizes="(max-width: 1024px) 100vw, 40vw"
+          <div className="lg:col-span-5 relative h-72 sm:h-96 rounded-3xl overflow-hidden shadow-md border border-cream-300 bg-charcoal-950 group">
+            <video
+              src="/videos/bramley-apothecary-shelf.mp4"
+              poster="/images/bramley-products-shelf.jpg"
+              preload="metadata"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <div className="absolute bottom-4 left-4 text-white">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-4 left-4 text-white pointer-events-none">
               <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">
                 Official Stockist & Partner
               </span>

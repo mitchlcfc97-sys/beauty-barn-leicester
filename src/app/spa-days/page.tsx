@@ -8,7 +8,7 @@ import SpaPackageBuilder from '@/components/booking/SpaPackageBuilder';
 export const metadata: Metadata = {
   title: 'Exclusive Private Spa Days & Hot Tub Hire Leicester',
   description:
-    'Leicester\'s only 100% private day spa. Enjoy private heated lodge & hot tub hire with zero strangers, luxury afternoon tea, unlimited drinks, and bespoke treatments from £90pp.',
+    'Leicester\'s only 100% private day spa. Enjoy private lodge & hot tub hire with zero strangers, luxury afternoon tea, unlimited drinks, and bespoke treatments from £90pp.',
   keywords: [
     'spa day leicester',
     'private spa leicester',
@@ -32,7 +32,7 @@ export default function SpaDaysPage() {
             Private Spa Days in Leicester
           </h1>
           <p className="text-sm sm:text-base text-charcoal-800/80 max-w-2xl mx-auto leading-relaxed">
-            Unlike public hotel spas, The Beauty Barn gives you 100% private lodge and hot tub exclusivity. No strangers, no shared changing rooms—just pure, uninterrupted bliss for you and your guests.
+            The Beauty Barn gives you private use of our lodge, garden, and hot tub — just for you and your group. Relax at your own pace with afternoon tea, unlimited drinks, and bespoke treatments.
           </p>
         </div>
 
@@ -49,13 +49,15 @@ export default function SpaDaysPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-3 left-3 text-white">
               <p className="font-serif text-sm font-semibold">Private Spa Garden</p>
-              <span className="text-[10px] text-cream-200">Zero other guests</span>
+              <span className="text-[10px] text-cream-200">Exclusive to your group</span>
             </div>
           </div>
 
           <div className="relative h-60 rounded-2xl overflow-hidden shadow-md group bg-charcoal-950">
             <video
               src="/videos/hot-tub-jets-garden.mp4"
+              poster="/images/hot-tub-deck-twilight.jpg"
+              preload="metadata"
               autoPlay
               loop
               muted
@@ -65,7 +67,7 @@ export default function SpaDaysPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
             <div className="absolute bottom-3 left-3 text-white pointer-events-none">
               <span className="text-[9px] uppercase font-bold tracking-widest text-bronze-300 block">Bubbling Warmth</span>
-              <p className="font-serif text-sm font-semibold">Hydrotherapy Hot Tub</p>
+              <p className="font-serif text-sm font-semibold">Private Hot Tub</p>
               <span className="text-[10px] text-cream-200">Private garden jets</span>
             </div>
           </div>
@@ -73,6 +75,8 @@ export default function SpaDaysPage() {
           <div className="relative h-60 rounded-2xl overflow-hidden shadow-md group bg-charcoal-950">
             <video
               src="/videos/private-retreat-cabin-tour.mp4"
+              poster="/images/cabin-interior-cozy.jpg"
+              preload="metadata"
               autoPlay
               loop
               muted
@@ -82,7 +86,7 @@ export default function SpaDaysPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
             <div className="absolute bottom-3 left-3 text-white pointer-events-none">
               <span className="text-[9px] uppercase font-bold tracking-widest text-bronze-300 block">360° Walkthrough</span>
-              <p className="font-serif text-sm font-semibold">Heated Wooden Lodge</p>
+              <p className="font-serif text-sm font-semibold">The Wooden Lodge</p>
               <span className="text-[10px] text-cream-200">Warm & cozy year-round</span>
             </div>
           </div>
@@ -198,22 +202,25 @@ export default function SpaDaysPage() {
             A Glimpse Inside Your Private Sanctuary
           </h2>
           <p className="text-sm text-charcoal-800/80 leading-relaxed">
-            From laughter on the private terrace to unhurried relaxation in our heated wooden retreat cabin, see what awaits your group.
+            From laughter on the private terrace to unhurried relaxation in our wooden retreat cabin, see what awaits your group.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           {/* Main big card: Guests relaxing */}
-          <div className="md:col-span-7 relative h-96 sm:h-[420px] rounded-3xl overflow-hidden shadow-md border border-cream-300 group">
-            <Image
-              src="/images/spa-relaxation.jpg"
-              alt="Guests in robes enjoying afternoon tea and prosecco on the private spa terrace"
-              fill
-              className="object-cover group-hover:scale-105 transition duration-500"
-              sizes="(max-width: 768px) 100vw, 60vw"
+          <div className="md:col-span-7 relative h-96 sm:h-[420px] rounded-3xl overflow-hidden shadow-md border border-cream-300 bg-charcoal-950 group">
+            <video
+              src="/videos/prosecco-cheers-retreat.mp4"
+              poster="/images/afternoon-tea-spread.jpg"
+              preload="metadata"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 text-white space-y-1">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+            <div className="absolute bottom-6 left-6 right-6 text-white space-y-1 pointer-events-none">
               <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300">
                 Exclusive Terrace Relaxation
               </span>
@@ -228,18 +235,21 @@ export default function SpaDaysPage() {
 
           {/* Right side 2 stacked cards: Cabin interior & Garden bistro */}
           <div className="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-6">
-            <div className="relative h-48 sm:h-[198px] rounded-3xl overflow-hidden shadow-md border border-cream-300 group">
-              <Image
-                src="/images/cabin-interior-cozy.jpg"
-                alt="Inside The Retreat heated wooden lodge with cozy cushions and blankets"
-                fill
-                className="object-cover group-hover:scale-105 transition duration-500"
-                sizes="(max-width: 768px) 100vw, 40vw"
+            <div className="relative h-48 sm:h-[198px] rounded-3xl overflow-hidden shadow-md border border-cream-300 bg-charcoal-950 group">
+              <video
+                src="/videos/heated-robes-preparation.mp4"
+                poster="/images/spa-garden-overview.jpg"
+                preload="metadata"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-3 left-4 text-white">
-                <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">The Retreat Lodge</span>
-                <p className="font-serif text-sm font-semibold">Cozy Heated Interior</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-3 left-4 text-white pointer-events-none">
+                <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">Your Arrival</span>
+                <p className="font-serif text-sm font-semibold">Heated Robes Ready & Waiting</p>
               </div>
             </div>
 
@@ -256,6 +266,32 @@ export default function SpaDaysPage() {
                 <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">Outdoor Garden</span>
                 <p className="font-serif text-sm font-semibold">Alfresco Bistro Seating</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Luxury Tea Ritual Cinematic Banner */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative rounded-3xl overflow-hidden shadow-lg border border-cream-300 bg-charcoal-950 aspect-[16/9] sm:aspect-[21/9] max-h-[440px]">
+          <video
+            src="/videos/luxury-herbal-tea-pour.mp4"
+            poster="/images/afternoon-tea-stand.jpg"
+            preload="metadata"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover opacity-85"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+          <div className="absolute bottom-6 left-6 right-6 text-white flex flex-col sm:flex-row sm:items-end justify-between gap-4 pointer-events-none">
+            <div className="space-y-1 max-w-xl">
+              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">Complimentary Refreshments</span>
+              <h3 className="font-serif text-2xl sm:text-3xl font-medium">Herbal Tea, Prosecco & Afternoon Treats</h3>
+              <p className="text-xs text-cream-200/90 leading-relaxed hidden sm:block">
+                Every spa day includes freshly prepared herbal teas, chilled prosecco, and a curated afternoon tea spread — all served in your private garden sanctuary.
+              </p>
             </div>
           </div>
         </div>
@@ -279,7 +315,7 @@ export default function SpaDaysPage() {
               Is the spa area really 100% private?
             </h3>
             <p className="text-xs sm:text-sm text-charcoal-800/80 leading-relaxed">
-              Yes, absolutely! When you book a private spa day package at The Beauty Barn, your party has exclusive access to the heated lodge, changing area, and hot tub. There are no other guests on site during your session.
+              Yes, absolutely — all spa areas are completely private. Your group has exclusive use of the garden, lodge, hot tub, and changing area. Your treatments will be in our main salon, which may have other clients during your visit, so you may briefly cross paths as you walk to your treatment room, but your private treatment room and spa area are completely just for you and your group.
             </p>
           </div>
 

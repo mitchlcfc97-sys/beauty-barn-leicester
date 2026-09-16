@@ -43,6 +43,24 @@ export function FreshaProvider({ children }: { children: React.ReactNode }) {
     window.open(targetUrl, '_blank', 'noopener,noreferrer');
     setHasOpened(true);
 
+    // Track conversion event in Google Analytics 4
+    if (typeof window !== 'undefined' && (window as unknown as { gtag?: Function }).gtag) {
+      (window as unknown as { gtag: Function }).gtag('event', 'fresha_booking_click', {
+        treatment_name: targetName,
+        destination_url: targetUrl,
+      });
+      (window as unknown as { gtag: Function }).gtag('event', 'begin_checkout', {
+        value: 1,
+        currency: 'GBP',
+        items: [{ item_name: targetName }],
+      });
+    }
+
+    // Track custom event in Microsoft Clarity
+    if (typeof window !== 'undefined' && (window as unknown as { clarity?: Function }).clarity) {
+      (window as unknown as { clarity: Function }).clarity('event', 'fresha_booking_click');
+    }
+
     // Auto-dismiss the confirmation overlay after 4 seconds
     setTimeout(() => {
       setIsOpen(false);

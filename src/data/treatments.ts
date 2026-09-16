@@ -17,7 +17,7 @@ export const TREATMENTS: Treatment[] = [
     "id": "back-massage",
     "name": "The Back Massage",
     "category": "massage",
-    "categoryLabel": "Massage & Bodywork",
+    "categoryLabel": "Massage",
     "duration": "30 mins",
     "price": "£35 (£40 with Hot Stones / Bamboo)",
     "priceNum": 35,
@@ -28,13 +28,13 @@ export const TREATMENTS: Treatment[] = [
       "30-min express recharge"
     ],
     "popular": true,
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A5955241"
   },
   {
     "id": "back-neck-shoulder",
     "name": "The Back, Neck & Shoulder Massage",
     "category": "massage",
-    "categoryLabel": "Massage & Bodywork",
+    "categoryLabel": "Massage",
     "duration": "45 mins",
     "price": "£47 (£52 with Hot Stones / Bamboo)",
     "priceNum": 47,
@@ -45,13 +45,13 @@ export const TREATMENTS: Treatment[] = [
       "Deeply restorative pressure"
     ],
     "popular": true,
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A5955238"
   },
   {
     "id": "back-neck-shoulder-scalp",
     "name": "The Back, Neck, Shoulder & Scalp Massage",
     "category": "massage",
-    "categoryLabel": "Massage & Bodywork",
+    "categoryLabel": "Massage",
     "duration": "60 mins",
     "price": "£60",
     "priceNum": 60,
@@ -61,13 +61,13 @@ export const TREATMENTS: Treatment[] = [
       "Relieves tension headaches",
       "Nourishing botanical oils"
     ],
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A24093384"
   },
   {
     "id": "relaxing-full-body",
     "name": "The Relaxing Full Body Massage",
     "category": "massage",
-    "categoryLabel": "Massage & Bodywork",
+    "categoryLabel": "Massage",
     "duration": "60 mins",
     "price": "£55 (£60 with Hot Stones / Bamboo)",
     "priceNum": 55,
@@ -78,13 +78,13 @@ export const TREATMENTS: Treatment[] = [
       "Bramley botanical oils"
     ],
     "popular": true,
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A7310103"
   },
   {
     "id": "deep-tissue-full-body",
     "name": "The Deep Tissue Full Body Massage",
     "category": "massage",
-    "categoryLabel": "Massage & Bodywork",
+    "categoryLabel": "Massage",
     "duration": "60 mins",
     "price": "£60",
     "priceNum": 60,
@@ -95,13 +95,13 @@ export const TREATMENTS: Treatment[] = [
       "Muscle recovery focus"
     ],
     "popular": true,
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A18353636"
   },
   {
     "id": "full-body-scalp-face",
     "name": "The Relaxing Full Body Massage (with Scalp & Face)",
     "category": "massage",
-    "categoryLabel": "Massage & Bodywork",
+    "categoryLabel": "Massage",
     "duration": "90 mins",
     "price": "£85",
     "priceNum": 85,
@@ -111,30 +111,30 @@ export const TREATMENTS: Treatment[] = [
       "Includes rejuvenating face & scalp massage",
       "Complete head-to-toe revival"
     ],
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A20703115"
   },
   {
     "id": "double-room-massage",
     "name": "Couples / Double Room Relaxing Massage",
     "category": "massage",
-    "categoryLabel": "Massage & Bodywork",
+    "categoryLabel": "Massage",
     "duration": "60 mins",
     "price": "£110 for two (£120 with Hot Stones)",
     "priceNum": 110,
-    "description": "Experience side-by-side full body relaxation in our private double treatment suite with two therapists.",
+    "description": "Experience side-by-side full body relaxation in our private double treatment room with two therapists.",
     "highlights": [
-      "Private double suite with side-by-side beds",
+      "Private double room with side-by-side beds",
       "Perfect for couples or friends",
       "Includes two therapists"
     ],
     "popular": true,
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=pkg%3A167602"
   },
   {
     "id": "indian-head-massage",
     "name": "Indian Head Massage",
     "category": "massage",
-    "categoryLabel": "Massage & Bodywork",
+    "categoryLabel": "Massage",
     "duration": "45 mins",
     "price": "£50",
     "priceNum": 50,
@@ -144,7 +144,7 @@ export const TREATMENTS: Treatment[] = [
       "Acupressure point therapy",
       "Nourishing scalp oils"
     ],
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8461474"
   },
   {
     "id": "mini-bramley-facial",
@@ -160,7 +160,7 @@ export const TREATMENTS: Treatment[] = [
       "Botanical exfoliation & mask",
       "Great pre-event refresh"
     ],
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A24093691"
   },
   {
     "id": "bramley-ultra-relaxing-facial",
@@ -177,7 +177,7 @@ export const TREATMENTS: Treatment[] = [
       "Deeply hydrating finishing mask"
     ],
     "popular": true,
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A5955197"
   },
   {
     "id": "apple-peel-aha-facial",
@@ -193,7 +193,7 @@ export const TREATMENTS: Treatment[] = [
       "Brightens & evens skin tone",
       "Smooths skin texture"
     ],
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A24093711"
   },
   {
     "id": "bramley-probiotic-facial",
@@ -210,7 +210,7 @@ export const TREATMENTS: Treatment[] = [
       "90-minute holistic immersion"
     ],
     "popular": true,
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A9023474"
   },
   {
     "id": "beauty-barn-bespoke-facial",
@@ -227,7 +227,7 @@ export const TREATMENTS: Treatment[] = [
       "Clinical & botanical synergy"
     ],
     "popular": true,
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8493168"
   },
   {
     "id": "dermaplaning-facial",
@@ -244,7 +244,7 @@ export const TREATMENTS: Treatment[] = [
       "Optional Hydrojelly mask add-on"
     ],
     "popular": true,
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A7386825"
   },
   {
     "id": "microneedling-facial",
@@ -260,7 +260,7 @@ export const TREATMENTS: Treatment[] = [
       "Diminishes fine lines & scarring",
       "Medical-grade precision"
     ],
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A7386877"
   },
   {
     "id": "million-dollar-facial",
@@ -277,7 +277,7 @@ export const TREATMENTS: Treatment[] = [
       "Unmatched radiant glow"
     ],
     "popular": true,
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A6373754"
   },
   {
     "id": "dual-serenity",
@@ -294,7 +294,7 @@ export const TREATMENTS: Treatment[] = [
       "Unique luxury sensory experience"
     ],
     "popular": true,
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=pkg%3A1873592"
   },
   {
     "id": "bramley-simply-divine",
@@ -311,7 +311,7 @@ export const TREATMENTS: Treatment[] = [
       "Bramley botanical facial & scalp therapy"
     ],
     "popular": true,
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A24981589"
   },
   {
     "id": "bramley-selenite-crystal",
@@ -327,7 +327,7 @@ export const TREATMENTS: Treatment[] = [
       "Bespoke essential oil blends",
       "Available in 45m, 60m & 90m durations"
     ],
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A24093335"
   },
   {
     "id": "bramley-sleep-ritual",
@@ -343,7 +343,7 @@ export const TREATMENTS: Treatment[] = [
       "Calming lavender & chamomile botanicals",
       "Includes dry body brushing & scalp ritual"
     ],
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A24093850"
   },
   {
     "id": "nourishing-hands-feet-scalp",
@@ -359,7 +359,7 @@ export const TREATMENTS: Treatment[] = [
       "Reflex hand & foot massage",
       "Deeply conditioning scalp therapy"
     ],
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A5955224"
   },
   {
     "id": "bramley-skin-smoother",
@@ -375,7 +375,7 @@ export const TREATMENTS: Treatment[] = [
       "Silky soft skin finish",
       "Stimulates circulation"
     ],
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A5955175"
   },
   {
     "id": "mother-to-be-massage",
@@ -392,7 +392,7 @@ export const TREATMENTS: Treatment[] = [
       "100% obstetric-approved botanical body oils"
     ],
     "popular": true,
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A27473921"
   },
   {
     "id": "gel-bottle-manicure",
@@ -409,7 +409,7 @@ export const TREATMENTS: Treatment[] = [
       "Precision cuticle work"
     ],
     "popular": true,
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A5952022"
   },
   {
     "id": "gel-bottle-biab",
@@ -426,7 +426,7 @@ export const TREATMENTS: Treatment[] = [
       "Available with French or colour finish"
     ],
     "popular": true,
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A10549332"
   },
   {
     "id": "gel-bottle-pedicure",
@@ -442,7 +442,7 @@ export const TREATMENTS: Treatment[] = [
       "Instantly dry LED cured finish",
       "Smooths tired soles"
     ],
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A12500339"
   },
   {
     "id": "rejuvenating-feet-callus",
@@ -458,6 +458,6 @@ export const TREATMENTS: Treatment[] = [
       "Intensive callus peel treatment",
       "Complete gel pedicure finish"
     ],
-    "freshaUrl": "https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459"
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A12500284"
   }
 ];

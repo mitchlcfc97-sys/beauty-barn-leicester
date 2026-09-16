@@ -67,14 +67,14 @@ export default function TreatmentsPage() {
           <div className="relative h-48 sm:h-56 rounded-3xl overflow-hidden shadow-sm border border-cream-200 group">
             <Image
               src="/images/treatments/couples-duo-massage-suite.jpg"
-              alt="Couples massage suite with twin beds and ambient lighting"
+              alt="Couples massage room with twin beds and ambient lighting"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-500"
               sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-5 text-white">
-              <span className="font-serif font-medium text-base">Couples & Duo Massage Suites</span>
-              <span className="text-cream-200 text-xs">Warm ambient lighting & twin heated beds</span>
+              <span className="font-serif font-medium text-base">Couples & Duo Massage Room</span>
+              <span className="text-cream-200 text-xs">Warm ambient lighting & twin treatment beds</span>
             </div>
           </div>
 
@@ -92,15 +92,18 @@ export default function TreatmentsPage() {
             </div>
           </div>
 
-          <div className="relative h-48 sm:h-56 rounded-3xl overflow-hidden shadow-sm border border-cream-200 group">
-            <Image
-              src="/images/treatments/gelbottle-nail-station.jpg"
-              alt="The GelBottle Inc manicure & pedicure station with exposed brick"
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-500"
-              sizes="(max-width: 768px) 100vw, 33vw"
+          <div className="relative h-48 sm:h-56 rounded-3xl overflow-hidden shadow-sm border border-cream-200 bg-charcoal-950 group">
+            <video
+              src="/videos/gelbottle-polish-carousel.mp4"
+              poster="/images/nail-bar-salon.jpg"
+              preload="metadata"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-95"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-5 text-white">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-5 text-white pointer-events-none">
               <span className="font-serif font-medium text-base">The GelBottle Inc Nail Bar</span>
               <span className="text-cream-200 text-xs">Pedicure bowls, mineral scrub & bespoke gel palettes</span>
             </div>
@@ -282,6 +285,8 @@ export default function TreatmentsPage() {
             <div className="relative aspect-[4/5] sm:aspect-[3/4] max-h-[520px] rounded-3xl overflow-hidden shadow-xl border border-cream-300 bg-charcoal-950 group">
               <video
                 src="/videos/brow-and-lash-transformation.mp4"
+                poster="/images/treatment-room-skylight.jpg"
+                preload="metadata"
                 autoPlay
                 loop
                 muted
@@ -375,7 +380,7 @@ export default function TreatmentsPage() {
             {/* CTA */}
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <button
-                onClick={() => openFresha('https://www.fresha.com/book-now/the-beauty-barn-sowuxl7s/services?lid=380113&share=true&pId=354459', 'Brow & Lash Services')}
+                onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=pkg%3A223212', 'Brow & Lash Services')}
                 className="px-6 py-3 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition shadow-md flex items-center gap-2"
               >
                 <Calendar className="w-3.5 h-3.5 text-bronze-300" />
@@ -517,7 +522,7 @@ export default function TreatmentsPage() {
           <div className="space-y-2 max-w-xl">
             <span className="text-xs uppercase tracking-widest text-bronze-400 font-bold">Looking for full day pampering?</span>
             <h2 className="font-serif text-2xl sm:text-3xl font-medium">Explore Our 100% Private Spa Packages</h2>
-            <p className="text-xs text-sage-200">Include private hot tub hire, heated lodge exclusivity, afternoon tea, and tailored treatments from £90pp.</p>
+            <p className="text-xs text-sage-200">Include private hot tub hire, lodge exclusivity, afternoon tea, and tailored treatments from £90pp.</p>
           </div>
           <Link
             href="/spa-days"

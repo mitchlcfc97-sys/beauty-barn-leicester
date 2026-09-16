@@ -145,6 +145,16 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Local Catchment Area & Search Anchors */}
+      <div className="border-t border-sage-800/80 py-5 bg-sage-950/30 text-[11px] text-sage-300">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left">
+          <p>
+            <strong className="text-cream-100">Serving Leicestershire:</strong> Scraptoft • Thurnby & Bushby • Houghton on the Hill • Oadby • Stoughton • Evington • Hamilton • Billesdon • Syston • Leicester City Centre
+          </p>
+          <span className="text-bronze-400 font-medium whitespace-nowrap">Free private on-site parking at Hall Farm Barn</span>
+        </div>
+      </div>
+
       {/* Bottom Copyright & 301 Protection Notice */}
       <div className="border-t border-sage-800 py-6 text-xs text-sage-400 text-center">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">

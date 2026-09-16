@@ -68,6 +68,17 @@ export default function SchemaMarkup() {
       "bestRating": "5",
       "worstRating": "1"
     },
+    "areaServed": [
+      { "@type": "Place", "name": "Scraptoft" },
+      { "@type": "Place", "name": "Thurnby" },
+      { "@type": "Place", "name": "Bushby" },
+      { "@type": "Place", "name": "Houghton on the Hill" },
+      { "@type": "Place", "name": "Oadby" },
+      { "@type": "Place", "name": "Stoughton" },
+      { "@type": "Place", "name": "Evington" },
+      { "@type": "Place", "name": "Leicester" },
+      { "@type": "Place", "name": "Leicestershire" }
+    ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Spa & Beauty Treatments Menu",

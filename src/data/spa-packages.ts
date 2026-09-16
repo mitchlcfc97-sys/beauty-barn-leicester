@@ -43,7 +43,7 @@ export const SPA_PACKAGES: SpaPackage[] = [
     includesLodgeAndHotTub: true,
     includesAfternoonTea: true,
     includesUnlimitedDrinks: true,
-    description: "Our most sought-after private package! Relax in your exclusive heated wooden lodge and private hot tub area with unlimited prosecco, hot & soft drinks, and our signature afternoon tea. Includes 60 minutes of bespoke spa treatments per guest.",
+    description: "Our most sought-after private package! Relax in your exclusive wooden lodge and private hot tub area with unlimited drinks, hot & soft drinks, and our signature afternoon tea. Includes 60 minutes of bespoke spa treatments per guest.",
     treatmentOptions: [
       {
         heading: "Option A: 1 x 60-Minute Treatment",
@@ -70,7 +70,7 @@ export const SPA_PACKAGES: SpaPackage[] = [
       "Tiered pricing: 2-3 guests £125pp | 4-5 guests £110pp | 6-8 guests £100pp",
       "Full 60 minutes of treatments per guest (1 x 60m or 2 x 30m)",
       "Luxury 3-tier afternoon tea included",
-      "Unlimited prosecco, tea, coffee & soft drinks",
+      "Unlimited drinks including tea, coffee & soft drinks",
       "Complimentary luxury robes, towels & slippers"
     ],
     popular: true
@@ -121,7 +121,7 @@ export const SPA_PACKAGES: SpaPackage[] = [
       "Full 90 minutes of spa treatments per guest",
       "Extended private hire: 4 to 5 hours exclusive lodge & hot tub access",
       "Tiered pricing: 2-3 guests £150pp | 4-5 guests £132.50pp | 6 guests £120pp",
-      "Luxury afternoon tea & unlimited prosecco & refreshments",
+      "Luxury afternoon tea & unlimited drinks & refreshments",
       "Fluffy robes, spa towels & slippers provided"
     ],
     popular: false
@@ -178,7 +178,7 @@ export const SPA_PACKAGES: SpaPackage[] = [
     includesLodgeAndHotTub: false,
     includesAfternoonTea: true,
     includesUnlimitedDrinks: true,
-    description: "Perfect for those who want the luxury of our heated wooden lodge, delicious afternoon tea, and pampering treatments without the hot tub.",
+    description: "Perfect for those who want the luxury of our wooden lodge, delicious afternoon tea, and pampering treatments without the hot tub.",
     treatmentOptions: [
       {
         heading: "Choice of 1 x 30-Minute Treatment per person",
@@ -192,11 +192,11 @@ export const SPA_PACKAGES: SpaPackage[] = [
       }
     ],
     features: [
-      "Exclusive private heated wooden lodge hire",
+      "Exclusive private wooden lodge hire",
       "Tiered pricing: 2-3 guests £95pp (2h) | 4-5 guests £90pp (3h)",
       "Luxury 3-tier afternoon tea included",
       "Choice of 1 x 30m treatment per guest",
-      "Unlimited prosecco, artisan teas, coffee & soft drinks"
+      "Unlimited drinks including artisan teas, coffee & soft drinks"
     ],
     popular: false
   }
