@@ -15,6 +15,8 @@ export default function SpaPackageBuilder() {
   const [notes, setNotes] = useState<string>('');
   const [submitted, setSubmitted] = useState<boolean>(false);
 
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
   const selectedPkg: SpaPackage = SPA_PACKAGES.find(p => p.id === selectedPackageId) || SPA_PACKAGES[0];
 
   // Dynamic price per person based on group size tier
@@ -27,10 +29,42 @@ export default function SpaPackageBuilder() {
   const totalPrice = currentPricePerPerson * guestCount;
   const depositRequired = totalPrice * 0.5;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    try {
+      await fetch('/api/booking', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          clientName,
+          clientPhone,
+          clientEmail,
+          packageName: selectedPkg.name,
+          guestCount,
+          totalPrice,
+          depositRequired,
+          preferredDate: selectedDate,
+          preferredTime,
+          notes,
+        }),
+      });
+    } catch (err) {
+      console.error('Submission error:', err);
+    } finally {
+      setIsSubmitting(false);
+      setSubmitted(true);
+    }
   };
+
+  const whatsappMessage = encodeURIComponent(
+    `Hi The Beauty Barn, I have requested a private spa day booking:\n\n• Package: ${selectedPkg.name}\n• Guests: ${guestCount}\n• Date: ${selectedDate || 'Flexible'}\n• Time: ${preferredTime}\n• Name: ${clientName}\n• Phone: ${clientPhone}\n• Email: ${clientEmail}${notes ? `\n• Notes: ${notes}` : ''}`
+  );
+
+  const emailSubject = encodeURIComponent(`Spa Day Booking Request: ${selectedPkg.name} - ${clientName}`);
+  const emailBody = encodeURIComponent(
+    `Hi The Beauty Barn Team,\n\nI would like to reserve a private spa day:\n\nPackage: ${selectedPkg.name}\nGuests: ${guestCount}\nPreferred Date: ${selectedDate || 'Flexible'}\nTime Preference: ${preferredTime}\n\nName: ${clientName}\nPhone: ${clientPhone}\nEmail: ${clientEmail}\nSpecial Notes: ${notes || 'None'}\n\nThank you!`
+  );
 
   return (
     <div className="bg-white rounded-3xl shadow-xl border border-cream-200 overflow-hidden" id="package-builder">
@@ -52,25 +86,56 @@ export default function SpaPackageBuilder() {
 
       <div className="p-6 md:p-10">
         {submitted ? (
-          <div className="text-center py-12 px-4 max-w-lg mx-auto">
-            <div className="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="text-center py-8 px-4 max-w-lg mx-auto space-y-6">
+            <div className="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-10 h-10" />
             </div>
-            <h3 className="font-serif text-2xl text-charcoal-900 font-medium mb-2">
-              Spa Day Request Received!
-            </h3>
-            <p className="text-charcoal-800/80 text-sm leading-relaxed mb-6">
-              Thank you, <strong className="text-charcoal-900">{clientName || 'Guest'}</strong>. We have reserved your requested slot for <strong>{guestCount} guests</strong> on <strong>{selectedPkg.name}</strong>. Our team will verify lodge availability and contact you via {clientPhone || clientEmail} within 2 hours to confirm your 50% booking deposit of £{depositRequired}.
-            </p>
-            <div className="p-4 bg-cream-50 rounded-2xl border border-cream-200 text-xs text-charcoal-800 space-y-1 mb-6 text-left">
+            <div>
+              <h3 className="font-serif text-2xl text-charcoal-900 font-medium mb-2">
+                Spa Day Request Received!
+              </h3>
+              <p className="text-charcoal-800/80 text-sm leading-relaxed">
+                Thank you, <strong className="text-charcoal-900">{clientName || 'Guest'}</strong>. Your booking request for <strong>{guestCount} guests</strong> on <strong>{selectedPkg.name}</strong> has been logged. Our team will verify lodge availability and contact you via {clientPhone || clientEmail} to confirm your slot and arrange your 50% securing deposit of £{depositRequired}.
+              </p>
+            </div>
+
+            <div className="p-4 bg-cream-50 rounded-2xl border border-cream-200 text-xs text-charcoal-800 space-y-1.5 text-left">
               <div className="flex justify-between"><span>Package:</span><strong>{selectedPkg.name}</strong></div>
               <div className="flex justify-between"><span>Party Size:</span><strong>{guestCount} Guests</strong></div>
+              <div className="flex justify-between"><span>Requested Date:</span><strong>{selectedDate || 'Flexible'} ({preferredTime})</strong></div>
               <div className="flex justify-between"><span>Total Experience:</span><strong>£{totalPrice}</strong></div>
-              <div className="flex justify-between text-sage-800"><span>50% Securing Deposit:</span><strong>£{depositRequired}</strong></div>
+              <div className="flex justify-between text-sage-800 font-bold pt-1 border-t border-cream-200">
+                <span>50% Securing Deposit:</span>
+                <span>£{depositRequired}</span>
+              </div>
             </div>
+
+            {/* Fast-Track Actions */}
+            <div className="space-y-2 pt-2">
+              <span className="text-[11px] uppercase tracking-wider text-charcoal-800/60 font-bold block">
+                Instant Confirmation Options
+              </span>
+              <div className="flex flex-col sm:flex-row gap-2.5">
+                <a
+                  href={`https://wa.me/447535243827?text=${whatsappMessage}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold uppercase tracking-wider text-center transition shadow flex items-center justify-center gap-1.5"
+                >
+                  <span>Fast-Track on WhatsApp ↗</span>
+                </a>
+                <a
+                  href={`mailto:thebeautybarn.leic@gmail.com?subject=${emailSubject}&body=${emailBody}`}
+                  className="flex-1 py-3 px-4 rounded-xl border border-sage-800 text-sage-900 hover:bg-sage-50 text-xs font-semibold uppercase tracking-wider text-center transition"
+                >
+                  <span>Email Directly ↗</span>
+                </a>
+              </div>
+            </div>
+
             <button
               onClick={() => setSubmitted(false)}
-              className="px-6 py-2.5 rounded-xl bg-sage-800 text-cream-50 text-sm font-medium hover:bg-sage-900 transition"
+              className="text-xs text-sage-700 hover:text-sage-900 underline pt-2 block mx-auto"
             >
               Modify or Customize Another Package
             </button>

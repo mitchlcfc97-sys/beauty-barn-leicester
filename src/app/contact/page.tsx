@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { MapPin, Phone, Mail, Clock, ShieldCheck, Send, Calendar, MessageCircle } from 'lucide-react';
 import { BUSINESS_INFO } from '@/data/business';
+import ContactForm from '@/components/contact/ContactForm';
 
 export const metadata: Metadata = {
   title: 'Contact & Location | The Beauty Barn Leicester',
@@ -124,8 +125,10 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Interactive Map & Booking Card */}
+          {/* Interactive Form & Map */}
           <div className="lg:col-span-7 space-y-6">
+            <ContactForm />
+
             <div className="bg-white rounded-3xl p-6 sm:p-8 border border-cream-300 shadow-sm space-y-4">
               <h2 className="font-serif text-2xl font-medium text-charcoal-900">
                 Interactive Location Map
