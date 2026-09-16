@@ -25,12 +25,12 @@ export const TREATMENT_ADDONS: TreatmentAddon[] = [
   },
   {
     id: "addon-bamboo",
-    name: "Heated Bamboo Sticks",
+    name: "Natural Bamboo Sticks",
     category: "massage",
     price: "+£5",
     priceNum: 5,
     duration: "Integrated into service",
-    description: "Silky, warm natural bamboo canes rolled and kneaded over tight muscle groups to provide firm, even, elongated pressure.",
+    description: "Smooth natural bamboo canes rolled and kneaded over tight muscle groups to provide firm, even, elongated pressure.",
     benefits: ["Targeted deep tissue knot release", "Stimulates lymphatic drainage", "Relieves repetitive strain & postural fatigue"],
     recommendedWith: "Deep Tissue, Back Massage, or Foot & Leg Massage"
   },

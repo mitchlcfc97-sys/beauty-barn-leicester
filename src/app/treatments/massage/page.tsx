@@ -479,7 +479,7 @@ export default function MassagePage() {
             <div className="relative aspect-[4/5] sm:aspect-[3/4] max-h-[500px] rounded-3xl overflow-hidden shadow-xl border border-cream-300 bg-charcoal-950 group">
               <video
                 src="/videos/deep-tissue-back-massage.mp4"
-                poster="/images/treatment-room-skylight.jpg"
+                poster="/images/deep-tissue-massage-poster.jpg"
                 preload="metadata"
                 autoPlay
                 loop
@@ -513,7 +513,7 @@ export default function MassagePage() {
           <span className="text-xs uppercase tracking-widest text-bronze-600 font-bold">Customise Your Treatment</span>
           <h2 className="font-serif text-2xl sm:text-3xl font-medium text-sage-900">Massage Enhancements & Bramley Add-Ons</h2>
           <p className="text-xs sm:text-sm text-charcoal-800/80">
-            Elevate any back, neck, or full body massage during booking with our targeted heat therapy or Bramley botanical upgrades.
+            Elevate any back, neck, or full body massage during booking with our targeted hot stone therapy, natural bamboo canes, or Bramley botanical upgrades.
           </p>
         </div>
 

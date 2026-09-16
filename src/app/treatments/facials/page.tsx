@@ -300,6 +300,90 @@ export default function FacialsPage() {
         </div>
       </section>
 
+      {/* BESPOKE FACIAL SPOTLIGHT: REAL POST-TREATMENT GLOW */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gradient-to-br from-cream-100 via-white to-sage-50/50 rounded-3xl p-8 sm:p-12 border border-cream-300 shadow-md grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          {/* Left: Real Video Showcase */}
+          <div className="lg:col-span-6 space-y-3">
+            <div className="relative aspect-[4/5] sm:aspect-[3/4] max-h-[500px] rounded-3xl overflow-hidden shadow-xl border border-cream-300 bg-charcoal-950 group">
+              <video
+                src="/videos/bespoke-facial-glow.mp4"
+                poster="/images/bespoke-facial-glow-poster.jpg"
+                preload="metadata"
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-4 left-4 right-4 text-white pointer-events-none">
+                <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block mb-0.5">
+                  Post-Treatment Radiance
+                </span>
+                <p className="font-serif text-base font-semibold">
+                  The Beauty Barn Bespoke Facial Glow
+                </p>
+                <p className="text-xs text-cream-100/90 mt-0.5">
+                  Unfiltered, healthy glow following a tailored clinical and botanical facial in our Scraptoft sanctuary.
+                </p>
+              </div>
+            </div>
+            <p className="text-[11px] text-center text-charcoal-800/60 italic">
+              ✨ 100% customised to your skin goals — available in 30, 60 & 90-minute rituals.
+            </p>
+          </div>
+
+          {/* Right: Copy & Booking */}
+          <div className="lg:col-span-6 space-y-6">
+            <div className="space-y-3">
+              <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-bronze-500/15 text-bronze-700 text-xs font-semibold uppercase tracking-wider">
+                <Sparkles className="w-3.5 h-3.5 text-bronze-600" /> Signature Clinical & Spa Fusion
+              </span>
+              <h2 className="font-serif text-3xl sm:text-4xl font-medium text-sage-900 leading-tight">
+                The Beauty Barn <br className="hidden sm:inline" />
+                <span className="italic font-normal text-bronze-600">Bespoke Facial Experience</span>
+              </h2>
+              <p className="text-sm text-charcoal-800/80 leading-relaxed">
+                No two complexions are identical. Our signature Bespoke Facial combines the targeted dermal results of clinical cosmeceuticals with the restorative touch of a luxury holistic spa ritual.
+              </p>
+              <p className="text-sm text-charcoal-800/80 leading-relaxed">
+                Zofia and our certified skin therapists begin with an in-depth dermal analysis before tailoring each step: double-cleansing, targeted exfoliation, MEDI+ active serum infusion, restorative facial massage, and calming botanical hydration.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-3 gap-3 pt-2">
+              <div className="p-3 rounded-2xl bg-white border border-cream-200 text-center shadow-sm">
+                <span className="text-[10px] uppercase font-bold tracking-wider text-bronze-600 block">Express</span>
+                <span className="font-serif text-lg font-bold text-sage-900">£65</span>
+                <span className="text-[11px] text-charcoal-800/60 block mt-0.5">30 mins</span>
+              </div>
+              <div className="p-3 rounded-2xl bg-white border-2 border-bronze-400 text-center shadow-sm relative">
+                <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full bg-bronze-600 text-[9px] font-bold uppercase tracking-wider text-white">Popular</span>
+                <span className="text-[10px] uppercase font-bold tracking-wider text-bronze-600 block">Signature</span>
+                <span className="font-serif text-lg font-bold text-sage-900">£100</span>
+                <span className="text-[11px] text-charcoal-800/60 block mt-0.5">60 mins</span>
+              </div>
+              <div className="p-3 rounded-2xl bg-white border border-cream-200 text-center shadow-sm">
+                <span className="text-[10px] uppercase font-bold tracking-wider text-bronze-600 block">Deluxe</span>
+                <span className="font-serif text-lg font-bold text-sage-900">£130</span>
+                <span className="text-[11px] text-charcoal-800/60 block mt-0.5">90 mins</span>
+              </div>
+            </div>
+
+            <div className="pt-2 flex flex-wrap items-center gap-3">
+              <button
+                onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8493168', 'The Beauty Barn Bespoke Facial')}
+                className="px-6 py-3 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition shadow-md flex items-center gap-2"
+              >
+                <Calendar className="w-3.5 h-3.5 text-bronze-300" />
+                Book Bespoke Facial (From £65)
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       
       {/* INSIDE THE SKIN HUB: REAL SUITE PHOTO SHOWCASE */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">

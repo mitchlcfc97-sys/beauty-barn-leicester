@@ -169,7 +169,7 @@ export default function TreatmentsPage() {
                   <div className={`pt-3 border-t flex items-center justify-between text-xs ${
                     isSelected ? 'border-sage-800 text-cream-100' : 'border-cream-200 text-charcoal-800/80'
                   }`}>
-                    <span className="font-semibold text-bronze-400">{ritual.therapists}</span>
+                    <span className="font-semibold text-bronze-400">{ritual.therapists || ritual.badge || 'Signature Experience'}</span>
                     <span className="font-serif text-base font-bold">{ritual.price}</span>
                   </div>
                 </button>
@@ -197,9 +197,11 @@ export default function TreatmentsPage() {
                       <h3 className="font-serif text-2xl sm:text-3xl font-medium text-sage-900">
                         {activeRitual.name}
                       </h3>
-                      <p className="text-xs text-bronze-600 font-medium mt-0.5">
-                        {activeRitual.therapists}
-                      </p>
+                      {activeRitual.therapists && (
+                        <p className="text-xs text-bronze-600 font-medium mt-0.5">
+                          {activeRitual.therapists}
+                        </p>
+                      )}
                     </div>
 
                     <div className="sm:text-right">
@@ -280,29 +282,26 @@ export default function TreatmentsPage() {
       {/* ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-gradient-to-br from-cream-100 via-white to-sage-50/40 rounded-3xl p-8 sm:p-12 border border-cream-300 shadow-md grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          {/* Left: Real Video Transformation */}
+          {/* Left: Brow & Lash Artistry Showcase */}
           <div className="lg:col-span-6 space-y-3">
             <div className="relative aspect-[4/5] sm:aspect-[3/4] max-h-[520px] rounded-3xl overflow-hidden shadow-xl border border-cream-300 bg-charcoal-950 group">
-              <video
-                src="/videos/brow-and-lash-transformation.mp4"
-                poster="/images/treatment-room-skylight.jpg"
-                preload="metadata"
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+              <Image
+                src="/images/treatment-room-skylight.jpg"
+                alt="The Beauty Barn brow and lash treatment suite in Scraptoft"
+                fill
+                className="object-cover group-hover:scale-105 transition duration-700"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-4 left-4 right-4 text-white pointer-events-none">
                 <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block mb-0.5">
-                  Real Client Transformation
+                  Eye Artistry Suite
                 </span>
                 <p className="font-serif text-base font-semibold">
-                  Sculpted Brows, Lifted Lashes & Radiant Glow
+                  Precision Lash Lifts & Brow Styling
                 </p>
                 <p className="text-xs text-cream-100/90 mt-0.5">
-                  Lamination, lash lift and precision styling by our specialist therapists Fran & Matilda.
+                  Lamination, lash lift, tinting, and precision styling by our specialist therapists Fran & Matilda.
                 </p>
               </div>
             </div>
@@ -363,15 +362,15 @@ export default function TreatmentsPage() {
               <div className="p-4 rounded-2xl bg-white border border-cream-200 shadow-sm flex items-start justify-between gap-4">
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
-                    <span className="font-serif text-base font-semibold text-sage-900">Complete Eye Package</span>
-                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-cream-200 text-charcoal-800 font-bold uppercase tracking-wider">Full Duo</span>
+                    <span className="font-serif text-base font-semibold text-sage-900">All About Eyes Package</span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-bronze-100 text-bronze-800 font-bold uppercase tracking-wider">Ultimate Eye Duo</span>
                   </div>
                   <p className="text-xs text-charcoal-800/70 leading-relaxed">
-                    Brow tint, brow wax, and lash tint combined for complete framing, polish, and defined elegance.
+                    Luxurious lash lift and tint to enhance natural lashes, combined with expert eyebrow waxing and tinting to perfectly frame your face.
                   </p>
                 </div>
                 <div className="text-right flex-shrink-0">
-                  <span className="font-serif text-lg font-bold text-sage-900 block">£48</span>
+                  <span className="font-serif text-lg font-bold text-sage-900 block">£60</span>
                   <span className="text-[10px] text-charcoal-800/60">60 mins</span>
                 </div>
               </div>
@@ -380,7 +379,7 @@ export default function TreatmentsPage() {
             {/* CTA */}
             <div className="pt-2 flex flex-wrap items-center gap-3">
               <button
-                onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=pkg%3A223212', 'Brow & Lash Services')}
+                onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A223212', 'All About Eyes Package')}
                 className="px-6 py-3 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition shadow-md flex items-center gap-2"
               >
                 <Calendar className="w-3.5 h-3.5 text-bronze-300" />
@@ -406,7 +405,7 @@ export default function TreatmentsPage() {
             Treatment Add-Ons & Clinical Boosters
           </h2>
           <p className="text-xs sm:text-sm text-charcoal-800/80 leading-relaxed">
-            Elevate any appointment with therapeutic heated volcanic stones, warm bamboo sticks, clinical LED light therapy, or intensive peptide and electrolyte masks.
+            Elevate any appointment with therapeutic volcanic hot stones, natural bamboo canes, clinical LED light therapy, or intensive peptide and electrolyte masks.
           </p>
         </div>
 

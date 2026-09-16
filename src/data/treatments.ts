@@ -285,8 +285,8 @@ export const TREATMENTS: Treatment[] = [
     "category": "signature",
     "categoryLabel": "Signature Rituals",
     "duration": "45 mins",
-    "price": "£140 (Synchronised by 2 Therapists)",
-    "priceNum": 140,
+    "price": "£70 (Synchronised by 2 Therapists)",
+    "priceNum": 70,
     "description": "Our signature head-to-toe ritual performed by two therapists simultaneously! One therapist delivers a rejuvenating tailored facial while the second indulges your feet and lower legs with a nourishing foot treatment.",
     "highlights": [
       "Synchronised service by 2 therapists",
@@ -295,6 +295,23 @@ export const TREATMENTS: Treatment[] = [
     ],
     "popular": true,
     "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=pkg%3A1873592"
+  },
+  {
+    "id": "bramley-full-indulgence",
+    "name": "The Full Indulgence Ritual",
+    "category": "signature",
+    "categoryLabel": "Signature Rituals",
+    "duration": "90 mins",
+    "price": "£100 (£105 with Hot Stones | £200 for Two)",
+    "priceNum": 100,
+    "description": "A seamless 90-minute pairing of deep restorative full-body massage and our glowing bespoke botanical facial with warm towel compresses.",
+    "highlights": [
+      "90-minute balanced face & body combination",
+      "Full body massage with botanical oils",
+      "Revitalising tailored facial & scalp therapy"
+    ],
+    "popular": true,
+    "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8461617"
   },
   {
     "id": "bramley-simply-divine",

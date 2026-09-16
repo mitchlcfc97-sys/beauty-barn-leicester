@@ -6,7 +6,7 @@ export interface SignatureRitual {
   priceNum: number;
   duration: string;
   badge?: string;
-  therapists: string; // e.g. "2 Therapists Synchronised" or "1 Senior Therapist"
+  therapists?: string; // Optional: used for multi-therapist experiences (e.g. Dual Serenity)
   leadImage: string;
   description: string;
   ritualSteps: {
@@ -27,7 +27,6 @@ export const SIGNATURE_RITUALS: SignatureRitual[] = [
     priceNum: 70,
     duration: "60 - 120 Minutes",
     badge: "Limited Seasonal Edition",
-    therapists: "Senior Spa Specialist",
     leadImage: "/images/treatment-room.jpg",
     description: "Step away from the cold and into the comforting warmth of our limited-edition Fireside Ritual. Each ritual begins with a warming cinnamon and honey back exfoliation and combines hot stones, nourishing Bramley oils, and a relaxing warm-oil scalp massage, accompanied by the gentle crackle of a fireside candle. The 90- and 120-minute options also include a luxury skincare cracker containing Bramley Raspberry Seed Facial Oil and a gua sha so you can continue the ritual at home!",
     ritualSteps: [
@@ -59,11 +58,11 @@ export const SIGNATURE_RITUALS: SignatureRitual[] = [
     id: "dual-serenity",
     name: "Dual Serenity — Face Forward, Feet First",
     subtitle: "A synchronized head-and-sole ritual delivered simultaneously by two therapists",
-    price: "£140",
-    priceNum: 140,
+    price: "£70",
+    priceNum: 70,
     duration: "45 Minutes",
     badge: "Most Unique Experience",
-    therapists: "2 Therapists Working in Harmony",
+    therapists: "2 Therapists Synchronised",
     leadImage: "/images/treatment-room-skylight.jpg",
     description: "Experience the ultimate balance of deep relaxation and visible glow. While one therapist delivers an indulgent, customized botanical facial tailored to your skin's exact needs, a second therapist pampers your feet and lower legs with an intensive softening scrub, mask, and reflex massage.",
     ritualSteps: [
@@ -98,7 +97,6 @@ export const SIGNATURE_RITUALS: SignatureRitual[] = [
     priceNum: 190,
     duration: "2 Hours 45 Minutes",
     badge: "Ultimate Indulgence",
-    therapists: "Senior Holistic Therapist",
     leadImage: "/images/candlelit-treatment-bed.jpg",
     description: "Our most comprehensive head-to-toe face and body ritual, designed to leave you completely transformed. Your journey begins with a soothing Bramley Opening Ritual, followed by a revitalizing full-body Cranberry Scrub to smooth and renew the skin. Sink into blissful relaxation with a nourishing full-body massage using warm essential oils, transitioning into an indulgent customized botanical facial and warm oil scalp ritual.",
     ritualSteps: [
@@ -134,7 +132,6 @@ export const SIGNATURE_RITUALS: SignatureRitual[] = [
     priceNum: 160,
     duration: "2 Hours",
     badge: "Rest & Recovery",
-    therapists: "Specialist Holistic Therapist",
     leadImage: "/images/spa-garden-overview.jpg",
     description: "Formulated specifically for overactive minds, insomnia, and nervous exhaustion. We combine gentle body brushing, rhythmic warm lavender and chamomile oil massage, and soothing pressure point head and facial work to transition your nervous system into deep parasympathetic recovery.",
     ritualSteps: [
@@ -163,13 +160,12 @@ export const SIGNATURE_RITUALS: SignatureRitual[] = [
   },
   {
     id: "bramley-full-indulgence",
-    name: "The Bramley Full Indulgence Package",
+    name: "The Full Indulgence Ritual",
     subtitle: "A seamless 90-minute pairing of deep bodywork and glowing facial therapy",
     price: "£100 (£105 with Hot Stones | £200 for Two)",
     priceNum: 100,
     duration: "1 Hour 30 Minutes",
-    badge: "Client Favourite",
-    therapists: "Qualified Spa Therapist",
+    badge: "Very Popular Ritual",
     leadImage: "/images/treatment-room-skylight.jpg",
     description: "Our signature face & body combination. Begin with a moment of serene calm during our Bramley Opening Ritual, followed by a restorative full-body massage and a revitalizing botanical facial with warm towel compresses.",
     ritualSteps: [
@@ -203,7 +199,6 @@ export const SIGNATURE_RITUALS: SignatureRitual[] = [
     priceNum: 245,
     duration: "4 Hours 30 Minutes",
     badge: "Pregnancy Sanctuary",
-    therapists: "Prenatal Certified Specialist",
     leadImage: "/images/nail-bar-salon.jpg",
     description: "The ultimate head-to-toe retreat designed specifically for mums-to-be. Features a luxury manicure and pedicure with warm foot soak, exfoliation, mask and massage, followed by our pregnancy-safe relaxing back massage and ultra-relaxing botanical facial.",
     ritualSteps: [
