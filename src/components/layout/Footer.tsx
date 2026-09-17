@@ -49,7 +49,8 @@ export default function Footer() {
             The Beauty Barn
           </span>
           <p className="text-xs text-sage-200 leading-relaxed">
-            Leicester’s sanctuary for luxury pampering, Swedish massage, organic facials, and private hot tub spa packages. Founded by Mel and Zofia in Scraptoft.
+            Leicester’s sanctuary for luxury pampering, Swedish massage, organic facials, and private hot tub spa packages.
+            <span className="block mt-1 text-sage-300">Founded by Mel and Zofia in Scraptoft.</span>
           </p>
           <div className="pt-2 flex flex-wrap gap-2">
             <a
