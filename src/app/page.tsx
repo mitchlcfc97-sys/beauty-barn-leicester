@@ -97,7 +97,7 @@ export default function HomePage() {
 
             <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-sage-100 border border-sage-200 text-sage-900 text-xs font-semibold tracking-wider uppercase shadow-sm">
               <Sparkles className="w-3.5 h-3.5 text-bronze-500" />
-              <span>Leicester’s 100% Private Day Spa</span>
+              <span>Independent Family-Run Countryside Spa & Salon</span>
             </div>
           </div>
 
@@ -109,7 +109,7 @@ export default function HomePage() {
 
           {/* Subheading */}
           <p className="max-w-2xl mx-auto text-base sm:text-lg text-charcoal-800/80 leading-relaxed">
-            Nestled in the serene countryside of Scraptoft, Leicester. Indulge in exclusive private lodge & hot tub hire with zero strangers, unlimited refreshments, afternoon tea, and deeply restorative massage rituals.
+            Nestled in the peaceful countryside of Scraptoft, Leicester. Enjoy your own private garden lodge & bubbling hot tub, warm hospitality, fresh homemade afternoon tea, and deeply relaxing treatments with our friendly team.
           </p>
 
           {/* CTAs */}
@@ -135,7 +135,7 @@ export default function HomePage() {
           <div className="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-charcoal-800/70 border-t border-cream-300/80 max-w-xl mx-auto">
             <div className="flex items-center gap-1.5 font-medium">
               <ShieldCheck className="w-4 h-4 text-emerald-600" />
-              <span>Exclusive Private Hire</span>
+              <span>Exclusive Lodge & Tub Hire</span>
             </div>
             <div className="flex items-center gap-1.5 font-medium">
               <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
@@ -165,8 +165,8 @@ export default function HomePage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-4 left-4 right-4 text-white">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">100% Private Garden</span>
-              <p className="font-serif text-lg font-medium">Private Cabin & Garden</p>
+              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">Cosy Spa Sanctuary</span>
+              <p className="font-serif text-lg font-medium">Garden Lodge & Grounds</p>
             </div>
           </div>
 
@@ -180,8 +180,8 @@ export default function HomePage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-4 left-4 right-4 text-white">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">Zero Strangers</span>
-              <p className="font-serif text-lg font-medium">Private Hot Tub</p>
+              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">Hydrotherapy Jets</span>
+              <p className="font-serif text-lg font-medium">Private Hot Tub Area</p>
             </div>
           </div>
 
@@ -344,20 +344,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* WHY PRIVATE MATTERS SECTION */}
+      {/* COSY COUNTRYSIDE SPA DAYS SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-sage-900 text-cream-50 rounded-3xl p-8 md:p-16 relative overflow-hidden shadow-xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7 space-y-6">
               <span className="text-xs uppercase tracking-widest text-bronze-400 font-bold">
-                The Beauty Barn Experience
+                Independent Countryside Spa Retreat
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl font-medium tracking-tight text-cream-50">
-                A Spa Day with No Strangers. <br />
-                <span className="italic text-bronze-300">Just You and Your Loved Ones.</span>
+                A Cosy Countryside Escape. <br />
+                <span className="italic text-bronze-300">Warm, Inviting & Just for Your Group.</span>
               </h2>
               <p className="text-sage-200 text-sm sm:text-base leading-relaxed">
-                Unlike crowded hotel spas where you share pools and lounges with dozens of people, The Beauty Barn gives you complete, uninterrupted exclusivity. Relax in your private lodge, soak in the bubbling hot tub, and enjoy dedicated therapist care in total serenity.
+                As an independent, family-run business, we believe a spa day should feel like a true retreat — personal, unhurried, and genuinely welcoming. When you book a spa day with us, our heated garden lodge and steaming hot tub are exclusively reserved just for you and your guests to unwind in peace, while our salon remains open for one-on-one appointments.
+              </p>
+              <p className="text-sage-200/90 text-xs sm:text-sm leading-relaxed">
+                Snuggle up in soft robes with cosy blankets and hot water bottles, sip freshly brewed teas or chilled drinks, and enjoy our homemade afternoon tea before your therapist welcomes you for your treatments.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -366,8 +369,8 @@ export default function HomePage() {
                     <Check className="w-3.5 h-3.5" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-cream-50">Private Lodge & Hot Tub</h4>
-                    <p className="text-xs text-sage-300">Countryside lodge with dedicated private hot tub</p>
+                    <h4 className="text-sm font-semibold text-cream-50">Cosy Lodge & Hot Tub</h4>
+                    <p className="text-xs text-sage-300">Heated wooden lodge with dedicated private hot tub for your group</p>
                   </div>
                 </div>
 
@@ -376,8 +379,8 @@ export default function HomePage() {
                     <Check className="w-3.5 h-3.5" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-cream-50">Luxury Afternoon Tea</h4>
-                    <p className="text-xs text-sage-300">Sweet & savoury treats plus unlimited drinks and teas</p>
+                    <h4 className="text-sm font-semibold text-cream-50">Homemade Afternoon Tea</h4>
+                    <p className="text-xs text-sage-300">Fresh sandwiches, scones, sweet treats & unlimited drinks</p>
                   </div>
                 </div>
 
@@ -386,8 +389,8 @@ export default function HomePage() {
                     <Check className="w-3.5 h-3.5" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-cream-50">Groups of 2 to 8</h4>
-                    <p className="text-xs text-sage-300">Ideal for couples, birthdays, hen parties, and mother-daughter pampering</p>
+                    <h4 className="text-sm font-semibold text-cream-50">Intimate Groups (2 to 8)</h4>
+                    <p className="text-xs text-sage-300">Ideal for couples, birthdays, hen parties, and mother-daughter days</p>
                   </div>
                 </div>
 
@@ -396,8 +399,8 @@ export default function HomePage() {
                     <Check className="w-3.5 h-3.5" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-cream-50">Simple Pricing</h4>
-                    <p className="text-xs text-sage-300">Packages from £90pp with easy 50% booking deposit</p>
+                    <h4 className="text-sm font-semibold text-cream-50">Family-Run Warmth</h4>
+                    <p className="text-xs text-sage-300">Friendly, attentive care from our close-knit, passionate team</p>
                   </div>
                 </div>
               </div>
@@ -421,7 +424,7 @@ export default function HomePage() {
                   className="object-cover"
                 />
                 <div className="absolute top-3 right-3 px-2.5 py-1 bg-bronze-500 text-white text-[10px] font-bold uppercase tracking-wider rounded-full shadow">
-                  Private Garden Access
+                  Lodge & Tub Hire
                 </div>
               </div>
 
@@ -456,9 +459,6 @@ export default function HomePage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <span className="text-xs uppercase tracking-widest text-bronze-600 font-bold">
-              Therapeutic & Aesthetic Menu
-            </span>
             <h2 className="font-serif text-3xl sm:text-4xl font-medium tracking-tight text-sage-900 mt-1">
               Popular Salon Treatments
             </h2>
@@ -605,7 +605,7 @@ export default function HomePage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-5 left-5 right-5 text-white">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block mb-1">Salon Aesthetics</span>
+              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block mb-1">Nails & Hand Care</span>
               <h3 className="font-serif text-xl font-medium">Nail Bar & Manicures</h3>
               <p className="text-xs text-cream-200/90 mt-1 line-clamp-2">Gel hands, builder gel, and luxury pedicures in rustic elegance.</p>
             </div>
@@ -622,9 +622,9 @@ export default function HomePage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-5 left-5 right-5 text-white">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block mb-1">Pure Relaxation</span>
-              <h3 className="font-serif text-xl font-medium">Treatment Sanctuary</h3>
-              <p className="text-xs text-cream-200/90 mt-1 line-clamp-2">Bramley botanical rituals, warm towel service, and natural skylight.</p>
+              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block mb-1">Sanctuary Suites</span>
+              <h3 className="font-serif text-xl font-medium">Bespoke Treatment Rooms</h3>
+              <p className="text-xs text-cream-200/90 mt-1 line-clamp-2">Private suites tailored for focused holistic and skincare therapies.</p>
             </div>
           </div>
         </div>
@@ -686,7 +686,7 @@ export default function HomePage() {
               "We Built The Beauty Barn to Give You Complete Serenity"
             </h2>
             <p className="text-sm text-charcoal-800/80 leading-relaxed">
-              We started The Beauty Barn in 2020 with a dream: an authentic countryside sanctuary where nobody is ever rushed, no hot tubs are shared with strangers, and every guest feels completely at home.
+              We started The Beauty Barn in 2020 with a dream: an authentic countryside sanctuary where nobody is ever rushed, your garden lodge and hot tub are exclusively your own, and every guest feels completely at home.
             </p>
             <p className="text-sm text-charcoal-800/80 leading-relaxed">
               Whether you're visiting for an afternoon tea spa package, a Bramley botanical massage, or an advanced facial, our team looks forward to welcoming you to The Beauty Barn Leicester.
