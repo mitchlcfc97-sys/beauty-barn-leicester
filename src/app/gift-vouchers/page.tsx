@@ -103,22 +103,22 @@ export default function GiftVouchersPage() {
             </div>
           </div>
 
-          {/* In-Salon Physical Presentation Box */}
+          {/* In-Salon Physical Gift Voucher Envelope */}
           <div className="lg:col-span-5 bg-cream-100 rounded-3xl p-8 border border-cream-300 space-y-6">
             <div className="space-y-2">
-              <span className="text-xs font-bold text-bronze-600 uppercase tracking-wider">Luxury Presentation</span>
+              <span className="text-xs font-bold text-bronze-600 uppercase tracking-wider">In-Salon Collection</span>
               <h3 className="font-serif text-2xl text-sage-900 font-medium">
-                Physical Salon Gift Box
+                Physical Gift Voucher Envelope
               </h3>
               <p className="text-xs text-charcoal-800/80 leading-relaxed">
-                Prefer a physical gift voucher? Visit us at the salon by appointment to collect a beautifully presented gift voucher enclosed in our signature embossed presentation envelope and ribbon.
+                Prefer a physical gift voucher? Visit us at the salon by appointment to collect a gift voucher enclosed in our presentation envelope.
               </p>
             </div>
 
             <div className="space-y-2.5 text-xs text-charcoal-800">
               <div className="flex items-start gap-2">
                 <Check className="w-3.5 h-3.5 text-sage-800 flex-shrink-0 mt-0.5" />
-                <span>Embossed voucher with personalized message</span>
+                <span>Gift voucher in envelope with personalized message</span>
               </div>
               <div className="flex items-start gap-2">
                 <Check className="w-3.5 h-3.5 text-sage-800 flex-shrink-0 mt-0.5" />
