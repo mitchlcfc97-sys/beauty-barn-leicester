@@ -14,7 +14,7 @@ export default function Footer() {
               <Shield className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="font-serif text-sm font-semibold text-cream-50">100% Private Spa Lodge</h4>
+              <h4 className="font-serif text-sm font-semibold text-cream-50">100% Private Spa Cabin</h4>
               <p className="text-xs text-sage-200">Zero other guests during your private spa day</p>
             </div>
           </div>

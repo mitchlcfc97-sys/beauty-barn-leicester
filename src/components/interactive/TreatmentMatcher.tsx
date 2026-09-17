@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { Sparkles, Clock, Calendar, ArrowRight, RotateCcw, CheckCircle2, Heart, Smile } from 'lucide-react';
 import { useFresha } from '@/components/booking/FreshaModal';
 
@@ -325,13 +326,24 @@ export default function TreatmentMatcher() {
                   </div>
                 </div>
 
-                <button
-                  onClick={() => openFresha(result.freshaUrl, result.title)}
-                  className="px-6 py-3.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition shadow-md flex items-center justify-center gap-2"
-                >
-                  <Calendar className="w-3.5 h-3.5 text-bronze-300" />
-                  Book This Treatment on Fresha
-                </button>
+                <div className="flex flex-wrap items-center gap-3">
+                  {goal === 'pregnancy' && (
+                    <Link
+                      href="/pregnancy"
+                      className="px-5 py-3 rounded-xl border border-sage-800 text-sage-900 hover:bg-sage-50 text-xs font-semibold uppercase tracking-wider transition inline-flex items-center gap-1.5"
+                    >
+                      <Sparkles className="w-3.5 h-3.5 text-bronze-600" />
+                      View All Pregnancy Offerings
+                    </Link>
+                  )}
+                  <button
+                    onClick={() => openFresha(result.freshaUrl, result.title)}
+                    className="px-6 py-3.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition shadow-md flex items-center justify-center gap-2"
+                  >
+                    <Calendar className="w-3.5 h-3.5 text-bronze-300" />
+                    Book This Treatment on Fresha
+                  </button>
+                </div>
               </div>
             </div>
           </div>

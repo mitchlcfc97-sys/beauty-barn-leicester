@@ -18,7 +18,7 @@ const FAQS: FaqItem[] = [
   {
     question: "What should I wear or bring with me?",
     icon: <Shirt className="w-5 h-5 text-bronze-600" />,
-    answer: "For individual massages and facials: Wear whatever you are most comfortable in. We provide professional modesty draping, disposable briefs, and fluffy warm towels. For private spa packages & lodge hire: Please bring your favourite swimwear. We provide plush cosy robes, spa slippers, bath sheets, and luxury Bramley botanical toiletries.",
+    answer: "For individual massages and facials: Wear whatever you are most comfortable in. We provide professional modesty draping, disposable briefs, and fluffy warm towels. For private spa packages & cabin hire: Please bring your favourite swimwear. We provide plush cosy robes, spa slippers, bath sheets, and luxury Bramley botanical toiletries.",
   },
   {
     question: "How early should I arrive before my appointment?",
@@ -28,7 +28,7 @@ const FAQS: FaqItem[] = [
   {
     question: "Can I book for two people or a group?",
     icon: <Users className="w-5 h-5 text-bronze-600" />,
-    answer: "Yes! We specialize in duo and group experiences. We have a dedicated double treatment room for side-by-side couples massages with two therapists, as well as exclusive private hire of our wooden retreat lodge, garden, and hot tub for groups of 2 to 8 people.",
+    answer: "Yes! We specialize in duo and group experiences. We have a dedicated double treatment room for side-by-side couples massages with two therapists, as well as exclusive private hire of our wooden garden cabin and hot tub for groups of 2 to 8 people.",
   },
   {
     question: "What is your cancellation and booking policy?",

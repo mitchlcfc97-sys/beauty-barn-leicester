@@ -8,7 +8,7 @@ import SpaPackageBuilder from '@/components/booking/SpaPackageBuilder';
 export const metadata: Metadata = {
   title: 'Exclusive Private Spa Days & Hot Tub Hire Leicester',
   description:
-    'Independent family-run countryside day spa in Scraptoft. Enjoy exclusive private lodge & hot tub hire for your group, luxury afternoon tea, unlimited drinks, and bespoke treatments from £90pp.',
+    'Independent family-run countryside day spa in Scraptoft. Enjoy exclusive private cabin & hot tub hire for your group, luxury afternoon tea, unlimited drinks, and bespoke treatments from £90pp.',
   keywords: [
     'spa day leicester',
     'private spa leicester',
@@ -32,7 +32,7 @@ export default function SpaDaysPage() {
             Private Spa Days in Leicester
           </h1>
           <p className="text-sm sm:text-base text-charcoal-800/80 max-w-2xl mx-auto leading-relaxed">
-            The Beauty Barn gives you private use of our lodge, garden, and hot tub — just for you and your group. Relax at your own pace with afternoon tea, unlimited drinks, and bespoke treatments.
+            The Beauty Barn gives you private use of our garden cabin and hot tub — just for you and your group. Relax at your own pace with afternoon tea, unlimited drinks, and bespoke treatments.
           </p>
         </div>
 
@@ -84,7 +84,7 @@ export default function SpaDaysPage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
             <div className="absolute bottom-3 left-3 text-white pointer-events-none">
-              <p className="font-serif text-sm font-semibold">The Wooden Lodge</p>
+              <p className="font-serif text-sm font-semibold">The Garden Cabin</p>
               <span className="text-[10px] text-cream-200">Warm & cozy year-round</span>
             </div>
           </div>
@@ -237,7 +237,7 @@ export default function SpaDaysPage() {
             A Glimpse Inside Your Private Sanctuary
           </h2>
           <p className="text-sm text-charcoal-800/80 leading-relaxed">
-            From unhurried relaxation in our cosy wooden retreat lodge to peaceful garden downtime, see what awaits your group.
+            From unhurried relaxation in our cosy wooden retreat cabin to peaceful garden downtime, see what awaits your group.
           </p>
         </div>
 
@@ -257,7 +257,7 @@ export default function SpaDaysPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
             <div className="absolute bottom-6 left-6 right-6 text-white space-y-1 pointer-events-none">
               <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300">
-                Lodge & Garden Relaxation
+                Cabin & Garden Relaxation
               </span>
               <p className="font-serif text-xl sm:text-2xl font-semibold">
                 Afternoon Tea & Drinks Under The Countryside Sun
@@ -350,7 +350,7 @@ export default function SpaDaysPage() {
               Is the spa area really 100% private?
             </h3>
             <p className="text-xs sm:text-sm text-charcoal-800/80 leading-relaxed">
-              Yes, absolutely — all spa areas are completely private. Your group has exclusive use of the garden, lodge, hot tub, and changing area. Your treatments will be in our main salon, which may have other clients during your visit, so you may briefly cross paths as you walk to your treatment room, but your private treatment room and spa area are completely just for you and your group.
+              Yes, absolutely — all spa areas are completely private. Your group has exclusive use of the garden cabin, hot tub, and changing area. Your treatments will be in our main salon, which may have other clients during your visit, so you may briefly cross paths as you walk to your treatment room, but your private treatment room and spa area are completely just for you and your group.
             </p>
           </div>
 
@@ -368,7 +368,7 @@ export default function SpaDaysPage() {
               How does the 50% deposit work?
             </h3>
             <p className="text-xs sm:text-sm text-charcoal-800/80 leading-relaxed">
-              To secure your requested date and lodge exclusivity, a 50% non-refundable deposit is required at time of booking confirmation. The remaining balance can be settled on the day of your spa visit.
+              To secure your requested date and cabin exclusivity, a 50% non-refundable deposit is required at time of booking confirmation. The remaining balance can be settled on the day of your spa visit.
             </p>
           </div>
         </div>

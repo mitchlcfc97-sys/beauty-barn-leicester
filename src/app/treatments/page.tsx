@@ -530,7 +530,7 @@ export default function TreatmentsPage() {
           <div className="space-y-2 max-w-xl">
             <span className="text-xs uppercase tracking-widest text-bronze-400 font-bold">Looking for full day pampering?</span>
             <h2 className="font-serif text-2xl sm:text-3xl font-medium">Explore Our 100% Private Spa Packages</h2>
-            <p className="text-xs text-sage-200">Include private hot tub hire, lodge exclusivity, afternoon tea, and tailored treatments from £90pp.</p>
+            <p className="text-xs text-sage-200">Include private hot tub hire, garden cabin exclusivity, afternoon tea, and tailored treatments from £90pp.</p>
           </div>
           <Link
             href="/spa-days"

@@ -1,7 +1,7 @@
 export const BUSINESS_INFO = {
   name: "The Beauty Barn Leicester",
   tagline: "Leicester's Premier Private Day Spa & Luxury Beauty Barn",
-  description: "Exclusive private luxury day spa located in Scraptoft, Leicester. Featuring private lodge & hot tub hire, bespoke massage, advanced facials, and luxury pamper packages.",
+  description: "Exclusive private luxury day spa located in Scraptoft, Leicester. Featuring private garden cabin & hot tub hire, bespoke massage, advanced facials, and luxury pamper packages.",
   address: {
     street: "Hall Farm Barn, Beeby Road",
     locality: "Scraptoft",

@@ -94,7 +94,7 @@ export default function AboutPage() {
                 Mel and Zofia had both trained and worked professionally in beauty from the moment they left college. When 2020 hit, they joined forces with an ambitious plan to build their own bespoke countryside spa & salon.
               </p>
               <p className="text-xs sm:text-sm text-charcoal-800/80 leading-relaxed">
-                After months of painting, knocking down walls, upcycling rustic furniture, and creating the private hot tub garden lodge, The Beauty Barn officially opened its doors on <strong>1st August 2020</strong>.
+                After months of painting, knocking down walls, upcycling rustic furniture, and creating the private hot tub garden cabin, The Beauty Barn officially opened its doors on <strong>1st August 2020</strong>.
               </p>
             </div>
 
@@ -262,7 +262,7 @@ export default function AboutPage() {
         <div className="relative rounded-3xl overflow-hidden shadow-lg border border-cream-300 max-w-5xl mx-auto aspect-[4/3] sm:aspect-[16/10] md:aspect-[21/11]">
           <Image
             src="/images/team-full-lineup.jpg"
-            alt="The Beauty Barn Leicester therapist team outside the retreat lodge"
+            alt="The Beauty Barn Leicester therapist team outside the garden cabin"
             fill
             className="object-cover object-[center_30%]"
             sizes="(max-width: 1024px) 100vw, 1024px"

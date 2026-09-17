@@ -70,7 +70,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       success: true,
-      message: 'Booking request received! Our team will contact you to verify lodge availability.',
+      message: 'Booking request received! Our team will contact you to verify cabin availability.',
     });
   } catch (error) {
     console.error('Booking request error:', error);

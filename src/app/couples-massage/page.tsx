@@ -391,7 +391,7 @@ export default function CouplesMassagePage() {
           <div className="lg:col-span-4 relative h-64 sm:h-72 rounded-2xl overflow-hidden border border-sage-600 shadow-inner">
             <Image
               src="/images/outdoor-loungers.jpg"
-              alt="Private hot tub and lodge for couples spa day"
+              alt="Private hot tub and cabin for couples spa day"
               fill
               className="object-cover"
             />
@@ -456,7 +456,7 @@ export default function CouplesMassagePage() {
               ))}
             </div>
             <p className="text-xs text-charcoal-800/80 leading-relaxed italic">
-              &ldquo;An absolute hidden gem in Leicestershire! The private lodge and hot tub experience is completely uninterrupted — cosy, peaceful, and just pure bliss. The afternoon tea was delicious.&rdquo;
+              &ldquo;An absolute hidden gem in Leicestershire! The private cabin and hot tub experience is completely uninterrupted — cosy, peaceful, and just pure bliss. The afternoon tea was delicious.&rdquo;
             </p>
             <div className="pt-2 border-t border-cream-200 text-xs">
               <span className="font-semibold text-charcoal-900 block">Sophie M.</span>

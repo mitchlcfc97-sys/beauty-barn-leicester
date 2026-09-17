@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | The Beauty Barn Leicester",
   },
   description:
-    "Leicester's premier private day spa in Scraptoft. Exclusive lodge and hot tub hire for your group, couples massage, full body Swedish massage, Bramley organic facials, and pamper packages from £90pp. Book online with Fresha.",
+    "Leicester's premier private day spa in Scraptoft. Exclusive garden cabin and hot tub hire for your group, couples massage, full body Swedish massage, Bramley organic facials, and pamper packages from £90pp. Book online with Fresha.",
   keywords: [
     "massage leicester",
     "the beauty barn leicester",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Beauty Barn Leicester | Exclusive Private Day Spa & Beauty Salon",
     description:
-      "Leicester's only 100% private day spa. Relax in your exclusive lodge & hot tub with afternoon tea, Swedish massage, and luxury pamper packages.",
+      "Leicester's only 100% private day spa. Relax in your exclusive garden cabin & hot tub with afternoon tea, Swedish massage, and luxury pamper packages.",
     url: "https://www.thebeautybarnleicester.co.uk",
     siteName: "The Beauty Barn Leicester",
     locale: "en_GB",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "The Beauty Barn Leicester | Exclusive Private Day Spa",
-    description: "Private lodge & hot tub pamper packages, Swedish massage, and organic facials in Scraptoft, Leicester.",
+    description: "Private garden cabin & hot tub pamper packages, Swedish massage, and organic facials in Scraptoft, Leicester.",
   },
   alternates: {
     canonical: "https://www.thebeautybarnleicester.co.uk",

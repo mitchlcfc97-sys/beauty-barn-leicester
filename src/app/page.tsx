@@ -86,9 +86,8 @@ export default function HomePage() {
                 <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                 <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                 <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
               </div>
-              <span className="font-semibold">5.0 Star Rated</span>
+              <span className="font-semibold">4.9 Star Rated</span>
               <span className="text-charcoal-800/30">•</span>
               <span className="text-[#5b5bd6] font-semibold flex items-center gap-1.5">
                 <img src="/images/fresha-best-in-class.png" alt="Fresha Best in Class" className="w-4 h-4 object-contain inline" />
@@ -103,14 +102,13 @@ export default function HomePage() {
           </div>
 
           {/* Heading */}
-          <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-medium tracking-tight text-sage-900 leading-[1.15]">
-            Private Luxury Spa Days & <br className="hidden sm:inline" />
-            <span className="italic font-normal text-bronze-600">Tailored Beauty Rituals</span>
+          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-sage-900 max-w-4xl mx-auto leading-[1.15]">
+            Private Spa Days, Bespoke Massage & Botanical Skin Therapies
           </h1>
 
           {/* Subheading */}
           <p className="max-w-2xl mx-auto text-base sm:text-lg text-charcoal-800/80 leading-relaxed">
-            Nestled in the peaceful countryside of Scraptoft, Leicester. Enjoy your own private garden lodge & bubbling hot tub, warm hospitality, fresh homemade afternoon tea, and deeply relaxing treatments with our friendly team.
+            Nestled in the peaceful countryside of Scraptoft, Leicester. Enjoy your own private garden cabin & bubbling hot tub, warm hospitality, fresh homemade afternoon tea, and deeply relaxing treatments with our friendly team.
           </p>
 
           {/* CTAs */}
@@ -136,7 +134,7 @@ export default function HomePage() {
           <div className="pt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-charcoal-800/70 border-t border-cream-300/80 max-w-xl mx-auto">
             <div className="flex items-center gap-1.5 font-medium">
               <ShieldCheck className="w-4 h-4 text-emerald-600" />
-              <span>Exclusive Lodge & Tub Hire</span>
+              <span>Exclusive Cabin & Tub Hire</span>
             </div>
             <div className="flex items-center gap-1.5 font-medium">
               <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
@@ -358,7 +356,7 @@ export default function HomePage() {
                 <span className="italic text-bronze-300">Warm, Inviting & Just for Your Group.</span>
               </h2>
               <p className="text-sage-200 text-sm sm:text-base leading-relaxed">
-                As an independent, family-run business, we believe a spa day should feel like a true retreat — personal, unhurried, and genuinely welcoming. When you book a spa day with us, our heated garden lodge and steaming hot tub are exclusively reserved just for you and your guests to unwind in peace, while our salon remains open for one-on-one appointments.
+                As an independent, family-run business, we believe a spa day should feel like a true retreat — personal, unhurried, and genuinely welcoming. When you book a spa day with us, our heated garden cabin and steaming hot tub are exclusively reserved just for you and your guests to unwind in peace, while our salon remains open for one-on-one appointments.
               </p>
               <p className="text-sage-200/90 text-xs sm:text-sm leading-relaxed">
                 Snuggle up in soft robes with cosy blankets and hot water bottles, sip freshly brewed teas or chilled drinks, and enjoy our homemade afternoon tea before your therapist welcomes you for your treatments.
@@ -370,8 +368,8 @@ export default function HomePage() {
                     <Check className="w-3.5 h-3.5" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-semibold text-cream-50">Cosy Lodge & Hot Tub</h4>
-                    <p className="text-xs text-sage-300">Heated wooden lodge with dedicated private hot tub for your group</p>
+                    <h4 className="text-sm font-semibold text-cream-50">Cosy Cabin & Hot Tub</h4>
+                    <p className="text-xs text-sage-300">Heated wooden cabin with dedicated private hot tub for your group</p>
                   </div>
                 </div>
 
@@ -448,7 +446,7 @@ export default function HomePage() {
                   <div className="relative h-48 sm:h-52 -mt-2 -mx-2 rounded-2xl overflow-hidden shadow-inner">
                     <Image
                       src="/images/outdoor-loungers.jpg"
-                      alt="Private daybeds and spa lodge at The Beauty Barn"
+                      alt="Private daybeds and spa cabin at The Beauty Barn"
                       fill
                       className="object-cover"
                     />
@@ -469,7 +467,7 @@ export default function HomePage() {
                   </div>
 
                   <ul className="space-y-2 text-xs text-sage-200">
-                    <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-bronze-400 flex-shrink-0" /> Exclusive private hot tub & lodge hire (3.5 - 5h)</li>
+                    <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-bronze-400 flex-shrink-0" /> Exclusive private hot tub & cabin hire (3.5 - 5h)</li>
                     <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-bronze-400 flex-shrink-0" /> Homemade afternoon tea served before treatments & unlimited drinks</li>
                     <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-bronze-400 flex-shrink-0" /> 1 x 60m or 2 x 30m treatments per person</li>
                   </ul>
@@ -498,7 +496,7 @@ export default function HomePage() {
                   <div className="space-y-1.5">
                     <h3 className="font-serif text-2xl text-cream-50 font-medium">The Deluxe Experience</h3>
                     <p className="text-xs text-sage-200 leading-relaxed">
-                      Pure unhurried decadence: extended private lodge & hot tub access, afternoon tea before treatments, and 90 minutes of treatments.
+                      Pure unhurried decadence: extended private cabin & hot tub access, afternoon tea before treatments, and 90 minutes of treatments.
                     </p>
                   </div>
 
@@ -507,7 +505,7 @@ export default function HomePage() {
                   </div>
 
                   <ul className="space-y-2 text-xs text-sage-200">
-                    <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-bronze-400 flex-shrink-0" /> Extended private lodge & hot tub hire (4 - 5h)</li>
+                    <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-bronze-400 flex-shrink-0" /> Extended private cabin & hot tub hire (4 - 5h)</li>
                     <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-bronze-400 flex-shrink-0" /> Homemade afternoon tea served before treatments & unlimited drinks</li>
                     <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-bronze-400 flex-shrink-0" /> Full 90m treatments (1 x 90m ritual or 60m + 30m combo)</li>
                   </ul>
@@ -591,7 +589,7 @@ export default function HomePage() {
             Life at The Beauty Barn
           </h2>
           <p className="text-sm text-charcoal-800/70">
-            Explore our private retreat in Scraptoft—from our bubbling hot tub and cosy wooden lodge to our candlelit treatment suites.
+            Explore our private retreat in Scraptoft—from our bubbling hot tub and cosy wooden cabin to our candlelit treatment suites.
           </p>
         </div>
 
@@ -642,7 +640,7 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-5 left-5 right-5 text-white">
               <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block mb-1">Private Retreat</span>
-              <h3 className="font-serif text-xl font-medium">The Spa Lodge</h3>
+              <h3 className="font-serif text-xl font-medium">The Garden Cabin</h3>
               <p className="text-xs text-cream-200/90 mt-1 line-clamp-2">Timber beams, plush cushions, warm blankets, hot water bottles, and cosy candlelit charm.</p>
             </div>
           </div>
@@ -756,7 +754,7 @@ export default function HomePage() {
               "We Built The Beauty Barn to Give You Complete Serenity"
             </h2>
             <p className="text-sm text-charcoal-800/80 leading-relaxed">
-              We started The Beauty Barn in 2020 with a dream: an authentic countryside sanctuary where nobody is ever rushed, your garden lodge and hot tub are exclusively your own, and every guest feels completely at home.
+              We started The Beauty Barn in 2020 with a dream: an authentic countryside sanctuary where nobody is ever rushed, your garden cabin and hot tub are exclusively your own, and every guest feels completely at home.
             </p>
             <p className="text-sm text-charcoal-800/80 leading-relaxed">
               Whether you're visiting for an afternoon tea spa package, a Bramley botanical massage, or an advanced facial, our team looks forward to welcoming you to The Beauty Barn Leicester.

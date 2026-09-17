@@ -74,31 +74,32 @@ export const REVIEWS: Review[] = [
     name: "Sophie M.",
     rating: 5,
     packageOrService: "Private Spa Day & Afternoon Tea",
-    text: "An absolute hidden gem in Leicestershire! The private lodge and hot tub experience is completely uninterrupted — cosy, peaceful, and just pure bliss. The afternoon tea was delicious and the staff couldn't do enough for us.",
+    text: "An absolute hidden gem in Leicestershire! The private cabin and hot tub experience is completely uninterrupted — cosy, peaceful, and just pure bliss. The afternoon tea was delicious and the staff couldn't do enough for us.",
     date: "Google Review",
     source: "Google"
   },
   {
     id: "rev-google-2",
-    name: "Charlotte B.",
+    name: "Sophie T.",
     rating: 5,
-    packageOrService: "Deep Tissue Massage & Facial",
-    text: "Hands down the best massage experience I've ever had. Such a tranquil and spotless barn setting. From the minute you enter through the gates, all the stresses of the week melt away. Highly recommend!",
+    packageOrService: "Classic Spa Package",
+    text: "We booked the Classic Spa Package for my sister's 30th birthday and it exceeded all expectations. The garden cabin is so cosy, the hot tub was lovely and warm, and the full body massage was heavenly.",
     date: "Google Review",
     source: "Google"
   },
   {
     id: "rev-google-3",
-    name: "Hannah W.",
+    name: "Charlotte H.",
     rating: 5,
-    packageOrService: "Couples Double Suite Package",
-    text: "Booked the double treatment room for my partner's birthday. The synchronised massage and facial was heavenly. The setting at Hall Farm Barn is stunning and peaceful. Will definitely be returning!",
+    packageOrService: "Afternoon Tea & Private Spa",
+    text: "Cannot recommend The Beauty Barn enough! The afternoon tea was incredible and having the whole hot tub and cabin area just to ourselves felt so exclusive and luxurious.",
     date: "Google Review",
     source: "Google"
   }
 ];
 
 // Direct link to all 2,500+ verified reviews on Fresha with partner tracking
-export const FRESHA_REVIEWS_URL = "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/reviews?pId=354459";
+export const FRESHA_REVIEWS_URL = "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/reviews";
 export const FRESHA_PROFILE_URL = "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429?pId=354459";
-export const GOOGLE_REVIEWS_URL = "https://www.google.com/search?q=The+Beauty+Barn+Leicester+reviews";
+// Direct link to Google Maps business profile & reviews
+export const GOOGLE_REVIEWS_URL = "https://www.google.com/maps/search/?api=1&query=The+Beauty+Barn+Leicester+LE7+9SJ";

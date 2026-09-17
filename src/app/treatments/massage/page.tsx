@@ -678,7 +678,7 @@ export default function MassagePage() {
             <span className="text-xs uppercase tracking-widest text-bronze-400 font-bold">Couples & Group Retreats</span>
             <h2 className="font-serif text-3xl font-medium">Couples Massage & Private Pamper Days</h2>
             <p className="text-xs sm:text-sm text-sage-200 leading-relaxed">
-              Looking for a romantic anniversary surprise or a tranquil escape with your best friend? Book our double treatment room for side-by-side massages, or pair your massage with our exclusive private hot tub lodge and afternoon tea for an unforgettable full day experience.
+              Looking for a romantic anniversary surprise or a tranquil escape with your best friend? Book our double treatment room for side-by-side massages, or pair your massage with our exclusive private hot tub garden cabin and afternoon tea for an unforgettable full day experience.
             </p>
           </div>
           <div className="flex flex-wrap gap-4">

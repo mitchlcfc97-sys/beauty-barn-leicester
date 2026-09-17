@@ -30,7 +30,7 @@ export const SPA_PACKAGES: SpaPackage[] = [
   {
     id: "classic-experience",
     name: "The Classic Spa Experience",
-    tagline: "Our signature private retreat — 60 mins of treatments, lodge, hot tub & afternoon tea",
+    tagline: "Our signature private retreat — 60 mins of treatments, cabin, hot tub & afternoon tea",
     pricePerPerson: 100, // From £100pp
     minGuests: 2,
     maxGuests: 8,
@@ -43,7 +43,7 @@ export const SPA_PACKAGES: SpaPackage[] = [
     includesLodgeAndHotTub: true,
     includesAfternoonTea: true,
     includesUnlimitedDrinks: true,
-    description: "Our most sought-after private package! Relax in your exclusive wooden lodge and private hot tub area with unlimited drinks, hot & soft drinks, and our signature afternoon tea. Includes 60 minutes of bespoke spa treatments per guest.",
+    description: "Our most sought-after private package! Relax in your exclusive garden cabin and private hot tub area with unlimited drinks, hot & soft drinks, and our signature afternoon tea. Includes 60 minutes of bespoke spa treatments per guest.",
     treatmentOptions: [
       {
         heading: "Option A: 1 x 60-Minute Treatment",
@@ -77,7 +77,7 @@ export const SPA_PACKAGES: SpaPackage[] = [
   {
     id: "deluxe-experience",
     name: "The Deluxe Spa Experience",
-    tagline: "The ultimate 90-minute treatment indulgence with extended private lodge access",
+    tagline: "The ultimate 90-minute treatment indulgence with extended private cabin access",
     pricePerPerson: 120, // From £120pp
     minGuests: 2,
     maxGuests: 6,
@@ -90,7 +90,7 @@ export const SPA_PACKAGES: SpaPackage[] = [
     includesLodgeAndHotTub: true,
     includesAfternoonTea: true,
     includesUnlimitedDrinks: true,
-    description: "Pure luxury and unhurried decadence. Enjoy extended private access to the lodge and hot tub, gourmet afternoon tea, bottomless refreshments, and a full 90 minutes of restorative treatments per person.",
+    description: "Pure luxury and unhurried decadence. Enjoy extended private access to the cabin and hot tub, gourmet afternoon tea, bottomless refreshments, and a full 90 minutes of restorative treatments per person.",
     treatmentOptions: [
       {
         heading: "Option A: 1 x 90-Minute Signature Ritual",
@@ -140,7 +140,7 @@ export const SPA_PACKAGES: SpaPackage[] = [
     includesLodgeAndHotTub: true,
     includesAfternoonTea: false,
     includesUnlimitedDrinks: true,
-    description: "Designed for quality connection and unhurried relaxation. Enjoy exclusive use of the hot tub and lodge with unlimited refreshments, plus a full 60-minute bespoke treatment of your choice.",
+    description: "Designed for quality connection and unhurried relaxation. Enjoy exclusive use of the hot tub and garden cabin with unlimited refreshments, plus a full 60-minute bespoke treatment of your choice.",
     treatmentOptions: [
       {
         heading: "Choice of 1 x 60-Minute Treatment per person",
@@ -161,7 +161,7 @@ export const SPA_PACKAGES: SpaPackage[] = [
   {
     id: "treat-and-tea",
     name: "Treat & Tea Package",
-    tagline: "Cosy lodge retreat with luxury afternoon tea & 60-minute bespoke treatment",
+    tagline: "Cosy cabin retreat with luxury afternoon tea & 60-minute bespoke treatment",
     pricePerPerson: 90, // From £90pp
     minGuests: 2,
     maxGuests: 5,
@@ -173,7 +173,7 @@ export const SPA_PACKAGES: SpaPackage[] = [
     includesLodgeAndHotTub: false,
     includesAfternoonTea: true,
     includesUnlimitedDrinks: true,
-    description: "Perfect for those who want the cosy comfort of our wooden lodge, delicious afternoon tea, and pampering treatments without the hot tub. Includes a full 60-minute treatment of your choice.",
+    description: "Perfect for those who want the cosy comfort of our garden cabin, delicious afternoon tea, and pampering treatments without the hot tub. Includes a full 60-minute treatment of your choice.",
     treatmentOptions: [
       {
         heading: "Choice of 1 x 60-Minute Treatment per person",
