@@ -405,7 +405,7 @@ export default function TreatmentsPage() {
             Treatment Add-Ons & Clinical Boosters
           </h2>
           <p className="text-xs sm:text-sm text-charcoal-800/80 leading-relaxed">
-            Elevate any appointment with therapeutic volcanic hot stones, natural bamboo canes, clinical LED light therapy, or intensive peptide and electrolyte masks.
+            Elevate any appointment with therapeutic hot stones, natural bamboo canes, clinical LED light therapy, or intensive peptide and electrolyte masks.
           </p>
         </div>
 

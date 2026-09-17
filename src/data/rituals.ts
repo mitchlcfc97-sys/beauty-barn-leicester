@@ -35,8 +35,8 @@ export const SIGNATURE_RITUALS: SignatureRitual[] = [
         description: "A gentle warming polish to smooth skin texture, stimulate circulation, and awaken the senses with rich spicy notes."
       },
       {
-        title: "Step 2: Hot Basalt Stone Massage & Bramley Botanicals",
-        description: "Heated volcanic stones melt deep muscular tightness across back, neck, shoulders, and limbs paired with warm essential oils."
+        title: "Step 2: Hot Stone Massage & Bramley Botanicals",
+        description: "Heated hot stones melt deep muscular tightness across back, neck, shoulders, and limbs paired with warm essential oils."
       },
       {
         title: "Step 3: Warm-Oil Scalp Therapy + Botanical Gua Sha Facial (90m/120m)",
@@ -45,7 +45,7 @@ export const SIGNATURE_RITUALS: SignatureRitual[] = [
     ],
     whatsIncluded: [
       "Warming cinnamon & honey back polish",
-      "Hot basalt stone thermal massage",
+      "Hot stone thermal massage",
       "Warm botanical oil scalp ritual",
       "Gua sha sculpting facial (included on 90m & 120m)",
       "Free Bramley Raspberry Seed Oil & Gua Sha Gift Cracker (on 90m & 120m)",

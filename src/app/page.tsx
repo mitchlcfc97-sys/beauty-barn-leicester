@@ -28,6 +28,7 @@ import FirstTimeGuide from '@/components/home/FirstTimeGuide';
 
 export default function HomePage() {
   const { openFresha } = useFresha();
+  const [spotlightTab, setSpotlightTab] = React.useState<'classic' | 'deluxe'>('classic');
   const popularTreatments = [
     {
       id: 'relaxing-full-body',
@@ -139,7 +140,7 @@ export default function HomePage() {
             </div>
             <div className="flex items-center gap-1.5 font-medium">
               <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
-              <span>3,000+ Five-Star Reviews</span>
+              <span>Over 2,500 Five-Star Reviews</span>
             </div>
             <div className="flex items-center gap-1.5 font-medium">
               <Coffee className="w-4 h-4 text-bronze-600" />
@@ -166,7 +167,7 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-4 left-4 right-4 text-white">
               <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">Cosy Spa Sanctuary</span>
-              <p className="font-serif text-lg font-medium">Garden Lodge & Grounds</p>
+              <p className="font-serif text-lg font-medium">Garden Cabin</p>
             </div>
           </div>
 
@@ -180,7 +181,7 @@ export default function HomePage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             <div className="absolute bottom-4 left-4 right-4 text-white">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">Hydrotherapy Jets</span>
+              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">Luxury Relaxation</span>
               <p className="font-serif text-lg font-medium">Private Hot Tub Area</p>
             </div>
           </div>
@@ -415,41 +416,110 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="lg:col-span-5 bg-sage-800/60 p-6 sm:p-8 rounded-3xl border border-sage-700 space-y-6 overflow-hidden">
-              <div className="relative h-48 sm:h-52 -mt-2 -mx-2 rounded-2xl overflow-hidden shadow-inner">
-                <Image
-                  src="/images/outdoor-loungers.jpg"
-                  alt="Private daybeds and spa lodge"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute top-3 right-3 px-2.5 py-1 bg-bronze-500 text-white text-[10px] font-bold uppercase tracking-wider rounded-full shadow">
-                  Lodge & Tub Hire
+            <div className="lg:col-span-5 bg-sage-800/60 p-6 sm:p-8 rounded-3xl border border-sage-700 space-y-5 overflow-hidden">
+              <div className="flex items-center justify-between gap-2 border-b border-sage-700/80 pb-3">
+                <span className="text-xs font-bold text-bronze-400 tracking-wider uppercase">Package Spotlight</span>
+                <div className="flex rounded-xl bg-sage-900/70 p-1 border border-sage-700">
+                  <button
+                    onClick={() => setSpotlightTab('classic')}
+                    className={`px-3 py-1 text-xs font-semibold rounded-lg transition ${
+                      spotlightTab === 'classic'
+                        ? 'bg-bronze-500 text-white shadow'
+                        : 'text-sage-300 hover:text-cream-50'
+                    }`}
+                  >
+                    Classic (60m)
+                  </button>
+                  <button
+                    onClick={() => setSpotlightTab('deluxe')}
+                    className={`px-3 py-1 text-xs font-semibold rounded-lg transition ${
+                      spotlightTab === 'deluxe'
+                        ? 'bg-bronze-500 text-white shadow'
+                        : 'text-sage-300 hover:text-cream-50'
+                    }`}
+                  >
+                    Deluxe (90m)
+                  </button>
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <span className="text-xs font-bold text-bronze-400 tracking-wider uppercase">Package Spotlight</span>
-                <h3 className="font-serif text-2xl text-cream-50 font-medium">The Classic Experience</h3>
-                <p className="text-xs text-sage-200">Our signature private package with hot tub, afternoon tea, and 60 minutes of bespoke treatments.</p>
-              </div>
+              {spotlightTab === 'classic' ? (
+                <>
+                  <div className="relative h-48 sm:h-52 -mt-2 -mx-2 rounded-2xl overflow-hidden shadow-inner">
+                    <Image
+                      src="/images/outdoor-loungers.jpg"
+                      alt="Private daybeds and spa lodge at The Beauty Barn"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute top-3 right-3 px-2.5 py-1 bg-bronze-500 text-white text-[10px] font-bold uppercase tracking-wider rounded-full shadow">
+                      60m Treatments
+                    </div>
+                  </div>
 
-              <div className="text-3xl font-serif font-bold text-cream-50">
-                From £100 <span className="text-sm font-sans font-normal text-sage-300">per person (Tiered by group size)</span>
-              </div>
+                  <div className="space-y-1.5">
+                    <h3 className="font-serif text-2xl text-cream-50 font-medium">The Classic Experience</h3>
+                    <p className="text-xs text-sage-200 leading-relaxed">
+                      Our signature private package with hot tub, afternoon tea served before treatments, and 60 minutes of bespoke therapies.
+                    </p>
+                  </div>
 
-              <ul className="space-y-2 text-xs text-sage-200">
-                <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-bronze-400" /> Private hot tub & lodge relaxation</li>
-                <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-bronze-400" /> Unlimited drinks & Afternoon Tea</li>
-                <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-bronze-400" /> 1 x 60m or 2 x 30m treatments per person</li>
-              </ul>
+                  <div className="text-3xl font-serif font-bold text-cream-50">
+                    From £100 <span className="text-sm font-sans font-normal text-sage-300">per person (Tiered by group size)</span>
+                  </div>
 
-              <Link
-                href="/spa-days#package-builder"
-                className="w-full py-3 rounded-xl bg-cream-50 text-sage-900 font-semibold text-xs uppercase tracking-wider hover:bg-cream-100 transition flex items-center justify-center gap-1.5 shadow"
-              >
-                Customize & Check Dates
-              </Link>
+                  <ul className="space-y-2 text-xs text-sage-200">
+                    <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-bronze-400 flex-shrink-0" /> Exclusive private hot tub & lodge hire (3.5 - 5h)</li>
+                    <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-bronze-400 flex-shrink-0" /> Homemade afternoon tea served before treatments & unlimited drinks</li>
+                    <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-bronze-400 flex-shrink-0" /> 1 x 60m or 2 x 30m treatments per person</li>
+                  </ul>
+
+                  <Link
+                    href="/spa-days#package-builder"
+                    className="w-full py-3 rounded-xl bg-cream-50 text-sage-900 font-semibold text-xs uppercase tracking-wider hover:bg-cream-100 transition flex items-center justify-center gap-1.5 shadow"
+                  >
+                    Customize & Check Dates
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <div className="relative h-48 sm:h-52 -mt-2 -mx-2 rounded-2xl overflow-hidden shadow-inner">
+                    <Image
+                      src="/images/candlelit-treatment-bed.jpg"
+                      alt="Candlelit treatment suite at The Beauty Barn"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute top-3 right-3 px-2.5 py-1 bg-bronze-500 text-white text-[10px] font-bold uppercase tracking-wider rounded-full shadow">
+                      90m Treatments
+                    </div>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <h3 className="font-serif text-2xl text-cream-50 font-medium">The Deluxe Experience</h3>
+                    <p className="text-xs text-sage-200 leading-relaxed">
+                      Pure unhurried decadence: extended private lodge & hot tub access, afternoon tea before treatments, and 90 minutes of treatments.
+                    </p>
+                  </div>
+
+                  <div className="text-3xl font-serif font-bold text-cream-50">
+                    From £120 <span className="text-sm font-sans font-normal text-sage-300">per person (Tiered by group size)</span>
+                  </div>
+
+                  <ul className="space-y-2 text-xs text-sage-200">
+                    <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-bronze-400 flex-shrink-0" /> Extended private lodge & hot tub hire (4 - 5h)</li>
+                    <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-bronze-400 flex-shrink-0" /> Homemade afternoon tea served before treatments & unlimited drinks</li>
+                    <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-bronze-400 flex-shrink-0" /> Full 90m treatments (1 x 90m ritual or 60m + 30m combo)</li>
+                  </ul>
+
+                  <Link
+                    href="/spa-days#package-builder"
+                    className="w-full py-3 rounded-xl bg-cream-50 text-sage-900 font-semibold text-xs uppercase tracking-wider hover:bg-cream-100 transition flex items-center justify-center gap-1.5 shadow"
+                  >
+                    Customize & Check Dates
+                  </Link>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -632,14 +702,14 @@ export default function HomePage() {
         {/* Video Atmosphere Feature */}
         <div className="relative rounded-3xl overflow-hidden shadow-lg border border-cream-300 bg-charcoal-950 aspect-[16/9] sm:aspect-[21/9] max-h-[440px]">
           <video
-            src="/videos/barn-video-1.mp4"
-            poster="/images/barn-entrance.jpg"
+            src="/videos/private-cabin-garden-tour.mp4"
+            poster="/images/spa-garden-overview.jpg"
             preload="metadata"
             autoPlay
             loop
             muted
             playsInline
-            className="w-full h-full object-cover opacity-85"
+            className="w-full h-full object-cover opacity-100"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
           <div className="absolute bottom-6 left-6 right-6 text-white flex flex-col sm:flex-row sm:items-end justify-between gap-4 pointer-events-none">
@@ -782,7 +852,7 @@ export default function HomePage() {
             Verified Client Reviews
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-medium tracking-tight text-sage-900">
-            Over 3,000 Five-Star Reviews
+            Over 2,500 Five-Star Reviews
           </h2>
           <p className="text-sm text-charcoal-800/70 leading-relaxed">
             Read genuine feedback from our clients across Fresha and Google — 100% verified 5-star experiences.
@@ -792,7 +862,7 @@ export default function HomePage() {
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-5 h-5 text-amber-500 fill-amber-500" />
               ))}
-              <span className="text-sm font-bold text-charcoal-900 ml-2">5.0 / 5.0</span>
+              <span className="text-sm font-bold text-charcoal-900 ml-2">4.9 / 5.0</span>
             </div>
             <span className="hidden sm:block text-charcoal-800/30">·</span>
             <a
@@ -802,7 +872,7 @@ export default function HomePage() {
               className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#00b0b9]/10 hover:bg-[#00b0b9]/20 border border-[#00b0b9]/30 transition text-xs font-semibold text-[#007a80]"
             >
               <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
-              3,000+ on Fresha
+              2,500+ on Fresha
             </a>
             <a
               href={GOOGLE_REVIEWS_URL}
@@ -811,7 +881,7 @@ export default function HomePage() {
               className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 border border-blue-200 transition text-xs font-semibold text-blue-700"
             >
               <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg>
-              5.0 on Google
+              4.9 on Google
             </a>
           </div>
         </div>
@@ -862,7 +932,7 @@ export default function HomePage() {
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs sm:text-sm font-semibold transition shadow-md"
           >
             <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
-            <span>Read 3,000+ Reviews on Fresha</span>
+            <span>Read 2,500+ Reviews on Fresha</span>
             <ArrowRight className="w-4 h-4" />
           </a>
           <a

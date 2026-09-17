@@ -35,7 +35,7 @@ export default function MassagePage() {
             Therapeutic Massage in Leicester
           </h1>
           <p className="text-sm sm:text-base text-charcoal-800/80 max-w-2xl mx-auto leading-relaxed">
-            Unwind in our tranquil countryside sanctuary. We offer tailored full body massages, targeted deep tissue therapies with natural bamboo canes and volcanic stones, soothing Bramley rituals, and duo treatments in our relaxing single and double rooms.
+            Unwind in our tranquil countryside sanctuary. We offer tailored full body massages, targeted deep tissue therapies with natural bamboo canes and hot stones, soothing Bramley rituals, and duo treatments in our relaxing single and double rooms.
           </p>
         </div>
 
@@ -435,13 +435,13 @@ export default function MassagePage() {
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl font-medium text-sage-900 leading-tight">
                 Deep Tissue Tension Relief: <br className="hidden sm:inline" />
-                <span className="italic font-normal text-bronze-600">Bamboo Canes & Volcanic Stones</span>
+                <span className="italic font-normal text-bronze-600">Bamboo Canes & Hot Stones</span>
               </h2>
               <p className="text-sm text-charcoal-800/80 leading-relaxed">
                 Persistent desk posture, heavy lifting, or everyday stress can cause stubborn tightness across the shoulders, neck, and lower back. Our deep tissue sessions are designed to break down chronic knots and restore muscular fluidity.
               </p>
               <p className="text-sm text-charcoal-800/80 leading-relaxed">
-                Tailored with your chosen pressure — from firm therapeutic hands-on myofascial kneading to the deep thermal penetration of hot volcanic basalt stones or smooth natural bamboo canes.
+                Tailored with your chosen pressure — from firm therapeutic hands-on myofascial kneading to the deep thermal penetration of hot stones or smooth natural bamboo canes.
               </p>
             </div>
 
@@ -453,9 +453,9 @@ export default function MassagePage() {
                 </p>
               </div>
               <div className="p-3.5 rounded-2xl bg-white border border-cream-200 shadow-sm">
-                <h4 className="text-xs font-bold text-sage-900 uppercase tracking-wider">Hot Volcanic Stones</h4>
+                <h4 className="text-xs font-bold text-sage-900 uppercase tracking-wider">Hot Stones</h4>
                 <p className="text-xs text-charcoal-800/70 mt-1 leading-relaxed">
-                  Heated basalt stones radiate deep soothing warmth directly into contracted muscle tissue, melting away stiffness.
+                  Heated stones radiate deep soothing warmth directly into contracted muscle tissue, melting away stiffness.
                 </p>
               </div>
             </div>
@@ -518,7 +518,7 @@ export default function MassagePage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {/* Add-on 1: Volcanic Hot Stones */}
+          {/* Add-on 1: Hot Stones */}
           <div className="bg-white rounded-3xl p-6 border border-cream-300 shadow-sm flex flex-col justify-between">
             <div className="space-y-3">
               <div className="flex items-center justify-between">
@@ -527,9 +527,9 @@ export default function MassagePage() {
                 </span>
                 <span className="font-serif text-xl font-bold text-sage-900">+£5</span>
               </div>
-              <h3 className="font-serif text-lg font-medium text-charcoal-900">Hot Volcanic Stones</h3>
+              <h3 className="font-serif text-lg font-medium text-charcoal-900">Hot Stones</h3>
               <p className="text-xs text-charcoal-800/70 leading-relaxed">
-                Smooth volcanic basalt stones radiate comforting heat deep into tight muscle layers without excessive pressure, melting stubborn tension.
+                Smooth heated stones radiate comforting heat deep into tight muscle layers without excessive pressure, melting stubborn tension.
               </p>
             </div>
             <div className="pt-4 mt-4 border-t border-cream-200 text-xs text-sage-900 font-medium">

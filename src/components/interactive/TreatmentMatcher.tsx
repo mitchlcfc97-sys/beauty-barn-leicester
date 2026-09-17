@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { Sparkles, Clock, Calendar, ArrowRight, RotateCcw, CheckCircle2, Heart, Smile } from 'lucide-react';
@@ -57,17 +57,17 @@ const MATCHES: Record<string, MatchResult> = {
     duration: '60 mins',
     price: '£60',
     reason: 'Systematic deep pressure addressing postural imbalance, tight glutes, back tightness, and tight hamstrings.',
-    highlights: ['Firm, therapeutic pressure', 'Natural bamboo canes or volcanic stones available', 'Full muscular reset'],
+    highlights: ['Firm, therapeutic pressure', 'Natural bamboo canes or hot stones available', 'Full muscular reset'],
     freshaUrl: 'https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A18353636',
   },
   'knots-extended': {
-    title: 'The Deep Tissue Full Body with Volcanic Stones',
-    category: 'Thermal Muscle Therapy',
-    duration: '60 - 90 mins',
-    price: 'From £65',
-    reason: 'Penetrates contracted fascia with thermal heat, softening stubborn bands with zero discomfort.',
-    highlights: ['Heated basalt stones soften deep tissue', 'Myofascial knot release', 'Long-lasting structural relief'],
-    freshaUrl: 'https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A18353636',
+    title: 'The Full Indulgence Ritual',
+    category: '90-Min Massage & Facial Combination',
+    duration: '90 mins',
+    price: '£100',
+    reason: 'The ultimate tension-melting ritual. Combines a 45-minute focused deep back, neck & shoulder massage with a 45-minute restorative botanical facial.',
+    highlights: ['45m targeted deep pressure knot release', '45m bespoke botanical facial & scalp work', 'Complete head-to-toe muscular and mental reset'],
+    freshaUrl: 'https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8461617',
   },
   'skin-quick': {
     title: 'The Mini Bramley Facial',
@@ -96,14 +96,32 @@ const MATCHES: Record<string, MatchResult> = {
     highlights: ['Dermaplaning + Microneedling combined', 'Deep lymphatic toxin flush', 'Ultimate medical-grade radiant glow'],
     freshaUrl: 'https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A6373754',
   },
-  'pregnancy-any': {
+  'pregnancy-quick': {
     title: 'The Bramley Mother-To-Be Back Massage',
-    category: 'Specialist Prenatal Care',
-    duration: '30 - 60 mins',
-    price: '£45 - £65',
-    reason: 'Features our award-winning tummy cushion so you can safely lie comfortably on your stomach and ease lower back ache.',
-    highlights: ['Award-winning lie-on-stomach pregnancy pillow', 'Relieves lumbar & sciatic fatigue', '100% obstetric-safe natural botanicals'],
+    category: 'Specialist Targeted Prenatal Care',
+    duration: '30 mins',
+    price: '£45',
+    reason: 'Features our award-winning tummy cushion so you can safely lie comfortably on your stomach to ease lower back, hip, and lumbar fatigue.',
+    highlights: ['Award-winning lie-on-stomach pregnancy pillow', 'Targeted lumbar & sciatic fatigue relief', '100% obstetric-safe natural Bramley botanicals'],
     freshaUrl: 'https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A27473921',
+  },
+  'pregnancy-standard': {
+    title: 'The Bramley Mother-To-Be Full Body Massage',
+    category: 'Full Body Prenatal Care',
+    duration: '60 mins',
+    price: '£65',
+    reason: 'Comprehensive head-to-toe prenatal massage using supportive cushioning and gentle botanical oils to soothe swollen legs, aching back, and tired hips.',
+    highlights: ['Full body tension & fluid retention relief', 'Comfortable supportive positioning', 'Nourishing Bramley oils safe for mum & baby'],
+    freshaUrl: 'https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A27473921',
+  },
+  'pregnancy-extended': {
+    title: 'The Mum-To-Be Luxury Pamper Packages',
+    category: 'Half-Day Pregnancy Sanctuary',
+    duration: '3 - 4.5 Hours',
+    price: 'From £170 (Bronze £170 | Silver £215 | Gold £245)',
+    reason: 'The ultimate prenatal retreat: includes luxury spa manicure & pedicure with foot soak, ergonomic pregnancy back massage, and ultra-relaxing botanical facial.',
+    highlights: ['Comprehensive 3 to 4.5 hour luxury pamper', 'Luxury pedicure & manicure with warm soak', 'Pregnancy massage + custom botanical facial'],
+    freshaUrl: 'https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8461547',
   },
   'duo-any': {
     title: 'Couples / Duo Relaxing Massage in Double Room',
@@ -128,9 +146,7 @@ export default function TreatmentMatcher() {
 
   // Determine key
   let result: MatchResult | null = null;
-  if (goal === 'pregnancy') {
-    result = MATCHES['pregnancy-any'];
-  } else if (goal === 'duo') {
+  if (goal === 'duo') {
     result = MATCHES['duo-any'];
   } else if (goal && time) {
     const key = `${goal}-${time}`;

@@ -8,7 +8,7 @@ export interface Review {
   source: 'Google' | 'Fresha' | 'Facebook';
 }
 
-// Real verified reviews sourced from Fresha (5/5 rating — 3,000+ reviews total)
+// Real verified reviews sourced from Fresha & Google (4.9 rating — 2,500+ reviews total)
 // Fresha profile: https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/reviews
 //
 // ⚠️  IMPORTANT: Only add reviews with rating === 5 here.
@@ -74,7 +74,7 @@ export const REVIEWS: Review[] = [
     name: "Sophie M.",
     rating: 5,
     packageOrService: "Private Spa Day & Afternoon Tea",
-    text: "An absolute hidden gem in Leicestershire! The private lodge and hot tub experience is completely uninterrupted — no strangers, just pure bliss. The afternoon tea was delicious and the staff couldn't do enough for us.",
+    text: "An absolute hidden gem in Leicestershire! The private lodge and hot tub experience is completely uninterrupted — cosy, peaceful, and just pure bliss. The afternoon tea was delicious and the staff couldn't do enough for us.",
     date: "Google Review",
     source: "Google"
   },
@@ -98,7 +98,7 @@ export const REVIEWS: Review[] = [
   }
 ];
 
-// Direct link to all 3,000+ verified reviews on Fresha with partner tracking
+// Direct link to all 2,500+ verified reviews on Fresha with partner tracking
 export const FRESHA_REVIEWS_URL = "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/reviews?pId=354459";
 export const FRESHA_PROFILE_URL = "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429?pId=354459";
-export const GOOGLE_REVIEWS_URL = "https://www.google.com/maps/place/The+Beauty+Barn+Leicester/@52.6472,-1.0421,17z";
+export const GOOGLE_REVIEWS_URL = "https://www.google.com/search?q=The+Beauty+Barn+Leicester+reviews";

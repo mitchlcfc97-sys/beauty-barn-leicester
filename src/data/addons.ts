@@ -14,12 +14,12 @@ export const TREATMENT_ADDONS: TreatmentAddon[] = [
   // MASSAGE ENHANCEMENTS
   {
     id: "addon-hot-stones",
-    name: "Heated Volcanic Hot Stones",
+    name: "Hot Stones",
     category: "massage",
     price: "+£5",
     priceNum: 5,
     duration: "Integrated into service",
-    description: "Smooth basalt river stones heated to therapeutic temperature are worked into your massage, penetrating deep muscle tissue without painful pressure to dissolve stubborn knots.",
+    description: "Smooth heated stones worked into your massage, penetrating deep muscle tissue without painful pressure to dissolve stubborn knots.",
     benefits: ["Melts deep muscle tension", "Increases local circulation", "Induces profound nervous system relaxation"],
     recommendedWith: "Back, Neck & Shoulder, Foot & Leg, or Full Body Massage"
   },

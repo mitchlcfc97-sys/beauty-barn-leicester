@@ -131,8 +131,8 @@ export default function AboutPage() {
               <span className="text-xs font-medium text-charcoal-800/70">Private Spa Hire</span>
             </div>
             <div className="p-4 rounded-2xl bg-cream-50 border border-cream-200">
-              <span className="font-serif text-3xl font-bold text-sage-900 block mb-1">3,000+</span>
-              <span className="text-xs font-medium text-charcoal-800/70">3,000+ Five-Star Reviews</span>
+              <span className="font-serif text-3xl font-bold text-sage-900 block mb-1">2,500+</span>
+              <span className="text-xs font-medium text-charcoal-800/70">Over 2,500 Five-Star Reviews</span>
             </div>
             <div className="p-4 rounded-2xl bg-cream-50 border border-cream-200">
               <span className="font-serif text-3xl font-bold text-sage-900 block mb-1">2020</span>
