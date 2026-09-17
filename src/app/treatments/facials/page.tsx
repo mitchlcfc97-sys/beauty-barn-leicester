@@ -38,6 +38,7 @@ export default function FacialsPage() {
               src="/images/skin-hub/skin-hub-room-wide.jpg"
               alt="The Beauty Barn dedicated Skin Hub suite in Scraptoft with treatment bed and neon sign"
               fill
+              unoptimized
               className="object-cover group-hover:scale-105 transition duration-500"
               sizes="(max-width: 768px) 100vw, 50vw"
               priority
@@ -154,8 +155,9 @@ export default function FacialsPage() {
                   src="/images/treatments/microneedling-before-after.jpg"
                   alt="Bespoke Facial Before and After at The Beauty Barn Leicester"
                   fill
+                  unoptimized
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 350px"
                 />
                 <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md text-[11px] font-bold text-white uppercase tracking-wider shadow-md">
                   Before & After
@@ -192,8 +194,9 @@ export default function FacialsPage() {
                   src="/images/treatments/facials-pigmentation-before-after.png"
                   alt="Pigmentation and Sun Damage Before and After Microneedling at The Beauty Barn"
                   fill
-                  className="object-contain bg-white"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  unoptimized
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 350px"
                 />
                 <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md text-[11px] font-bold text-white uppercase tracking-wider shadow-md">
                   Clinical Case Study
@@ -230,8 +233,9 @@ export default function FacialsPage() {
                   src="/images/treatments/facials-progression-timeline.jpg"
                   alt="Example of Facial Peels for Active Acne at The Beauty Barn Leicester"
                   fill
+                  unoptimized
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 350px"
                 />
                 <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md text-[11px] font-bold text-white uppercase tracking-wider shadow-md">
                   Active Acne Peels
@@ -268,8 +272,9 @@ export default function FacialsPage() {
                   src="/images/treatments/million-dollar-facial-client.jpg"
                   alt="Smiling client holding I Feel A Million Dollars sign outside The Beauty Barn"
                   fill
+                  unoptimized
                   className="object-cover object-center"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 350px"
                 />
                 <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md text-[11px] font-bold text-white uppercase tracking-wider shadow-md">
                   Real Client Glow
@@ -353,32 +358,49 @@ export default function FacialsPage() {
             </div>
 
             <div className="grid grid-cols-3 gap-3 pt-2">
-              <div className="p-3 rounded-2xl bg-white border border-cream-200 text-center shadow-sm">
-                <span className="text-[10px] uppercase font-bold tracking-wider text-bronze-600 block">Express</span>
-                <span className="font-serif text-lg font-bold text-sage-900">£65</span>
-                <span className="text-[11px] text-charcoal-800/60 block mt-0.5">30 mins</span>
+              <div className="p-3.5 rounded-2xl bg-white border border-cream-200 text-center shadow-sm flex flex-col justify-between">
+                <div>
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-bronze-600 block">Express</span>
+                  <span className="font-serif text-xl font-bold text-sage-900">£65</span>
+                  <span className="text-[11px] text-charcoal-800/60 block mt-0.5">30 mins</span>
+                </div>
+                <button
+                  onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8493168', 'The Beauty Barn Bespoke Facial (Express 30 mins)')}
+                  className="mt-3 w-full py-2 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-[11px] font-semibold uppercase tracking-wider transition shadow-xs flex items-center justify-center gap-1"
+                >
+                  <Calendar className="w-3 h-3 text-bronze-300" />
+                  Book 30m
+                </button>
               </div>
-              <div className="p-3 rounded-2xl bg-white border-2 border-bronze-400 text-center shadow-sm relative">
+              <div className="p-3.5 rounded-2xl bg-white border-2 border-bronze-400 text-center shadow-sm relative flex flex-col justify-between">
                 <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full bg-bronze-600 text-[9px] font-bold uppercase tracking-wider text-white">Popular</span>
-                <span className="text-[10px] uppercase font-bold tracking-wider text-bronze-600 block">Signature</span>
-                <span className="font-serif text-lg font-bold text-sage-900">£100</span>
-                <span className="text-[11px] text-charcoal-800/60 block mt-0.5">60 mins</span>
+                <div>
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-bronze-600 block">Signature</span>
+                  <span className="font-serif text-xl font-bold text-sage-900">£100</span>
+                  <span className="text-[11px] text-charcoal-800/60 block mt-0.5">60 mins</span>
+                </div>
+                <button
+                  onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8493168', 'The Beauty Barn Bespoke Facial (Signature 60 mins)')}
+                  className="mt-3 w-full py-2 rounded-xl bg-bronze-600 hover:bg-bronze-700 text-white text-[11px] font-semibold uppercase tracking-wider transition shadow-xs flex items-center justify-center gap-1"
+                >
+                  <Calendar className="w-3 h-3 text-white" />
+                  Book 60m
+                </button>
               </div>
-              <div className="p-3 rounded-2xl bg-white border border-cream-200 text-center shadow-sm">
-                <span className="text-[10px] uppercase font-bold tracking-wider text-bronze-600 block">Deluxe</span>
-                <span className="font-serif text-lg font-bold text-sage-900">£130</span>
-                <span className="text-[11px] text-charcoal-800/60 block mt-0.5">90 mins</span>
+              <div className="p-3.5 rounded-2xl bg-white border border-cream-200 text-center shadow-sm flex flex-col justify-between">
+                <div>
+                  <span className="text-[10px] uppercase font-bold tracking-wider text-bronze-600 block">Deluxe</span>
+                  <span className="font-serif text-xl font-bold text-sage-900">£130</span>
+                  <span className="text-[11px] text-charcoal-800/60 block mt-0.5">90 mins</span>
+                </div>
+                <button
+                  onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8493168', 'The Beauty Barn Bespoke Facial (Deluxe 90 mins)')}
+                  className="mt-3 w-full py-2 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-[11px] font-semibold uppercase tracking-wider transition shadow-xs flex items-center justify-center gap-1"
+                >
+                  <Calendar className="w-3 h-3 text-bronze-300" />
+                  Book 90m
+                </button>
               </div>
-            </div>
-
-            <div className="pt-2 flex flex-wrap items-center gap-3">
-              <button
-                onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8493168', 'The Beauty Barn Bespoke Facial')}
-                className="px-6 py-3 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition shadow-md flex items-center gap-2"
-              >
-                <Calendar className="w-3.5 h-3.5 text-bronze-300" />
-                Book Bespoke Facial (From £65)
-              </button>
             </div>
           </div>
         </div>
@@ -407,8 +429,9 @@ export default function FacialsPage() {
                 src="/images/skin-hub/skin-hub-led-canopy.jpg"
                 alt="Clinical LED light therapy canopy arch glowing red in The Skin Hub"
                 fill
+                unoptimized
                 className="object-cover group-hover:scale-105 transition duration-500"
-                sizes="(max-width: 768px) 100vw, 33vw"
+                sizes="(max-width: 768px) 100vw, 500px"
               />
               <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md text-[11px] font-bold text-white uppercase tracking-wider shadow-md">
                 Clinical Phototherapy
@@ -431,8 +454,9 @@ export default function FacialsPage() {
                 src="/images/skin-hub/skin-hub-entrance-door.jpg"
                 alt="Entrance door with gold Treatment Room plaque looking into The Skin Hub neon"
                 fill
+                unoptimized
                 className="object-cover group-hover:scale-105 transition duration-500"
-                sizes="(max-width: 768px) 100vw, 33vw"
+                sizes="(max-width: 768px) 100vw, 500px"
               />
               <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md text-[11px] font-bold text-white uppercase tracking-wider shadow-md">
                 Dedicated Room
@@ -458,8 +482,9 @@ export default function FacialsPage() {
                 src="/images/skin-hub/skin-hub-treatment-station.jpg"
                 alt="MEDI+ cosmeceuticals and sterilisation station in The Skin Hub"
                 fill
+                unoptimized
                 className="object-cover group-hover:scale-105 transition duration-500"
-                sizes="(max-width: 768px) 100vw, 33vw"
+                sizes="(max-width: 768px) 100vw, 500px"
               />
               <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md text-[11px] font-bold text-white uppercase tracking-wider shadow-md">
                 MEDI+ Cosmeceuticals
@@ -524,20 +549,81 @@ export default function FacialsPage() {
                 </div>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-cream-200 flex items-center justify-between">
-                <div>
-                  <span className="text-[10px] text-charcoal-800/60 block">Price</span>
-                  <span className="font-serif text-lg font-bold text-sage-900">{treatment.price}</span>
-                </div>
+              {treatment.id === 'beauty-barn-bespoke-facial' ? (
+                <div className="pt-5 mt-6 border-t border-cream-200 space-y-2.5 w-full">
+                  <div className="flex items-center justify-between pb-1">
+                    <span className="text-[11px] font-bold text-sage-900 uppercase tracking-wider">
+                      Available Options:
+                    </span>
+                    <span className="text-[11px] text-bronze-700 font-semibold">
+                      From £65
+                    </span>
+                  </div>
 
-                <button
-                  onClick={() => openFresha(treatment.freshaUrl, treatment.name)}
-                  className="px-5 py-2.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-medium transition shadow-sm flex items-center gap-1.5"
-                >
-                  <Calendar className="w-3.5 h-3.5 text-bronze-300" />
-                  Book with Fresha
-                </button>
-              </div>
+                  {/* Express 30m */}
+                  <div className="flex items-center justify-between p-2.5 rounded-2xl bg-cream-50/90 border border-cream-200 hover:border-bronze-300 transition">
+                    <div>
+                      <span className="text-xs font-bold text-sage-900 block">Express Bespoke Facial</span>
+                      <span className="text-[11px] text-charcoal-800/65">30 mins • £65</span>
+                    </div>
+                    <button
+                      onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8493168', 'The Beauty Barn Bespoke Facial (Express 30 mins)')}
+                      className="px-3.5 py-1.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-[11px] font-semibold uppercase tracking-wider transition shadow-xs flex items-center gap-1"
+                    >
+                      <Calendar className="w-3 h-3 text-bronze-300" />
+                      Book (£65)
+                    </button>
+                  </div>
+
+                  {/* Signature 60m */}
+                  <div className="flex items-center justify-between p-2.5 rounded-2xl bg-bronze-50/40 border border-bronze-300 hover:border-bronze-400 transition">
+                    <div>
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-xs font-bold text-sage-900 block">Signature Bespoke Facial</span>
+                        <span className="px-1.5 py-0.2 rounded-full bg-bronze-600 text-white text-[9px] font-bold uppercase tracking-wider">Popular</span>
+                      </div>
+                      <span className="text-[11px] text-charcoal-800/65">60 mins • £100</span>
+                    </div>
+                    <button
+                      onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8493168', 'The Beauty Barn Bespoke Facial (Signature 60 mins)')}
+                      className="px-3.5 py-1.5 rounded-xl bg-bronze-600 hover:bg-bronze-700 text-white text-[11px] font-semibold uppercase tracking-wider transition shadow-xs flex items-center gap-1"
+                    >
+                      <Calendar className="w-3 h-3 text-white" />
+                      Book (£100)
+                    </button>
+                  </div>
+
+                  {/* Deluxe 90m */}
+                  <div className="flex items-center justify-between p-2.5 rounded-2xl bg-cream-50/90 border border-cream-200 hover:border-bronze-300 transition">
+                    <div>
+                      <span className="text-xs font-bold text-sage-900 block">Deluxe Bespoke Facial</span>
+                      <span className="text-[11px] text-charcoal-800/65">90 mins • £130</span>
+                    </div>
+                    <button
+                      onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8493168', 'The Beauty Barn Bespoke Facial (Deluxe 90 mins)')}
+                      className="px-3.5 py-1.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-[11px] font-semibold uppercase tracking-wider transition shadow-xs flex items-center gap-1"
+                    >
+                      <Calendar className="w-3 h-3 text-bronze-300" />
+                      Book (£130)
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="pt-6 mt-6 border-t border-cream-200 flex items-center justify-between">
+                  <div>
+                    <span className="text-[10px] text-charcoal-800/60 block">Price</span>
+                    <span className="font-serif text-lg font-bold text-sage-900">{treatment.price}</span>
+                  </div>
+
+                  <button
+                    onClick={() => openFresha(treatment.freshaUrl, treatment.name)}
+                    className="px-5 py-2.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-medium transition shadow-sm flex items-center gap-1.5"
+                  >
+                    <Calendar className="w-3.5 h-3.5 text-bronze-300" />
+                    Book with Fresha
+                  </button>
+                </div>
+              )}
             </div>
           ))}
         </div>

@@ -218,7 +218,7 @@ export const TREATMENTS: Treatment[] = [
     "category": "facials",
     "categoryLabel": "Advanced Skin Clinic",
     "duration": "30 - 90 mins",
-    "price": "From £65 (Express £65 / Signature £100 / Deluxe £130)",
+    "price": "From £65",
     "priceNum": 65,
     "description": "Zofia and our skin specialists tailor every step to your unique skin condition, combining clinical active ingredients with soothing spa touches.",
     "highlights": [
