@@ -42,10 +42,10 @@ export default function FacialsPage() {
               sizes="(max-width: 768px) 100vw, 50vw"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
             <div className="absolute bottom-4 left-4 text-white">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">The Beauty Barn Sanctuary</span>
-              <p className="font-serif text-base font-medium">The Skin Hub Treatment Suite</p>
+              <span className="text-[11px] uppercase font-bold tracking-widest text-amber-300 block drop-shadow-sm">The Beauty Barn Sanctuary</span>
+              <p className="font-serif text-lg font-semibold text-white drop-shadow">The Skin Hub Treatment Suite</p>
             </div>
           </div>
 
@@ -60,10 +60,10 @@ export default function FacialsPage() {
               playsInline
               className="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />
             <div className="absolute bottom-4 left-4 text-white pointer-events-none">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">Lymphatic Drainage</span>
-              <p className="font-serif text-base font-medium">Million Dollar Facial Movements</p>
+              <span className="text-[11px] uppercase font-bold tracking-widest text-amber-300 block drop-shadow-sm">Lymphatic Drainage</span>
+              <p className="font-serif text-lg font-semibold text-white drop-shadow">Million Dollar Facial Movements</p>
             </div>
           </div>
         </div>
@@ -146,40 +146,40 @@ export default function FacialsPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* CASE 1: MICRONEEDLING ACNE SCARRING */}
+          {/* CASE 1: BESPOKE FACIAL 60 MINS */}
           <div className="bg-white rounded-3xl overflow-hidden border border-cream-300 shadow-sm hover:shadow-md transition flex flex-col justify-between">
             <div>
               <div className="relative aspect-square w-full bg-charcoal-900 overflow-hidden">
                 <Image
                   src="/images/treatments/microneedling-before-after.jpg"
-                  alt="Acne Scarring Before and After Microneedling at The Beauty Barn Leicester"
+                  alt="Bespoke Facial Before and After at The Beauty Barn Leicester"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                 />
-                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-sm text-[10px] font-semibold text-white uppercase tracking-wider">
-                  Top: Before • Bottom: After
+                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md text-[11px] font-bold text-white uppercase tracking-wider shadow-md">
+                  Before & After
                 </div>
               </div>
               <div className="p-6 space-y-2">
                 <span className="text-[11px] font-bold text-bronze-600 uppercase tracking-wider block">
-                  Microneedling & CIT
+                  Bespoke Facial (60 mins)
                 </span>
                 <h3 className="font-serif text-lg font-semibold text-sage-900">
-                  Acne Scarring & Texture Remodeling
+                  Custom Multi-Method Facial
                 </h3>
-                <p className="text-xs text-charcoal-800/75 leading-relaxed">
-                  Notice the visible reduction in deep post-acne pitting, smoothed skin texture, refined pores, and healthy new collagen generation across the jawline and cheek.
+                <p className="text-xs text-charcoal-800/85 leading-relaxed">
+                  A bespoke 60-minute facial combining tailored clinical methods — including microneedling, dermaplaning, LED light therapy, and a soothing custom hydrojelly mask — leaving skin visibly smoother, clearer, and deeply rejuvenated.
                 </p>
               </div>
             </div>
 
             <div className="p-6 pt-0">
               <button
-                onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A7386877', 'The Microneedling Collagen Induction Facial')}
-                className="w-full py-2.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition"
+                onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8493168', 'The Beauty Barn Bespoke Facial')}
+                className="w-full py-2.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition shadow-sm"
               >
-                Book Microneedling (£90)
+                Book Bespoke Facial (£100)
               </button>
             </div>
           </div>
@@ -195,7 +195,7 @@ export default function FacialsPage() {
                   className="object-contain bg-white"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                 />
-                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-sm text-[10px] font-semibold text-white uppercase tracking-wider">
+                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md text-[11px] font-bold text-white uppercase tracking-wider shadow-md">
                   Clinical Case Study
                 </div>
               </div>
@@ -206,7 +206,7 @@ export default function FacialsPage() {
                 <h3 className="font-serif text-lg font-semibold text-sage-900">
                   Pigmentation & Sun Damage Correction
                 </h3>
-                <p className="text-xs text-charcoal-800/75 leading-relaxed">
+                <p className="text-xs text-charcoal-800/85 leading-relaxed">
                   Noticeable lightening and fading of sun damage and stubborn hyperpigmentation across the cheeks, alongside visibly lifted contours, restored radiance, and an even complexion.
                 </p>
               </div>
@@ -215,37 +215,37 @@ export default function FacialsPage() {
             <div className="p-6 pt-0">
               <button
                 onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A7386877', 'The Microneedling Collagen Induction Facial')}
-                className="w-full py-2.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition"
+                className="w-full py-2.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition shadow-sm"
               >
                 Book Microneedling (£90)
               </button>
             </div>
           </div>
 
-          {/* CASE 3: 8-MONTH BREAKOUT CLEARING & HEALTH JOURNEY */}
+          {/* CASE 3: FACIAL PEELS FOR ACTIVE ACNE */}
           <div className="bg-white rounded-3xl overflow-hidden border border-cream-300 shadow-sm hover:shadow-md transition flex flex-col justify-between">
             <div>
               <div className="relative aspect-square w-full bg-charcoal-900 overflow-hidden">
                 <Image
                   src="/images/treatments/facials-progression-timeline.jpg"
-                  alt="8-Month Breakout Clearing with Chemical Peels and Microneedling at The Beauty Barn"
+                  alt="Example of Facial Peels for Active Acne at The Beauty Barn Leicester"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                 />
-                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-sm text-[10px] font-semibold text-white uppercase tracking-wider">
-                  8-Month Transformation
+                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md text-[11px] font-bold text-white uppercase tracking-wider shadow-md">
+                  Active Acne Peels
                 </div>
               </div>
               <div className="p-6 space-y-2">
                 <span className="text-[11px] font-bold text-bronze-600 uppercase tracking-wider block">
-                  Chemical Peels & Microneedling
+                  Facial Peels
                 </span>
                 <h3 className="font-serif text-lg font-semibold text-sage-900">
-                  Breakout Clearing & Barrier Health
+                  Example of Facial Peels for Active Acne
                 </h3>
-                <p className="text-xs text-charcoal-800/75 leading-relaxed">
-                  A consistent 8-month course combining targeted chemical peels and microneedling — sustained clearance of active breakouts and congestion, calming of redness, and long-term epidermal barrier repair.
+                <p className="text-xs text-charcoal-800/85 leading-relaxed">
+                  A targeted clinical course of facial peels to clear active breakouts, dissolve deep congestion, calm persistent inflammation, and restore skin barrier balance.
                 </p>
               </div>
             </div>
@@ -253,9 +253,9 @@ export default function FacialsPage() {
             <div className="p-6 pt-0">
               <button
                 onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8493168', 'The Beauty Barn Bespoke Facial')}
-                className="w-full py-2.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition"
+                className="w-full py-2.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition shadow-sm"
               >
-                Book Bespoke Facial (From £65)
+                Book Facial Peels (From £65)
               </button>
             </div>
           </div>
@@ -271,8 +271,8 @@ export default function FacialsPage() {
                   className="object-cover object-center"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                 />
-                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-sm text-[10px] font-semibold text-bronze-300 uppercase tracking-wider">
-                  Real Client Experience
+                <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md text-[11px] font-bold text-white uppercase tracking-wider shadow-md">
+                  Real Client Glow
                 </div>
               </div>
               <div className="p-6 space-y-2">
@@ -282,7 +282,7 @@ export default function FacialsPage() {
                 <h3 className="font-serif text-lg font-semibold text-sage-900">
                   &ldquo;I Feel A Million Dollars&rdquo; Glow
                 </h3>
-                <p className="text-xs text-charcoal-800/75 leading-relaxed">
+                <p className="text-xs text-charcoal-800/85 leading-relaxed">
                   Instant post-treatment luminosity, plumped deep dermal hydration, and a super-smooth glass skin finish that leaves our guests glowing from the inside out.
                 </p>
               </div>
@@ -316,15 +316,15 @@ export default function FacialsPage() {
                 playsInline
                 className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
               <div className="absolute bottom-4 left-4 right-4 text-white pointer-events-none">
-                <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block mb-0.5">
+                <span className="text-[11px] uppercase font-bold tracking-widest text-amber-300 block mb-0.5 drop-shadow-sm">
                   Post-Treatment Radiance
                 </span>
-                <p className="font-serif text-base font-semibold">
+                <p className="font-serif text-lg font-semibold text-white drop-shadow">
                   The Beauty Barn Bespoke Facial Glow
                 </p>
-                <p className="text-xs text-cream-100/90 mt-0.5">
+                <p className="text-xs text-white/95 mt-0.5 font-medium drop-shadow-sm">
                   Unfiltered, healthy glow following a tailored clinical and botanical facial in our Scraptoft sanctuary.
                 </p>
               </div>
@@ -410,7 +410,7 @@ export default function FacialsPage() {
                 className="object-cover group-hover:scale-105 transition duration-500"
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
-              <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-[10px] font-semibold text-bronze-300 uppercase tracking-wider shadow">
+              <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md text-[11px] font-bold text-white uppercase tracking-wider shadow-md">
                 Clinical Phototherapy
               </div>
             </div>
@@ -434,7 +434,7 @@ export default function FacialsPage() {
                 className="object-cover group-hover:scale-105 transition duration-500"
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
-              <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-[10px] font-semibold text-bronze-300 uppercase tracking-wider shadow">
+              <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md text-[11px] font-bold text-white uppercase tracking-wider shadow-md">
                 Dedicated Room
               </div>
             </div>
@@ -446,7 +446,7 @@ export default function FacialsPage() {
                 </p>
               </div>
               <div className="pt-2 text-[11px] font-semibold text-sage-800 border-t border-cream-200">
-                100% private, 1-on-1 certified skin specialist care
+                Dedicated 1-on-1 certified skin specialist care
               </div>
             </div>
           </div>
@@ -461,7 +461,7 @@ export default function FacialsPage() {
                 className="object-cover group-hover:scale-105 transition duration-500"
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
-              <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/70 backdrop-blur-md text-[10px] font-semibold text-bronze-300 uppercase tracking-wider shadow">
+              <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-black/85 backdrop-blur-md text-[11px] font-bold text-white uppercase tracking-wider shadow-md">
                 MEDI+ Cosmeceuticals
               </div>
             </div>
