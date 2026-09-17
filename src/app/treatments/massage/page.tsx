@@ -652,17 +652,17 @@ export default function MassagePage() {
           </div>
           <div className="flex flex-wrap gap-4">
             <Link
-              href="/spa-days"
+              href="/couples-massage"
               className="px-6 py-3.5 rounded-xl bg-bronze-500 hover:bg-bronze-600 text-white text-xs font-semibold uppercase tracking-wider transition shadow"
             >
-              Explore Private Spa Packages
+              Explore Couples Massage & Packages
             </Link>
-            <button
-              onClick={() => openFresha()}
+            <Link
+              href="/spa-days"
               className="px-6 py-3.5 rounded-xl bg-sage-800 hover:bg-sage-700 text-cream-50 text-xs font-semibold uppercase tracking-wider transition border border-sage-700"
             >
-              Book Individual / Duo Massage
-            </button>
+              Private Spa Days & Hot Tub
+            </Link>
           </div>
         </div>
       </section>

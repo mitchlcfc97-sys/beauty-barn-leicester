@@ -80,9 +80,9 @@ export default function Footer() {
           <ul className="space-y-2 text-xs text-sage-200">
             <li><Link href="/spa-days" className="hover:text-bronze-400 transition">Private Spa Days & Packages</Link></li>
             <li><Link href="/treatments/massage" className="hover:text-bronze-400 transition">Swedish & Hot Stone Massage</Link></li>
-            <li><Link href="/treatments/massage" className="hover:text-bronze-400 transition">Couples Massage Leicester</Link></li>
+            <li><Link href="/couples-massage" className="hover:text-bronze-400 transition">Couples Massage Leicester</Link></li>
             <li><Link href="/treatments/facials" className="hover:text-bronze-400 transition">Advanced Facials & Skin Hub</Link></li>
-            <li><Link href="/treatments" className="hover:text-bronze-400 transition">Deluxe Bacials & Body Rituals</Link></li>
+            <li><Link href="/rituals" className="hover:text-bronze-400 transition">Rituals</Link></li>
             <li><Link href="/bramley" className="hover:text-bronze-300 transition text-bronze-300 font-medium">Bramley British Botanicals</Link></li>
             <li><Link href="/gift-vouchers" className="hover:text-bronze-400 transition">Instant Gift Vouchers</Link></li>
             <li>

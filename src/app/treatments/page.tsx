@@ -125,6 +125,15 @@ export default function TreatmentsPage() {
           <p className="text-xs sm:text-sm text-charcoal-800/80 leading-relaxed">
             Multi-stage immersive journeys designed for transformative relaxation. Featuring synchronised dual-therapist treatments, near 3-hour holistic head-to-toe immersions, and dedicated prenatal pampering.
           </p>
+          <div className="pt-1">
+            <Link
+              href="/rituals"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-bronze-700 hover:text-bronze-800 underline"
+            >
+              <span>Explore full rituals breakdown & British botanicals guide</span>
+              <ArrowRight className="w-3 h-3" />
+            </Link>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
