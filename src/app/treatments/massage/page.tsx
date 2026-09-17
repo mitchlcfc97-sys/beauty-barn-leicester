@@ -19,10 +19,6 @@ export default function MassagePage() {
     ['dual-serenity', 'bramley-simply-divine', 'bramley-selenite-crystal', 'bramley-sleep-ritual'].includes(t.id)
   );
 
-  const pregnancyTreatments = TREATMENTS.filter(t =>
-    ['mother-to-be-massage'].includes(t.id)
-  );
-
   return (
     <div className="space-y-20 pb-24">
       {/* SEO Hero Header */}
@@ -184,19 +180,20 @@ export default function MassagePage() {
 
             {/* Booking CTAs */}
             <div className="pt-2 flex flex-wrap items-center gap-3">
+              <Link
+                href="/pregnancy"
+                className="px-6 py-3 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition shadow-md inline-flex items-center gap-2"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-bronze-300" />
+                Explore All Pregnancy Offerings & Videos <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
               <button
                 onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A27473921', 'The Bramley Mother-To-Be Back Massage')}
-                className="px-6 py-3 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition shadow-md flex items-center gap-2"
-              >
-                <Calendar className="w-3.5 h-3.5 text-bronze-300" />
-                Book Pregnancy Massage (£45 - £65)
-              </button>
-              <Link
-                href="/treatments#rituals"
                 className="px-5 py-3 rounded-xl border border-sage-300 text-sage-900 hover:bg-cream-100 text-xs font-semibold uppercase tracking-wider transition inline-flex items-center gap-1.5"
               >
-                Mum-To-Be Gold Ritual (£245) <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+                <Calendar className="w-3.5 h-3.5 text-bronze-600" />
+                Quick Book on Fresha (£45 - £65)
+              </button>
             </div>
           </div>
         </div>
@@ -322,85 +319,119 @@ export default function MassagePage() {
           </div>
         </section>
 
-        {/* Section 3: Mother-to-Be Rituals */}
+        {/* Section 3: Dedicated Mother-to-Be Showcase */}
         <section className="space-y-6">
-          <div className="border-b border-cream-300 pb-4">
-            <span className="text-xs uppercase tracking-widest text-bronze-600 font-bold">Gentle & Safe Prenatal Care</span>
-            <h2 className="font-serif text-2xl sm:text-3xl font-medium text-sage-900 mt-1">Mother-To-Be Care</h2>
-            <p className="text-xs sm:text-sm text-charcoal-800/75 mt-1">
-              Thoughtfully created for pregnancy with obstetric-safe botanicals and our signature tummy cushion.
-            </p>
+          <div className="border-b border-cream-300 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div>
+              <span className="text-xs uppercase tracking-widest text-bronze-600 font-bold">Gentle & Safe Prenatal Care</span>
+              <h2 className="font-serif text-2xl sm:text-3xl font-medium text-sage-900 mt-1">Mother-To-Be Sanctuaries</h2>
+              <p className="text-xs sm:text-sm text-charcoal-800/75 mt-1">
+                Thoughtfully created for pregnancy with obstetric-safe botanicals, our award-winning tummy cushion, and multi-hour pamper days.
+              </p>
+            </div>
+            <Link
+              href="/pregnancy"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-bronze-700 hover:text-bronze-800 self-start sm:self-auto"
+            >
+              View Full Pregnancy Hub <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {pregnancyTreatments.map((treatment) => (
-              <div
-                key={treatment.id}
-                className="bg-white rounded-3xl p-6 sm:p-8 border border-cream-300 shadow-sm hover:shadow-md transition flex flex-col justify-between"
-              >
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between text-xs text-charcoal-800/60">
-                    <span className="font-semibold text-bronze-600 uppercase tracking-wider">{treatment.categoryLabel}</span>
-                    <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> {treatment.duration}</span>
-                  </div>
-
-                  <h3 className="font-serif text-xl sm:text-2xl font-medium text-charcoal-900">
-                    {treatment.name}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-charcoal-800/70 leading-relaxed">
-                    {treatment.description}
-                  </p>
-
-                  <div className="space-y-1.5 pt-2">
-                    {treatment.highlights.map((highlight, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-xs text-charcoal-800/80">
-                        <Check className="w-3.5 h-3.5 text-sage-800 flex-shrink-0" />
-                        <span>{highlight}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="pt-6 mt-6 border-t border-cream-200 flex items-center justify-between">
-                  <div>
-                    <span className="text-[10px] text-charcoal-800/60 block">Price</span>
-                    <span className="font-serif text-lg font-bold text-sage-900">{treatment.price}</span>
-                  </div>
-
-                  <button
-                    onClick={() => openFresha(treatment.freshaUrl, treatment.name)}
-                    className="px-5 py-2.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-medium transition shadow-sm flex items-center gap-1.5"
-                  >
-                    <Calendar className="w-3.5 h-3.5 text-bronze-300" />
-                    Book on Fresha
-                  </button>
+          <div className="bg-gradient-to-br from-cream-100 via-white to-sage-50/50 rounded-3xl p-6 sm:p-10 border border-cream-300 shadow-md grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            {/* Left: Video & Media Teaser */}
+            <div className="lg:col-span-5 space-y-3">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-cream-300 bg-charcoal-950 group">
+                <video
+                  src="/videos/pregnancy-massage-support.mp4"
+                  poster="/images/candlelit-treatment-bed.jpg"
+                  preload="metadata"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+                <div className="absolute bottom-3 left-3 right-3 text-white pointer-events-none">
+                  <span className="text-[9px] uppercase font-bold tracking-widest text-bronze-300 block">Watch Real Session</span>
+                  <p className="font-serif text-sm font-semibold">Gentle Prenatal Support & Cushioning</p>
                 </div>
               </div>
-            ))}
+              <div className="flex items-center justify-between text-[11px] text-charcoal-800/70 px-1">
+                <span>✨ Safely lie on your stomach</span>
+                <span>🌿 100% Obstetric-Safe</span>
+              </div>
+            </div>
 
-            {/* Link to Mum-to-Be Full Day Spa Rituals */}
-            <div className="bg-cream-100 rounded-3xl p-6 sm:p-8 border border-cream-300 flex flex-col justify-between space-y-6">
-              <div className="space-y-3">
-                <span className="text-xs font-bold text-bronze-600 uppercase tracking-wider">Extended Indulgence</span>
-                <h3 className="font-serif text-xl sm:text-2xl font-medium text-charcoal-900">
-                  Mum-To-Be Gold Spa Ritual
+            {/* Right: The Offerings Spectrum & Link */}
+            <div className="lg:col-span-7 space-y-5">
+              <div className="space-y-2">
+                <span className="text-xs font-bold text-bronze-700 uppercase tracking-wider">Dedicated Pregnancy Suite</span>
+                <h3 className="font-serif text-2xl sm:text-3xl font-medium text-sage-900">
+                  Explore All Our Mother-To-Be Offerings
                 </h3>
                 <p className="text-xs sm:text-sm text-charcoal-800/80 leading-relaxed">
-                  Looking for the ultimate pregnancy pamper? Combine our signature stomach-cushion back massage with a luxury Bramley botanical facial, gentle foot scrub, and afternoon treats.
+                  We don&apos;t just offer a single standard pregnancy massage. From targeted 30-minute lumbar relief to full body lymphatic restoration, botanical facial duos, and our 4.5-hour Mum-To-Be Gold Luxury Sanctuary, discover tailored prenatal care designed around you.
                 </p>
               </div>
-              <div className="pt-4 border-t border-cream-200/60 flex items-center justify-between">
-                <div>
-                  <span className="text-[10px] text-charcoal-800/60 block">Full Ritual</span>
-                  <span className="font-serif text-lg font-bold text-sage-900">£245</span>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+                <div className="p-3.5 rounded-2xl bg-white border border-cream-200 shadow-xs space-y-1">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold text-sage-900">Lie-on-Stomach Massages</span>
+                    <span className="text-[11px] font-semibold text-bronze-700">£45 - £65</span>
+                  </div>
+                  <p className="text-[11px] text-charcoal-800/70 leading-relaxed">
+                    30m & 60m targeted back, sacral, hip, and swollen leg relief on our tummy cushion.
+                  </p>
                 </div>
+
+                <div className="p-3.5 rounded-2xl bg-white border border-cream-200 shadow-xs space-y-1">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold text-sage-900">Massage & Facial Duos</span>
+                    <span className="text-[11px] font-semibold text-bronze-700">£95 - £130</span>
+                  </div>
+                  <p className="text-[11px] text-charcoal-800/70 leading-relaxed">
+                    Combine stomach-cushion relief with hormone-balancing Bramley botanical facial care.
+                  </p>
+                </div>
+
+                <div className="p-3.5 rounded-2xl bg-white border border-cream-200 shadow-xs space-y-1">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold text-sage-900">Half-Day Sanctuary Days</span>
+                    <span className="text-[11px] font-semibold text-bronze-700">Bronze, Silver, Gold</span>
+                  </div>
+                  <p className="text-[11px] text-charcoal-800/70 leading-relaxed">
+                    3 to 4.5 hours of luxury pedicures, manicures, massages, facials, and afternoon treats.
+                  </p>
+                </div>
+
+                <div className="p-3.5 rounded-2xl bg-white border border-cream-200 shadow-xs space-y-1">
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs font-bold text-sage-900">Expectant Parents Duos</span>
+                    <span className="text-[11px] font-semibold text-bronze-700">£110 for Two</span>
+                  </div>
+                  <p className="text-[11px] text-charcoal-800/70 leading-relaxed">
+                    Side-by-side heated couches in our candlelit double suite with two dedicated therapists.
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-2 flex flex-wrap items-center gap-3">
                 <Link
-                  href="/treatments#rituals"
-                  className="px-5 py-2.5 rounded-xl bg-bronze-600 hover:bg-bronze-700 text-white text-xs font-medium transition shadow-sm flex items-center gap-1.5"
+                  href="/pregnancy"
+                  className="px-6 py-3 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold uppercase tracking-wider transition shadow-md inline-flex items-center gap-2"
                 >
-                  View Details <ArrowRight className="w-3.5 h-3.5" />
+                  <Sparkles className="w-3.5 h-3.5 text-bronze-300" />
+                  View All Pregnancy Offerings & Videos <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
+                <button
+                  onClick={() => openFresha('https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A27473921', 'The Bramley Mother-To-Be Back Massage')}
+                  className="px-5 py-3 rounded-xl border border-sage-300 text-sage-900 hover:bg-cream-100 text-xs font-semibold uppercase tracking-wider transition inline-flex items-center gap-1.5"
+                >
+                  <Calendar className="w-3.5 h-3.5 text-bronze-600" />
+                  Book on Fresha
+                </button>
               </div>
             </div>
           </div>

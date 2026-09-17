@@ -81,6 +81,7 @@ export default function Footer() {
             <li><Link href="/spa-days" className="hover:text-bronze-400 transition">Private Spa Days & Packages</Link></li>
             <li><Link href="/treatments/massage" className="hover:text-bronze-400 transition">Swedish & Hot Stone Massage</Link></li>
             <li><Link href="/couples-massage" className="hover:text-bronze-400 transition">Couples Massage Leicester</Link></li>
+            <li><Link href="/pregnancy" className="hover:text-bronze-400 transition">Pregnancy & Mother-To-Be</Link></li>
             <li><Link href="/treatments/facials" className="hover:text-bronze-400 transition">Advanced Facials & Skin Hub</Link></li>
             <li><Link href="/rituals" className="hover:text-bronze-400 transition">Rituals</Link></li>
             <li><Link href="/bramley" className="hover:text-bronze-300 transition text-bronze-300 font-medium">Bramley British Botanicals</Link></li>

@@ -375,7 +375,7 @@ export default function RitualsPage() {
               Are these treatments suitable during pregnancy?
             </h3>
             <p className="text-xs sm:text-sm text-charcoal-800/80 leading-relaxed">
-              For expectant mothers, we have created &ldquo;The Mum-To-Be Gold Luxury Pamper Package&rdquo; (3 to 4.5 hours), which includes specialist pregnancy cushioning, ergonomic support, and obstetrician-approved botanicals. Please let our team know your stage of pregnancy upon booking.
+              For expectant mothers, we have created &ldquo;The Mum-To-Be Gold Luxury Pamper Package&rdquo; (3 to 4.5 hours), which includes specialist pregnancy cushioning, ergonomic support, and obstetrician-approved botanicals. Please let our team know your stage of pregnancy upon booking, or explore our full collection on our dedicated <Link href="/pregnancy" className="text-bronze-700 font-semibold underline hover:text-bronze-800">Pregnancy & Mother-To-Be Sanctuary</Link>.
             </p>
           </div>
 
