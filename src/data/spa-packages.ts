@@ -66,7 +66,7 @@ export const SPA_PACKAGES: SpaPackage[] = [
       }
     ],
     features: [
-      "100% Private Lodge & Hot Tub (No sharing with strangers)",
+      "Exclusive Private Lodge & Hot Tub for Your Group",
       "Tiered pricing: 2-3 guests £125pp | 4-5 guests £110pp | 6-8 guests £100pp",
       "Full 60 minutes of treatments per guest (1 x 60m or 2 x 30m)",
       "Luxury 3-tier afternoon tea included",
@@ -129,7 +129,7 @@ export const SPA_PACKAGES: SpaPackage[] = [
   {
     id: "quality-time",
     name: "Quality Time Package",
-    tagline: "Private hot tub retreat with refreshments & 30-minute bespoke treatment",
+    tagline: "Private hot tub retreat with refreshments & 60-minute luxury treatment",
     pricePerPerson: 90, // From £90pp
     minGuests: 2,
     maxGuests: 5,
@@ -141,23 +141,20 @@ export const SPA_PACKAGES: SpaPackage[] = [
     includesLodgeAndHotTub: true,
     includesAfternoonTea: false,
     includesUnlimitedDrinks: true,
-    description: "Designed for quality connection and quick revitalisation. Relax in your exclusive hot tub with refreshments, followed by a 30-minute tailored treatment of your choice.",
+    description: "Designed for quality connection and unhurried relaxation. Enjoy exclusive use of the hot tub and lodge with unlimited refreshments, plus a full 60-minute bespoke treatment of your choice.",
     treatmentOptions: [
       {
-        heading: "Choice of 1 x 30-Minute Treatment per person",
+        heading: "Choice of 1 x 60-Minute Treatment per person",
         items: [
-          "The Back Massage (Swedish or Hot Stones)",
-          "The Bramley Scalp Treatment & Massage",
-          "The Foot and Leg Massage",
-          "The Mini Bramley Botanical Facial",
-          "File & Gel Polish"
+          "Hot Stones Full Body Massage (60 mins)",
+          "The Bramley Facial (60 mins)"
         ]
       }
     ],
     features: [
-      "100% Private hot tub garden & lodge access",
+      "Exclusive private hot tub & lodge access for your group",
       "Tiered pricing: 2-3 guests £95pp (2h) | 4-5 guests £90pp (3h)",
-      "Choice of 1 x 30m bespoke treatment per guest",
+      "Includes a 60-minute treatment: Hot Stones Full Body Massage or Bramley Facial",
       "Unlimited refreshments, tea & coffee",
       "Robes, towels & slippers included"
     ],
@@ -166,7 +163,7 @@ export const SPA_PACKAGES: SpaPackage[] = [
   {
     id: "treat-and-tea",
     name: "Treat & Tea Package",
-    tagline: "Cozy lodge retreat with luxury afternoon tea & 30-minute treatment",
+    tagline: "Cosy lodge retreat with luxury afternoon tea & 60-minute bespoke treatment",
     pricePerPerson: 90, // From £90pp
     minGuests: 2,
     maxGuests: 5,
@@ -178,24 +175,21 @@ export const SPA_PACKAGES: SpaPackage[] = [
     includesLodgeAndHotTub: false,
     includesAfternoonTea: true,
     includesUnlimitedDrinks: true,
-    description: "Perfect for those who want the luxury of our wooden lodge, delicious afternoon tea, and pampering treatments without the hot tub.",
+    description: "Perfect for those who want the cosy comfort of our wooden lodge, delicious afternoon tea, and pampering treatments without the hot tub. Includes a full 60-minute treatment of your choice.",
     treatmentOptions: [
       {
-        heading: "Choice of 1 x 30-Minute Treatment per person",
+        heading: "Choice of 1 x 60-Minute Treatment per person",
         items: [
-          "The Back Massage (Swedish or Hot Stones)",
-          "The Mini Bramley Facial",
-          "The Bramley Scalp Massage",
-          "The Foot and Leg Massage",
-          "The Gel Bottle Manicure / Pedicure Express"
+          "Hot Stones Full Body Massage (60 mins)",
+          "The Bramley Facial (60 mins)"
         ]
       }
     ],
     features: [
-      "Exclusive private wooden lodge hire",
+      "Exclusive private wooden lodge hire for your group",
       "Tiered pricing: 2-3 guests £95pp (2h) | 4-5 guests £90pp (3h)",
       "Luxury 3-tier afternoon tea included",
-      "Choice of 1 x 30m treatment per guest",
+      "Includes a 60-minute treatment: Hot Stones Full Body Massage or Bramley Facial",
       "Unlimited drinks including artisan teas, coffee & soft drinks"
     ],
     popular: false

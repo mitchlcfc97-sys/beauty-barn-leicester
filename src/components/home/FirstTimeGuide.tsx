@@ -28,7 +28,7 @@ const FAQS: FaqItem[] = [
   {
     question: "Can I book for two people or a group?",
     icon: <Users className="w-5 h-5 text-bronze-600" />,
-    answer: "Yes! We specialize in duo and group experiences. We have a dedicated double treatment room for side-by-side couples massages with two therapists, as well as exclusive private hire of our wooden retreat lodge, alfresco garden, and hot tub for groups of 2 to 8 people with 100% private access.",
+    answer: "Yes! We specialize in duo and group experiences. We have a dedicated double treatment room for side-by-side couples massages with two therapists, as well as exclusive private hire of our wooden retreat lodge, garden, and hot tub for groups of 2 to 8 people.",
   },
   {
     question: "What is your cancellation and booking policy?",

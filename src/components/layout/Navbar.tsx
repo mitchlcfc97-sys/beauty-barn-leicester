@@ -11,7 +11,7 @@ export default function Navbar() {
   const { openFresha } = useFresha();
 
   const desktopNavLinks = [
-    { name: 'Private Spa Days', href: '/spa-days', highlight: true },
+    { name: 'Private Spa Days', href: '/spa-days' },
     { name: 'Massage', href: '/treatments/massage' },
     { name: 'Facials', href: '/treatments/facials' },
     { name: 'All Treatments', href: '/treatments' },
@@ -22,7 +22,7 @@ export default function Navbar() {
 
   const mobileNavLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Private Spa Days', href: '/spa-days', highlight: true },
+    { name: 'Private Spa Days', href: '/spa-days' },
     { name: 'Massage', href: '/treatments/massage' },
     { name: 'Advanced Facials', href: '/treatments/facials' },
     { name: 'All Treatments', href: '/treatments' },
@@ -90,11 +90,7 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`text-[13px] xl:text-sm font-medium transition whitespace-nowrap ${
-                  link.highlight
-                    ? 'text-sage-900 font-semibold px-3 py-1.5 rounded-full bg-sage-100 hover:bg-sage-200'
-                    : 'text-charcoal-800 hover:text-bronze-500'
-                }`}
+                className="text-[13px] xl:text-sm font-medium transition whitespace-nowrap text-charcoal-800 hover:text-bronze-500"
               >
                 {link.name}
               </Link>

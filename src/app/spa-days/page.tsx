@@ -8,7 +8,7 @@ import SpaPackageBuilder from '@/components/booking/SpaPackageBuilder';
 export const metadata: Metadata = {
   title: 'Exclusive Private Spa Days & Hot Tub Hire Leicester',
   description:
-    'Leicester\'s only 100% private day spa. Enjoy private lodge & hot tub hire with zero strangers, luxury afternoon tea, unlimited drinks, and bespoke treatments from £90pp.',
+    'Independent family-run countryside day spa in Scraptoft. Enjoy exclusive private lodge & hot tub hire for your group, luxury afternoon tea, unlimited drinks, and bespoke treatments from £90pp.',
   keywords: [
     'spa day leicester',
     'private spa leicester',
@@ -68,7 +68,6 @@ export default function SpaDaysPage() {
             <div className="absolute bottom-3 left-3 text-white pointer-events-none">
               <span className="text-[9px] uppercase font-bold tracking-widest text-bronze-300 block">Bubbling Warmth</span>
               <p className="font-serif text-sm font-semibold">Private Hot Tub</p>
-              <span className="text-[10px] text-cream-200">Private garden jets</span>
             </div>
           </div>
 
@@ -85,7 +84,6 @@ export default function SpaDaysPage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
             <div className="absolute bottom-3 left-3 text-white pointer-events-none">
-              <span className="text-[9px] uppercase font-bold tracking-widest text-bronze-300 block">360° Walkthrough</span>
               <p className="font-serif text-sm font-semibold">The Wooden Lodge</p>
               <span className="text-[10px] text-cream-200">Warm & cozy year-round</span>
             </div>
@@ -202,7 +200,7 @@ export default function SpaDaysPage() {
             A Glimpse Inside Your Private Sanctuary
           </h2>
           <p className="text-sm text-charcoal-800/80 leading-relaxed">
-            From laughter on the private terrace to unhurried relaxation in our wooden retreat cabin, see what awaits your group.
+            From unhurried relaxation in our cosy wooden retreat lodge to peaceful garden downtime, see what awaits your group.
           </p>
         </div>
 
@@ -222,7 +220,7 @@ export default function SpaDaysPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
             <div className="absolute bottom-6 left-6 right-6 text-white space-y-1 pointer-events-none">
               <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300">
-                Exclusive Terrace Relaxation
+                Lodge & Garden Relaxation
               </span>
               <p className="font-serif text-xl sm:text-2xl font-semibold">
                 Afternoon Tea & Drinks Under The Countryside Sun
@@ -264,7 +262,7 @@ export default function SpaDaysPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               <div className="absolute bottom-3 left-4 text-white">
                 <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">Outdoor Garden</span>
-                <p className="font-serif text-sm font-semibold">Alfresco Bistro Seating</p>
+                <p className="font-serif text-sm font-semibold">Garden Seating Area</p>
               </div>
             </div>
           </div>
