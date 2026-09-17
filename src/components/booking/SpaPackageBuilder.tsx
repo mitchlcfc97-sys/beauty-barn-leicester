@@ -174,7 +174,7 @@ export default function SpaPackageBuilder() {
                         <h4 className="font-serif font-medium text-charcoal-900 text-base mb-1">
                           {pkg.name}
                         </h4>
-                        <p className="text-xs text-charcoal-800/70 line-clamp-2 mb-3">
+                        <p className="text-xs text-charcoal-800/70 leading-relaxed mb-3">
                           {pkg.tagline}
                         </p>
                       </div>

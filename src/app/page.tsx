@@ -489,7 +489,7 @@ export default function HomePage() {
                 <h3 className="font-serif text-lg font-medium text-charcoal-900 group-hover:text-sage-800 transition mb-2">
                   {treatment.name}
                 </h3>
-                <p className="text-xs text-charcoal-800/70 line-clamp-3 leading-relaxed mb-4">
+                <p className="text-xs text-charcoal-800/70 leading-relaxed mb-4">
                   {treatment.description}
                 </p>
               </div>

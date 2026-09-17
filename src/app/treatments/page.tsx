@@ -160,7 +160,7 @@ export default function TreatmentsPage() {
                   <h3 className="font-serif text-lg font-semibold mb-1 leading-snug">
                     {ritual.name}
                   </h3>
-                  <p className={`text-xs line-clamp-2 leading-relaxed mb-3 ${
+                  <p className={`text-xs leading-relaxed mb-3 ${
                     isSelected ? 'text-sage-200/90' : 'text-charcoal-800/70'
                   }`}>
                     {ritual.subtitle}
