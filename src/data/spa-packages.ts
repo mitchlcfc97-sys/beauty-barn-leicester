@@ -66,12 +66,11 @@ export const SPA_PACKAGES: SpaPackage[] = [
       }
     ],
     features: [
-      "Exclusive Private Lodge & Hot Tub for Your Group",
-      "Tiered pricing: 2-3 guests £125pp | 4-5 guests £110pp | 6-8 guests £100pp",
+      "Exclusive private heated garden cabin & private hot tub hire for your group",
       "Full 60 minutes of treatments per guest (1 x 60m or 2 x 30m)",
-      "Luxury 3-tier afternoon tea included",
-      "Unlimited drinks including tea, coffee & soft drinks",
-      "Complimentary luxury robes, towels & slippers"
+      "Luxury homemade afternoon tea served before treatments",
+      "Unlimited drinks including artisan teas, coffee & soft drinks",
+      "Complimentary luxury robes, fluffy towels & slippers provided"
     ],
     popular: true
   },
@@ -118,11 +117,11 @@ export const SPA_PACKAGES: SpaPackage[] = [
       }
     ],
     features: [
-      "Full 90 minutes of spa treatments per guest",
-      "Extended private hire: 4 to 5 hours exclusive lodge & hot tub access",
-      "Tiered pricing: 2-3 guests £150pp | 4-5 guests £132.50pp | 6 guests £120pp",
-      "Luxury afternoon tea & unlimited drinks & refreshments",
-      "Fluffy robes, spa towels & slippers provided"
+      "Exclusive private heated garden cabin & private hot tub hire for your group (extended 4 to 5 hours)",
+      "Full 90 minutes of treatments per guest (1 x 90m ritual or 60m + 30m combo)",
+      "Luxury homemade afternoon tea served before treatments",
+      "Unlimited drinks including artisan teas, coffee & soft drinks",
+      "Complimentary luxury robes, fluffy towels & slippers provided"
     ],
     popular: false
   },
@@ -152,11 +151,10 @@ export const SPA_PACKAGES: SpaPackage[] = [
       }
     ],
     features: [
-      "Exclusive private hot tub & lodge access for your group",
-      "Tiered pricing: 2-3 guests £95pp (2h) | 4-5 guests £90pp (3h)",
-      "Includes a 60-minute treatment: Hot Stones Full Body Massage or Bramley Facial",
-      "Unlimited refreshments, tea & coffee",
-      "Robes, towels & slippers included"
+      "Exclusive private heated garden cabin & private hot tub hire for your group",
+      "Full 60 minutes of treatments per guest (Hot Stones Full Body Massage or Bramley Facial)",
+      "Unlimited drinks including artisan teas, coffee & soft drinks",
+      "Complimentary luxury robes, fluffy towels & slippers provided"
     ],
     popular: false
   },
@@ -186,11 +184,11 @@ export const SPA_PACKAGES: SpaPackage[] = [
       }
     ],
     features: [
-      "Exclusive private wooden lodge hire for your group",
-      "Tiered pricing: 2-3 guests £95pp (2h) | 4-5 guests £90pp (3h)",
-      "Luxury 3-tier afternoon tea included",
-      "Includes a 60-minute treatment: Hot Stones Full Body Massage or Bramley Facial",
-      "Unlimited drinks including artisan teas, coffee & soft drinks"
+      "Exclusive private heated garden cabin hire for your group",
+      "Full 60 minutes of treatments per guest (Hot Stones Full Body Massage or Bramley Facial)",
+      "Luxury homemade afternoon tea served before treatments",
+      "Unlimited drinks including artisan teas, coffee & soft drinks",
+      "Complimentary luxury robes, fluffy towels & slippers provided"
     ],
     popular: false
   }

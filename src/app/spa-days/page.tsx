@@ -106,6 +106,54 @@ export default function SpaDaysPage() {
         </div>
       </section>
 
+      {/* Tiered Pricing Guide Once At The Top */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-cream-100 rounded-3xl p-6 sm:p-8 border border-cream-300 space-y-5">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-cream-200/80 pb-4">
+            <div className="space-y-1">
+              <span className="text-xs uppercase tracking-widest text-bronze-600 font-bold">
+                Transparent Group Pricing
+              </span>
+              <h2 className="font-serif text-2xl sm:text-3xl font-medium text-sage-900">
+                How Our Tiered Spa Pricing Works
+              </h2>
+            </div>
+            <p className="text-xs sm:text-sm text-charcoal-800/70 max-w-md leading-relaxed">
+              Every spa package includes private hire of our heated garden cabin & hot tub for your group. Pricing is tiered by your party size:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="p-4 rounded-2xl bg-white border border-cream-200 shadow-sm space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold uppercase tracking-wider text-bronze-700">2 to 3 Guests</span>
+                <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-cream-100 text-charcoal-800">2h – 4h Private Access</span>
+              </div>
+              <p className="font-serif text-lg font-bold text-sage-900">From £95 – £125pp</p>
+              <p className="text-[11px] text-charcoal-800/70">Deluxe 90m package £150pp (4h)</p>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-white border border-cream-200 shadow-sm space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold uppercase tracking-wider text-bronze-700">4 to 5 Guests</span>
+                <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-cream-100 text-charcoal-800">3h – 4.5h Private Access</span>
+              </div>
+              <p className="font-serif text-lg font-bold text-sage-900">From £90 – £110pp</p>
+              <p className="text-[11px] text-charcoal-800/70">Deluxe 90m package £132.50pp (4.5h)</p>
+            </div>
+
+            <div className="p-4 rounded-2xl bg-white border border-cream-200 shadow-sm space-y-1.5">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-bold uppercase tracking-wider text-bronze-700">6 to 8 Guests</span>
+                <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-cream-100 text-charcoal-800">Up to 5h Private Access</span>
+              </div>
+              <p className="font-serif text-lg font-bold text-sage-900">From £100pp</p>
+              <p className="text-[11px] text-charcoal-800/70">Deluxe 90m package £120pp (5h)</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Package Cards Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -142,20 +190,9 @@ export default function SpaDaysPage() {
                     <span className="font-serif text-3xl font-bold">£{pkg.pricePerPerson}</span>
                     <span className={`text-xs ${pkg.popular ? 'text-sage-300' : 'text-charcoal-800/60'}`}>/ person</span>
                   </div>
-                  {pkg.pricingTiers && (
-                    <div className="mt-3 pt-2.5 border-t border-cream-200/20 space-y-1 text-[11px]">
-                      {pkg.pricingTiers.map((tier, idx) => (
-                        <div key={idx} className="flex justify-between items-center">
-                          <span className={pkg.popular ? 'text-sage-200' : 'text-charcoal-800/70'}>
-                            {tier.minGuests}{tier.maxGuests > tier.minGuests ? `-${tier.maxGuests}` : ''} Guests ({tier.duration}):
-                          </span>
-                          <span className={`font-semibold ${pkg.popular ? 'text-bronze-300' : 'text-sage-900'}`}>
-                            £{tier.pricePerPerson}pp
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                  <span className={`text-[11px] block mt-1 ${pkg.popular ? 'text-sage-300' : 'text-charcoal-800/70'}`}>
+                    {pkg.duration}
+                  </span>
                 </div>
 
                 <div className="space-y-2">
@@ -233,7 +270,7 @@ export default function SpaDaysPage() {
 
           {/* Right side 2 stacked cards: Cabin interior & Garden bistro */}
           <div className="md:col-span-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-6">
-            <div className="relative h-48 sm:h-[198px] rounded-3xl overflow-hidden shadow-md border border-cream-300 bg-charcoal-950 group">
+            <div className="relative h-48 sm:h-[198px] rounded-3xl overflow-hidden shadow-md border border-cream-300 bg-charcoal-950 group flex items-center justify-center">
               <video
                 src="/videos/heated-robes-preparation.mp4"
                 poster="/images/spa-garden-overview.jpg"
@@ -242,7 +279,7 @@ export default function SpaDaysPage() {
                 loop
                 muted
                 playsInline
-                className="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95"
+                className="w-full h-full object-contain p-1.5 transition duration-500 opacity-95"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-3 left-4 text-white pointer-events-none">
