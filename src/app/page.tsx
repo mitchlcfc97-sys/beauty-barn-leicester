@@ -316,8 +316,8 @@ export default function HomePage() {
             </div>
 
             {/* Right Column: Visual Showcase */}
-            <div className="lg:col-span-5 space-y-4">
-              <div className="relative aspect-[4/5] sm:aspect-[3/4] max-h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-amber-500/40 group bg-black">
+            <div className="lg:col-span-5 flex flex-col items-center justify-center">
+              <div className="relative w-full max-w-[380px] aspect-[9/16] max-h-[580px] rounded-3xl overflow-hidden shadow-2xl border border-amber-500/40 group bg-charcoal-950">
                 <video
                   src="/videos/fireside-ritual-trailer.mp4"
                   poster="/videos/fireside-ritual-trailer-poster.jpg"
@@ -327,17 +327,12 @@ export default function HomePage() {
                   playsInline
                   className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
-                <div className="absolute bottom-5 left-5 right-5 text-white pointer-events-none space-y-1">
-                  <span className="text-[10px] uppercase font-bold tracking-widest text-amber-400 block">
-                    Sneak Peek Video
+                {/* Elegant top badge - keeping lower area completely clear for video titles and step captions */}
+                <div className="absolute top-4 left-4 pointer-events-none z-10">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/65 backdrop-blur-md border border-amber-400/30 text-[11px] font-semibold text-amber-300 uppercase tracking-wider shadow-lg">
+                    <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                    Treatment Preview
                   </span>
-                  <p className="font-serif text-lg font-semibold text-cream-50">
-                    The Fireside Ritual Experience
-                  </p>
-                  <p className="text-xs text-cream-200/80">
-                    Warming stones, cinnamon exfoliation & gentle candle crackle.
-                  </p>
                 </div>
               </div>
             </div>

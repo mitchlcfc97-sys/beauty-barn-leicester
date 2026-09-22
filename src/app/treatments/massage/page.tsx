@@ -520,7 +520,7 @@ export default function MassagePage() {
                     : 'text-charcoal-700 hover:text-sage-900'
                 }`}
               >
-                <span>🎋 Warm Bamboo Canes</span>
+                <span>🎋 Natural Bamboo Canes</span>
               </button>
               <button
                 onClick={() => setDeepTissueVideo('stones')}
@@ -546,19 +546,19 @@ export default function MassagePage() {
                 playsInline
                 className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-4 left-4 right-4 text-white pointer-events-none">
                 <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block mb-0.5">
                   Real Treatment Session
                 </span>
                 <p className="font-serif text-base font-semibold">
                   {deepTissueVideo === 'bamboo'
-                    ? 'Warm Bamboo Canes & Deep Knot Release'
+                    ? 'Natural Bamboo Canes & Deep Knot Release'
                     : 'Heated Volcanic Stones & Muscular Release'}
                 </p>
                 <p className="text-xs text-cream-100/90 mt-0.5">
                   {deepTissueVideo === 'bamboo'
-                    ? 'Solid heated bamboo canes rolled along tension lines to loosen stubborn muscle bands and melt posture stiffness.'
+                    ? 'Smooth solid bamboo canes rolled along tension lines to loosen stubborn muscle bands and relieve posture tension.'
                     : 'Heated volcanic basalt stones and firm therapeutic pressure targeting deep back and shoulder tension.'}
                 </p>
               </div>

@@ -82,7 +82,7 @@ export default function RitualsPage() {
         <div className="max-w-6xl mx-auto mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="relative h-72 rounded-3xl overflow-hidden shadow-md border border-cream-300 bg-charcoal-950 group">
             <video
-              src="/videos/fireside-ritual-trailer.mp4"
+              src="/videos/fireside-ritual-sneak-peek.mp4"
               poster="/videos/fireside-ritual-trailer-poster.jpg"
               preload="metadata"
               autoPlay
