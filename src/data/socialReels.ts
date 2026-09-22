@@ -229,7 +229,7 @@ SLIDE 3:
     categoryLabel: 'Facials & Skincare',
     title: 'Rose Quartz Gua Sha Sculpting',
     badge: 'Viral Radiance',
-    src: '/videos/facial-gua-sha-sculpting.mp4',
+    src: '/videos/facial-gua-sha-ritual.mp4',
     downloadName: 'Beauty-Barn-Facial-Gua-Sha.mp4',
     fileSize: '1.0 MB',
     duration: '5s loop',
