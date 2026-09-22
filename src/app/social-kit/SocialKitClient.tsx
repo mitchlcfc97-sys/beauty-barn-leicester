@@ -2,70 +2,34 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Copy, Check, Download, ArrowLeft, Sparkles, Heart, Flame, Film, Share2, Instagram } from 'lucide-react';
 import Link from 'next/link';
+import {
+  Copy,
+  Check,
+  Download,
+  ArrowLeft,
+  Sparkles,
+  Flame,
+  Film,
+  Share2,
+  Instagram,
+  Eye,
+  Music,
+  Clock,
+  MessageSquare,
+  Smartphone,
+  Tag,
+  Lightbulb,
+} from 'lucide-react';
+import { SOCIAL_REELS, type SocialReel } from '@/data/socialReels';
 
 export default function SocialKitClient() {
-  const [activeTab, setActiveTab] = useState<'fireside' | 'launch' | 'library'>('fireside');
-  const [copiedCaption, setCopiedCaption] = useState(false);
-  const [copiedShort, setCopiedShort] = useState(false);
+  const [activeFilter, setActiveFilter] = useState<string>('all');
+  const [activeCaptionTabs, setActiveCaptionTabs] = useState<Record<string, 'reels' | 'feed' | 'story'>>({});
+  const [showOverlays, setShowOverlays] = useState<Record<string, boolean>>({});
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
-  const firesideMainCaption = `Step away from the cold and into the comforting warmth of The Fireside Ritual… 🍁🔥
-
-As the crisp autumn air settles over Leicestershire, we’ve created a limited-edition warming escape designed to melt away deep muscular tension and restore seasonal radiance from head to toe.
-
-✨ What your Fireside Ritual includes:
-🍯 Step 1: Warming Cinnamon & Honey Back Exfoliation — A gentle spiced polish that smooths skin texture and awakens circulation.
-🔥 Step 2: Heated Basalt Stone Massage & Bramley Botanicals — Smooth volcanic hot stones and warm botanical oils soothe tired shoulders, neck, and back.
-🧖‍♀️ Step 3: Botanical Gua Sha Facial & Warm-Oil Scalp Therapy — Pressure-point scalp release and rose quartz contouring under cosy heated blankets.
-
-🎁 Exclusive Take-Home Gift:
-Book our 90-minute (£110) or 120-minute (£140) ritual and receive a complimentary luxury Bramley Gift Cracker (worth £35!), containing Bramley Raspberry Seed Facial Oil and a Rose Quartz Gua Sha so you can continue the ritual at home.
-
-🍂 Available Options:
-• 60 Minutes — £70
-• 90 Minutes — £110 (Includes £35 Bramley Gift Cracker)
-• 120 Minutes — £140 (Includes £35 Bramley Gift Cracker)
-
-Appointments are strictly limited for the autumn & winter season. Tap the link in our bio or visit thebeautybarnleicester.co.uk to reserve your sanctuary today 🤍
-
-With warmth,
-Mel, Zofia & The Beauty Barn Team x
-
-—
-#TheBeautyBarnLeicester #TheBeautyBarn #LeicesterSpa #FiresideRitual #HotStoneMassageLeicester #LeicesterBeauty #Scraptoft #BramleyBotanicals #GuaShaFacial #AutumnSanctuary #Leicestershire`;
-
-  const firesideReelCaption = `Save this for when the temperature drops below 10°C in Leicester… 🍁🍯🔥
-
-The limited-edition Fireside Ritual is officially live at The Beauty Barn.
-Warming cinnamon & honey back polish 🍯
-Heated volcanic basalt stones 🔥
-Nourishing warm Bramley oils 🌿
-Rose quartz gua sha facial & scalp therapy 🧖‍♀️
-
-PLUS a free £35 Bramley skincare cracker to take home on 90m & 120m bookings!
-
-🔗 Tap the link in our bio to book your warming escape on Fresha!
-
-#TheBeautyBarnLeicester #LeicesterSpa #FiresideRitual #HotStoneMassage #BramleyBotanicals #LeicesterBeauty`;
-
-  const firesideStoryScript = `📱 3-SLIDE INSTAGRAM STORY SEQUENCE
-
-SLIDE 1 (Video: Hot Stones Clip):
-• Text: "When the autumn cold sets in and you just need this... 🔥"
-• Poll Sticker: "Ready for hot stones season?" ➡️ [YES PLEASE! / DESPERATELY]
-
-SLIDE 2 (Video: Cinnamon & Honey Polish Clip):
-• Text: "Introducing THE FIRESIDE RITUAL 🍁 Warming cinnamon polish, heated volcanic stones, warm scalp therapy & rose quartz gua sha facial."
-
-SLIDE 3 (Endcard / Booking):
-• Text: "From £70 • Limited autumn & winter appointments. (90m & 120m include a FREE £35 Bramley cracker gift!)"
-• Link Sticker: "BOOK ON FRESHA" 🔗 (Link to: thebeautybarnleicester.co.uk/rituals)`;
-
-  const firesideHashtags = `#TheBeautyBarnLeicester #TheBeautyBarn #LeicesterSpa #FiresideRitual #HotStoneMassage #HotStonesLeicester #LeicestershireSpa #ScraptoftSpa #BramleyBotanicals #GuaShaFacial #AutumnSanctuary #LeicesterBeauty #WinterWellness #CouplesMassageLeicester #HolisticTherapy`;
-
-  const mainCaption = `Same warm welcome, brand new digital sanctuary… ✨🌿
+  const mainLaunchCaption = `Same warm welcome, brand new digital sanctuary… ✨🌿
 
 If you’ve visited our website recently, you might have noticed a fresh new look! 
 
@@ -89,14 +53,14 @@ Mel, Zofia & The Beauty Barn Team x
 —
 #TheBeautyBarn #TheBeautyBarnLeicester #LeicesterSpa #Scraptoft #CouplesMassageLeicester #LeicesterBeauty #BramleyBotanicals #PrivateSpaDays #LeicestershireSpa`;
 
-  const shortCaption = `A fresh new look for The Beauty Barn! 🌾✨
+  const shortLaunchCaption = `A fresh new look for The Beauty Barn! 🌾✨
 
 Don’t worry — it’s still the same Mel, Zofia, and the team you know and love! We’ve completely refreshed our website to make booking your treatments, couples packages, and gift vouchers easier and more relaxing than ever.
 
 Tap the link to explore our new digital home 🤍
 👉 thebeautybarnleicester.co.uk`;
 
-  const photos = [
+  const launchPhotos = [
     {
       id: 'team',
       title: '1. The Real Team (Most Recommended!)',
@@ -127,399 +91,362 @@ Tap the link to explore our new digital home 🤍
     },
   ];
 
-  const handleCopy = (text: string, type: string) => {
+  const filterTabs = [
+    { id: 'all', label: 'All Reels & Videos', count: SOCIAL_REELS.length },
+    { id: 'massage', label: 'Massage & Stones', count: SOCIAL_REELS.filter(r => r.category === 'massage').length },
+    { id: 'facials', label: 'Facials & Gua Sha', count: SOCIAL_REELS.filter(r => r.category === 'facials').length },
+    { id: 'eyes', label: 'Eyes & Lashes', count: SOCIAL_REELS.filter(r => r.category === 'eyes').length },
+    { id: 'retreat', label: 'Private Spa & Hot Tub', count: SOCIAL_REELS.filter(r => r.category === 'retreat').length },
+    { id: 'nails', label: 'BIAB Nails', count: SOCIAL_REELS.filter(r => r.category === 'nails').length },
+    { id: 'fireside', label: 'Fireside Campaign', count: SOCIAL_REELS.filter(r => r.category === 'fireside').length },
+    { id: 'launch', label: 'Website Launch Kit', count: 4 },
+  ];
+
+  const handleCopy = (text: string, id: string) => {
     navigator.clipboard.writeText(text);
-    setCopiedId(type);
-    if (type === 'main') {
-      setCopiedCaption(true);
-      setTimeout(() => setCopiedCaption(false), 2500);
-    } else if (type === 'short') {
-      setCopiedShort(true);
-      setTimeout(() => setCopiedShort(false), 2500);
-    }
+    setCopiedId(id);
     setTimeout(() => setCopiedId(null), 2500);
   };
 
+  const toggleOverlay = (reelId: string) => {
+    setShowOverlays(prev => ({ ...prev, [reelId]: !prev[reelId] }));
+  };
+
+  const setCaptionTab = (reelId: string, tab: 'reels' | 'feed' | 'story') => {
+    setActiveCaptionTabs(prev => ({ ...prev, [reelId]: tab }));
+  };
+
+  const displayedReels = activeFilter === 'all'
+    ? SOCIAL_REELS
+    : SOCIAL_REELS.filter(r => r.category === activeFilter);
+
   return (
     <div className="min-h-screen bg-cream-50 text-charcoal-900 py-10 px-4 sm:px-6">
-      <div className="max-w-4xl mx-auto space-y-8">
+      <div className="max-w-6xl mx-auto space-y-8">
         {/* Header */}
-        <div className="text-center space-y-2">
+        <div className="text-center space-y-3">
           <Link
             href="/"
-            className="inline-flex items-center gap-1.5 text-xs text-sage-700 hover:text-bronze-600 transition font-medium mb-2"
+            className="inline-flex items-center gap-1.5 text-xs text-sage-700 hover:text-bronze-600 transition font-medium mb-1"
           >
             <ArrowLeft className="w-3.5 h-3.5" /> Back to website
           </Link>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-bronze-500/10 text-bronze-700 text-xs font-semibold">
-            <Share2 className="w-3.5 h-3.5" /> Social Media Marketing Hub
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-bronze-500/10 text-bronze-700 text-xs font-semibold">
+            <Share2 className="w-3.5 h-3.5" /> Social Media Marketing & Reels Hub
           </div>
-          <h1 className="font-serif text-2xl sm:text-4xl font-bold text-sage-900">
-            Download Content Straight to Your Phone
+          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-sage-900">
+            Instagram Reels & Content Creator
           </h1>
-          <p className="text-xs sm:text-sm text-charcoal-600 max-w-xl mx-auto">
-            Ready-made promotional videos, official trailer, and pre-written captions. Tap any <strong className="text-charcoal-900">&ldquo;Save&rdquo;</strong> button to download directly to your photos.
+          <p className="text-xs sm:text-sm text-charcoal-700 max-w-2xl mx-auto leading-relaxed">
+            Real treatment videos paired with done-for-you captions, on-screen text hooks, trending sound suggestions, and hashtag banks. Download any video and copy the paired caption straight to your phone.
           </p>
+
+          {/* Quick 3-Step Guide Banner */}
+          <div className="max-w-2xl mx-auto mt-4 p-4 rounded-2xl bg-sage-900 text-cream-50 text-left border border-bronze-400/40 shadow-lg flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="space-y-1">
+              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 flex items-center gap-1">
+                <Lightbulb className="w-3.5 h-3.5 text-bronze-300" /> Quick Posting Guide
+              </span>
+              <p className="text-xs text-sage-200">
+                1. Tap <strong>&ldquo;Save Video&rdquo;</strong> to download to your camera roll &bull; 2. Tap <strong>&ldquo;Copy Caption&rdquo;</strong> &bull; 3. Paste into Instagram Reels!
+              </p>
+            </div>
+            <span className="px-3 py-1 rounded-full bg-bronze-500 text-white text-[11px] font-bold whitespace-nowrap self-start sm:self-center">
+              Ready to Post
+            </span>
+          </div>
         </div>
 
-        {/* Tab Navigation */}
-        <div className="flex items-center justify-center p-1.5 bg-cream-200/80 rounded-2xl max-w-xl mx-auto border border-cream-300">
-          <button
-            onClick={() => setActiveTab('fireside')}
-            className={`flex-1 py-2.5 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2 ${
-              activeTab === 'fireside'
-                ? 'bg-sage-900 text-cream-50 shadow-md'
-                : 'text-charcoal-700 hover:text-sage-900'
-            }`}
-          >
-            <Flame className="w-4 h-4 text-amber-400" />
-            Fireside Campaign
-          </button>
-          <button
-            onClick={() => setActiveTab('launch')}
-            className={`flex-1 py-2.5 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2 ${
-              activeTab === 'launch'
-                ? 'bg-sage-900 text-cream-50 shadow-md'
-                : 'text-charcoal-700 hover:text-sage-900'
-            }`}
-          >
-            <Sparkles className="w-4 h-4 text-bronze-400" />
-            Website Launch
-          </button>
-          <button
-            onClick={() => setActiveTab('library')}
-            className={`flex-1 py-2.5 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold transition flex items-center justify-center gap-2 ${
-              activeTab === 'library'
-                ? 'bg-sage-900 text-cream-50 shadow-md'
-                : 'text-charcoal-700 hover:text-sage-900'
-            }`}
-          >
-            <Film className="w-4 h-4 text-sage-400" />
-            All Clips
-          </button>
+        {/* Filter Tabs */}
+        <div className="flex flex-wrap items-center justify-center gap-2 p-1.5 bg-cream-200/80 rounded-2xl max-w-4xl mx-auto border border-cream-300">
+          {filterTabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveFilter(tab.id)}
+              className={`py-2 px-3.5 rounded-xl text-xs font-semibold transition flex items-center gap-1.5 ${
+                activeFilter === tab.id
+                  ? 'bg-sage-900 text-cream-50 shadow-md scale-[1.02]'
+                  : 'text-charcoal-700 hover:text-sage-900 hover:bg-cream-100'
+              }`}
+            >
+              <span>{tab.label}</span>
+              <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${
+                activeFilter === tab.id ? 'bg-bronze-500 text-white' : 'bg-cream-300 text-charcoal-700'
+              }`}>
+                {tab.count}
+              </span>
+            </button>
+          ))}
         </div>
 
-        {/* TAB 1: FIRESIDE RITUAL CAMPAIGN */}
-        {activeTab === 'fireside' && (
+        {/* ========================================================================= */}
+        {/* 🎬 REELS LIBRARY VIEW */}
+        {/* ========================================================================= */}
+        {activeFilter !== 'launch' && (
           <div className="space-y-10">
-            {/* Hero Trailer */}
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-amber-500/30 shadow-xl space-y-6">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-cream-200 pb-5">
-                <div className="space-y-1">
-                  <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-700 text-[11px] font-bold uppercase tracking-wider">
-                    <Flame className="w-3.5 h-3.5 text-amber-600" /> Official Cinematic Trailer
-                  </div>
-                  <h2 className="font-serif text-xl sm:text-2xl font-bold text-sage-900">
-                    The Fireside Ritual Experience Trailer
-                  </h2>
-                  <p className="text-xs text-charcoal-600">
-                    35.5s • 1080x1920 Full HD Vertical • Integrated Spa Soundtrack & Text Badges
-                  </p>
-                </div>
-                <a
-                  href="/videos/fireside-ritual-trailer.mp4"
-                  download="The-Beauty-Barn-Fireside-Ritual-Trailer.mp4"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-2xl bg-amber-600 hover:bg-amber-700 text-white font-semibold text-xs sm:text-sm shadow-md transition whitespace-nowrap"
-                >
-                  <Download className="w-4 h-4" /> Save Trailer (16.6 MB)
-                </a>
+            <div className="flex items-center justify-between border-b border-cream-200 pb-3">
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-bronze-600">
+                  {activeFilter === 'all' ? 'Complete Collection' : filterTabs.find(t => t.id === activeFilter)?.label}
+                </span>
+                <h2 className="font-serif text-2xl font-bold text-sage-900">
+                  {displayedReels.length} Ready-to-Post {displayedReels.length === 1 ? 'Reel' : 'Reels'} & Video Clips
+                </h2>
               </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-                <div className="md:col-span-6 lg:col-span-5 flex justify-center">
-                  <div className="w-full max-w-[280px] aspect-[9/16] rounded-2xl overflow-hidden bg-black shadow-2xl border-2 border-sage-800 relative">
-                    <video
-                      src="/videos/fireside-ritual-trailer.mp4"
-                      poster="/videos/fireside-ritual-trailer-poster.jpg"
-                      controls
-                      playsInline
-                      preload="metadata"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                </div>
-
-                <div className="md:col-span-6 lg:col-span-7 space-y-4">
-                  <h3 className="font-serif text-base font-bold text-sage-900 flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-bronze-500" />
-                    Complete Journey Flow Shown in Video:
-                  </h3>
-                  <div className="space-y-2.5 text-xs text-charcoal-700">
-                    <div className="p-2.5 rounded-xl bg-cream-100 border border-cream-200">
-                      <strong className="text-sage-900 block font-semibold">🕯️ 0:00 - 0:04 | The Hook</strong>
-                      Candlelit luxury ambience: &ldquo;Step away from the cold... Introducing The Fireside Ritual&rdquo;
-                    </div>
-                    <div className="p-2.5 rounded-xl bg-cream-100 border border-cream-200">
-                      <strong className="text-sage-900 block font-semibold">🍯 0:04 - 0:11 | Step 1: Polish & Smooth</strong>
-                      Wooden spatula scooping warm cinnamon & honey scrub + full-back smoothing polish
-                    </div>
-                    <div className="p-2.5 rounded-xl bg-cream-100 border border-cream-200">
-                      <strong className="text-sage-900 block font-semibold">🔥 0:11 - 0:19 | Step 2: Heated Basalt Stones</strong>
-                      Gliding volcanic basalt stones & warm Bramley botanical oils melting tension
-                    </div>
-                    <div className="p-2.5 rounded-xl bg-cream-100 border border-cream-200">
-                      <strong className="text-sage-900 block font-semibold">🧖‍♀️ 0:19 - 0:27 | Step 3: Gua Sha & Scalp Therapy</strong>
-                      Rose quartz facial contouring & soothing warm-oil scalp & décolleté release
-                    </div>
-                    <div className="p-2.5 rounded-xl bg-cream-100 border border-cream-200">
-                      <strong className="text-sage-900 block font-semibold">🎁 0:27 - 0:35 | Free Gift & Call to Action</strong>
-                      Free £35 Bramley cracker gift on 90m/120m + pricing from £70 & Fresha booking
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <span className="text-xs text-charcoal-500 hidden sm:inline">
+                Formatted for Instagram Reels, TikTok & Stories
+              </span>
             </div>
 
-            {/* 3 Short Promotional Clips */}
-            <div className="space-y-4">
-              <div className="space-y-1">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-bronze-600 block">
-                  Bite-Sized Social Content
-                </span>
-                <h2 className="font-serif text-xl sm:text-2xl font-bold text-sage-900">
-                  3 Short Promotional Clips for Reels & Stories
-                </h2>
-                <p className="text-xs text-charcoal-600">
-                  Short, high-hook video cuts (8 - 10s) formatted for Instagram Reels, TikTok, and Stories.
-                </p>
-              </div>
+            <div className="space-y-12">
+              {displayedReels.map((reel) => {
+                const currentTab = activeCaptionTabs[reel.id] || 'reels';
+                const isOverlayOn = showOverlays[reel.id] || false;
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                {/* Promo 1 */}
-                <div className="bg-white rounded-2xl overflow-hidden border border-cream-200 shadow-sm flex flex-col">
-                  <div className="p-3 bg-sage-900 text-cream-50 flex items-center justify-between text-xs">
-                    <span className="font-bold font-serif text-amber-300">1. Cinnamon Polish</span>
-                    <span className="text-[11px] text-sage-300">8.0s • 4.9 MB</span>
-                  </div>
-                  <div className="relative aspect-[9/16] bg-black">
-                    <video
-                      src="/videos/fireside-promo-cinnamon-honey.mp4"
-                      poster="/videos/fireside-promo-cinnamon-poster.jpg"
-                      controls
-                      playsInline
-                      preload="metadata"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-4 space-y-3 flex-1 flex flex-col justify-between">
-                    <div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-bronze-600 block">Sensory ASMR Hook</span>
-                      <h4 className="font-serif text-sm font-bold text-sage-900">Warming Cinnamon Polish</h4>
-                      <p className="text-[11px] text-charcoal-500 mt-1">
-                        Scoop & polish back smoothing. Perfect for seasonal glow-up reels.
-                      </p>
-                    </div>
-                    <a
-                      href="/videos/fireside-promo-cinnamon-honey.mp4"
-                      download="Fireside-Promo-Cinnamon-Honey.mp4"
-                      className="w-full py-2 px-3 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold flex items-center justify-center gap-1.5 transition"
-                    >
-                      <Download className="w-3.5 h-3.5 text-bronze-300" /> Save to Phone
-                    </a>
-                  </div>
-                </div>
+                let activeCaptionText = reel.reelsCaption;
+                if (currentTab === 'feed') activeCaptionText = reel.feedCaption;
+                if (currentTab === 'story') activeCaptionText = reel.storyScript;
 
-                {/* Promo 2 */}
-                <div className="bg-white rounded-2xl overflow-hidden border border-cream-200 shadow-sm flex flex-col">
-                  <div className="p-3 bg-sage-900 text-cream-50 flex items-center justify-between text-xs">
-                    <span className="font-bold font-serif text-amber-300">2. Hot Stones Therapy</span>
-                    <span className="text-[11px] text-sage-300">8.5s • 4.3 MB</span>
-                  </div>
-                  <div className="relative aspect-[9/16] bg-black">
-                    <video
-                      src="/videos/fireside-promo-hot-stones.mp4"
-                      poster="/videos/fireside-promo-stones-poster.jpg"
-                      controls
-                      playsInline
-                      preload="metadata"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-4 space-y-3 flex-1 flex flex-col justify-between">
-                    <div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-bronze-600 block">Cold Weather Sanctuary</span>
-                      <h4 className="font-serif text-sm font-bold text-sage-900">Hot Basalt Stone Melting</h4>
-                      <p className="text-[11px] text-charcoal-500 mt-1">
-                        Volcanic hot stones gliding over shoulders. Ideal for freezing weather posts.
-                      </p>
-                    </div>
-                    <a
-                      href="/videos/fireside-promo-hot-stones.mp4"
-                      download="Fireside-Promo-Hot-Stones.mp4"
-                      className="w-full py-2 px-3 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold flex items-center justify-center gap-1.5 transition"
-                    >
-                      <Download className="w-3.5 h-3.5 text-bronze-300" /> Save to Phone
-                    </a>
-                  </div>
-                </div>
-
-                {/* Promo 3 */}
-                <div className="bg-white rounded-2xl overflow-hidden border border-cream-200 shadow-sm flex flex-col">
-                  <div className="p-3 bg-sage-900 text-cream-50 flex items-center justify-between text-xs">
-                    <span className="font-bold font-serif text-amber-300">3. Full 3-Step Journey</span>
-                    <span className="text-[11px] text-sage-300">10.5s • 6.2 MB</span>
-                  </div>
-                  <div className="relative aspect-[9/16] bg-black">
-                    <video
-                      src="/videos/fireside-promo-full-experience.mp4"
-                      poster="/videos/fireside-promo-full-poster.jpg"
-                      controls
-                      playsInline
-                      preload="metadata"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-4 space-y-3 flex-1 flex flex-col justify-between">
-                    <div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-bronze-600 block">Step-by-Step Reel</span>
-                      <h4 className="font-serif text-sm font-bold text-sage-900">All 3 Ritual Steps + Gift</h4>
-                      <p className="text-[11px] text-charcoal-500 mt-1">
-                        Fast-paced sequence showing polish, hot stones, gua sha facial & scalp therapy.
-                      </p>
-                    </div>
-                    <a
-                      href="/videos/fireside-promo-full-experience.mp4"
-                      download="Fireside-Promo-Full-Experience.mp4"
-                      className="w-full py-2 px-3 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold flex items-center justify-center gap-1.5 transition"
-                    >
-                      <Download className="w-3.5 h-3.5 text-bronze-300" /> Save to Phone
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Captions Section */}
-            <div className="space-y-6">
-              <div className="space-y-1">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-bronze-600 block">
-                  Done-For-You Social Copy
-                </span>
-                <h2 className="font-serif text-xl sm:text-2xl font-bold text-sage-900">
-                  Ready-to-Paste Captions & Story Scripts
-                </h2>
-                <p className="text-xs text-charcoal-600">
-                  Tap any &ldquo;Copy&rdquo; button below to copy the full caption text directly to your clipboard.
-                </p>
-              </div>
-
-              {/* Caption 1 */}
-              <div className="bg-white rounded-2xl p-5 border border-cream-200 shadow-sm space-y-4">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-bronze-600 uppercase tracking-wider">
-                      <Instagram className="w-3.5 h-3.5" /> Option 1: Main Launch Post (Instagram & Facebook)
-                    </div>
-                    <h3 className="font-serif text-base font-bold text-sage-900">Full Sensory Story & Treatment Details</h3>
-                  </div>
-                  <button
-                    onClick={() => handleCopy(firesideMainCaption, 'fireside-main')}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-bronze-500 hover:bg-bronze-600 text-white text-xs font-semibold shadow transition"
+                return (
+                  <div
+                    key={reel.id}
+                    id={reel.id}
+                    className="bg-white rounded-3xl border border-cream-300 shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
                   >
-                    {copiedId === 'fireside-main' ? (
-                      <>
-                        <Check className="w-3.5 h-3.5" /> Copied!
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-3.5 h-3.5" /> Copy Caption
-                      </>
-                    )}
-                  </button>
-                </div>
-                <pre className="bg-cream-50 p-4 rounded-xl text-xs text-charcoal-800 font-sans whitespace-pre-wrap leading-relaxed max-h-60 overflow-y-auto border border-cream-200">
-                  {firesideMainCaption}
-                </pre>
-              </div>
+                    {/* Top Bar */}
+                    <div className="p-4 sm:p-5 bg-gradient-to-r from-sage-900 via-sage-800 to-sage-900 text-cream-50 flex flex-wrap items-center justify-between gap-3 border-b border-sage-700">
+                      <div className="flex items-center gap-2.5">
+                        <span className="px-3 py-1 rounded-full bg-bronze-500 text-white text-[10px] sm:text-[11px] font-bold uppercase tracking-wider shadow-sm flex items-center gap-1">
+                          <Sparkles className="w-3 h-3 fill-white" />
+                          {reel.badge}
+                        </span>
+                        <span className="text-xs text-sage-300 font-medium">
+                          {reel.categoryLabel}
+                        </span>
+                      </div>
 
-              {/* Caption 2 */}
-              <div className="bg-white rounded-2xl p-5 border border-cream-200 shadow-sm space-y-4">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-bronze-600 uppercase tracking-wider">
-                      <Film className="w-3.5 h-3.5" /> Option 2: Reels & TikTok Punchy Hook
+                      <div className="flex items-center gap-3 text-xs text-sage-300">
+                        <span>{reel.duration}</span>
+                        <span>&bull;</span>
+                        <span>{reel.fileSize}</span>
+                      </div>
                     </div>
-                    <h3 className="font-serif text-base font-bold text-sage-900">Viral Short Hook for Quick Scrolling</h3>
-                  </div>
-                  <button
-                    onClick={() => handleCopy(firesideReelCaption, 'fireside-reel')}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold shadow transition"
-                  >
-                    {copiedId === 'fireside-reel' ? (
-                      <>
-                        <Check className="w-3.5 h-3.5" /> Copied!
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-3.5 h-3.5" /> Copy Reel Text
-                      </>
-                    )}
-                  </button>
-                </div>
-                <pre className="bg-cream-50 p-4 rounded-xl text-xs text-charcoal-800 font-sans whitespace-pre-wrap leading-relaxed border border-cream-200">
-                  {firesideReelCaption}
-                </pre>
-              </div>
 
-              {/* Caption 3 */}
-              <div className="bg-white rounded-2xl p-5 border border-cream-200 shadow-sm space-y-4">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="inline-flex items-center gap-1.5 text-[11px] font-bold text-bronze-600 uppercase tracking-wider">
-                      <Sparkles className="w-3.5 h-3.5" /> Option 3: Instagram Stories Sequence (With Polls)
+                    <div className="p-6 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                      {/* Left: Video Preview & Overlay */}
+                      <div className="lg:col-span-5 space-y-4">
+                        <div className="relative aspect-[9/16] max-h-[520px] w-full max-w-[320px] mx-auto rounded-2xl overflow-hidden bg-black shadow-2xl border-2 border-cream-300 group">
+                          <video
+                            src={reel.src}
+                            poster={reel.poster}
+                            controls
+                            playsInline
+                            preload="metadata"
+                            className="w-full h-full object-cover"
+                          />
+
+                          {/* Instagram-Style Text Overlay Preview */}
+                          {isOverlayOn && (
+                            <div className="absolute inset-0 flex items-center justify-center p-4 pointer-events-none z-10 bg-black/25 transition-all">
+                              <div className="bg-black/85 backdrop-blur-md text-white font-sans text-xs sm:text-sm font-bold text-center px-4 py-3 rounded-2xl border border-white/20 shadow-2xl max-w-[240px] leading-snug">
+                                {reel.overlayText}
+                              </div>
+                            </div>
+                          )}
+
+                          {/* Floating Overlay Toggle on Video */}
+                          <button
+                            onClick={() => toggleOverlay(reel.id)}
+                            className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-black/70 hover:bg-black/90 text-white text-[10px] font-semibold flex items-center gap-1 backdrop-blur-sm transition z-20 shadow"
+                          >
+                            <Eye className="w-3 h-3 text-bronze-400" />
+                            {isOverlayOn ? 'Hide Hook' : 'Preview Hook'}
+                          </button>
+                        </div>
+
+                        {/* Video Actions */}
+                        <div className="w-full max-w-[320px] mx-auto space-y-2">
+                          <a
+                            href={reel.src}
+                            download={reel.downloadName}
+                            className="w-full py-3 px-4 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold flex items-center justify-center gap-2 transition shadow-md"
+                          >
+                            <Download className="w-4 h-4 text-bronze-300" />
+                            Save Video to Phone ({reel.fileSize})
+                          </a>
+                          <button
+                            onClick={() => toggleOverlay(reel.id)}
+                            className="w-full py-2 px-3 rounded-xl bg-cream-100 hover:bg-cream-200 text-charcoal-700 text-[11px] font-medium transition flex items-center justify-center gap-1.5 border border-cream-300"
+                          >
+                            <Eye className="w-3.5 h-3.5 text-bronze-600" />
+                            {isOverlayOn ? 'Hide On-Screen Reel Hook' : 'Preview On-Screen Reel Hook On Video'}
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Right: Reel Strategy, Paired Captions & Hashtags */}
+                      <div className="lg:col-span-7 space-y-6">
+                        <div>
+                          <h3 className="font-serif text-2xl font-bold text-sage-900">
+                            {reel.title}
+                          </h3>
+                        </div>
+
+                        {/* On-Screen Reel Hook Box */}
+                        <div className="p-4 rounded-2xl bg-cream-100/90 border border-cream-300 space-y-2">
+                          <div className="flex items-center justify-between">
+                            <span className="text-[10px] font-bold uppercase tracking-wider text-bronze-700 flex items-center gap-1.5">
+                              <Smartphone className="w-3 h-3 text-bronze-600" />
+                              On-Screen Reel Text Hook (Type This on the Video):
+                            </span>
+                            <button
+                              onClick={() => handleCopy(reel.overlayText, `${reel.id}-hook`)}
+                              className="text-[11px] font-semibold text-sage-800 hover:text-bronze-600 transition flex items-center gap-1"
+                            >
+                              {copiedId === `${reel.id}-hook` ? (
+                                <span className="text-emerald-700 flex items-center gap-1 font-bold">
+                                  <Check className="w-3 h-3" /> Copied Hook!
+                                </span>
+                              ) : (
+                                <>
+                                  <Copy className="w-3 h-3" /> Copy Hook
+                                </>
+                              )}
+                            </button>
+                          </div>
+                          <p className="font-sans font-bold text-xs sm:text-sm text-sage-950 leading-snug">
+                            &ldquo;{reel.overlayText}&rdquo;
+                          </p>
+                        </div>
+
+                        {/* Audio & Timing Insights */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                          <div className="p-3 rounded-xl bg-white border border-cream-200 shadow-sm flex items-start gap-2.5">
+                            <Music className="w-4 h-4 text-bronze-600 flex-shrink-0 mt-0.5" />
+                            <div>
+                              <strong className="text-sage-900 block font-semibold">Recommended Sound:</strong>
+                              <span className="text-charcoal-600 text-[11px]">{reel.audioSuggestion}</span>
+                            </div>
+                          </div>
+                          <div className="p-3 rounded-xl bg-white border border-cream-200 shadow-sm flex items-start gap-2.5">
+                            <Clock className="w-4 h-4 text-bronze-600 flex-shrink-0 mt-0.5" />
+                            <div>
+                              <strong className="text-sage-900 block font-semibold">Optimal Posting Time:</strong>
+                              <span className="text-charcoal-600 text-[11px]">{reel.bestPostingTime}</span>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Caption Variation Tabs */}
+                        <div className="space-y-3">
+                          <div className="flex items-center justify-between">
+                            <span className="text-[11px] font-bold uppercase tracking-wider text-sage-900 flex items-center gap-1.5">
+                              <MessageSquare className="w-3.5 h-3.5 text-bronze-600" />
+                              Paired Suggested Captions:
+                            </span>
+
+                            <button
+                              onClick={() => handleCopy(activeCaptionText, `${reel.id}-${currentTab}`)}
+                              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-bronze-500 hover:bg-bronze-600 text-white text-xs font-semibold shadow transition"
+                            >
+                              {copiedId === `${reel.id}-${currentTab}` ? (
+                                <>
+                                  <Check className="w-3.5 h-3.5" /> Copied Caption!
+                                </>
+                              ) : (
+                                <>
+                                  <Copy className="w-3.5 h-3.5" /> Copy This Caption
+                                </>
+                              )}
+                            </button>
+                          </div>
+
+                          {/* Caption Tab Switcher */}
+                          <div className="flex items-center gap-1.5 p-1 bg-cream-200/80 rounded-xl border border-cream-300">
+                            <button
+                              onClick={() => setCaptionTab(reel.id, 'reels')}
+                              className={`flex-1 py-1.5 px-2 rounded-lg text-xs font-semibold transition ${
+                                currentTab === 'reels'
+                                  ? 'bg-white text-sage-900 shadow-sm'
+                                  : 'text-charcoal-700 hover:text-sage-900'
+                              }`}
+                            >
+                              Option 1: Reel / TikTok Hook
+                            </button>
+                            <button
+                              onClick={() => setCaptionTab(reel.id, 'feed')}
+                              className={`flex-1 py-1.5 px-2 rounded-lg text-xs font-semibold transition ${
+                                currentTab === 'feed'
+                                  ? 'bg-white text-sage-900 shadow-sm'
+                                  : 'text-charcoal-700 hover:text-sage-900'
+                              }`}
+                            >
+                              Option 2: In-Depth Feed Post
+                            </button>
+                            <button
+                              onClick={() => setCaptionTab(reel.id, 'story')}
+                              className={`flex-1 py-1.5 px-2 rounded-lg text-xs font-semibold transition ${
+                                currentTab === 'story'
+                                  ? 'bg-white text-sage-900 shadow-sm'
+                                  : 'text-charcoal-700 hover:text-sage-900'
+                              }`}
+                            >
+                              Option 3: Story Script & Polls
+                            </button>
+                          </div>
+
+                          {/* Caption Text Box */}
+                          <pre className="bg-cream-50 p-4 rounded-2xl text-xs text-charcoal-800 font-sans whitespace-pre-wrap leading-relaxed max-h-64 overflow-y-auto border border-cream-300">
+                            {activeCaptionText}
+                          </pre>
+                        </div>
+
+                        {/* Tailored Hashtags Bar */}
+                        <div className="bg-cream-100 rounded-2xl p-3.5 border border-cream-300 flex items-center justify-between gap-3">
+                          <div className="text-xs text-charcoal-700 overflow-hidden">
+                            <span className="font-bold text-sage-900 flex items-center gap-1 text-[11px] mb-0.5">
+                              <Tag className="w-3 h-3 text-bronze-600" /> Curated Hashtag Bank:
+                            </span>
+                            <p className="font-mono text-[10px] text-sage-800 truncate">
+                              {reel.hashtags}
+                            </p>
+                          </div>
+                          <button
+                            onClick={() => handleCopy(reel.hashtags, `${reel.id}-tags`)}
+                            className="px-3 py-1.5 rounded-lg bg-cream-200 hover:bg-cream-300 text-charcoal-800 text-xs font-semibold transition flex-shrink-0"
+                          >
+                            {copiedId === `${reel.id}-tags` ? 'Copied Tags!' : 'Copy Tags'}
+                          </button>
+                        </div>
+                      </div>
                     </div>
-                    <h3 className="font-serif text-base font-bold text-sage-900">Interactive 3-Slide Story Strategy</h3>
                   </div>
-                  <button
-                    onClick={() => handleCopy(firesideStoryScript, 'fireside-story')}
-                    className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold shadow transition"
-                  >
-                    {copiedId === 'fireside-story' ? (
-                      <>
-                        <Check className="w-3.5 h-3.5" /> Copied!
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="w-3.5 h-3.5" /> Copy Story Plan
-                      </>
-                    )}
-                  </button>
-                </div>
-                <pre className="bg-cream-50 p-4 rounded-xl text-xs text-charcoal-800 font-sans whitespace-pre-wrap leading-relaxed border border-cream-200">
-                  {firesideStoryScript}
-                </pre>
-              </div>
-
-              {/* Hashtags */}
-              <div className="bg-cream-100 rounded-2xl p-4 border border-cream-300 flex items-center justify-between gap-4">
-                <div className="text-xs text-charcoal-600">
-                  <strong className="text-sage-900 block font-semibold mb-0.5">Local & Ritual Hashtag Bank:</strong>
-                  <span className="font-mono text-[11px] text-sage-800">{firesideHashtags}</span>
-                </div>
-                <button
-                  onClick={() => {
-                    handleCopy(firesideHashtags, 'fireside-tags');
-                  }}
-                  className="px-3 py-1.5 rounded-lg bg-cream-200 hover:bg-cream-300 text-charcoal-800 text-xs font-semibold transition flex-shrink-0"
-                >
-                  {copiedId === 'fireside-tags' ? 'Copied!' : 'Copy Tags'}
-                </button>
-              </div>
+                );
+              })}
             </div>
           </div>
         )}
 
-        {/* TAB 2: WEBSITE LAUNCH KIT */}
-        {activeTab === 'launch' && (
+        {/* ========================================================================= */}
+        {/* 🚀 WEBSITE LAUNCH KIT TAB */}
+        {/* ========================================================================= */}
+        {activeFilter === 'launch' && (
           <div className="space-y-8">
             <div className="space-y-6">
-              <h2 className="text-xs font-bold uppercase tracking-wider text-sage-800 flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-bronze-500" />
-                Announcement Photos (Choose one or use all for a carousel)
-              </h2>
+              <div className="border-b border-cream-200 pb-3">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-bronze-600">
+                  Brand & Digital Reassurance
+                </span>
+                <h2 className="font-serif text-2xl font-bold text-sage-900">
+                  Website Announcement Photos (Mel, Zofia & Sanctuary)
+                </h2>
+                <p className="text-xs text-charcoal-600 mt-1">
+                  Choose one photo or download all four to create an Instagram carousel.
+                </p>
+              </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                {photos.map((photo) => (
+                {launchPhotos.map((photo) => (
                   <div
                     key={photo.id}
                     className="bg-white rounded-2xl overflow-hidden border border-cream-200 shadow-sm"
@@ -546,7 +473,7 @@ Tap the link to explore our new digital home 🤍
                         className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-sage-800 text-cream-50 hover:bg-sage-900 transition text-xs font-semibold shadow-sm flex-shrink-0"
                       >
                         <Download className="w-3.5 h-3.5 text-bronze-300" />
-                        Save
+                        Save Photo
                       </a>
                     </div>
                   </div>
@@ -554,17 +481,22 @@ Tap the link to explore our new digital home 🤍
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-5 border border-cream-200 shadow-sm space-y-4">
+            {/* Main Launch Caption */}
+            <div className="bg-white rounded-2xl p-6 border border-cream-200 shadow-sm space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <h2 className="font-serif text-base font-bold text-sage-900">Instagram & Facebook Launch Caption</h2>
-                  <p className="text-xs text-charcoal-500">Reassures clients that it is still Mel, Zofia and the team</p>
+                  <h3 className="font-serif text-base font-bold text-sage-900">
+                    Instagram & Facebook Launch Caption
+                  </h3>
+                  <p className="text-xs text-charcoal-500">
+                    Warmly reassures clients that it is still Mel, Zofia and the team
+                  </p>
                 </div>
                 <button
-                  onClick={() => handleCopy(mainCaption, 'main')}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-bronze-500 hover:bg-bronze-600 text-white text-xs font-semibold shadow transition"
+                  onClick={() => handleCopy(mainLaunchCaption, 'launch-main')}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-bronze-500 hover:bg-bronze-600 text-white text-xs font-semibold shadow transition"
                 >
-                  {copiedCaption ? (
+                  {copiedId === 'launch-main' ? (
                     <>
                       <Check className="w-3.5 h-3.5" /> Copied!
                     </>
@@ -577,21 +509,26 @@ Tap the link to explore our new digital home 🤍
               </div>
 
               <pre className="bg-cream-50 p-4 rounded-xl text-xs text-charcoal-800 font-sans whitespace-pre-wrap leading-relaxed max-h-60 overflow-y-auto border border-cream-200">
-                {mainCaption}
+                {mainLaunchCaption}
               </pre>
             </div>
 
-            <div className="bg-white rounded-2xl p-5 border border-cream-200 shadow-sm space-y-3">
+            {/* Short Story Version */}
+            <div className="bg-white rounded-2xl p-6 border border-cream-200 shadow-sm space-y-3">
               <div className="flex items-center justify-between">
                 <div>
-                  <h2 className="font-serif text-base font-bold text-sage-900">Short Story Version</h2>
-                  <p className="text-xs text-charcoal-500">Short text for Instagram / Facebook story</p>
+                  <h3 className="font-serif text-base font-bold text-sage-900">
+                    Short Story Version
+                  </h3>
+                  <p className="text-xs text-charcoal-500">
+                    Punchy text for Instagram Stories or quick Facebook status
+                  </p>
                 </div>
                 <button
-                  onClick={() => handleCopy(shortCaption, 'short')}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold shadow transition"
+                  onClick={() => handleCopy(shortLaunchCaption, 'launch-short')}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-semibold shadow transition"
                 >
-                  {copiedShort ? (
+                  {copiedId === 'launch-short' ? (
                     <>
                       <Check className="w-3.5 h-3.5" /> Copied!
                     </>
@@ -604,99 +541,8 @@ Tap the link to explore our new digital home 🤍
               </div>
 
               <pre className="bg-cream-50 p-4 rounded-xl text-xs text-charcoal-800 font-sans whitespace-pre-wrap leading-relaxed border border-cream-200">
-                {shortCaption}
+                {shortLaunchCaption}
               </pre>
-            </div>
-          </div>
-        )}
-
-        {/* TAB 3: TREATMENT CLIPS LIBRARY */}
-        {activeTab === 'library' && (
-          <div className="space-y-6">
-            <div className="space-y-1">
-              <h2 className="text-xs font-bold uppercase tracking-wider text-sage-800 flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-bronze-500" />
-                Treatment Video Clips (Save for Instagram Reels & Stories)
-              </h2>
-              <p className="text-xs text-charcoal-600">
-                Real treatment footage recorded in the barn. Tap Save to download any clip straight to your phone.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-              {[
-                {
-                  id: 'lash-lift',
-                  title: 'Lash Lift Treatment',
-                  subtitle: 'Precision curling & eye artistry',
-                  src: '/videos/lash-lift-treatment.mp4',
-                  downloadName: 'Beauty-Barn-Lash-Lift.mp4',
-                  size: '1.5 MB',
-                },
-                {
-                  id: 'hot-stones',
-                  title: 'Hot Stones Massage',
-                  subtitle: 'Heated stones & deep tension relief',
-                  src: '/videos/hot-stone-massage-treatment.mp4',
-                  downloadName: 'Beauty-Barn-Hot-Stones.mp4',
-                  size: '3.0 MB',
-                },
-                {
-                  id: 'facial-gua-sha',
-                  title: 'Facial Gua Sha Sculpting',
-                  subtitle: 'Lymphatic drainage & contouring',
-                  src: '/videos/facial-gua-sha-sculpting.mp4',
-                  downloadName: 'Beauty-Barn-Facial-Gua-Sha.mp4',
-                  size: '1.0 MB',
-                },
-                {
-                  id: 'facial-ritual',
-                  title: 'Facial Botanical Ritual',
-                  subtitle: 'Botanical application & glowing skin',
-                  src: '/videos/facial-botanical-ritual.mp4',
-                  downloadName: 'Beauty-Barn-Facial-Ritual.mp4',
-                  size: '1.5 MB',
-                },
-                {
-                  id: 'body-massage',
-                  title: 'Body Massage Flow',
-                  subtitle: 'Swedish bodywork in candlelit room',
-                  src: '/videos/body-massage-flow.mp4',
-                  downloadName: 'Beauty-Barn-Body-Massage.mp4',
-                  size: '5.1 MB',
-                },
-              ].map((v) => (
-                <div
-                  key={v.id}
-                  className="bg-white rounded-2xl overflow-hidden border border-cream-200 shadow-sm flex flex-col"
-                >
-                  <div className="relative aspect-[4/5] bg-black">
-                    <video
-                      src={v.src}
-                      controls
-                      playsInline
-                      preload="metadata"
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <div className="p-3.5 flex items-center justify-between gap-3 bg-white border-t border-cream-200">
-                    <div>
-                      <h3 className="font-serif text-xs font-bold text-sage-900">{v.title}</h3>
-                      <p className="text-[11px] text-charcoal-500">{v.size}</p>
-                    </div>
-                    <a
-                      href={v.src}
-                      download={v.downloadName}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sage-800 text-cream-50 hover:bg-sage-900 transition text-xs font-semibold shadow-sm flex-shrink-0"
-                    >
-                      <Download className="w-3.5 h-3.5 text-bronze-300" />
-                      Save
-                    </a>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         )}
