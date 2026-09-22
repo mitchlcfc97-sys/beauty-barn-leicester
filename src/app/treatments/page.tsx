@@ -95,15 +95,15 @@ export default function TreatmentsPage() {
 
           <div className="relative h-48 sm:h-56 rounded-3xl overflow-hidden shadow-sm border border-cream-200 group">
             <Image
-              src="/images/treatment-room-skylight.jpg"
-              alt="Skylight facial treatment room"
+              src="/images/candlelit-treatment-bed.jpg"
+              alt="Private botanical treatment sanctuary"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-500"
               sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-5 text-white">
-              <span className="font-serif font-medium text-base">Natural Light Facial Suite</span>
-              <span className="text-cream-200 text-xs">Natural skylight & botanical skincare</span>
+              <span className="font-serif font-medium text-base">Private Treatment Suite</span>
+              <span className="text-cream-200 text-xs">Heated bed, floor candlelight & botanical calm</span>
             </div>
           </div>
 

@@ -63,7 +63,7 @@ export const SIGNATURE_RITUALS: SignatureRitual[] = [
     duration: "45 Minutes",
     badge: "Most Unique Experience",
     therapists: "2 Therapists Synchronised",
-    leadImage: "/images/treatment-room-skylight.jpg",
+    leadImage: "/images/couples-massage-room.jpg",
     description: "Experience the ultimate balance of deep relaxation and visible glow. While one therapist delivers an indulgent, customized botanical facial tailored to your skin's exact needs, a second therapist pampers your feet and lower legs with an intensive softening scrub, mask, and reflex massage.",
     ritualSteps: [
       {
@@ -166,7 +166,7 @@ export const SIGNATURE_RITUALS: SignatureRitual[] = [
     priceNum: 100,
     duration: "1 Hour 30 Minutes",
     badge: "Very Popular Ritual",
-    leadImage: "/images/treatment-room-skylight.jpg",
+    leadImage: "/images/couples-massage-room.jpg",
     description: "Our signature face & body combination. Begin with a moment of serene calm during our Bramley Opening Ritual, followed by a restorative full-body massage and a revitalizing botanical facial with warm towel compresses.",
     ritualSteps: [
       {

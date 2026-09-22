@@ -462,7 +462,7 @@ export default function PregnancyPage() {
 
           <div className="lg:col-span-5 relative h-72 sm:h-80 rounded-2xl overflow-hidden border border-sage-700 shadow-lg">
             <Image
-              src="/images/treatment-room-skylight.jpg"
+              src="/images/couples-massage-room.jpg"
               alt="Candlelit Double Suite for Expectant Couples at The Beauty Barn"
               fill
               className="object-cover"

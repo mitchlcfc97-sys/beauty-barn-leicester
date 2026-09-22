@@ -679,8 +679,8 @@ export default function HomePage() {
           {/* Card 6: Solo Treatment Sanctuary */}
           <div className="group relative h-80 rounded-3xl overflow-hidden shadow-md border border-cream-300">
             <Image
-              src="/images/treatment-room-skylight.jpg"
-              alt="Treatment sanctuary with massage bed, golden oil cart, and skylight"
+              src="/images/candlelit-treatment-bed.jpg"
+              alt="Private treatment sanctuary with plush fleece bed and warm floor candlelight"
               fill
               className="object-cover group-hover:scale-105 transition duration-500"
               sizes="(max-width: 768px) 100vw, 33vw"

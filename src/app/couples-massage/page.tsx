@@ -153,7 +153,7 @@ export default function CouplesMassagePage() {
           <div className="relative h-72 rounded-3xl overflow-hidden shadow-md border border-cream-300 bg-charcoal-950 group">
             <video
               src="/videos/dual-therapist-relaxation.mp4"
-              poster="/images/treatment-room-skylight.jpg"
+              poster="/images/couples-massage-room.jpg"
               preload="metadata"
               autoPlay
               loop

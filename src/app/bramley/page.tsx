@@ -269,8 +269,8 @@ export default function BramleyPage() {
 
             <div className="lg:col-span-5 relative h-80 sm:h-96 rounded-2xl overflow-hidden border border-sage-800">
               <Image
-                src="/images/treatment-room-skylight.jpg"
-                alt="Heated treatment bed with Bramley botanical oils under natural skylight"
+                src="/images/candlelit-treatment-bed.jpg"
+                alt="Heated treatment bed with Bramley botanical oils in serene candlelight"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 40vw"
@@ -278,7 +278,7 @@ export default function BramleyPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 right-4 text-white">
                 <p className="font-serif text-sm font-semibold">Private Treatment Sanctuary</p>
-                <p className="text-[11px] text-sage-200">Heated bed, gentle acoustics, and country skylight</p>
+                <p className="text-[11px] text-sage-200">Heated bed, gentle acoustics, and ambient candlelight</p>
               </div>
             </div>
           </div>

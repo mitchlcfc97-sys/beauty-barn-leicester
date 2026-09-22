@@ -100,8 +100,8 @@ export default function RitualsPage() {
 
           <div className="relative h-72 rounded-3xl overflow-hidden shadow-md border border-cream-300 group">
             <Image
-              src="/images/treatment-room-skylight.jpg"
-              alt="Skylight treatment suite for high ticket rituals"
+              src="/images/couples-massage-room.jpg"
+              alt="Warm candlelit treatment suite for rituals"
               fill
               className="object-cover group-hover:scale-105 transition duration-500"
               sizes="(max-width: 768px) 100vw, 33vw"

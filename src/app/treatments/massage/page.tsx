@@ -58,8 +58,8 @@ export default function MassagePage() {
 
           <div className="relative h-64 rounded-3xl overflow-hidden shadow-md border border-cream-300 group">
             <Image
-              src="/images/treatment-room-skylight.jpg"
-              alt="Single and Double Treatment Rooms with Natural Light"
+              src="/images/couples-massage-room.jpg"
+              alt="Single and Double Treatment Rooms with Ambient Candlelight"
               fill
               className="object-cover group-hover:scale-105 transition duration-500"
               sizes="(max-width: 768px) 100vw, 33vw"
