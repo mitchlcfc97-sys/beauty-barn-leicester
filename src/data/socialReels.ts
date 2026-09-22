@@ -171,33 +171,33 @@ SLIDE 3:
     hashtags: `#TheBeautyBarnLeicester #LeicesterMassage #SpinalAlignment #HotStones #ScraptoftSpa #Leicestershire #StressRelief`,
   },
   {
-    id: 'warm-bamboo-massage',
+    id: 'natural-bamboo-massage',
     category: 'massage',
     categoryLabel: 'Massage & Deep Tissue',
-    title: 'Warm Bamboo Canes Deep Tissue Flow',
+    title: 'Natural Bamboo Canes Deep Tissue Flow',
     badge: 'Deep Knot Release',
     src: '/videos/bamboo-deep-tissue-flow.mp4',
     poster: '/images/treatments/bamboo-deep-flow-poster.jpg',
-    downloadName: 'Beauty-Barn-Warm-Bamboo-Massage.mp4',
-    fileSize: '22.5 MB',
-    duration: '43s reel cut',
-    overlayText: 'When stubborn shoulder knots that standard massage couldn’t shift meet warm bamboo canes… 🎋🔥',
+    downloadName: 'Beauty-Barn-Natural-Bamboo-Massage.mp4',
+    fileSize: '18.6 MB',
+    duration: '38s reel cut',
+    overlayText: 'When stubborn shoulder knots that standard massage couldn’t shift meet natural bamboo canes… 🎋✨',
     audioSuggestion: 'Deep rhythmic spa drums / Relaxing lofi instrumental',
     bestPostingTime: 'Wednesday 6:00 PM or Sunday 7:00 PM',
     reelsCaption: `Say goodbye to deep muscular tension! 🎋✨
 
-Heated solid bamboo canes deliver elongated, firm pressure along tight muscle bands, melting stubborn posture knots faster than hands alone ever could.
+Smooth solid bamboo canes deliver elongated, firm pressure along tight muscle bands, unknotting stubborn posture tightness faster than hands alone ever could.
 
 Upgrade any Back or Full Body Massage with natural Bamboo Canes for just £5 on Fresha!
 
 🔗 Tap the link in our bio to book your bamboo massage escape.
 
-#TheBeautyBarnLeicester #BambooMassage #DeepTissueMassage #LeicesterMassage #ScraptoftSpa #BackPainRelief #TensionRelief #LeicestershireWellness`,
-    feedCaption: `Why warm bamboo massage is our therapist secret for stubborn knots: 🎋🌿
+#TheBeautyBarnLeicester #BambooMassage #DeepTissueMassage #LeicesterMassage #ScraptoftSpa #BackPainRelief #TensionRelief #NaturalBamboo #LeicestershireWellness`,
+    feedCaption: `Why natural bamboo massage is our therapist secret for stubborn knots: 🎋🌿
 
 If you suffer from chronic shoulder tightness, desk stiffness, or tension headaches — standard manual pressure sometimes can’t reach deep enough without causing discomfort.
 
-Heated natural bamboo canes distribute smooth, even, sustained pressure across large muscle groups. The therapeutic warmth softens tight fascia, allowing your therapist to work into deep trigger points effortlessly.
+Smooth natural bamboo canes distribute even, sustained pressure across large muscle groups. The firm rolling action releases tight fascia, allowing your therapist to work into deep trigger points effortlessly.
 
 ✨ Benefits of Bamboo Massage:
 • Deep muscular tension and knot release
@@ -213,15 +213,15 @@ Tap the link in our bio to book on Fresha 🤍`,
     storyScript: `📱 3-SLIDE INSTAGRAM STORY SEQUENCE
 
 SLIDE 1 (Video: Bamboo Rolling on Back):
-• Text: "When your shoulder knots need more than standard hands… 🎋🔥"
+• Text: "When your shoulder knots need more than standard hands… 🎋✨"
 • Slider Sticker: "How tight are your shoulders right now?" [🎋 0 - 100%]
 
 SLIDE 2:
-• Text: "Warm bamboo canes roll along tight muscle bands to dissolve deep knots."
+• Text: "Natural bamboo canes roll along tight muscle bands to dissolve deep knots."
 
 SLIDE 3:
 • Link Sticker: "BOOK BAMBOO MASSAGE +£5" 🔗 (Link to: thebeautybarnleicester.co.uk/treatments/massage)`,
-    hashtags: `#TheBeautyBarnLeicester #BambooMassage #WarmBamboo #DeepTissueLeicester #LeicesterMassage #Scraptoft #BackPain #MassageTherapy`,
+    hashtags: `#TheBeautyBarnLeicester #BambooMassage #NaturalBamboo #DeepTissueLeicester #LeicesterMassage #Scraptoft #BackPain #MassageTherapy`,
   },
   {
     id: 'facial-gua-sha',
