@@ -209,8 +209,8 @@ export default function PregnancyPage() {
               <span className="text-xs font-medium text-sage-900">Single & Double Rooms</span>
             </div>
             <div className="p-3 rounded-2xl bg-white/70 border border-cream-300/80 shadow-xs flex items-center gap-2.5">
-              <Star className="w-4 h-4 text-bronze-600 flex-shrink-0" />
-              <span className="text-xs font-medium text-sage-900">4.9★ (2,500+ Reviews)</span>
+              <Star className="w-4 h-4 text-amber-500 fill-amber-500 flex-shrink-0" />
+              <span className="text-xs font-medium text-sage-900">5.0★ (2,500+ Reviews)</span>
             </div>
           </div>
         </div>

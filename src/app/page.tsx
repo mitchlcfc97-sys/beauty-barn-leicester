@@ -86,8 +86,9 @@ export default function HomePage() {
                 <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                 <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
                 <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
               </div>
-              <span className="font-semibold">4.9 Star Rated</span>
+              <span className="font-semibold">5 Star Rated</span>
               <span className="text-charcoal-800/30">•</span>
               <span className="text-[#5b5bd6] font-semibold flex items-center gap-1.5">
                 <img src="/images/fresha-best-in-class.png" alt="Fresha Best in Class" className="w-4 h-4 object-contain inline" />
@@ -860,7 +861,7 @@ export default function HomePage() {
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-5 h-5 text-amber-500 fill-amber-500" />
               ))}
-              <span className="text-sm font-bold text-charcoal-900 ml-2">4.9 / 5.0</span>
+              <span className="text-sm font-bold text-charcoal-900 ml-2">5.0 / 5.0</span>
             </div>
             <span className="hidden sm:block text-charcoal-800/30">·</span>
             <a
