@@ -30,6 +30,36 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/packages',
+        destination: '/spa-days',
+        permanent: true,
+      },
+      {
+        source: '/spa-packages',
+        destination: '/spa-days',
+        permanent: true,
+      },
+      {
+        source: '/treatment-menu',
+        destination: '/treatments',
+        permanent: true,
+      },
+      {
+        source: '/our-treatment-menu',
+        destination: '/treatments',
+        permanent: true,
+      },
+      {
+        source: '/contact-us',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/massage',
+        destination: '/treatments/massage',
+        permanent: true,
+      },
+      {
         source: '/signature-treatments',
         destination: '/treatments',
         permanent: true,
