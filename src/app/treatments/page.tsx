@@ -310,7 +310,7 @@ export default function TreatmentsPage() {
                   Precision Lash Lifts & Brow Styling
                 </p>
                 <p className="text-xs text-cream-100/90 mt-0.5">
-                  Lamination, lash lift, tinting, and precision styling by our specialist therapists Fran & Matilda.
+                  Lamination, lash lift, tinting, and precision styling by our therapists Fran & Matilda.
                 </p>
               </div>
             </div>
