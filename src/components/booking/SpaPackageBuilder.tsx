@@ -97,6 +97,39 @@ export default function SpaPackageBuilder() {
     }
     setIsSubmitting(true);
     try {
+      // Direct client-side dispatch to Web3Forms for instant email delivery to thebeautybarn.leic@gmail.com
+      await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: '02d9ef30-7db4-4327-abd0-5d1e857b3cfc',
+          subject: `Spa Day Booking Request: ${selectedPkg.name} (${guestCount} guests) - ${clientName}`,
+          from_name: 'The Beauty Barn Website',
+          name: clientName,
+          email: clientEmail,
+          phone: clientPhone,
+          message: `SPA DAY BOOKING ENQUIRY:
+------------------------------------------
+• Package: ${selectedPkg.name}
+• Guests: ${guestCount}
+• Preferred Date: ${selectedDate || 'Flexible'}
+• Preferred Start Time: ${formattedTimeSlot}
+• Total Price: £${totalPrice}
+• 50% Securing Deposit: £${depositRequired}
+
+CLIENT CONTACT INFO:
+• Name: ${clientName}
+• Phone: ${clientPhone}
+• Email: ${clientEmail}
+• Dietary / Occasion Notes: ${notes || 'None provided'}
+------------------------------------------`,
+        }),
+      }).catch((e) => console.error('Web3Forms dispatch error:', e));
+
+      // Also log via Next.js internal API
       await fetch('/api/booking', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -112,7 +145,7 @@ export default function SpaPackageBuilder() {
           preferredTime: formatStartTimeLabel(preferredStartTime),
           notes,
         }),
-      });
+      }).catch(() => {});
     } catch (err) {
       console.error('Submission error:', err);
     } finally {

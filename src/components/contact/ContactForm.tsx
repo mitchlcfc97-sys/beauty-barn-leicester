@@ -20,18 +20,42 @@ export default function ContactForm() {
     setErrorMsg('');
 
     try {
-      const res = await fetch('/api/contact', {
+      // Direct client-side dispatch to Web3Forms
+      await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: '02d9ef30-7db4-4327-abd0-5d1e857b3cfc',
+          subject: `Website Enquiry: ${subject || 'General'} - ${name}`,
+          from_name: name,
+          name,
+          email,
+          phone,
+          message: `NEW WEBSITE CONTACT ENQUIRY:
+------------------------------------------
+• Name: ${name}
+• Phone: ${phone || 'Not provided'}
+• Email: ${email}
+• Subject: ${subject || 'General'}
+
+MESSAGE:
+${message}
+------------------------------------------`,
+        }),
+      }).catch((e) => console.error('Web3Forms dispatch error:', e));
+
+      // Also log via API route
+      await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, phone, subject, message }),
-      });
+      }).catch(() => {});
 
-      if (!res.ok) {
-        throw new Error('Failed to submit message.');
-      }
       setSubmitted(true);
     } catch (err: any) {
-      // Fallback: still show friendly screen and direct options
       setSubmitted(true);
     } finally {
       setIsSubmitting(false);

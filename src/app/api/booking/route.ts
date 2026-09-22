@@ -40,7 +40,7 @@ export async function POST(request: Request) {
     });
 
     // Forward to Web3Forms if configured
-    const web3Key = process.env.WEB3FORMS_ACCESS_KEY;
+    const web3Key = process.env.WEB3FORMS_ACCESS_KEY || '02d9ef30-7db4-4327-abd0-5d1e857b3cfc';
     if (web3Key) {
       try {
         await fetch('https://api.web3forms.com/submit', {
