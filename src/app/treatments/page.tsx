@@ -23,6 +23,21 @@ export default function TreatmentsPage() {
     { id: 'body', label: 'Body & Mums-to-Be' },
   ];
 
+  const handleCategoryClick = (id: string) => {
+    setSelectedCategory(id);
+    if (id === 'signature') {
+      const el = document.getElementById('signature-rituals');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } else {
+      const el = document.getElementById('treatment-menu');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
+
   const filteredTreatments = selectedCategory === 'all'
     ? TREATMENTS
     : TREATMENTS.filter(t => t.category === selectedCategory);
@@ -47,7 +62,7 @@ export default function TreatmentsPage() {
             {categories.map((cat) => (
               <button
                 key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
+                onClick={() => handleCategoryClick(cat.id)}
                 className={`px-4 py-2 rounded-xl text-xs font-semibold transition ${
                   selectedCategory === cat.id
                     ? 'bg-sage-800 text-cream-50 shadow-md'
@@ -114,7 +129,7 @@ export default function TreatmentsPage() {
       {/* ========================================================================= */}
       {/* 🌟 HIGH-TICKET SHOWCASE: SIGNATURE RITUALS & IMMERSION PACKAGES */}
       {/* ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <section id="signature-rituals" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 scroll-mt-28">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <span className="text-xs uppercase tracking-widest text-bronze-600 font-bold flex items-center justify-center gap-1.5">
             <Star className="w-3.5 h-3.5 fill-bronze-500 text-bronze-500" /> Crown Jewel Experiences
@@ -464,15 +479,36 @@ export default function TreatmentsPage() {
       {/* ========================================================================= */}
       {/* 📋 COMPLETE TREATMENTS MENU */}
       {/* ========================================================================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-cream-200 pb-4">
+      <section id="treatment-menu" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 scroll-mt-28">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 border-b border-cream-200 pb-5">
           <div>
             <span className="text-xs uppercase tracking-widest text-bronze-600 font-bold">Comprehensive Menu</span>
-            <h2 className="font-serif text-3xl font-medium text-sage-900">All Treatments & Salon Services</h2>
+            <h2 className="font-serif text-3xl font-medium text-sage-900">
+              {selectedCategory === 'all'
+                ? 'All Treatments & Salon Services'
+                : categories.find(c => c.id === selectedCategory)?.label || 'All Treatments'}
+            </h2>
+            <p className="text-xs text-charcoal-800/70 mt-1">
+              Showing {filteredTreatments.length} {filteredTreatments.length === 1 ? 'service' : 'services'}
+            </p>
           </div>
-          <span className="text-xs text-charcoal-800/70 font-medium">
-            Showing {filteredTreatments.length} services
-          </span>
+
+          {/* In-menu Filter Tabs */}
+          <div className="flex flex-wrap items-center gap-1.5">
+            {categories.map((cat) => (
+              <button
+                key={cat.id}
+                onClick={() => handleCategoryClick(cat.id)}
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition ${
+                  selectedCategory === cat.id
+                    ? 'bg-sage-800 text-cream-50 shadow-sm'
+                    : 'bg-white text-charcoal-800 border border-cream-300 hover:bg-cream-100'
+                }`}
+              >
+                {cat.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
