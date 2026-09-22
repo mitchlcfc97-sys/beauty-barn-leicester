@@ -66,9 +66,9 @@ export default function CouplesMassagePage() {
       price: '£200 for Two',
       pricePerPerson: '£100 per person',
       freshaUrl: 'https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8461617',
-      description: 'Why choose between a massage and a facial when you can have both? Begin with 45 minutes of customized deep back, neck & shoulder massage to release accumulated stress, transitioning into 45 minutes of revitalising botanical facial therapy with warm towel compresses and scalp acupressure.',
+      description: 'Why choose between a massage and a facial when you can have both? Begin with 45 minutes of customized restorative back, neck & shoulder massage to melt tension (with Bamboo Canes upgrade available for deeper pressure), transitioning into 45 minutes of revitalising botanical facial therapy with warm towel compresses and scalp acupressure.',
       features: [
-        '45m targeted deep relaxation back, neck & shoulder massage',
+        '45m targeted restorative back, neck & shoulder massage (Bamboo upgrade available)',
         '45m tailored botanical glow facial with warm compresses',
         'Acupressure scalp massage & sensory aromatherapy',
         'Side-by-side heated treatment couches in private double room',

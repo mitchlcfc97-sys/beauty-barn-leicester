@@ -161,7 +161,7 @@ export const SIGNATURE_RITUALS: SignatureRitual[] = [
   {
     id: "bramley-full-indulgence",
     name: "The Full Indulgence Ritual",
-    subtitle: "A seamless 90-minute pairing of deep bodywork and glowing facial therapy",
+    subtitle: "A seamless 90-minute pairing of restorative bodywork and glowing facial therapy (Bamboo upgrade available for deeper pressure)",
     price: "£100 (£105 with Hot Stones | £200 for Two)",
     priceNum: 100,
     duration: "1 Hour 30 Minutes",

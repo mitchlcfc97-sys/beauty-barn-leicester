@@ -62,12 +62,16 @@ const MATCHES: Record<string, MatchResult> = {
     freshaUrl: 'https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A18353636',
   },
   'knots-extended': {
-    title: 'The Full Indulgence Ritual',
-    category: '90-Min Massage & Facial Combination',
+    title: 'The Full Indulgence Ritual (+ Bamboo Upgrade)',
+    category: '90-Min Face & Body Ritual',
     duration: '90 mins',
-    price: '£100',
-    reason: 'The ultimate tension-melting ritual. Combines a 45-minute focused deep back, neck & shoulder massage with a 45-minute restorative botanical facial.',
-    highlights: ['45m targeted deep pressure knot release', '45m bespoke botanical facial & scalp work', 'Complete head-to-toe muscular and mental reset'],
+    price: '£100 (+£5 Bamboo Canes for Deeper Pressure)',
+    reason: 'Our signature 90-minute pairing of full body massage and bespoke facial. The massage is inherently soothing and relaxing — simply select the Natural Bamboo Canes add-on (+£5) during booking if you want deeper myofascial pressure to work out stubborn knots.',
+    highlights: [
+      '45m restorative body massage + 45m bespoke botanical facial',
+      'Add Natural Bamboo Canes (+£5) on Fresha for deep knot release',
+      'Complete face & body reset in one appointment',
+    ],
     freshaUrl: 'https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8461617',
   },
   'skin-quick': {

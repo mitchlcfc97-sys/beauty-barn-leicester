@@ -304,7 +304,7 @@ export const TREATMENTS: Treatment[] = [
     "duration": "90 mins",
     "price": "£100 (£105 with Hot Stones | £200 for Two)",
     "priceNum": 100,
-    "description": "A seamless 90-minute pairing of deep restorative full-body massage and our glowing bespoke botanical facial with warm towel compresses.",
+    "description": "A seamless 90-minute pairing of restorative full-body massage and our glowing bespoke botanical facial with warm towel compresses (Natural Bamboo Canes upgrade available for deeper pressure).",
     "highlights": [
       "90-minute balanced face & body combination",
       "Full body massage with botanical oils",
