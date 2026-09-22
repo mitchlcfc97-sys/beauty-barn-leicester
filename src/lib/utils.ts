@@ -10,5 +10,5 @@ export const FRESHA_CONFIG = {
   locationId: "380113",
   slug: "the-beauty-barn-leicester-leicester-beeby-road-x4x1h429",
   directBookingUrl: "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking",
-  voucherUrl: "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/vouchers",
+  voucherUrl: "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/gift-cards",
 };

@@ -1,16 +1,12 @@
 'use client';
 
-import React, { useState } from 'react';
-import type { Metadata } from 'next';
+import React from 'react';
 import { Gift, Sparkles, Check, Send, ShieldCheck, Heart, ExternalLink } from 'lucide-react';
 import { FRESHA_CONFIG } from '@/lib/utils';
 import { useFresha } from '@/components/booking/FreshaModal';
 
 export default function GiftVouchersPage() {
   const { openFresha } = useFresha();
-  const [customAmount, setCustomAmount] = useState<number>(50);
-
-  const presetAmounts = [30, 50, 75, 90, 120, 150];
 
   return (
     <div className="space-y-16 pb-20">
@@ -44,44 +40,25 @@ export default function GiftVouchersPage() {
               </p>
             </div>
 
-            {/* Quick Amount Selector */}
-            <div>
-              <label className="block text-xs font-bold text-charcoal-900 uppercase tracking-wider mb-3">
-                Select Voucher Value
-              </label>
-              <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
-                {presetAmounts.map((amount) => (
-                  <button
-                    key={amount}
-                    type="button"
-                    onClick={() => setCustomAmount(amount)}
-                    className={`py-3 rounded-xl font-serif text-sm font-semibold transition border ${
-                      customAmount === amount
-                        ? 'bg-sage-800 text-cream-50 border-sage-800 shadow-sm'
-                        : 'bg-cream-50 text-charcoal-900 border-cream-300 hover:bg-cream-100'
-                    }`}
-                  >
-                    £{amount}
-                  </button>
-                ))}
-              </div>
-            </div>
-
             {/* Voucher Preview Card */}
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-sage-900 to-charcoal-900 text-cream-50 border border-sage-800 space-y-4 shadow-md">
+            <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-sage-900 to-charcoal-900 text-cream-50 border border-sage-800 space-y-4 shadow-md">
               <div className="flex justify-between items-start">
                 <div>
-                  <span className="text-[10px] tracking-widest uppercase font-bold text-bronze-400">Gift Certificate</span>
-                  <h4 className="font-serif text-xl font-medium text-cream-50">The Beauty Barn Leicester</h4>
+                  <span className="text-[10px] tracking-widest uppercase font-bold text-bronze-400">Digital Gift Certificate</span>
+                  <h3 className="font-serif text-2xl font-medium text-cream-50 mt-1">The Beauty Barn Leicester</h3>
                 </div>
-                <div className="font-serif text-3xl font-bold text-bronze-400">
-                  £{customAmount}
+                <div className="text-right">
+                  <span className="text-xs text-sage-300 block">Values from</span>
+                  <span className="font-serif text-2xl sm:text-3xl font-bold text-bronze-400">£30+</span>
                 </div>
               </div>
-              <p className="text-xs text-sage-200">Valid for 12 months from purchase on all private spa packages & salon treatments.</p>
-              <div className="pt-2 border-t border-sage-800 text-[11px] text-sage-300 flex justify-between">
-                <span>Location: Scraptoft, LE7 9SJ</span>
-                <span>Powered by Fresha</span>
+              <p className="text-xs sm:text-sm text-sage-200 leading-relaxed">
+                Choose any custom or preset amount and select your digital card design directly at checkout. Valid for 12 months on all private spa days, hot tub packages, massages, and organic facials.
+              </p>
+              <div className="pt-3 border-t border-sage-800/80 text-[11px] text-sage-300 flex flex-wrap justify-between gap-2">
+                <span>📍 Scraptoft, LE7 9SJ</span>
+                <span>✨ Instant Email Delivery</span>
+                <span>🔒 Powered by Fresha</span>
               </div>
             </div>
 
@@ -90,16 +67,16 @@ export default function GiftVouchersPage() {
                 href={FRESHA_CONFIG.voucherUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-4 rounded-xl bg-bronze-500 hover:bg-bronze-600 text-white font-medium text-sm transition shadow-md flex items-center justify-center gap-2 group"
+                className="w-full py-4 rounded-xl bg-bronze-500 hover:bg-bronze-600 text-white font-semibold text-sm transition shadow-md flex items-center justify-center gap-2 group transform hover:-translate-y-0.5"
               >
-                <span>Purchase £{customAmount} Voucher on Fresha</span>
+                <span>Choose Amount & Buy on Fresha</span>
                 <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition" />
               </a>
             </div>
 
             <div className="flex items-center gap-2 text-xs text-charcoal-800/70 pt-2">
               <ShieldCheck className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-              <span>Instant digital code delivered directly to email • Valid for 12 months</span>
+              <span>Instant digital voucher code emailed directly to you or your recipient</span>
             </div>
           </div>
 
