@@ -63,31 +63,31 @@ Tap the link to explore our new digital home 🤍
   const launchPhotos = [
     {
       id: 'team',
-      title: '1. The Real Team (Most Recommended!)',
-      subtitle: 'Instantly lets clients recognize Mel, Zofia & the team',
+      title: '1. The Real Team (Mel & Zofia)',
+      subtitle: 'Instantly lets clients recognize the therapists they know and love',
       src: '/social/2-team.jpg',
       downloadName: 'The-Beauty-Barn-Team.jpg',
     },
     {
-      id: 'atmosphere',
-      title: '2. Toned-Down Spa Atmosphere',
-      subtitle: 'Soft herbal tea, eucalyptus & waffle cotton towels',
-      src: '/social/1-atmosphere.jpg',
-      downloadName: 'The-Beauty-Barn-Atmosphere.jpg',
+      id: 'double-room',
+      title: '2. Real Double Treatment Suite',
+      subtitle: 'Twin heated couches, sage waffle blankets & ambient lighting',
+      src: '/images/double-room-massage-suite.jpg',
+      downloadName: 'The-Beauty-Barn-Double-Room.jpg',
+    },
+    {
+      id: 'nail-station',
+      title: '3. The GelBottle Nail & Pedicure Bar',
+      subtitle: 'Ceramic pedicure bowl, scrub, and bespoke gel color swatches',
+      src: '/images/nail-station-salon.jpg',
+      downloadName: 'The-Beauty-Barn-Nail-Station.jpg',
     },
     {
       id: 'entrance',
-      title: '3. The Barn Entrance',
-      subtitle: 'Authentic stone barn entrance clients know well',
+      title: '4. Authentic Stone Barn Entrance',
+      subtitle: 'The historic converted barn entrance clients look out for in Scraptoft',
       src: '/social/3-entrance.jpg',
       downloadName: 'The-Beauty-Barn-Entrance.jpg',
-    },
-    {
-      id: 'room',
-      title: '4. Candlelit Treatment Suite',
-      subtitle: 'Warm heated couch and tranquil ambience',
-      src: '/social/4-room.jpg',
-      downloadName: 'The-Beauty-Barn-Treatment-Room.jpg',
     },
   ];
 

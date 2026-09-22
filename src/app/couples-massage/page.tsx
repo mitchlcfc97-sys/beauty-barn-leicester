@@ -170,8 +170,8 @@ export default function CouplesMassagePage() {
 
           <div className="relative h-72 rounded-3xl overflow-hidden shadow-md border border-cream-300 group">
             <Image
-              src="/images/candlelit-treatment-bed.jpg"
-              alt="Candlelit treatment beds in our double room"
+              src="/images/double-room-massage-suite.jpg"
+              alt="Real couples double treatment room with twin heated couches at The Beauty Barn"
               fill
               className="object-cover group-hover:scale-105 transition duration-500"
               sizes="(max-width: 768px) 100vw, 33vw"
@@ -254,8 +254,8 @@ export default function CouplesMassagePage() {
           <div className="lg:col-span-6 relative">
             <div className="relative h-[440px] sm:h-[500px] rounded-3xl overflow-hidden shadow-xl border border-cream-300">
               <Image
-                src="/images/treatment-room-skylight.jpg"
-                alt="Skylight double treatment room at The Beauty Barn Leicester"
+                src="/images/double-room-massage-suite.jpg"
+                alt="Authentic double treatment suite with heated couches, towel warmer, and ambient radial lighting"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -266,7 +266,7 @@ export default function CouplesMassagePage() {
                   Scraptoft Sanctuary
                 </span>
                 <h3 className="font-serif text-2xl font-medium">Double Room Tranquility</h3>
-                <p className="text-xs text-cream-200 mt-1">Side-by-side heated couches under timber barn rafters.</p>
+                <p className="text-xs text-cream-200 mt-1">Side-by-side heated couches, waffle knit blankets, towel warmer, and warm radial lighting.</p>
               </div>
             </div>
           </div>

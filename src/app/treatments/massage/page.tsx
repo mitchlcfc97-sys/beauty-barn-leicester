@@ -9,6 +9,7 @@ import { useFresha } from '@/components/booking/FreshaModal';
 
 export default function MassagePage() {
   const { openFresha } = useFresha();
+  const [deepTissueVideo, setDeepTissueVideo] = React.useState<'bamboo' | 'stones'>('bamboo');
 
   // Categorised treatment groupings for clear readability
   const classicMassages = TREATMENTS.filter(t =>
@@ -509,10 +510,35 @@ export default function MassagePage() {
 
           {/* Right: Real Session Video */}
           <div className="lg:col-span-6 space-y-3">
+            {/* Video Selector Tabs */}
+            <div className="flex items-center justify-between gap-2 p-1 bg-cream-200/80 rounded-2xl border border-cream-300">
+              <button
+                onClick={() => setDeepTissueVideo('bamboo')}
+                className={`flex-1 py-1.5 px-3 rounded-xl text-xs font-semibold transition flex items-center justify-center gap-1.5 ${
+                  deepTissueVideo === 'bamboo'
+                    ? 'bg-sage-900 text-cream-50 shadow-sm'
+                    : 'text-charcoal-700 hover:text-sage-900'
+                }`}
+              >
+                <span>🎋 Warm Bamboo Canes</span>
+              </button>
+              <button
+                onClick={() => setDeepTissueVideo('stones')}
+                className={`flex-1 py-1.5 px-3 rounded-xl text-xs font-semibold transition flex items-center justify-center gap-1.5 ${
+                  deepTissueVideo === 'stones'
+                    ? 'bg-sage-900 text-cream-50 shadow-sm'
+                    : 'text-charcoal-700 hover:text-sage-900'
+                }`}
+              >
+                <span>🔥 Heated Basalt Stones</span>
+              </button>
+            </div>
+
             <div className="relative aspect-[4/5] sm:aspect-[3/4] max-h-[500px] rounded-3xl overflow-hidden shadow-xl border border-cream-300 bg-charcoal-950 group">
               <video
-                src="/videos/hot-stone-massage-treatment.mp4"
-                poster="/images/treatments/hot-stone-massage-poster.jpg"
+                key={deepTissueVideo}
+                src={deepTissueVideo === 'bamboo' ? '/videos/bamboo-deep-tissue-flow.mp4' : '/videos/hot-stone-massage-treatment.mp4'}
+                poster={deepTissueVideo === 'bamboo' ? '/images/treatments/bamboo-deep-flow-poster.jpg' : '/images/treatments/hot-stone-massage-poster.jpg'}
                 preload="metadata"
                 autoPlay
                 loop
@@ -526,15 +552,19 @@ export default function MassagePage() {
                   Real Treatment Session
                 </span>
                 <p className="font-serif text-base font-semibold">
-                  Warm Stones & Deep Muscular Release
+                  {deepTissueVideo === 'bamboo'
+                    ? 'Warm Bamboo Canes & Deep Knot Release'
+                    : 'Heated Volcanic Stones & Muscular Release'}
                 </p>
                 <p className="text-xs text-cream-100/90 mt-0.5">
-                  Heated volcanic basalt stones and firm therapeutic pressure targeting deep back and shoulder tension.
+                  {deepTissueVideo === 'bamboo'
+                    ? 'Solid heated bamboo canes rolled along tension lines to loosen stubborn muscle bands and melt posture stiffness.'
+                    : 'Heated volcanic basalt stones and firm therapeutic pressure targeting deep back and shoulder tension.'}
                 </p>
               </div>
             </div>
             <p className="text-[11px] text-center text-charcoal-800/60 italic">
-              ✨ Every session is calibrated to your exact pressure preference.
+              ✨ Available as an upgrade (+£5) on all Back and Full Body Massage appointments.
             </p>
           </div>
         </div>

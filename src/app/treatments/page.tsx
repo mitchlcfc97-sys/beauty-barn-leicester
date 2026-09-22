@@ -81,15 +81,15 @@ export default function TreatmentsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div className="relative h-48 sm:h-56 rounded-3xl overflow-hidden shadow-sm border border-cream-200 group">
             <Image
-              src="/images/treatments/couples-duo-massage-suite.jpg"
-              alt="Couples massage room with twin beds and ambient lighting"
+              src="/images/double-room-massage-suite.jpg"
+              alt="Real couples massage room with twin heated couches and rustic basket"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-500"
               sizes="(max-width: 768px) 100vw, 33vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-5 text-white">
-              <span className="font-serif font-medium text-base">Couples & Duo Massage Room</span>
-              <span className="text-cream-200 text-xs">Warm ambient lighting & twin treatment beds</span>
+              <span className="font-serif font-medium text-base">Couples & Duo Massage Suite</span>
+              <span className="text-cream-200 text-xs">Twin heated couches, warm lighting & towel warmers</span>
             </div>
           </div>
 
@@ -110,7 +110,7 @@ export default function TreatmentsPage() {
           <div className="relative h-48 sm:h-56 rounded-3xl overflow-hidden shadow-sm border border-cream-200 bg-charcoal-950 group">
             <video
               src="/videos/gelbottle-polish-carousel.mp4"
-              poster="/images/nail-bar-salon.jpg"
+              poster="/images/nail-station-salon.jpg"
               preload="metadata"
               autoPlay
               loop
