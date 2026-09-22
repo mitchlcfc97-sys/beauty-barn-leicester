@@ -147,6 +147,95 @@ Tap the link to explore our new digital home 🤍
           </div>
         </div>
 
+        {/* Treatment Video Reels (Mobile Downloads) */}
+        <div className="space-y-6 pt-4">
+          <div className="space-y-1">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-sage-800 flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-bronze-500" />
+              Treatment Video Clips (Save for Instagram Reels & Stories)
+            </h2>
+            <p className="text-xs text-charcoal-600">
+              Real treatment footage recorded in the barn. Tap Save to download any clip straight to your phone.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {[
+              {
+                id: 'lash-lift',
+                title: 'Lash Lift Treatment',
+                subtitle: 'Precision curling & eye artistry',
+                src: '/videos/lash-lift-treatment.mp4',
+                downloadName: 'Beauty-Barn-Lash-Lift.mp4',
+                size: '1.5 MB',
+              },
+              {
+                id: 'hot-stones',
+                title: 'Hot Stones Massage',
+                subtitle: 'Heated stones & deep tension relief',
+                src: '/videos/hot-stone-massage-treatment.mp4',
+                downloadName: 'Beauty-Barn-Hot-Stones.mp4',
+                size: '3.0 MB',
+              },
+              {
+                id: 'facial-gua-sha',
+                title: 'Facial Gua Sha Sculpting',
+                subtitle: 'Lymphatic drainage & contouring',
+                src: '/videos/facial-gua-sha-sculpting.mp4',
+                downloadName: 'Beauty-Barn-Facial-Gua-Sha.mp4',
+                size: '1.0 MB',
+              },
+              {
+                id: 'facial-ritual',
+                title: 'Facial Botanical Ritual',
+                subtitle: 'Botanical application & glowing skin',
+                src: '/videos/facial-botanical-ritual.mp4',
+                downloadName: 'Beauty-Barn-Facial-Ritual.mp4',
+                size: '1.5 MB',
+              },
+              {
+                id: 'body-massage',
+                title: 'Body Massage Flow',
+                subtitle: 'Swedish bodywork in candlelit room',
+                src: '/videos/body-massage-flow.mp4',
+                downloadName: 'Beauty-Barn-Body-Massage.mp4',
+                size: '5.1 MB',
+              },
+            ].map((v) => (
+              <div
+                key={v.id}
+                className="bg-white rounded-2xl overflow-hidden border border-cream-200 shadow-sm flex flex-col"
+              >
+                <div className="relative aspect-[4/5] bg-black">
+                  <video
+                    src={v.src}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="p-3.5 flex items-center justify-between gap-3 bg-white border-t border-cream-200">
+                  <div>
+                    <h3 className="font-serif text-xs sm:text-sm font-bold text-sage-900">{v.title}</h3>
+                    <p className="text-[11px] text-charcoal-500">{v.subtitle} • {v.size}</p>
+                  </div>
+                  <a
+                    href={v.src}
+                    download={v.downloadName}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sage-800 text-cream-50 hover:bg-sage-900 transition text-xs font-semibold shadow-sm flex-shrink-0"
+                  >
+                    <Download className="w-3.5 h-3.5 text-bronze-300" />
+                    Save
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Captions Section */}
         <div className="bg-white rounded-2xl p-5 border border-cream-200 shadow-sm space-y-4">
           <div className="flex items-center justify-between">

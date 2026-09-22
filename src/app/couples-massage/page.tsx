@@ -185,7 +185,7 @@ export default function CouplesMassagePage() {
 
           <div className="relative h-72 rounded-3xl overflow-hidden shadow-md border border-cream-300 bg-charcoal-950 group">
             <video
-              src="/videos/candlelight-sanctuary.mp4"
+              src="/videos/hot-stones-placement.mp4"
               poster="/images/treatment-room.jpg"
               preload="metadata"
               autoPlay
@@ -196,8 +196,8 @@ export default function CouplesMassagePage() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
             <div className="absolute bottom-4 left-4 right-4 text-white pointer-events-none">
-              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">Peaceful Countryside Barn</span>
-              <p className="font-serif text-base font-medium">Warm, Inviting Atmosphere</p>
+              <span className="text-[10px] uppercase font-bold tracking-widest text-bronze-300 block">Duo Thermal Bodywork</span>
+              <p className="font-serif text-base font-medium">Heated Hot Stone Experience</p>
             </div>
           </div>
         </div>

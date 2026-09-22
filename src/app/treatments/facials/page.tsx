@@ -52,19 +52,18 @@ export default function FacialsPage() {
 
           <div className="relative h-72 rounded-3xl overflow-hidden shadow-md border border-cream-300 group bg-charcoal-950">
             <video
-              src="/videos/facial-massage-sculpt.mp4"
-              poster="/images/treatments/million-dollar-facial-client.jpg"
+              src="/videos/facial-gua-sha-sculpting.mp4"
               preload="metadata"
               autoPlay
               loop
               muted
               playsInline
-              className="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-90"
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-95"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none" />
             <div className="absolute bottom-4 left-4 text-white pointer-events-none">
-              <span className="text-[11px] uppercase font-bold tracking-widest text-amber-300 block drop-shadow-sm">Lymphatic Drainage</span>
-              <p className="font-serif text-lg font-semibold text-white drop-shadow">Million Dollar Facial Movements</p>
+              <span className="text-[11px] uppercase font-bold tracking-widest text-amber-300 block drop-shadow-sm">Gua Sha Sculpting</span>
+              <p className="font-serif text-lg font-semibold text-white drop-shadow">Facial Lymphatic & Contour Ritual</p>
             </div>
           </div>
         </div>

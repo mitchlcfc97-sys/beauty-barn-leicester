@@ -309,12 +309,14 @@ export default function TreatmentsPage() {
           {/* Left: Brow & Lash Artistry Showcase */}
           <div className="lg:col-span-6 space-y-3">
             <div className="relative aspect-[4/5] sm:aspect-[3/4] max-h-[520px] rounded-3xl overflow-hidden shadow-xl border border-cream-300 bg-charcoal-950 group">
-              <Image
-                src="/images/treatment-room-skylight.jpg"
-                alt="The Beauty Barn brow and lash treatment suite in Scraptoft"
-                fill
-                className="object-cover group-hover:scale-105 transition duration-700"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+              <video
+                src="/videos/lash-lift-treatment.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="w-full h-full object-cover group-hover:scale-105 transition duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
               <div className="absolute bottom-4 left-4 right-4 text-white pointer-events-none">
