@@ -20,21 +20,15 @@ export default function ContactForm() {
     setErrorMsg('');
 
     try {
-      // Direct client-side dispatch to Web3Forms
-      await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: '02d9ef30-7db4-4327-abd0-5d1e857b3cfc',
-          subject: `Website Enquiry: ${subject || 'General'} - ${name}`,
-          from_name: name,
-          name,
-          email,
-          phone,
-          message: `NEW WEBSITE CONTACT ENQUIRY:
+      // Direct client-side dispatch to Web3Forms using standard FormData
+      const formData = new FormData();
+      formData.append('access_key', '02d9ef30-7db4-4327-abd0-5d1e857b3cfc');
+      formData.append('subject', `Website Enquiry: ${subject || 'General'} - ${name}`);
+      formData.append('from_name', name);
+      formData.append('name', name);
+      formData.append('email', email);
+      formData.append('phone', phone || 'Not provided');
+      formData.append('message', `NEW WEBSITE CONTACT ENQUIRY:
 ------------------------------------------
 • Name: ${name}
 • Phone: ${phone || 'Not provided'}
@@ -43,9 +37,14 @@ export default function ContactForm() {
 
 MESSAGE:
 ${message}
-------------------------------------------`,
-        }),
-      }).catch((e) => console.error('Web3Forms dispatch error:', e));
+------------------------------------------`);
+
+      const web3Res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+      const web3Data = await web3Res.json();
+      console.log('Web3Forms contact result:', web3Data);
 
       // Also log via API route
       await fetch('/api/contact', {

@@ -97,21 +97,15 @@ export default function SpaPackageBuilder() {
     }
     setIsSubmitting(true);
     try {
-      // Direct client-side dispatch to Web3Forms for instant email delivery to thebeautybarn.leic@gmail.com
-      await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          access_key: '02d9ef30-7db4-4327-abd0-5d1e857b3cfc',
-          subject: `Spa Day Booking Request: ${selectedPkg.name} (${guestCount} guests) - ${clientName}`,
-          from_name: 'The Beauty Barn Website',
-          name: clientName,
-          email: clientEmail,
-          phone: clientPhone,
-          message: `SPA DAY BOOKING ENQUIRY:
+      // Direct client-side dispatch to Web3Forms using standard FormData
+      const formData = new FormData();
+      formData.append('access_key', '02d9ef30-7db4-4327-abd0-5d1e857b3cfc');
+      formData.append('subject', `Spa Day Booking Request: ${selectedPkg.name} (${guestCount} guests) - ${clientName}`);
+      formData.append('from_name', 'The Beauty Barn Website');
+      formData.append('name', clientName);
+      formData.append('email', clientEmail);
+      formData.append('phone', clientPhone);
+      formData.append('message', `SPA DAY BOOKING ENQUIRY:
 ------------------------------------------
 • Package: ${selectedPkg.name}
 • Guests: ${guestCount}
@@ -125,9 +119,14 @@ CLIENT CONTACT INFO:
 • Phone: ${clientPhone}
 • Email: ${clientEmail}
 • Dietary / Occasion Notes: ${notes || 'None provided'}
-------------------------------------------`,
-        }),
-      }).catch((e) => console.error('Web3Forms dispatch error:', e));
+------------------------------------------`);
+
+      const web3Res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData,
+      });
+      const web3Data = await web3Res.json();
+      console.log('Web3Forms result:', web3Data);
 
       // Also log via Next.js internal API
       await fetch('/api/booking', {
