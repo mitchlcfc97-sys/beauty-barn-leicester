@@ -137,6 +137,33 @@ const MATCHES: Record<string, MatchResult> = {
     highlights: ['Private double room with candlelit beds', 'Two dedicated therapists', 'Perfect anniversary or birthday gift'],
     freshaUrl: 'https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=pkg%3A167602',
   },
+  'ritual-quick': {
+    title: 'Dual Serenity — Face Forward, Feet First',
+    category: 'Synchronised 2-Therapist Experience',
+    duration: '45 mins',
+    price: '£70',
+    reason: 'The ultimate luxury reset in half the time: two therapists work in complete synchronicity — one delivering a bespoke botanical facial while the other pampers your feet and lower legs with scrubs and reflex massage.',
+    highlights: ['Two qualified therapists working simultaneously', 'Custom botanical glow facial & scalp massage', 'Luxury lower leg & foot revival therapy'],
+    freshaUrl: 'https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=pkg%3A1873592',
+  },
+  'ritual-standard': {
+    title: 'The Fireside Ritual 🍁 (Includes Luxury Take-Home Gift)',
+    category: 'Limited Edition Warming Seasonal Ritual',
+    duration: '90 mins',
+    price: '£115',
+    reason: 'Step away from the cold into comforting warmth: cinnamon & honey back polish, hot basalt stone massage, nourishing Bramley oils, warm-oil scalp therapy, crackling fireside candle, PLUS a take-home luxury Bramley gift cracker (£35 value)!',
+    highlights: ['Hot stone thermal massage & cinnamon back polish', 'Warm-oil scalp therapy & gentle fireside candle', 'Includes free Bramley Raspberry Seed Oil & Gua Sha Cracker'],
+    freshaUrl: 'https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A29263352',
+  },
+  'ritual-extended': {
+    title: 'The Bramley Simply Divine Ritual',
+    category: 'The Pinnacle of Luxury (Near 3-Hour Escape)',
+    duration: '2 Hours 45 Mins',
+    price: '£190 (£380 for Double Suite)',
+    reason: 'The crown jewel of The Beauty Barn. A nearly 3-hour head-to-toe immersion: full body botanical exfoliation, warm cocoon wrap, 60-minute full body massage, bespoke botanical facial, and warm oil scalp therapy.',
+    highlights: ['Full body exfoliation & warm cocoon wrap', '60-min restorative body massage + bespoke facial', 'Near 3 hours of uninterrupted countryside sanctuary'],
+    freshaUrl: 'https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A24981589',
+  },
 };
 
 export default function TreatmentMatcher() {
@@ -214,6 +241,20 @@ export default function TreatmentMatcher() {
               </button>
 
               <button
+                onClick={() => setGoal('ritual')}
+                className="p-4 rounded-2xl border border-cream-300 bg-white hover:border-bronze-400 hover:bg-bronze-50/30 transition text-left space-y-1 group relative overflow-hidden"
+              >
+                <div className="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-bronze-500/10 text-bronze-700 text-[9px] font-bold uppercase tracking-wider">
+                  Extra Special
+                </div>
+                <span className="text-sm font-semibold text-sage-900 group-hover:text-bronze-600 transition flex items-center justify-between pr-14">
+                  👑 Signature Rituals & Luxury
+                  <ArrowRight className="w-4 h-4 text-cream-400 group-hover:text-bronze-500 transition" />
+                </span>
+                <p className="text-xs text-charcoal-800/70">Multi-step sensory escapes, hot basalt stones, body wraps, and take-home gifts.</p>
+              </button>
+
+              <button
                 onClick={() => setGoal('pregnancy')}
                 className="p-4 rounded-2xl border border-cream-300 bg-white hover:border-sage-400 hover:bg-sage-50/50 transition text-left space-y-1 group"
               >
@@ -226,13 +267,13 @@ export default function TreatmentMatcher() {
 
               <button
                 onClick={() => setGoal('duo')}
-                className="sm:col-span-2 p-4 rounded-2xl border border-cream-300 bg-white hover:border-sage-400 hover:bg-sage-50/50 transition text-left space-y-1 group"
+                className="p-4 rounded-2xl border border-cream-300 bg-white hover:border-sage-400 hover:bg-sage-50/50 transition text-left space-y-1 group"
               >
                 <span className="text-sm font-semibold text-sage-900 group-hover:text-bronze-600 transition flex items-center justify-between">
                   🥂 Side-by-Side Couple or Duo Pamper
                   <ArrowRight className="w-4 h-4 text-cream-400 group-hover:text-bronze-500 transition" />
                 </span>
-                <p className="text-xs text-charcoal-800/70">Side-by-side treatments in our double room with two therapists.</p>
+                <p className="text-xs text-charcoal-800/70">Side-by-side treatments in our double room with two dedicated therapists.</p>
               </button>
             </div>
           </div>
@@ -258,27 +299,45 @@ export default function TreatmentMatcher() {
                 onClick={() => setTime('quick')}
                 className="p-4 rounded-2xl border border-cream-300 bg-white hover:border-sage-400 hover:bg-sage-50/50 transition text-center space-y-1.5"
               >
-                <span className="text-xs uppercase font-bold text-bronze-600 block">30 – 45 mins</span>
-                <p className="font-serif text-base font-semibold text-charcoal-900">Quick Recharge</p>
-                <p className="text-[11px] text-charcoal-800/70">Focused, targeted therapy that fits into a busy schedule.</p>
+                <span className="text-xs uppercase font-bold text-bronze-600 block">
+                  {goal === 'ritual' ? '45 mins' : '30 – 45 mins'}
+                </span>
+                <p className="font-serif text-base font-semibold text-charcoal-900">
+                  {goal === 'ritual' ? 'Dual Serenity (45m)' : 'Quick Recharge'}
+                </p>
+                <p className="text-[11px] text-charcoal-800/70">
+                  {goal === 'ritual' ? 'Synchronised 2-therapist facial & foot pamper.' : 'Focused, targeted therapy that fits into a busy schedule.'}
+                </p>
               </button>
 
               <button
                 onClick={() => setTime('standard')}
                 className="p-4 rounded-2xl border border-cream-300 bg-white hover:border-sage-400 hover:bg-sage-50/50 transition text-center space-y-1.5"
               >
-                <span className="text-xs uppercase font-bold text-bronze-600 block">60 mins</span>
-                <p className="font-serif text-base font-semibold text-charcoal-900">Full Immersion</p>
-                <p className="text-[11px] text-charcoal-800/70">The classic duration for unhurried head-to-toe care.</p>
+                <span className="text-xs uppercase font-bold text-bronze-600 block">
+                  {goal === 'ritual' ? '90 mins' : '60 mins'}
+                </span>
+                <p className="font-serif text-base font-semibold text-charcoal-900">
+                  {goal === 'ritual' ? 'The Fireside Ritual 🍁' : 'Full Immersion'}
+                </p>
+                <p className="text-[11px] text-charcoal-800/70">
+                  {goal === 'ritual' ? 'Hot stones, honey polish, and free Bramley gift.' : 'The classic duration for unhurried head-to-toe care.'}
+                </p>
               </button>
 
               <button
                 onClick={() => setTime('extended')}
                 className="p-4 rounded-2xl border border-cream-300 bg-white hover:border-sage-400 hover:bg-sage-50/50 transition text-center space-y-1.5"
               >
-                <span className="text-xs uppercase font-bold text-bronze-600 block">90+ mins</span>
-                <p className="font-serif text-base font-semibold text-charcoal-900">Deep Sanctuary</p>
-                <p className="text-[11px] text-charcoal-800/70">The ultimate indulgent reset for pure restorative calm.</p>
+                <span className="text-xs uppercase font-bold text-bronze-600 block">
+                  {goal === 'ritual' ? '2h 45m' : '90+ mins'}
+                </span>
+                <p className="font-serif text-base font-semibold text-charcoal-900">
+                  {goal === 'ritual' ? 'The Simply Divine (2h 45m)' : 'Deep Sanctuary'}
+                </p>
+                <p className="text-[11px] text-charcoal-800/70">
+                  {goal === 'ritual' ? 'Full body polish, cocoon wrap, massage & facial.' : 'The ultimate indulgent reset for pure restorative calm.'}
+                </p>
               </button>
             </div>
           </div>
@@ -320,6 +379,27 @@ export default function TreatmentMatcher() {
                   </div>
                 ))}
               </div>
+
+              {/* Extra Special Upsell Banner */}
+              {goal !== 'ritual' && (
+                <div className="p-4 rounded-2xl bg-gradient-to-r from-amber-500/10 via-cream-100 to-amber-500/10 border border-amber-300/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+                  <div className="space-y-0.5 text-center sm:text-left">
+                    <span className="font-serif font-bold text-sage-900 flex items-center gap-1.5 justify-center sm:justify-start">
+                      <Sparkles className="w-3.5 h-3.5 text-bronze-600" />
+                      Looking for something extra special?
+                    </span>
+                    <p className="text-charcoal-700">
+                      Explore our <strong>Signature Head-to-Toe Rituals</strong> — including the limited-edition Fireside Ritual 🍁 (with free Bramley gift cracker) and our near 3-hour Simply Divine escape.
+                    </p>
+                  </div>
+                  <Link
+                    href="/rituals"
+                    className="px-4 py-2 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 font-semibold text-[11px] whitespace-nowrap transition shadow-sm flex-shrink-0"
+                  >
+                    Explore All Rituals →
+                  </Link>
+                </div>
+              )}
 
               <div className="pt-4 border-t border-cream-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
