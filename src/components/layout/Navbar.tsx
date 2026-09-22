@@ -12,6 +12,7 @@ export default function Navbar() {
 
   const desktopNavLinks = [
     { name: 'Private Spa Days', href: '/spa-days' },
+    { name: 'Couples Massage', href: '/couples-massage' },
     { name: 'Massage', href: '/treatments/massage' },
     { name: 'Facials', href: '/treatments/facials' },
     { name: 'All Treatments', href: '/treatments' },
@@ -23,6 +24,7 @@ export default function Navbar() {
   const mobileNavLinks = [
     { name: 'Home', href: '/' },
     { name: 'Private Spa Days', href: '/spa-days' },
+    { name: 'Couples Massage', href: '/couples-massage' },
     { name: 'Massage', href: '/treatments/massage' },
     { name: 'Advanced Facials', href: '/treatments/facials' },
     { name: 'All Treatments', href: '/treatments' },
@@ -85,12 +87,12 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-3 xl:space-x-5">
+          <nav className="hidden lg:flex items-center space-x-2.5 xl:space-x-4 2xl:space-x-5">
             {desktopNavLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-[13px] xl:text-sm font-medium transition whitespace-nowrap text-charcoal-800 hover:text-bronze-500"
+                className="text-[12.5px] xl:text-sm font-medium transition whitespace-nowrap text-charcoal-800 hover:text-bronze-500"
               >
                 {link.name}
               </Link>
