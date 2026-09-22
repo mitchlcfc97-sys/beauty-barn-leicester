@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D3C30"/>
+      <stop offset="100%" stop-color="#1B241E"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2D8A7"/>
+      <stop offset="35%" stop-color="#DFBA73"/>
+      <stop offset="70%" stop-color="#C59E4E"/>
+      <stop offset="100%" stop-color="#A67F33"/>
+    </linearGradient>
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0E1410" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Background Squircle -->
+  <rect width="512" height="512" rx="120" fill="url(#bgGrad)"/>
+
+  <!-- Outer Border Accent -->
+  <rect x="24" y="24" width="464" height="464" rx="100" fill="none" stroke="url(#goldGrad)" stroke-width="4" stroke-opacity="0.5"/>
+
+  <!-- Inner Pinstripe Border -->
+  <rect x="36" y="36" width="440" height="440" rx="88" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-opacity="0.3"/>
+
+  <!-- Center Graphic: Luxury Barn Gable + Botanical Laurel & Serene Leaf -->
+  <g filter="url(#subtleShadow)">
+    <!-- Stylized Barn Gable Roofline -->
+    <path d="M 120 220 L 256 110 L 392 220" fill="none" stroke="url(#goldGrad)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Barn Eaves Accents -->
+    <path d="M 100 225 L 125 225 M 387 225 L 412 225" stroke="url(#goldGrad)" stroke-width="14" stroke-linecap="round"/>
+
+    <!-- Central 4-Point Star / Sparkle at Peak -->
+    <path d="M 256 68 Q 256 88 268 96 Q 256 104 256 124 Q 256 104 244 96 Q 256 88 256 68 Z" fill="url(#goldGrad)"/>
+
+    <!-- Monogram: 'B' in elegant high-contrast Roman serif style -->
+    <!-- Left Stem -->
+    <path d="M 195 205 L 195 380" stroke="url(#goldGrad)" stroke-width="22" stroke-linecap="butt"/>
+    <!-- Top & Bottom Serifs for Stem -->
+    <path d="M 172 205 L 222 205 M 172 380 L 226 380" stroke="url(#goldGrad)" stroke-width="9" stroke-linecap="round"/>
+    <!-- Upper Bowl -->
+    <path d="M 200 205 L 275 205 C 318 205, 330 232, 330 256 C 330 280, 310 294, 272 294 L 200 294" fill="none" stroke="url(#goldGrad)" stroke-width="16" stroke-linejoin="round"/>
+    <!-- Lower Bowl -->
+    <path d="M 200 294 L 285 294 C 335 294, 348 322, 348 344 C 348 372, 322 380, 275 380 L 200 380" fill="none" stroke="url(#goldGrad)" stroke-width="17" stroke-linejoin="round"/>
+
+    <!-- Delicate Botanical Sprig Emerging Right Side -->
+    <g transform="translate(330, 260) rotate(16) scale(0.72)">
+      <!-- Central stem -->
+      <path d="M 0 100 Q 25 40 45 -20" fill="none" stroke="url(#goldGrad)" stroke-width="9" stroke-linecap="round"/>
+      <!-- Top leaf -->
+      <path d="M 45 -20 C 58 -55 85 -60 88 -38 C 90 -16 65 -5 45 -20 Z" fill="url(#goldGrad)"/>
+      <!-- Right leaf -->
+      <path d="M 32 15 C 65 10 78 30 68 45 C 58 60 40 40 32 15 Z" fill="url(#goldGrad)"/>
+      <!-- Left leaf -->
+      <path d="M 20 40 C -15 30 -25 50 -15 65 C -5 80 12 60 20 40 Z" fill="url(#goldGrad)"/>
+      <!-- Lower right leaf -->
+      <path d="M 10 75 C 38 75 48 95 38 108 C 28 120 15 100 10 75 Z" fill="url(#goldGrad)"/>
+    </g>
+
+    <!-- Subtle bottom decorative line / pedestal -->
+    <path d="M 160 415 L 352 415" stroke="url(#goldGrad)" stroke-width="3.5" stroke-linecap="round" stroke-opacity="0.55"/>
+    <circle cx="256" cy="415" r="5" fill="url(#goldGrad)"/>
+  </g>
+</svg>
