@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import Analytics from "@/components/analytics/Analytics";
 import MobileBookingBar from "@/components/layout/MobileBookingBar";
+import WhatsAppFloatingButton from "@/components/layout/WhatsAppFloatingButton";
 import { FreshaProvider } from "@/components/booking/FreshaModal";
 import { BUSINESS_INFO } from "@/data/business";
 
@@ -87,6 +88,7 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-1 pb-16 md:pb-0">{children}</main>
           <Footer />
+          <WhatsAppFloatingButton />
           <MobileBookingBar />
         </FreshaProvider>
       </body>
