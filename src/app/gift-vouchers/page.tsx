@@ -4,6 +4,7 @@ import React from 'react';
 import { Gift, Sparkles, Check, Send, ShieldCheck, Heart, ExternalLink } from 'lucide-react';
 import { FRESHA_CONFIG } from '@/lib/utils';
 import { useFresha } from '@/components/booking/FreshaModal';
+import { trackGiftVoucherClick, trackPhoneCall } from '@/lib/analytics';
 
 export default function GiftVouchersPage() {
   const { openFresha } = useFresha();
@@ -67,6 +68,7 @@ export default function GiftVouchersPage() {
                 href={FRESHA_CONFIG.voucherUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackGiftVoucherClick('digital_fresha')}
                 className="w-full py-4 rounded-xl bg-bronze-500 hover:bg-bronze-600 text-white font-semibold text-sm transition shadow-md flex items-center justify-center gap-2 group transform hover:-translate-y-0.5"
               >
                 <span>Choose Amount & Buy on Fresha</span>
@@ -112,6 +114,7 @@ export default function GiftVouchersPage() {
               </button>
               <a
                 href="tel:07535243827"
+                onClick={() => trackPhoneCall('other')}
                 className="w-full py-2.5 rounded-xl border border-sage-300 text-sage-900 text-xs font-semibold uppercase tracking-wider text-center block hover:bg-cream-200 transition"
               >
                 Or Call to Arrange (07535 243827)

@@ -54,7 +54,7 @@ export default function HomePage() {
       categoryLabel: 'Signature Ritual',
       duration: '90 mins',
       price: '£100',
-      description: 'Our signature face & body combination: 45-minute restorative full-body massage combined with a 45-minute revitalising tailored botanical facial.',
+      description: 'Our signature face & body combination: 1-hour restorative full-body massage combined with a 30-minute revitalising mini botanical facial.',
       freshaUrl: 'https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8461617',
     },
     {
@@ -319,7 +319,8 @@ export default function HomePage() {
             <div className="lg:col-span-5 space-y-4">
               <div className="relative aspect-[4/5] sm:aspect-[3/4] max-h-[480px] rounded-3xl overflow-hidden shadow-2xl border border-amber-500/40 group bg-black">
                 <video
-                  src="/videos/fireside-ritual-sneak-peek.mp4"
+                  src="/videos/fireside-ritual-trailer.mp4"
+                  poster="/videos/fireside-ritual-trailer-poster.jpg"
                   autoPlay
                   loop
                   muted
