@@ -111,22 +111,18 @@ export default function GiftVouchersPage() {
                 Physical Gift Voucher Envelope
               </h3>
               <p className="text-xs text-charcoal-800/80 leading-relaxed">
-                Prefer a physical gift voucher? Visit us at the salon by appointment to collect a gift voucher enclosed in our presentation envelope.
+                Prefer a physical gift voucher? Visit us at the salon by appointment to collect a gift voucher enclosed in an envelope.
               </p>
             </div>
 
             <div className="space-y-2.5 text-xs text-charcoal-800">
               <div className="flex items-start gap-2">
                 <Check className="w-3.5 h-3.5 text-sage-800 flex-shrink-0 mt-0.5" />
-                <span>Gift voucher in envelope with personalized message</span>
+                <span>Gift voucher in an envelope with personalized message</span>
               </div>
               <div className="flex items-start gap-2">
                 <Check className="w-3.5 h-3.5 text-sage-800 flex-shrink-0 mt-0.5" />
-                <span>Complimentary treatment brochure included</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <Check className="w-3.5 h-3.5 text-sage-800 flex-shrink-0 mt-0.5" />
-                <span>Collect in Scraptoft or request postal delivery</span>
+                <span>Collect in person from our Scraptoft salon by appointment</span>
               </div>
             </div>
 
