@@ -511,8 +511,8 @@ export default function MassagePage() {
           <div className="lg:col-span-6 space-y-3">
             <div className="relative aspect-[4/5] sm:aspect-[3/4] max-h-[500px] rounded-3xl overflow-hidden shadow-xl border border-cream-300 bg-charcoal-950 group">
               <video
-                src="/videos/deep-tissue-back-massage.mp4"
-                poster="/images/deep-tissue-massage-poster.jpg"
+                src="/videos/hot-stone-massage-treatment.mp4"
+                poster="/images/treatments/hot-stone-massage-poster.jpg"
                 preload="metadata"
                 autoPlay
                 loop
@@ -526,10 +526,10 @@ export default function MassagePage() {
                   Real Treatment Session
                 </span>
                 <p className="font-serif text-base font-semibold">
-                  Candlelit Deep Muscular Release
+                  Warm Stones & Deep Muscular Release
                 </p>
                 <p className="text-xs text-cream-100/90 mt-0.5">
-                  Firm myofascial pressure targeting upper back, neck, and shoulder tightness.
+                  Heated volcanic basalt stones and firm therapeutic pressure targeting deep back and shoulder tension.
                 </p>
               </div>
             </div>

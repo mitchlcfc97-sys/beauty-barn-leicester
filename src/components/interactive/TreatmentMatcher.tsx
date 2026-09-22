@@ -66,9 +66,9 @@ const MATCHES: Record<string, MatchResult> = {
     category: '90-Min Face & Body Ritual',
     duration: '90 mins',
     price: '£100 (+£5 Bamboo Canes for Deeper Pressure)',
-    reason: 'Our signature 90-minute pairing of full body massage and bespoke facial. The massage is inherently soothing and relaxing — simply select the Natural Bamboo Canes add-on (+£5) during booking if you want deeper myofascial pressure to work out stubborn knots.',
+    reason: 'Our signature 90-minute pairing of a 1-hour full body massage and a 30-minute mini botanical facial. The massage is inherently soothing and relaxing — simply select the Natural Bamboo Canes add-on (+£5) during booking if you want deeper myofascial pressure to work out stubborn knots.',
     highlights: [
-      '45m restorative body massage + 45m bespoke botanical facial',
+      '60m full body massage + 30m mini facial',
       'Add Natural Bamboo Canes (+£5) on Fresha for deep knot release',
       'Complete face & body reset in one appointment',
     ],

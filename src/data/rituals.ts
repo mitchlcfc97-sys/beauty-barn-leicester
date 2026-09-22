@@ -174,18 +174,18 @@ export const SIGNATURE_RITUALS: SignatureRitual[] = [
         description: "Relaxing foot wipe and deep breathing with custom essential oils."
       },
       {
-        title: "2. Restorative Full Body Massage",
-        description: "45 minutes of customized massage targeting your areas of tension."
+        title: "2. Restorative Full Body Massage (1 Hour)",
+        description: "60 minutes of customized full-body massage targeting areas of tension with warm botanical oils."
       },
       {
-        title: "3. Revitalising Botanical Facial",
-        description: "45 minutes of tailored skincare including double cleanse, gentle exfoliation, and mask."
+        title: "3. Revitalising Mini Botanical Facial (30 Mins)",
+        description: "30 minutes of tailored skincare including double cleanse, gentle exfoliation, hydrating mask, and warm towel compresses."
       }
     ],
     whatsIncluded: [
-      "90-minute balanced face & body combination",
-      "Full body massage with botanical oils",
-      "Revitalising tailored facial",
+      "90-minute pairing: 1-hour full body massage + 30-min mini facial",
+      "60-minute full body massage with botanical oils",
+      "30-minute tailored mini facial with warm compresses",
       "Available in private double suite for couples or pairs"
     ],
     idealFor: "Those who want both a massage and a facial in one seamless appointment without choosing between them.",

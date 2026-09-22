@@ -1,7 +1,8 @@
-﻿'use client';
+'use client';
 
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
+import { trackWhatsAppClick } from '@/lib/analytics';
 
 export default function WhatsAppFloatingButton() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,6 +47,7 @@ export default function WhatsAppFloatingButton() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick('floating_button')}
             className="w-full py-2.5 px-3 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-semibold flex items-center justify-center gap-2 shadow-md transition transform active:scale-95"
           >
             <span>Start WhatsApp Chat</span>

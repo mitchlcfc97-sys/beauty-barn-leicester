@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Sparkles, Clock, Check, Calendar, ArrowRight, Star, Heart, Flame, Shield, PlusCircle, Eye } from 'lucide-react';
-import { TREATMENTS } from '@/data/treatments';
+import { TREATMENTS, type Treatment } from '@/data/treatments';
 import { SIGNATURE_RITUALS } from '@/data/rituals';
 import { TREATMENT_ADDONS } from '@/data/addons';
 import { useFresha } from '@/components/booking/FreshaModal';
@@ -385,19 +385,21 @@ export default function TreatmentsPage() {
                 </div>
               </div>
 
-              <div className="p-4 rounded-2xl bg-white border border-cream-200 shadow-sm flex items-start justify-between gap-4">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span className="font-serif text-base font-semibold text-sage-900">All About Eyes Package</span>
-                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-bronze-100 text-bronze-800 font-bold uppercase tracking-wider">Ultimate Eye Duo</span>
+              <div className="p-4 sm:p-5 rounded-2xl bg-sage-900 text-cream-50 border-2 border-bronze-400 shadow-xl flex items-start justify-between gap-4 relative overflow-hidden">
+                <div className="space-y-1.5">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-serif text-base font-semibold text-white">All About Eyes Package</span>
+                    <span className="text-[10px] px-2.5 py-0.5 rounded-full bg-bronze-500 text-white font-bold uppercase tracking-wider shadow-sm flex items-center gap-1">
+                      <Sparkles className="w-2.5 h-2.5 fill-white" /> Most Popular Duo
+                    </span>
                   </div>
-                  <p className="text-xs text-charcoal-800/70 leading-relaxed">
+                  <p className="text-xs text-sage-200 leading-relaxed">
                     Luxurious lash lift and tint to enhance natural lashes, combined with expert eyebrow waxing and tinting to perfectly frame your face.
                   </p>
                 </div>
                 <div className="text-right flex-shrink-0">
-                  <span className="font-serif text-lg font-bold text-sage-900 block">£60</span>
-                  <span className="text-[10px] text-charcoal-800/60">60 mins</span>
+                  <span className="font-serif text-xl font-bold text-bronze-300 block">£60</span>
+                  <span className="text-[10px] text-sage-300">60 mins</span>
                 </div>
               </div>
             </div>
@@ -481,7 +483,7 @@ export default function TreatmentsPage() {
       {/* ========================================================================= */}
       {/* 📋 COMPLETE TREATMENTS MENU */}
       {/* ========================================================================= */}
-      <section id="treatment-menu" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 scroll-mt-28">
+      <section id="treatment-menu" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 scroll-mt-28">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-4 border-b border-cream-200 pb-5">
           <div>
             <span className="text-xs uppercase tracking-widest text-bronze-600 font-bold">Comprehensive Menu</span>
@@ -491,7 +493,9 @@ export default function TreatmentsPage() {
                 : categories.find(c => c.id === selectedCategory)?.label || 'All Treatments'}
             </h2>
             <p className="text-xs text-charcoal-800/70 mt-1">
-              Showing {filteredTreatments.length} {filteredTreatments.length === 1 ? 'service' : 'services'}
+              {selectedCategory === 'all'
+                ? `Showing ${TREATMENTS.length} treatments across 5 dedicated categories`
+                : `Showing ${filteredTreatments.length} ${filteredTreatments.length === 1 ? 'treatment' : 'treatments'}`}
             </p>
           </div>
 
@@ -500,7 +504,7 @@ export default function TreatmentsPage() {
             {categories.map((cat) => (
               <button
                 key={cat.id}
-                onClick={() => handleCategoryClick(cat.id)}
+                onClick={() => setSelectedCategory(cat.id)}
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition ${
                   selectedCategory === cat.id
                     ? 'bg-sage-800 text-cream-50 shadow-sm'
@@ -513,52 +517,192 @@ export default function TreatmentsPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredTreatments.map((treatment) => (
-            <div
-              key={treatment.id}
-              className="bg-white rounded-3xl p-6 sm:p-8 border border-cream-300 shadow-sm hover:shadow-md transition flex flex-col justify-between"
-            >
-              <div className="space-y-4">
-                <div className="flex items-center justify-between text-xs text-charcoal-800/60">
-                  <span className="font-semibold text-bronze-600 uppercase tracking-wider">{treatment.categoryLabel}</span>
-                  <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5" /> {treatment.duration}</span>
-                </div>
+        {/* Category Sections with Dark Green Popular Spotlights */}
+        <div className="space-y-16">
+          {[
+            {
+              id: 'massage',
+              label: 'Massage & Body Therapy',
+              description: 'Swedish, deep tissue, hot basalt stones & bamboo canes with organic Bramley botanicals.',
+              hubHref: '/treatments/massage',
+              hubLabel: 'Explore Massage Suites & Videos',
+            },
+            {
+              id: 'facials',
+              label: 'Advanced Clinical & Botanical Facials',
+              description: 'Million Dollar dermaplaning, microneedling, lymphatic gua sha & gentle fruit enzyme peels.',
+              hubHref: '/treatments/facials',
+              hubLabel: 'Explore Facials & Protocols',
+            },
+            {
+              id: 'signature',
+              label: 'Signature Rituals & Immersion Journeys',
+              description: 'Unhurried head-to-toe journeys, dual-therapist treatments, and restorative sleep rituals.',
+              hubHref: '/rituals',
+              hubLabel: 'Explore Signature Rituals Guide',
+            },
+            {
+              id: 'body',
+              label: 'Body Care & Mums-to-Be Rituals',
+              description: 'Nourishing pregnancy massages, head-to-toe scrubs, and restorative foot therapies.',
+              hubHref: null,
+              hubLabel: null,
+            },
+            {
+              id: 'nails',
+              label: 'The GelBottle Inc Nails & Hands',
+              description: 'Strengthening BIAB builder gel, luxury spa pedicures, and nail health restoration.',
+              hubHref: '/treatments/nails',
+              hubLabel: 'Explore Nail Bar & Pedicures',
+            },
+          ]
+            .filter((sec) => selectedCategory === 'all' || selectedCategory === sec.id)
+            .map((sec) => {
+              const sectionTreatments = TREATMENTS.filter((t) => t.category === sec.id);
+              if (sectionTreatments.length === 0) return null;
 
-                <h3 className="font-serif text-xl font-medium text-charcoal-900">
-                  {treatment.name}
-                </h3>
-
-                <p className="text-xs sm:text-sm text-charcoal-800/70 leading-relaxed">
-                  {treatment.description}
-                </p>
-
-                <div className="space-y-1.5 pt-2">
-                  {treatment.highlights.map((highlight, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-xs text-charcoal-800/80">
-                      <Check className="w-3.5 h-3.5 text-sage-800 flex-shrink-0" />
-                      <span>{highlight}</span>
+              return (
+                <div key={sec.id} className="space-y-6">
+                  <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-cream-200/80 pb-3">
+                    <div>
+                      <h3 className="font-serif text-2xl font-medium text-sage-900">
+                        {sec.label}
+                      </h3>
+                      <p className="text-xs text-charcoal-800/70 mt-0.5">
+                        {sec.description}
+                      </p>
                     </div>
-                  ))}
-                </div>
-              </div>
+                    {sec.hubHref && (
+                      <Link
+                        href={sec.hubHref}
+                        className="inline-flex items-center gap-1 text-xs font-semibold text-bronze-700 hover:text-bronze-800 underline whitespace-nowrap"
+                      >
+                        <span>{sec.hubLabel}</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </Link>
+                    )}
+                  </div>
 
-              <div className="pt-6 mt-6 border-t border-cream-200 flex items-center justify-between">
-                <div>
-                  <span className="text-[10px] text-charcoal-800/60 block">Price</span>
-                  <span className="font-serif text-lg font-bold text-sage-900">{treatment.price}</span>
-                </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {sectionTreatments.map((treatment) => {
+                      const isPopular = treatment.popular;
 
-                <button
-                  onClick={() => openFresha(treatment.freshaUrl, treatment.name)}
-                  className="px-5 py-2.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-medium transition shadow-sm flex items-center gap-1.5"
-                >
-                  <Calendar className="w-3.5 h-3.5 text-bronze-300" />
-                  Book Now
-                </button>
-              </div>
-            </div>
-          ))}
+                      if (isPopular) {
+                        return (
+                          <div
+                            key={treatment.id}
+                            className="bg-sage-900 text-cream-50 rounded-3xl p-6 sm:p-8 border-2 border-bronze-400 shadow-xl relative flex flex-col justify-between transition group hover:shadow-2xl hover:-translate-y-0.5"
+                          >
+                            {/* Floating Spotlight Badge */}
+                            <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3.5 py-1 bg-bronze-500 text-white text-[10px] sm:text-[11px] font-bold uppercase tracking-wider rounded-full shadow-md whitespace-nowrap z-10 flex items-center gap-1.5">
+                              <Sparkles className="w-3 h-3 fill-white" />
+                              <span>Category Spotlight</span>
+                            </div>
+
+                            <div className="space-y-4">
+                              <div className="flex items-center justify-between text-xs text-sage-300">
+                                <span className="font-semibold text-bronze-300 uppercase tracking-wider">
+                                  {treatment.categoryLabel}
+                                </span>
+                                <span className="flex items-center gap-1">
+                                  <Clock className="w-3.5 h-3.5 text-bronze-400" /> {treatment.duration}
+                                </span>
+                              </div>
+
+                              <h4 className="font-serif text-xl sm:text-2xl font-medium text-cream-50">
+                                {treatment.name}
+                              </h4>
+
+                              <p className="text-xs sm:text-sm text-sage-200 leading-relaxed">
+                                {treatment.description}
+                              </p>
+
+                              <div className="space-y-1.5 pt-2">
+                                {treatment.highlights.map((highlight, idx) => (
+                                  <div key={idx} className="flex items-center gap-2 text-xs text-sage-100">
+                                    <Check className="w-3.5 h-3.5 text-bronze-300 flex-shrink-0" />
+                                    <span>{highlight}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+
+                            <div className="pt-6 mt-6 border-t border-sage-800 flex items-center justify-between">
+                              <div>
+                                <span className="text-[10px] text-sage-300 uppercase tracking-wider block">Price</span>
+                                <span className="font-serif text-xl sm:text-2xl font-bold text-bronze-300">
+                                  {treatment.price}
+                                </span>
+                              </div>
+
+                              <button
+                                onClick={() => openFresha(treatment.freshaUrl, treatment.name)}
+                                className="px-5 py-2.5 rounded-xl bg-bronze-500 hover:bg-bronze-600 text-white text-xs font-semibold uppercase tracking-wider transition shadow-md flex items-center gap-1.5 group-hover:scale-105"
+                              >
+                                <Calendar className="w-3.5 h-3.5 text-white" />
+                                Book Spotlight
+                              </button>
+                            </div>
+                          </div>
+                        );
+                      }
+
+                      return (
+                        <div
+                          key={treatment.id}
+                          className="bg-white rounded-3xl p-6 sm:p-8 border border-cream-300 shadow-sm hover:shadow-md transition flex flex-col justify-between"
+                        >
+                          <div className="space-y-4">
+                            <div className="flex items-center justify-between text-xs text-charcoal-800/60">
+                              <span className="font-semibold text-bronze-600 uppercase tracking-wider">
+                                {treatment.categoryLabel}
+                              </span>
+                              <span className="flex items-center gap-1">
+                                <Clock className="w-3.5 h-3.5" /> {treatment.duration}
+                              </span>
+                            </div>
+
+                            <h4 className="font-serif text-xl font-medium text-charcoal-900">
+                              {treatment.name}
+                            </h4>
+
+                            <p className="text-xs sm:text-sm text-charcoal-800/70 leading-relaxed">
+                              {treatment.description}
+                            </p>
+
+                            <div className="space-y-1.5 pt-2">
+                              {treatment.highlights.map((highlight, idx) => (
+                                <div key={idx} className="flex items-center gap-2 text-xs text-charcoal-800/80">
+                                  <Check className="w-3.5 h-3.5 text-sage-800 flex-shrink-0" />
+                                  <span>{highlight}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+
+                          <div className="pt-6 mt-6 border-t border-cream-200 flex items-center justify-between">
+                            <div>
+                              <span className="text-[10px] text-charcoal-800/60 block">Price</span>
+                              <span className="font-serif text-lg font-bold text-sage-900">
+                                {treatment.price}
+                              </span>
+                            </div>
+
+                            <button
+                              onClick={() => openFresha(treatment.freshaUrl, treatment.name)}
+                              className="px-5 py-2.5 rounded-xl bg-sage-800 hover:bg-sage-900 text-cream-50 text-xs font-medium transition shadow-sm flex items-center gap-1.5"
+                            >
+                              <Calendar className="w-3.5 h-3.5 text-bronze-300" />
+                              Book Now
+                            </button>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
         </div>
       </section>
 

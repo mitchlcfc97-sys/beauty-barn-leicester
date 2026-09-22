@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { ExternalLink, Sparkles, ShieldCheck, Calendar, Clock, ArrowRight, X, CheckCircle2 } from 'lucide-react';
 import { FRESHA_CONFIG } from '@/lib/utils';
+import { trackFreshaBooking } from '@/lib/analytics';
 
 interface FreshaContextType {
   isOpen: boolean;
@@ -43,23 +44,8 @@ export function FreshaProvider({ children }: { children: React.ReactNode }) {
     window.open(targetUrl, '_blank', 'noopener,noreferrer');
     setHasOpened(true);
 
-    // Track conversion event in Google Analytics 4
-    if (typeof window !== 'undefined' && (window as unknown as { gtag?: Function }).gtag) {
-      (window as unknown as { gtag: Function }).gtag('event', 'fresha_booking_click', {
-        treatment_name: targetName,
-        destination_url: targetUrl,
-      });
-      (window as unknown as { gtag: Function }).gtag('event', 'begin_checkout', {
-        value: 1,
-        currency: 'GBP',
-        items: [{ item_name: targetName }],
-      });
-    }
-
-    // Track custom event in Microsoft Clarity
-    if (typeof window !== 'undefined' && (window as unknown as { clarity?: Function }).clarity) {
-      (window as unknown as { clarity: Function }).clarity('event', 'fresha_booking_click');
-    }
+    // Track conversion event in Google Analytics 4 & Microsoft Clarity
+    trackFreshaBooking(targetName, targetUrl);
 
     // Auto-dismiss the confirmation overlay after 4 seconds
     setTimeout(() => {

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Send, CheckCircle2, MessageCircle, Mail } from 'lucide-react';
 import { BUSINESS_INFO } from '@/data/business';
+import { trackContactFormSubmission, trackWhatsAppClick } from '@/lib/analytics';
 
 export default function ContactForm() {
   const [name, setName] = useState('');
@@ -53,8 +54,10 @@ ${message}
         body: JSON.stringify({ name, email, phone, subject, message }),
       }).catch(() => {});
 
+      trackContactFormSubmission(subject);
       setSubmitted(true);
     } catch (err: any) {
+      trackContactFormSubmission(subject);
       setSubmitted(true);
     } finally {
       setIsSubmitting(false);
@@ -91,6 +94,7 @@ ${message}
             href={`https://wa.me/447535243827?text=${whatsappText}`}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick('contact_page')}
             className="flex-1 py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold uppercase tracking-wider text-center transition shadow inline-flex items-center justify-center gap-1.5"
           >
             <MessageCircle className="w-4 h-4" />

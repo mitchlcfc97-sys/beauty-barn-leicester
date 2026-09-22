@@ -27,7 +27,6 @@ export const TREATMENTS: Treatment[] = [
       "Hot Stones / Bamboo upgrade available",
       "30-min express recharge"
     ],
-    "popular": true,
     "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A5955241"
   },
   {
@@ -44,7 +43,6 @@ export const TREATMENTS: Treatment[] = [
       "Hot Stones / Bamboo add-on available",
       "Deeply restorative pressure"
     ],
-    "popular": true,
     "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A5955238"
   },
   {
@@ -94,7 +92,6 @@ export const TREATMENTS: Treatment[] = [
       "Targeted chronic tension release",
       "Muscle recovery focus"
     ],
-    "popular": true,
     "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A18353636"
   },
   {
@@ -127,7 +124,6 @@ export const TREATMENTS: Treatment[] = [
       "Perfect for couples or friends",
       "Includes two therapists"
     ],
-    "popular": true,
     "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=pkg%3A167602"
   },
   {
@@ -176,7 +172,6 @@ export const TREATMENTS: Treatment[] = [
       "Lymphatic facial massage",
       "Deeply hydrating finishing mask"
     ],
-    "popular": true,
     "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A5955197"
   },
   {
@@ -209,7 +204,6 @@ export const TREATMENTS: Treatment[] = [
       "Probiotic barrier restoration",
       "90-minute holistic immersion"
     ],
-    "popular": true,
     "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A9023474"
   },
   {
@@ -226,7 +220,6 @@ export const TREATMENTS: Treatment[] = [
       "Available in 30m, 60m & 90m durations",
       "Clinical & botanical synergy"
     ],
-    "popular": true,
     "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8493168"
   },
   {
@@ -243,7 +236,6 @@ export const TREATMENTS: Treatment[] = [
       "Flawless makeup application base",
       "Optional Hydrojelly mask add-on"
     ],
-    "popular": true,
     "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A7386825"
   },
   {
@@ -293,7 +285,6 @@ export const TREATMENTS: Treatment[] = [
       "Simultaneous facial & foot therapy",
       "Unique luxury sensory experience"
     ],
-    "popular": true,
     "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=pkg%3A1873592"
   },
   {
@@ -304,11 +295,11 @@ export const TREATMENTS: Treatment[] = [
     "duration": "90 mins",
     "price": "£100 (£105 with Hot Stones | £200 for Two)",
     "priceNum": 100,
-    "description": "A seamless 90-minute pairing of restorative full-body massage and our glowing bespoke botanical facial with warm towel compresses (Natural Bamboo Canes upgrade available for deeper pressure).",
+    "description": "A seamless 90-minute pairing of 1-hour restorative full-body massage and a 30-minute glowing mini botanical facial with warm towel compresses (Natural Bamboo Canes upgrade available for deeper pressure).",
     "highlights": [
-      "90-minute balanced face & body combination",
-      "Full body massage with botanical oils",
-      "Revitalising tailored facial & scalp therapy"
+      "90-minute pairing: 1-hour full body massage + 30-min mini facial",
+      "60-minute full body massage with botanical oils",
+      "30-minute revitalising mini facial & scalp therapy"
     ],
     "popular": true,
     "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A8461617"
@@ -327,7 +318,6 @@ export const TREATMENTS: Treatment[] = [
       "Full body scrub, wrap & massage",
       "Bramley botanical facial & scalp therapy"
     ],
-    "popular": true,
     "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A24981589"
   },
   {
@@ -425,7 +415,6 @@ export const TREATMENTS: Treatment[] = [
       "Chip-free shine for up to 3 weeks",
       "Precision cuticle work"
     ],
-    "popular": true,
     "freshaUrl": "https://www.fresha.com/a/the-beauty-barn-leicester-leicester-beeby-road-x4x1h429/booking?offerItems=sv%3A5952022"
   },
   {

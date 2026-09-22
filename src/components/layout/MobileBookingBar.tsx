@@ -4,6 +4,7 @@ import React from 'react';
 import { Calendar, Phone, Sparkles } from 'lucide-react';
 import { useFresha } from '@/components/booking/FreshaModal';
 import { BUSINESS_INFO } from '@/data/business';
+import { trackPhoneCall, trackWhatsAppClick } from '@/lib/analytics';
 
 export default function MobileBookingBar() {
   const { openFresha } = useFresha();
@@ -22,6 +23,7 @@ export default function MobileBookingBar() {
         <a
           href={`tel:${BUSINESS_INFO.phone.replace(/\s+/g, '')}`}
           aria-label={`Call salon on ${BUSINESS_INFO.phone}`}
+          onClick={() => trackPhoneCall('mobile_booking_bar')}
           className="flex flex-col items-center justify-center px-3 py-2 rounded-xl border border-cream-300 bg-white hover:bg-cream-100 text-charcoal-800 transition active:scale-95 text-[10px] font-medium min-w-[56px]"
         >
           <Phone className="w-4 h-4 text-bronze-600 mb-0.5" />
@@ -33,6 +35,7 @@ export default function MobileBookingBar() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"
+          onClick={() => trackWhatsAppClick('mobile_booking_bar')}
           className="flex flex-col items-center justify-center px-3 py-2 rounded-xl border border-emerald-200 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 transition active:scale-95 text-[10px] font-semibold min-w-[68px]"
         >
           <svg className="w-4 h-4 fill-[#25D366] mb-0.5" viewBox="0 0 24 24">
